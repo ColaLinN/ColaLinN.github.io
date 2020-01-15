@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test2</title>
+    <url>/2020/01/15/%E2%80%98test2/</url>
+    <content><![CDATA[<h1 id="第二篇测试"><a href="#第二篇测试" class="headerlink" title="第二篇测试"></a>第二篇测试</h1><p>别来无恙啊</p>
+]]></content>
+      <tags>
+        <tag>test-tag</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hello world</title>
     <url>/2020/01/15/hello-world/</url>
     <content><![CDATA[<h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world!"></a>hello world!</h1><h1 id="github-ColaLinN"><a href="#github-ColaLinN" class="headerlink" title="github: ColaLinN"></a>github: ColaLinN</h1>]]></content>
