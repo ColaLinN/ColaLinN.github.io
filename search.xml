@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo使用配置记录</title>
+    <url>/2020/01/20/20-1-20/</url>
+    <content><![CDATA[<h1 id="从简单的hexo命令开始"><a href="#从简单的hexo命令开始" class="headerlink" title="从简单的hexo命令开始"></a>从简单的hexo命令开始</h1><h4 id=""><a href="#" class="headerlink" title=""></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.文章的生成及编辑</span><br><span class="line">hexo new “文章标题”</span><br><span class="line">博客所在路径\source_posts\”下生成一个md文件，文件名称为上面命令行所输入的文章标题</span><br><span class="line"></span><br><span class="line">2.文件发布</span><br><span class="line">hexo g generate</span><br><span class="line"></span><br><span class="line">3.本地测试</span><br><span class="line">hexo s </span><br><span class="line">访问localhost:4000来查看变化</span><br><span class="line"></span><br><span class="line">4.同步到github</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">5.Hexo更换主题并发布到github</span><br><span class="line">安装hexo-deployer-git自动部署发布工具</span><br><span class="line">npm install hexo-deployer-git  --save</span><br><span class="line">发布到GitHub</span><br><span class="line">输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line"></span><br><span class="line">6.如何一键式发布</span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line">可用以下简化（注意事项：下面的命令中 C:\blog_backup 是我博客的文件夹路径，请替换为你自己博客的路径，在git bash中输入命令）以后可以用hexo fuck来发布了</span><br><span class="line">git config --global alias.fuck &#39;!cd C:\blog_backup;hexo clean;hexo g -d&#39;</span><br><span class="line">git fuck</span><br><span class="line">取消别名</span><br><span class="line">git config --global --unset alias.fuck</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4>]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>test2</title>
     <url>/2020/01/15/%E2%80%98test2/</url>
     <content><![CDATA[<h1 id="第二篇测试"><a href="#第二篇测试" class="headerlink" title="第二篇测试"></a>第二篇测试</h1><p>别来无恙啊</p>
