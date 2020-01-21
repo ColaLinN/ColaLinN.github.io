@@ -49,15 +49,17 @@
     <link href="http://yoursite.com/2020/01/15/%E2%80%98test2/"/>
     <id>http://yoursite.com/2020/01/15/%E2%80%98test2/</id>
     <published>2020-01-15T11:40:22.000Z</published>
-    <updated>2020-01-15T11:41:41.873Z</updated>
+    <updated>2020-01-21T15:56:42.878Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="第二篇测试"><a href="#第二篇测试" class="headerlink" title="第二篇测试"></a>第二篇测试</h1><p>别来无恙啊</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="第二篇测试"><a href="#第二篇测试" class="headerlink" title="第二篇测试"></a>第二篇测试</h1><p>别来无恙啊</p><p>随笔2020.1.21</p><p>今天武汉不明肺炎又进一步扩散了，讨论甚多</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h1 id=&quot;第二篇测试&quot;&gt;&lt;a href=&quot;#第二篇测试&quot; class=&quot;headerlink&quot; title=&quot;第二篇测试&quot;&gt;&lt;/a&gt;第二篇测试&lt;/h1&gt;&lt;p&gt;别来无恙啊&lt;/p&gt;
+&lt;p&gt;随笔2020.1.21&lt;/p&gt;
+&lt;p&gt;今天武汉不明肺炎又进一步扩散了，讨论甚多&lt;/p&gt;
 
       
     
