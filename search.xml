@@ -20,21 +20,14 @@
 <p>The distance between node v and subset Vi,j is defined as dist(v, Vi,j ) = minw∈Vi,j dist(v, w)</p>
 </blockquote>
 <p>(4) 对于一个节点，把其到每个子集的最短距离记录下来，构成一个S集，这个S集就是该节点的<strong>路网嵌入向量</strong>，然后我们把所有的向量放在一起，构成路网嵌入数据集。</p>
-<img src="/.com//image-20200122212143074.png" alt="image-20200122212143074" style="zoom: 80%;">
-
-
-
+<p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212143074.png" alt="aaa"></p>
 <p>(5) 假设一个点u，处于节点s和t之间，该节点u到某个子集Vij之间的距离可以如下公式计算，</p>
 <p>dist(u，s)为点u到节点s的距离,dist(u,t)同理。</p>
-<img src="/.com//image-20200122212358662.png" alt="image-20200122212358662" style="zoom:80%;">
-
+<p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212358662.png" alt="aaa"></p>
 <p>(6) 根据上面的分析，对于该点u，我们也可以得到一个<strong>路网嵌入向量</strong>如下</p>
-<img src="/.com//image-20200122212654581.png" alt="image-20200122212654581" style="zoom: 80%;">
-
-
-
+<p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212654581.png" alt></p>
 <p>(7) 最终，我们可以计算任意两点a,b的最短距离</p>
-<p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212907442.png" alt="image-20200122212907442"></p>
+<p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212907442.png" alt></p>
 ]]></content>
       <categories>
         <category>大创</category>
