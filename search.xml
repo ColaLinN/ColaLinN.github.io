@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>路网嵌入 ROAD NETWORK EMBEDDING</title>
+    <url>/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/</url>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>路网嵌入是一种用来计算最短道路距离的方案，通过记录每个节点（道路之间的交叉口）的信息，把常规的道路用多维空间向量表示，使得每个节点之间的距离更能更有效地被计算。</p>
+<blockquote>
+<p>Road Network Embedding (RNE), proposed by Shahabi et al.* [12], is an approach to compute shortest path distance in road networks, which bases on the LLR embedding techniques [19]. RNE transforms a road network into a higher dimensional space by assigning a sketch (i.e., a vector) to every node such that the distance between any two nodes can be efficiently approximated using only their sketches.</p>
+</blockquote>
+<h3 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h3><p>(1) 设G=(V,E)为路网（road network）</p>
+<p>V代表道路之间的交叉节点，E（edge）代表道路。</p>
+<p>(2)  V有n个，把V分成<strong>n个子集</strong>如下</p>
+<p>V : R = {V1,1, . . . , V1,α, . . . , Vβ,1, . . . , Vβ,α}</p>
+<blockquote>
+<p>Let n = |V | be the size of the node set V . Define R as a set of O(log2n) reference sets, which are subsets of V : R = {V1,1, . . . , V1,α, . . . , Vβ,1, . . . , Vβ,α}, where α = O(log n) and β = O(log n).</p>
+<p> Each subset Vi,ji is defined as a random subset of <em>V</em> with 2<em>i</em> nodes randomly chosen from <em>V</em> . </p>
+</blockquote>
+<p>(3) 一个节点到一个子集Vij的距离即该节点到这个子集的最近距离所有节点距离的最小值</p>
+<blockquote>
+<p>The distance between node v and subset Vi,j is defined as dist(v, Vi,j ) = minw∈Vi,j dist(v, w)</p>
+</blockquote>
+<p>(4) 对于一个节点，把其到每个子集的最短距离记录下来，构成一个S集，这个S集就是该节点的<strong>路网嵌入向量</strong>，然后我们把所有的向量放在一起，构成路网嵌入数据集。</p>
+<img src="/.com//image-20200122212143074.png" alt="image-20200122212143074" style="zoom: 80%;">
+
+
+
+<p>(5) 假设一个点u，处于节点s和t之间，该节点u到某个子集Vij之间的距离可以如下公式计算，</p>
+<p>dist(u，s)为点u到节点s的距离,dist(u,t)同理。</p>
+<img src="/.com//image-20200122212358662.png" alt="image-20200122212358662" style="zoom:80%;">
+
+<p>(6) 根据上面的分析，对于该点u，我们也可以得到一个<strong>路网嵌入向量</strong>如下</p>
+<img src="/.com//image-20200122212654581.png" alt="image-20200122212654581" style="zoom: 80%;">
+
+
+
+<p>(7) 最终，我们可以计算任意两点a,b的最短距离</p>
+<p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212907442.png" alt="image-20200122212907442"></p>
+]]></content>
+      <categories>
+        <category>大创</category>
+      </categories>
+      <tags>
+        <tag>pRide</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo使用配置记录</title>
     <url>/2020/01/20/20-1-20/</url>
     <content><![CDATA[<h1 id="从简单的hexo命令开始"><a href="#从简单的hexo命令开始" class="headerlink" title="从简单的hexo命令开始"></a>从简单的hexo命令开始</h1><h4 id=""><a href="#" class="headerlink" title=""></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.文章的生成及编辑</span><br><span class="line">hexo new “文章标题”</span><br><span class="line">博客所在路径\source_posts\”下生成一个md文件，文件名称为上面命令行所输入的文章标题</span><br><span class="line"></span><br><span class="line">2.文件发布</span><br><span class="line">hexo g generate</span><br><span class="line"></span><br><span class="line">3.本地测试</span><br><span class="line">hexo s </span><br><span class="line">访问localhost:4000来查看变化</span><br><span class="line"></span><br><span class="line">4.同步到github</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">5.Hexo更换主题并发布到github</span><br><span class="line">安装hexo-deployer-git自动部署发布工具</span><br><span class="line">npm install hexo-deployer-git  --save</span><br><span class="line">发布到GitHub</span><br><span class="line">输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line"></span><br><span class="line">6.如何一键式发布</span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line">可用以下简化（注意事项：下面的命令中 C:\blog_backup 是我博客的文件夹路径，请替换为你自己博客的路径，在git bash中输入命令）以后可以用hexo fuck来发布了</span><br><span class="line">git config --global alias.fuck &#39;!cd C:\blog_backup;hexo clean;hexo g -d&#39;</span><br><span class="line">git fuck</span><br><span class="line">取消别名</span><br><span class="line">git config --global --unset alias.fuck</span><br></pre></td></tr></table></figure>

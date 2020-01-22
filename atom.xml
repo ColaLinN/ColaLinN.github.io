@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-20T03:05:06.570Z</updated>
+  <updated>2020-01-22T15:07:37.313Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>路网嵌入 ROAD NETWORK EMBEDDING</title>
+    <link href="http://yoursite.com/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/"/>
+    <id>http://yoursite.com/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/</id>
+    <published>2020-01-22T09:51:25.000Z</published>
+    <updated>2020-01-22T15:07:37.313Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>路网嵌入是一种用来计算最短道路距离的方案，通过记录每个节点（道路之间的交叉口）的信息，把常规的道路用多维空间向量表示，使得每个节点之间的距离更能更有效地被计算。</p><blockquote><p>Road Network Embedding (RNE), proposed by Shahabi et al.* [12], is an approach to compute shortest path distance in road networks, which bases on the LLR embedding techniques [19]. RNE transforms a road network into a higher dimensional space by assigning a sketch (i.e., a vector) to every node such that the distance between any two nodes can be efficiently approximated using only their sketches.</p></blockquote><h3 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h3><p>(1) 设G=(V,E)为路网（road network）</p><p>V代表道路之间的交叉节点，E（edge）代表道路。</p><p>(2)  V有n个，把V分成<strong>n个子集</strong>如下</p><p>V : R = {V1,1, . . . , V1,α, . . . , Vβ,1, . . . , Vβ,α}</p><blockquote><p>Let n = |V | be the size of the node set V . Define R as a set of O(log2n) reference sets, which are subsets of V : R = {V1,1, . . . , V1,α, . . . , Vβ,1, . . . , Vβ,α}, where α = O(log n) and β = O(log n).</p><p> Each subset Vi,ji is defined as a random subset of <em>V</em> with 2<em>i</em> nodes randomly chosen from <em>V</em> . </p></blockquote><p>(3) 一个节点到一个子集Vij的距离即该节点到这个子集的最近距离所有节点距离的最小值</p><blockquote><p>The distance between node v and subset Vi,j is defined as dist(v, Vi,j ) = minw∈Vi,j dist(v, w)</p></blockquote><p>(4) 对于一个节点，把其到每个子集的最短距离记录下来，构成一个S集，这个S集就是该节点的<strong>路网嵌入向量</strong>，然后我们把所有的向量放在一起，构成路网嵌入数据集。</p><img src="/.com//image-20200122212143074.png" alt="image-20200122212143074" style="zoom: 80%;"><p>(5) 假设一个点u，处于节点s和t之间，该节点u到某个子集Vij之间的距离可以如下公式计算，</p><p>dist(u，s)为点u到节点s的距离,dist(u,t)同理。</p><img src="/.com//image-20200122212358662.png" alt="image-20200122212358662" style="zoom:80%;"><p>(6) 根据上面的分析，对于该点u，我们也可以得到一个<strong>路网嵌入向量</strong>如下</p><img src="/.com//image-20200122212654581.png" alt="image-20200122212654581" style="zoom: 80%;"><p>(7) 最终，我们可以计算任意两点a,b的最短距离</p><p><img src="/.com//2020-1-22-ROAD-NETWORK-EMBEDDING%5Cimage-20200122212907442.png" alt="image-20200122212907442"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;路网嵌入是一种用来计算最短道路距离的方案，通过记录每个节点（道路之间的交叉口）的信息，把常规的道路用多维空间向量表示，使得每个节点之间的距离
+      
+    
+    </summary>
+    
+    
+      <category term="大创" scheme="http://yoursite.com/categories/%E5%A4%A7%E5%88%9B/"/>
+    
+    
+      <category term="pRide" scheme="http://yoursite.com/tags/pRide/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo使用配置记录</title>
