@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>pRide具体方法</title>
+    <title>pRide具体方案</title>
     <url>/2020/01/23/2020-1-23-pRide-optimized-construction/</url>
     <content><![CDATA[<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>初始方案暂且不谈，先说优化方案。</p>
 <p>一：地图分块，减少计算量</p>
@@ -56,7 +56,7 @@
 <p><img src="/.com//2020-1-23-pRide-optimized-construction%5Cimage-20200123171824965.png" alt="图4"></p>
 <p>​                                                            图  4   上为算法、下为混淆电路</p>
 <p>5.通过算法3获得有需要计算得必要的其他区域、</p>
-<p>然后通过4.1Local Zone matching算法计算该区域中离乘客最近的司机，若该司机到乘客的距离B比乘客到本区域最短距离A小，就刷新最短距离A。最终我们得到距离最近的司机，并且将乘客位置信息发送给他……..</p>
+<p>然后通过4.1Local Zone matching算法计算该区域中离乘客最近的司机，若该司机到乘客的距离B比乘客到本区域最短距离A小，就刷新最短距离A。最终我们得到距离最近的司机，并且将乘客位置信息发送给他………</p>
 ]]></content>
       <categories>
         <category>大创</category>
