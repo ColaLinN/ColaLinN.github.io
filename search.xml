@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-1-26-leetcode</title>
+    <url>/2020/01/26/2020-1-26-leetcode/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>搭建机场简易教程shadowsocks centos7 vutlr bbr</title>
     <url>/2020/01/26/shadowsocks-centos7-vutlr-bbr/</url>
     <content><![CDATA[<h2 id="1-获得vutlr服务器后-包含ip、用户名和密码-使用Xshell连接（其他连接器请自行百度）"><a href="#1-获得vutlr服务器后-包含ip、用户名和密码-使用Xshell连接（其他连接器请自行百度）" class="headerlink" title="1.获得vutlr服务器后(包含ip、用户名和密码)使用Xshell连接（其他连接器请自行百度）"></a>1.获得vutlr服务器后(包含ip、用户名和密码)使用Xshell连接（其他连接器请自行百度）</h2><h2 id="2-依次输入以下代码安装shadowsocks"><a href="#2-依次输入以下代码安装shadowsocks" class="headerlink" title="2.依次输入以下代码安装shadowsocks"></a>2.依次输入以下代码安装shadowsocks</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install wget</span><br></pre></td></tr></table></figure>
@@ -12,7 +17,7 @@
 <h4 id="设置个人shadowsocks密码和端口号"><a href="#设置个人shadowsocks密码和端口号" class="headerlink" title="设置个人shadowsocks密码和端口号"></a>设置个人shadowsocks密码和端口号</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
 
 <p>然后依次输入你的密码password、端口号(就是ss服务的端口号，后面连接使用)、加密模式(很多人推荐7 aes-256-cfb)</p>
-<p>按任意键开始配置press any key to start</p>
+<p>按任意键开始配置press any key to start，如果是第一次配置需要几分钟</p>
 <h4 id="配置完之后可以看到用四行红字"><a href="#配置完之后可以看到用四行红字" class="headerlink" title="配置完之后可以看到用四行红字"></a>配置完之后可以看到用四行红字</h4><p>这个就是我们shadowsocks的连接信息了,其中除了ip是服务器自带的，端口、密码、加密模式都是我们自选的</p>
 <h2 id="3-安装拥塞控制BBR加速上网"><a href="#3-安装拥塞控制BBR加速上网" class="headerlink" title="3.安装拥塞控制BBR加速上网"></a>3.安装拥塞控制BBR加速上网</h2><h4 id="安装BBR"><a href="#安装BBR" class="headerlink" title="安装BBR"></a>安装BBR</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh</span><br></pre></td></tr></table></figure>
 
@@ -20,6 +25,7 @@
 
 <h4 id="启动BBR安装"><a href="#启动BBR安装" class="headerlink" title="启动BBR安装"></a>启动BBR安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;bbr.sh</span><br></pre></td></tr></table></figure>
 
+<p>这步安装也蛮久的</p>
 <p>按任意键安装，完成之后提示是否重启，输入y确定重启</p>
 <p>重启之后</p>
 <p>输入以下的指令查看BBR是否启动，若提示tcp_bbr则成功</p>
