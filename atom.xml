@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-26T12:10:26.097Z</updated>
+  <updated>2020-01-27T15:09:42.047Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,24 @@
     <link href="http://yoursite.com/2020/01/26/2020-1-26-leetcode/"/>
     <id>http://yoursite.com/2020/01/26/2020-1-26-leetcode/</id>
     <published>2020-01-26T12:10:26.000Z</published>
-    <updated>2020-01-26T12:10:26.097Z</updated>
+    <updated>2020-01-27T15:09:42.047Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="5-Longest-Palindromic-Substring"><a href="#5-Longest-Palindromic-Substring" class="headerlink" title="5. Longest Palindromic Substring"></a><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">5. Longest Palindromic Substring</a></h4><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length_s=s.length(),length_Palin=<span class="number">1</span>;</span><br><span class="line">        String result=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> first,second,first_next,second_next;</span><br><span class="line">        <span class="keyword">if</span>(length_s==<span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(length_s&gt;<span class="number">1</span>) result=s.substring(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(first=<span class="number">0</span>,second=<span class="number">1</span>;second&lt;length_s;first++,second++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(first)==s.charAt(second))&#123;</span><br><span class="line">                first_next=first;second_next=second;</span><br><span class="line">                <span class="keyword">while</span>(first_next-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; second_next+<span class="number">1</span>&lt;length_s &amp;&amp; s.charAt(first_next-<span class="number">1</span>)==s.charAt(second_next+<span class="number">1</span>))&#123;</span><br><span class="line">                    first_next--;</span><br><span class="line">                    second_next++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(result.length()&lt;second_next-first_next+<span class="number">1</span>)&#123;</span><br><span class="line">                    result=s.substring(first_next, second_next+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(second&lt;=length_s-<span class="number">2</span>&amp;&amp;s.charAt(second-<span class="number">1</span>)==s.charAt(second+<span class="number">1</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                first_next=second-<span class="number">1</span>;second_next=second+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span>(first_next-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; second_next+<span class="number">1</span>&lt;length_s &amp;&amp; s.charAt(first_next-<span class="number">1</span>)==s.charAt(second_next+<span class="number">1</span>))&#123;</span><br><span class="line">                    first_next--;</span><br><span class="line">                    second_next++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(result.length()&lt;second_next-first_next+<span class="number">1</span>)&#123;</span><br><span class="line">                    result=s.substring(first_next, second_next+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;5-Longest-Palindromic-Substring&quot;&gt;&lt;a href=&quot;#5-Longest-Palindromic-Substring&quot; class=&quot;headerlink&quot; title=&quot;5. Longest Palindromic Substri
+      
     
     </summary>
     
     
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
