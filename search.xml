@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-1-28-leetcode</title>
+    <url>/2020/01/28/2020-1-28-leetcode/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>2020-1-27-leetcode</title>
+    <url>/2020/01/28/2020-1-27-leetcode/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>2020-1-26-leetcode</title>
     <url>/2020/01/26/2020-1-26-leetcode/</url>
     <content><![CDATA[<h4 id="5-Longest-Palindromic-Substring"><a href="#5-Longest-Palindromic-Substring" class="headerlink" title="5. Longest Palindromic Substring"></a><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">5. Longest Palindromic Substring</a></h4><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
