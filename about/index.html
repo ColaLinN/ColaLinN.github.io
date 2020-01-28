@@ -323,6 +323,11 @@
           
 
   
+    <div id="gitalk-container">
+	</div>	
+
+  
+
 
 
 
@@ -611,6 +616,22 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7dd0e4dd1112b4f6ac75',
+          clientSecret: '5f52c7a06abafb34741cd6468191b708c1f166b9',
+          repo: 'ColaLinN.github.io',
+          owner: 'ColaLinN',
+          admin: ['ColaLinN'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   

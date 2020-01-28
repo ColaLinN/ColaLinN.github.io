@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="神奇小站">
 <meta property="og:description" content="从简单的hexo命令开始123456789101112131415161718192021222324252627281.文章的生成及编辑hexo new “文章标题”博客所在路径\source_posts\”下生成一个md文件，文件名称为上面命令行所输入的文章标题2.文件发布hexo g generate3.本地测试hexo s 访问localhost:4000来查看变化4.同步到githubh">
 <meta property="article:published_time" content="2020-01-20T02:31:50.000Z">
-<meta property="article:modified_time" content="2020-01-28T08:42:32.029Z">
+<meta property="article:modified_time" content="2020-01-28T09:16:37.992Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="others">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  352
+                  371
                 </span>
               
 
@@ -430,6 +430,8 @@
 <p><a href="https://blog.csdn.net/qq_39610915/article/details/90679768" target="_blank" rel="noopener">https://blog.csdn.net/qq_39610915/article/details/90679768</a></p>
 <p>7.Hexo NexT 代码块复制功能</p>
 <p><a href="https://www.jianshu.com/p/3e9d614c1e77" target="_blank" rel="noopener">https://www.jianshu.com/p/3e9d614c1e77</a></p>
+<p>8.Hexo写博客时的图片问题</p>
+<p><a href="https://blog.csdn.net/TimeJjc/article/details/86707165" target="_blank" rel="noopener">https://blog.csdn.net/TimeJjc/article/details/86707165</a></p>
 
       
     </div>
@@ -504,6 +506,11 @@
           
 
   
+    <div id="gitalk-container">
+	</div>	
+
+  
+
 
 
 
@@ -817,6 +824,22 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7dd0e4dd1112b4f6ac75',
+          clientSecret: '5f52c7a06abafb34741cd6468191b708c1f166b9',
+          repo: 'ColaLinN.github.io',
+          owner: 'ColaLinN',
+          admin: ['ColaLinN'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
