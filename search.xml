@@ -68,7 +68,7 @@
 <p>同态加密 （Homomorphic），用于提供密文状态下的加法（及乘法）同步到明文中</p>
 <p>混淆电路（Garbled Circuit），用于提供CP（Crypto Provider）和ORH服务器的安全两方计算、有点像零知识证明</p>
 <h3 id="一、初始化-Setup"><a href="#一、初始化-Setup" class="headerlink" title="一、初始化   Setup"></a>一、初始化   Setup</h3><p>1.ORH   地图分块(如图1所示)</p>
-<p><img src="/.com//2020-1-23-pRide-optimized-construction%5Cimage-20200123162426100.png" alt="图1"></p>
+<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123162426100.png" alt="图1"></p>
 <p>​                                                                                  图  1</p>
 <p>2.ORH   计算  地图道路的   路网嵌入向量</p>
 <p>3.CP   初始化同态加密公钥并分发</p>
@@ -77,7 +77,7 @@
 <p>根据从服务器获取的地图道路路网嵌入向量、来在本地计算自己的路网嵌入向量S（这在路网嵌入已经讲过了）</p>
 <p>2.司机端   把S打包成一个变量P</p>
 <p>就是像进制位一样叠加维度S(如图2)</p>
-<p><img src="/.com//2020-1-23-pRide-optimized-construction%5Cimage-20200123162003661.png" alt="图2"></p>
+<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123162003661.png" alt="图2"></p>
 <p>​                                                                                  图  2</p>
 <p>3.司机端   把P用从CP获得的公钥加密成[P(b)]，把这个[P(b)]和所处区域Zα上传到ORH</p>
 <p>4.ORH   随机生成一个路网嵌入向量u，并加密之成[P(u)]</p>
@@ -97,7 +97,7 @@
 <p>第一、二步是计算第一个司机到该乘客的最近距离(把P打包、第二步是找到两个P之间的最大值)</p>
 <p>第三、四步同上计算第二个司机到该乘客的最近距离</p>
 <p>第五步是判断哪个司机离乘客近</p>
-<p><img src="/.com//2020-1-23-pRide-optimized-construction%5Cimage-20200123170731309.png" alt="图3"></p>
+<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123170731309.png" alt="图3"></p>
 <p>​                                                            图  3   上为算法、下为混淆电路</p>
 <h4 id="4-2-提高匹配精度-Refinement"><a href="#4-2-提高匹配精度-Refinement" class="headerlink" title="4.2.提高匹配精度   Refinement"></a>4.2.提高匹配精度   Refinement</h4><p>1.ORH   把4.1中计算出来的，乘客所处区域zα与最近司机的[P(d)’] (4.1.1中计算)、</p>
 <p>与[x]-[ηx]=&gt;[x’]        ;        [y]-[ηy]=&gt;[y’]都发给CP</p>
@@ -109,8 +109,8 @@
 <p>第五、六步是计算第一个司机到该乘客的最近距离(把P打包、第二步是找到两个P之间的最大值)</p>
 <p>第七步是计算Γ   Γ是一个8位的二进制数，每一位指示一个区域是否该计算（就是看以该距离为半径的圆是否“触”到了周围区域，具体看图1）</p>
 <p>第八步是判断 区域zα4是否该计算，后面9到15步同理，是很简单的距离判断（见图一）</p>
-<p><img src="/.com//2020-1-23-pRide-optimized-construction%5Cimage-20200123171733353.png" alt="图4"></p>
-<p><img src="/.com//2020-1-23-pRide-optimized-construction%5Cimage-20200123171824965.png" alt="图4"></p>
+<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123171733353.png" alt="图4"></p>
+<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123171824965.png" alt="图4"></p>
 <p>​                                                            图  4   上为算法、下为混淆电路</p>
 <p>5.通过算法3获得有需要计算得必要的其他区域、</p>
 <p>然后通过4.1Local Zone matching算法计算该区域中离乘客最近的司机，若该司机到乘客的距离B比乘客到本区域最短距离A小，就刷新最短距离A。最终我们得到距离最近的司机，并且将乘客位置信息发送给他………</p>
@@ -142,14 +142,14 @@
 <p>The distance between node v and subset Vi,j is defined as dist(v, Vi,j ) = minw∈Vi,j dist(v, w)</p>
 </blockquote>
 <p>(4) 对于一个节点，把其到每个子集的最短距离记录下来，构成一个S集，这个S集就是该节点的<strong>路网嵌入向量</strong>，然后我们把所有的向量放在一起，构成路网嵌入数据集。</p>
-<p><img src="/.com//image-20200122212143074.png" alt="4图"></p>
+<p><img src="/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/image-20200122212143074.png" alt="4图"></p>
 <p>(5) 假设一个点u，处于节点s和t之间，该节点u到某个子集Vij之间的距离可以如下公式计算，</p>
 <p>dist(u，s)为点u到节点s的距离,dist(u,t)同理。</p>
-<p><img src="/.com//image-20200122212358662.png" alt="aaa"></p>
+<p><img src="/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/image-20200122212358662.png" alt="aaa"></p>
 <p>(6) 根据上面的分析，对于该点u，我们也可以得到一个<strong>路网嵌入向量</strong>如下</p>
-<p><img src="/.com//image-20200122212654581.png" alt="6图"></p>
+<p><img src="/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/image-20200122212654581.png" alt="6图"></p>
 <p>(7) 最终，我们可以计算任意两点a,b的最短距离</p>
-<p><img src="/.com//image-20200122212907442.png" alt></p>
+<p><img src="/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/image-20200122212907442.png" alt></p>
 ]]></content>
       <categories>
         <category>大创</category>
@@ -178,6 +178,8 @@
 <p><a href="https://blog.csdn.net/weixin_33738982/article/details/89621120" target="_blank" rel="noopener">https://blog.csdn.net/weixin_33738982/article/details/89621120</a></p>
 <p>6.进阶版看板娘</p>
 <p><a href="https://blog.csdn.net/qq_39610915/article/details/90679768" target="_blank" rel="noopener">https://blog.csdn.net/qq_39610915/article/details/90679768</a></p>
+<p>7.Hexo NexT 代码块复制功能</p>
+<p><a href="https://www.jianshu.com/p/3e9d614c1e77" target="_blank" rel="noopener">https://www.jianshu.com/p/3e9d614c1e77</a></p>
 ]]></content>
       <categories>
         <category>hexo</category>
