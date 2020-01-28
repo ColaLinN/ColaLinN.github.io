@@ -5,9 +5,9 @@
   <subtitle>这里总有神奇的东西</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://colalinn.github.io/"/>
   <updated>2020-01-27T15:09:42.047Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://colalinn.github.io/</id>
   
   <author>
     <name>ColaLinN</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>2020-1-26-leetcode</title>
-    <link href="http://yoursite.com/2020/01/26/2020-1-26-leetcode/"/>
-    <id>http://yoursite.com/2020/01/26/2020-1-26-leetcode/</id>
+    <link href="https://colalinn.github.io/2020/01/26/2020-1-26-leetcode/"/>
+    <id>https://colalinn.github.io/2020/01/26/2020-1-26-leetcode/</id>
     <published>2020-01-26T12:10:26.000Z</published>
     <updated>2020-01-27T15:09:42.047Z</updated>
     
@@ -35,17 +35,17 @@
     </summary>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+      <category term="leetcode" scheme="https://colalinn.github.io/categories/leetcode/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://colalinn.github.io/tags/leetcode/"/>
     
   </entry>
   
   <entry>
     <title>搭建机场简易教程shadowsocks centos7 vutlr bbr</title>
-    <link href="http://yoursite.com/2020/01/26/shadowsocks-centos7-vutlr-bbr/"/>
-    <id>http://yoursite.com/2020/01/26/shadowsocks-centos7-vutlr-bbr/</id>
+    <link href="https://colalinn.github.io/2020/01/26/shadowsocks-centos7-vutlr-bbr/"/>
+    <id>https://colalinn.github.io/2020/01/26/shadowsocks-centos7-vutlr-bbr/</id>
     <published>2020-01-26T11:40:57.000Z</published>
     <updated>2020-01-26T12:14:37.417Z</updated>
     
@@ -61,23 +61,23 @@
     </summary>
     
     
-      <category term="shadowsocks" scheme="http://yoursite.com/categories/shadowsocks/"/>
+      <category term="shadowsocks" scheme="https://colalinn.github.io/categories/shadowsocks/"/>
     
     
-      <category term="shadowsocks" scheme="http://yoursite.com/tags/shadowsocks/"/>
+      <category term="shadowsocks" scheme="https://colalinn.github.io/tags/shadowsocks/"/>
     
-      <category term="vpn" scheme="http://yoursite.com/tags/vpn/"/>
+      <category term="vpn" scheme="https://colalinn.github.io/tags/vpn/"/>
     
-      <category term="centos" scheme="http://yoursite.com/tags/centos/"/>
+      <category term="centos" scheme="https://colalinn.github.io/tags/centos/"/>
     
-      <category term="vutlr" scheme="http://yoursite.com/tags/vutlr/"/>
+      <category term="vutlr" scheme="https://colalinn.github.io/tags/vutlr/"/>
     
   </entry>
   
   <entry>
     <title>pRide具体方案</title>
-    <link href="http://yoursite.com/2020/01/23/2020-1-23-pRide-optimized-construction/"/>
-    <id>http://yoursite.com/2020/01/23/2020-1-23-pRide-optimized-construction/</id>
+    <link href="https://colalinn.github.io/2020/01/23/2020-1-23-pRide-optimized-construction/"/>
+    <id>https://colalinn.github.io/2020/01/23/2020-1-23-pRide-optimized-construction/</id>
     <published>2020-01-23T08:05:04.000Z</published>
     <updated>2020-01-28T09:12:06.366Z</updated>
     
@@ -95,17 +95,17 @@
     </summary>
     
     
-      <category term="大创" scheme="http://yoursite.com/categories/%E5%A4%A7%E5%88%9B/"/>
+      <category term="大创" scheme="https://colalinn.github.io/categories/%E5%A4%A7%E5%88%9B/"/>
     
     
-      <category term="pRide" scheme="http://yoursite.com/tags/pRide/"/>
+      <category term="pRide" scheme="https://colalinn.github.io/tags/pRide/"/>
     
   </entry>
   
   <entry>
     <title>路网嵌入 ROAD NETWORK EMBEDDING</title>
-    <link href="http://yoursite.com/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/"/>
-    <id>http://yoursite.com/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/</id>
+    <link href="https://colalinn.github.io/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/"/>
+    <id>https://colalinn.github.io/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/</id>
     <published>2020-01-22T09:51:25.000Z</published>
     <updated>2020-01-23T07:26:22.957Z</updated>
     
@@ -121,17 +121,17 @@
     </summary>
     
     
-      <category term="大创" scheme="http://yoursite.com/categories/%E5%A4%A7%E5%88%9B/"/>
+      <category term="大创" scheme="https://colalinn.github.io/categories/%E5%A4%A7%E5%88%9B/"/>
     
     
-      <category term="pRide" scheme="http://yoursite.com/tags/pRide/"/>
+      <category term="pRide" scheme="https://colalinn.github.io/tags/pRide/"/>
     
   </entry>
   
   <entry>
     <title>hexo使用配置记录</title>
-    <link href="http://yoursite.com/2020/01/20/20-1-20/"/>
-    <id>http://yoursite.com/2020/01/20/20-1-20/</id>
+    <link href="https://colalinn.github.io/2020/01/20/20-1-20/"/>
+    <id>https://colalinn.github.io/2020/01/20/20-1-20/</id>
     <published>2020-01-20T02:31:50.000Z</published>
     <updated>2020-01-28T10:07:08.036Z</updated>
     
@@ -147,19 +147,19 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="https://colalinn.github.io/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://colalinn.github.io/tags/hexo/"/>
     
-      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+      <category term="others" scheme="https://colalinn.github.io/tags/others/"/>
     
   </entry>
   
   <entry>
     <title>test2</title>
-    <link href="http://yoursite.com/2020/01/15/%E2%80%98test2/"/>
-    <id>http://yoursite.com/2020/01/15/%E2%80%98test2/</id>
+    <link href="https://colalinn.github.io/2020/01/15/%E2%80%98test2/"/>
+    <id>https://colalinn.github.io/2020/01/15/%E2%80%98test2/</id>
     <published>2020-01-15T11:40:22.000Z</published>
     <updated>2020-01-25T14:42:24.394Z</updated>
     
@@ -178,14 +178,14 @@
     
     
     
-      <category term="test-tag" scheme="http://yoursite.com/tags/test-tag/"/>
+      <category term="test-tag" scheme="https://colalinn.github.io/tags/test-tag/"/>
     
   </entry>
   
   <entry>
     <title>hello world</title>
-    <link href="http://yoursite.com/2020/01/15/hello-world/"/>
-    <id>http://yoursite.com/2020/01/15/hello-world/</id>
+    <link href="https://colalinn.github.io/2020/01/15/hello-world/"/>
+    <id>https://colalinn.github.io/2020/01/15/hello-world/</id>
     <published>2020-01-15T08:46:23.000Z</published>
     <updated>2020-01-20T03:08:42.278Z</updated>
     
@@ -201,10 +201,10 @@
     </summary>
     
     
-      <category term="hello world!" scheme="http://yoursite.com/categories/hello-world/"/>
+      <category term="hello world!" scheme="https://colalinn.github.io/categories/hello-world/"/>
     
     
-      <category term="hello world!" scheme="http://yoursite.com/tags/hello-world/"/>
+      <category term="hello world!" scheme="https://colalinn.github.io/tags/hello-world/"/>
     
   </entry>
   
