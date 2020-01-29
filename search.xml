@@ -70,7 +70,10 @@
   <entry>
     <title>pRide具体方案</title>
     <url>/2020/01/23/2020-1-23-pRide-optimized-construction/</url>
-    <content><![CDATA[<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>初始方案暂且不谈，先说优化方案。</p>
+    <content><![CDATA[<p>这是一篇pRide具体方案的翻译简化版。</p>
+<a id="more"></a>
+
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>初始方案暂且不谈，先说优化方案。</p>
 <p>一：地图分块，减少计算量</p>
 <p>二：把路网嵌入向量打包起来，使得加密等操作可以一步完成</p>
 <h3 id="步骤：Setup、Location-update、Ride-request、Ride-matching"><a href="#步骤：Setup、Location-update、Ride-request、Ride-matching" class="headerlink" title="步骤：Setup、Location-update、Ride-request、Ride-matching"></a>步骤：Setup、Location-update、Ride-request、Ride-matching</h3><p>为了保证分块后的精度，我们首先寻找与乘客所处区域α的最近司机，再以乘客到该司机的距离为半径来判断区域α周围的区域是否划入范围（就是看以该距离为半径的圆是否“触”到了周围区域）</p>
@@ -135,7 +138,10 @@
   <entry>
     <title>路网嵌入 ROAD NETWORK EMBEDDING</title>
     <url>/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/</url>
-    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>路网嵌入是一种用来计算最短道路距离的方案，通过记录每个节点（道路之间的交叉口）的信息，把常规的道路用多维空间向量表示，使得每个节点之间的距离更能更有效地被计算。</p>
+    <content><![CDATA[<p>路网嵌入是一种用来计算最短道路距离的方案，通过记录每个节点（道路之间的交叉口）的信息，把常规的道路用多维空间向量表示，使得每个节点之间的距离更能更有效地被计算。</p>
+<a id="more"></a>
+
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>路网嵌入是一种用来计算最短道路距离的方案，通过记录每个节点（道路之间的交叉口）的信息，把常规的道路用多维空间向量表示，使得每个节点之间的距离更能更有效地被计算。</p>
 <blockquote>
 <p>Road Network Embedding (RNE), proposed by Shahabi et al.* [12], is an approach to compute shortest path distance in road networks, which bases on the LLR embedding techniques [19]. RNE transforms a road network into a higher dimensional space by assigning a sketch (i.e., a vector) to every node such that the distance between any two nodes can be efficiently approximated using only their sketches.</p>
 </blockquote>
