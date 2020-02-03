@@ -52,7 +52,13 @@
 
 
 
-<h2 id="4-在客户端配置ss，享受你的丝滑ss吧"><a href="#4-在客户端配置ss，享受你的丝滑ss吧" class="headerlink" title="4.在客户端配置ss，享受你的丝滑ss吧"></a>4.在客户端配置ss，享受你的丝滑ss吧</h2><hr>
+<h2 id="4-在客户端重启ss，享受你的丝滑ss吧"><a href="#4-在客户端重启ss，享受你的丝滑ss吧" class="headerlink" title="4.在客户端重启ss，享受你的丝滑ss吧"></a>4.在客户端重启ss，享受你的丝滑ss吧</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service shadowsocks restart</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
 <p>参考链接</p>
 <p>1.使用vultr(vps)搭建ss并开启BBR快速上网教程 超简单10分钟搞定</p>
 <p><a href="https://wistbean.github.io/vultr-vps-bbr-ss.html" target="_blank" rel="noopener">https://wistbean.github.io/vultr-vps-bbr-ss.html</a></p>
@@ -179,7 +185,7 @@
   <entry>
     <title>hexo使用配置记录</title>
     <url>/2020/01/20/20-1-20/</url>
-    <content><![CDATA[<h1 id="简单的hexo命令"><a href="#简单的hexo命令" class="headerlink" title="简单的hexo命令"></a>简单的hexo命令</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.文章的生成及编辑</span><br><span class="line">hexo new “文章标题”</span><br><span class="line">博客所在路径\source_posts\”下生成一个md文件，文件名称为上面命令行所输入的文章标题</span><br><span class="line"></span><br><span class="line">2.文件发布</span><br><span class="line">hexo g generate</span><br><span class="line"></span><br><span class="line">3.本地测试</span><br><span class="line">hexo s </span><br><span class="line">访问localhost:4000来查看变化</span><br><span class="line"></span><br><span class="line">4.同步到github</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">5.Hexo更换主题并发布到github</span><br><span class="line">安装hexo-deployer-git自动部署发布工具</span><br><span class="line">npm install hexo-deployer-git  --save</span><br><span class="line">发布到GitHub</span><br><span class="line">输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line"></span><br><span class="line">6.如何一键式发布</span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line">可用以下简化（注意事项：下面的命令中 C:\blog_backup 是我博客的文件夹路径，请替换为你自己博客的路径，在git bash中输入命令）以后可以用hexo fuck来发布了</span><br><span class="line">git config --global alias.fuck &#39;!cd C:\blog_backup;hexo clean;hexo g -d&#39;</span><br><span class="line">git fuck</span><br><span class="line">取消别名</span><br><span class="line">git config --global --unset alias.fuck</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="简单的hexo命令"><a href="#简单的hexo命令" class="headerlink" title="简单的hexo命令"></a>简单的hexo命令</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.文章的生成及编辑</span><br><span class="line">hexo new “文章标题”</span><br><span class="line">博客所在路径\source_posts\”下生成一个md文件，文件名称为上面命令行所输入的文章标题</span><br><span class="line"></span><br><span class="line">2.文件发布</span><br><span class="line">hexo g generate</span><br><span class="line"></span><br><span class="line">3.本地测试</span><br><span class="line">hexo s </span><br><span class="line">访问localhost:4000来查看变化</span><br><span class="line"></span><br><span class="line">4.同步到github</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">5.Hexo更换主题并发布到github</span><br><span class="line">安装hexo-deployer-git自动部署发布工具</span><br><span class="line">npm install hexo-deployer-git  --save</span><br><span class="line">发布到GitHub</span><br><span class="line">输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line"></span><br><span class="line">6.如何一键式发布</span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line">可用以下简化（注意事项：下面的命令中 E:\github_repo\hexo_blog 是我博客的文件夹路径，请替换为你自己博客的路径，在git bash中输入命令）以后可以用hexo fuck来发布了</span><br><span class="line">git config --global alias.fuck &#39;!cd E:\github_repo\hexo_blog;hexo clean;hexo g;hexo d&#39;</span><br><span class="line">git fuck</span><br><span class="line">取消别名</span><br><span class="line">git config --global --unset alias.fuck</span><br></pre></td></tr></table></figure>
 
 <h1 id="简单的markdown语法"><a href="#简单的markdown语法" class="headerlink" title="简单的markdown语法"></a>简单的markdown语法</h1><p><img src="/2020/01/20/20-1-20/markdown-program.jpg" alt="markdown语法"></p>
 <hr>
