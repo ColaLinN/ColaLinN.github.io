@@ -23,6 +23,13 @@
   </url>
   
   <url>
+    <loc>https://colalinn.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-02-12T11:36:50.821Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://colalinn.github.io/2020/01/20/20-1-20-hexo/</loc>
     
     <lastmod>2020-02-12T11:34:05.542Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://colalinn.github.io/2020/02/04/2020-2-4-pRide-current-search/</loc>
     
     <lastmod>2020-02-04T16:04:22.263Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://colalinn.github.io/2020/02/04/2020-2-4-tensorflow-gpu-CUDA/</loc>
-    
-    <lastmod>2020-02-04T14:58:18.550Z</lastmod>
     
   </url>
   
@@ -89,13 +89,6 @@
     <loc>https://colalinn.github.io/2020/01/15/hello-world/</loc>
     
     <lastmod>2020-01-20T03:08:42.278Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://colalinn.github.io/tags/index.html</loc>
-    
-    <lastmod>2020-01-20T03:07:41.981Z</lastmod>
     
   </url>
   
