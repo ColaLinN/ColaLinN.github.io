@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://colalinn.github.io/2020/01/15/2020-01-15-jottings/</loc>
+    <lastmod>2020-02-25</lastmod>
+  </url>  <url>
     <loc>https://colalinn.github.io/2020/02/13/2020-2-13-ZSRW-Development-record/</loc>
     <lastmod>2020-02-25</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/02/06/2020-2-6-English-grammar-show/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>https://colalinn.github.io/2020/01/15/%E2%80%98test2/</loc>
-    <lastmod>2020-02-19</lastmod>
-  </url>  <url>
-    <loc>https://colalinn.github.io/2020/01/20/20-1-20-hexo/</loc>
+    <loc>https://colalinn.github.io/2020/01/20/2020-01-20-hexo/</loc>
     <lastmod>2020-02-12</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/01/26/2020-1-26-leetcode/</loc>
@@ -19,7 +19,7 @@
     <loc>https://colalinn.github.io/2020/02/04/2020-2-4-pRide-current-search/</loc>
     <lastmod>2020-02-04</lastmod>
   </url>  <url>
-    <loc>https://colalinn.github.io/2020/01/26/shadowsocks-centos7-vutlr-bbr/</loc>
+    <loc>https://colalinn.github.io/2020/01/26/2020-01-26-shadowsocks-centos7-vutlr-bbr/</loc>
     <lastmod>2020-02-03</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/01/23/2020-1-23-pRide-optimized-construction/</loc>
@@ -28,7 +28,7 @@
     <loc>https://colalinn.github.io/2020/01/22/2020-1-22-ROAD-NETWORK-EMBEDDING/</loc>
     <lastmod>2020-01-29</lastmod>
   </url>  <url>
-    <loc>https://colalinn.github.io/2020/01/15/hello-world/</loc>
+    <loc>https://colalinn.github.io/2020/01/15/2020-01-15-hello-world/</loc>
     <lastmod>2020-01-20</lastmod>
   </url>
 </urlset>
