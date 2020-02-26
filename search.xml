@@ -365,7 +365,6 @@
     <url>/2020/02/04/2020-02-04-pRide-current-search/</url>
     <content><![CDATA[<p><img src="/2020/02/04/2020-02-04-pRide-current-search/image-20200204233855033.png" alt="image-20200204233855033"></p>
 <center>这是一篇关于pRIDE所用技术的检索结果</center>
-
 <a id="more"></a>
 
 <h1 id="1-路网嵌入（ROAD-NETWORK-ENBEDDING）"><a href="#1-路网嵌入（ROAD-NETWORK-ENBEDDING）" class="headerlink" title="1.路网嵌入（ROAD NETWORK ENBEDDING）"></a>1.路网嵌入（ROAD NETWORK ENBEDDING）</h1><p>目前的思路是自己从百度地图(google地图)查，然后存下来</p>
@@ -391,7 +390,7 @@
 <p><img src="/2020/02/04/2020-02-04-pRide-current-search/image-20200204233627276.png" alt="image-20200204233627276"></p>
 </li>
 <li><p>github-某个java仓库，我觉得挺好的</p>
-<p> <a href="https://github.com/thanosba/Yao-Garbled-Circuits![image-20200204233556551](2020-2-4-pRide-current-search/image-20200204233556551.png)" target="_blank" rel="noopener">https://github.com/thanosba/Yao-Garbled-Circuits![image-20200204233556551](2020-2-4-pRide-current-search/image-20200204233556551.png)</a></p>
+<p> <a href="https://github.com/thanosba/Yao-Garbled-Circuits![image-20200204233556551](2020-02-04-pRide-current-search/image-20200204233556551.png)" target="_blank" rel="noopener">https://github.com/thanosba/Yao-Garbled-Circuits![image-20200204233556551](2020-02-04-pRide-current-search/image-20200204233556551.png)</a></p>
 </li>
 </ul>
 ]]></content>
@@ -526,74 +525,9 @@
   </entry>
   <entry>
     <title>pRide具体方案</title>
-    <url>/2020/01/23/2020-1-23-pRide-optimized-construction/</url>
-    <content><![CDATA[<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123162426100.png" alt="图1"></p>
-<center>这是一篇pRide具体方案的翻译简化版</center>
-
-<a id="more"></a>
-
-<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>初始方案暂且不谈，先说优化方案。</p>
-<p>一：地图分块，减少计算量</p>
-<p>二：把路网嵌入向量打包起来，使得加密等操作可以一步完成</p>
-<h3 id="步骤：Setup、Location-update、Ride-request、Ride-matching"><a href="#步骤：Setup、Location-update、Ride-request、Ride-matching" class="headerlink" title="步骤：Setup、Location-update、Ride-request、Ride-matching"></a>步骤：Setup、Location-update、Ride-request、Ride-matching</h3><p>为了保证分块后的精度，我们首先寻找与乘客所处区域α的最近司机，再以乘客到该司机的距离为半径来判断区域α周围的区域是否划入范围（就是看以该距离为半径的圆是否“触”到了周围区域）</p>
-<h3 id="使用技术："><a href="#使用技术：" class="headerlink" title="使用技术："></a>使用技术：</h3><p>路网嵌入（ROAD NETWORK ENBEDDING），用于提高最短距离计算效率</p>
-<p>同态加密 （Homomorphic），用于提供密文状态下的加法（及乘法）同步到明文中</p>
-<p>混淆电路（Garbled Circuit），用于提供CP（Crypto Provider）和ORH服务器的安全两方计算、有点像零知识证明</p>
-<h3 id="一、初始化-Setup"><a href="#一、初始化-Setup" class="headerlink" title="一、初始化   Setup"></a>一、初始化   Setup</h3><p>1.ORH   地图分块(如图1所示)</p>
-<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123162426100.png" alt="图1"></p>
-<p>​                                                                                  图  1</p>
-<p>2.ORH   计算  地图道路的   路网嵌入向量</p>
-<p>3.CP   初始化同态加密公钥并分发</p>
-<h3 id="二、司机-位置更新-Location-update"><a href="#二、司机-位置更新-Location-update" class="headerlink" title="二、司机 位置更新   Location-update"></a>二、司机 位置更新   Location-update</h3><p>此步骤主要用于司机上传自己的位置信息（在pRide里是上传自己的路网嵌入信息）</p>
-<p>1.司机端   计算自己的路网嵌入变量S</p>
-<p>根据从服务器获取的地图道路路网嵌入向量、来在本地计算自己的路网嵌入向量S（这在路网嵌入已经讲过了）</p>
-<p>2.司机端   把S打包成一个变量P</p>
-<p>就是像进制位一样叠加维度S(如图2)</p>
-<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123162003661.png" alt="图2"></p>
-<p>​                                                                                  图  2</p>
-<p>3.司机端   把P用从CP获得的公钥加密成[P(b)]，把这个[P(b)]和所处区域Zα上传到ORH</p>
-<p>4.ORH   随机生成一个路网嵌入向量u，并加密之成[P(u)]</p>
-<p>5.ORH   使用[P(b)]-[P(u)]=&gt;[P(b‘)]</p>
-<h3 id="三、乘客-乘车请求-Ride-request"><a href="#三、乘客-乘车请求-Ride-request" class="headerlink" title="三、乘客 乘车请求   Ride-request"></a>三、乘客 乘车请求   Ride-request</h3><p>1.乘客端   把自己的坐标x、y加密为[x]、[y]</p>
-<p>2.乘客端   计算自己的路网嵌入向量S、打包、加密之得到[P(a)]</p>
-<p>3.乘客端 上传[P(a)]、[x]、[y]、所处区域Zα给ORH</p>
-<p>4.ORH   随机生成两随机数ηx、ηy，把其当做一个坐标值，计算其的网嵌入向量S、打包、加密之得到[P(η)]</p>
-<p>5.ORH   计算    [P(η)]-[P(a)]=》[P(a’)]       ;        [x]-[ηx]=&gt;[x’]        ;        [y]-[ηy]=&gt;[y’]</p>
-<p>《第五步是为了在4.2提高匹配精度的阶段判断坐标，所以把坐标也放到了距离向量中[P(a)]》</p>
-<h3 id="四、ORH-乘车匹配-Ride-matching"><a href="#四、ORH-乘车匹配-Ride-matching" class="headerlink" title="四、ORH 乘车匹配   Ride-matching"></a>四、ORH 乘车匹配   Ride-matching</h3><h4 id="4-1-乘客所属区域zα匹配-Local-Zone-matching"><a href="#4-1-乘客所属区域zα匹配-Local-Zone-matching" class="headerlink" title="4.1.乘客所属区域zα匹配    Local Zone matching"></a>4.1.乘客所属区域zα匹配    Local Zone matching</h4><p>1.ORH   计算   [P(d)’]=[P(a)]-[P(b‘)]=[P(a)]-[P(b)]+[P(u)]</p>
-<p>2.ORH   将 [P(d)’]发给CP</p>
-<p>3.CP   解密 [P(d)’]得到 P(d)’、并且获得其混淆值 ~P(d)’   《这里的混淆电路还不太明白怎么操作的》</p>
-<p>4.ORH   通过1-out-of-2 OT protocol 获得[P(u)]的混淆值  ~[P(u)]</p>
-<p>5.通过算法2(如图3)判断两个司机哪个离乘客近</p>
-<p>算法注释：</p>
-<p>第一、二步是计算第一个司机到该乘客的最近距离(把P打包、第二步是找到两个P之间的最大值)</p>
-<p>第三、四步同上计算第二个司机到该乘客的最近距离</p>
-<p>第五步是判断哪个司机离乘客近</p>
-<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123170731309.png" alt="图3"></p>
-<p>​                                                            图  3   上为算法、下为混淆电路</p>
-<h4 id="4-2-提高匹配精度-Refinement"><a href="#4-2-提高匹配精度-Refinement" class="headerlink" title="4.2.提高匹配精度   Refinement"></a>4.2.提高匹配精度   Refinement</h4><p>1.ORH   把4.1中计算出来的，乘客所处区域zα与最近司机的[P(d)’] (4.1.1中计算)、</p>
-<p>与[x]-[ηx]=&gt;[x’]        ;        [y]-[ηy]=&gt;[y’]都发给CP</p>
-<p>2.CP   将其解密并获得混淆值 <del>P(d)’、</del>[x’]、~[y’]</p>
-<p>3.ORH   通过1-out-of-2 OT protocol 获得~[P(η)]    ;        ~[ηx]    ;        ~[ηy]</p>
-<p>4.通过如下图算法3(如图4)判断其他八块区域za1, za2, za3, za4, za5, za6, za7,za8（具体见图1）是否有需要计算的必要</p>
-<p>算法注释：</p>
-<p>第四步是计算乘客的坐标x、y</p>
-<p>第五、六步是计算第一个司机到该乘客的最近距离(把P打包、第二步是找到两个P之间的最大值)</p>
-<p>第七步是计算Γ   Γ是一个8位的二进制数，每一位指示一个区域是否该计算（就是看以该距离为半径的圆是否“触”到了周围区域，具体看图1）</p>
-<p>第八步是判断 区域zα4是否该计算，后面9到15步同理，是很简单的距离判断（见图一）</p>
-<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123171733353.png" alt="图4"></p>
-<p><img src="/2020/01/23/2020-1-23-pRide-optimized-construction/image-20200123171824965.png" alt="图4"></p>
-<p>​                                                            图  4   上为算法、下为混淆电路</p>
-<p>5.通过算法3获得有需要计算得必要的其他区域、</p>
-<p>然后通过4.1Local Zone matching算法计算该区域中离乘客最近的司机，若该司机到乘客的距离B比乘客到本区域最短距离A小，就刷新最短距离A。最终我们得到距离最近的司机，并且将乘客位置信息发送给他………</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>pRide具体方案</title>
     <url>/2020/01/23/2020-01-23-pRide-optimized-construction/</url>
     <content><![CDATA[<p><img src="/2020/01/23/2020-01-23-pRide-optimized-construction/image-20200123162426100.png" alt="图1"></p>
 <center>这是一篇pRide具体方案的翻译简化版</center>
-
 <a id="more"></a>
 
 <h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>初始方案暂且不谈，先说优化方案。</p>
