@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://colalinn.github.io/"/>
-  <updated>2020-03-03T12:38:06.168Z</updated>
+  <updated>2020-03-03T15:19:24.377Z</updated>
   <id>https://colalinn.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java笔记2-spring</title>
+    <link href="https://colalinn.github.io/2020/03/03/2020-03-03-JAVA-complement-2/"/>
+    <id>https://colalinn.github.io/2020/03/03/2020-03-03-JAVA-complement-2/</id>
+    <published>2020-03-03T15:18:15.000Z</published>
+    <updated>2020-03-03T15:19:24.377Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="spring上手"><a href="#spring上手" class="headerlink" title="spring上手"></a>spring上手</h1><h2 id="挖坑中…-新的坑，新的挑战"><a href="#挖坑中…-新的坑，新的挑战" class="headerlink" title="# 挖坑中….新的坑，新的挑战"></a># 挖坑中….新的坑，新的挑战</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;spring上手&quot;&gt;&lt;a href=&quot;#spring上手&quot; class=&quot;headerlink&quot; title=&quot;spring上手&quot;&gt;&lt;/a&gt;spring上手&lt;/h1&gt;&lt;h2 id=&quot;挖坑中…-新的坑，新的挑战&quot;&gt;&lt;a href=&quot;#挖坑中…-新的坑，新的挑战&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="https://colalinn.github.io/categories/java/"/>
+    
+    
+      <category term="java" scheme="https://colalinn.github.io/tags/java/"/>
+    
+      <category term="spring" scheme="https://colalinn.github.io/tags/spring/"/>
+    
+  </entry>
   
   <entry>
     <title>2020-03-02-Software-security-notebook(1)</title>
