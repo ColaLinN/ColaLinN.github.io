@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-03-02-Software-security-notebook(1)</title>
+    <url>/2020/03/02/2020-03-02-Software-security-notebook-1/</url>
+    <content><![CDATA[<h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><h3 id="a"><a href="#a" class="headerlink" title="a)"></a>a)</h3><p>Q：恶意软件如何在系统重启、系统重装、以及硬盘更换之后继续获得控制权？</p>
+<p>A：</p>
+<ul>
+<li>重启：BIOS、MBR、DBR、NTLDR、自启动项（文件病毒）。</li>
+<li>重装：BIOS、MBR。</li>
+<li>硬盘更换：BIOS引导。</li>
+</ul>
+<h3 id="b"><a href="#b" class="headerlink" title="b)"></a>b)</h3><p>Q：给出在系统重启时恶意软件可以获得控制权的至少5种启动方式（并实践）。哪些方式不需要系统管理员权限？</p>
+<p>A：Bios、MBR、DBR、NTLDR、自启动项。</p>
+<h3 id="c"><a href="#c" class="headerlink" title="c)"></a>c)</h3><p>Q：每个进程可用4GB内存空间，但有的电脑内存才2G！系统如何做到的？</p>
+<p>A：虚拟地址转换物理地址</p>
+<h3 id="d"><a href="#d" class="headerlink" title="d)"></a>d)</h3><p>Q：两个进程的可执行程序映像加载地址都是00400000H，但同一地址对应的数据却不一样，为什么？</p>
+<p>A：因为是虚拟地址转换成物c理地址，他们的00400000H转换成的物理地址都</p>
+<p>不一样（cr3、页目录不一样）</p>
+<h3 id="e"><a href="#e" class="headerlink" title="e)"></a>e)</h3><p>Q：PAE模式下，虚拟地址依然只有32位地址，为何可以寻址64G范围内的物理内存?</p>
+<ul>
+<li>i.内存管理：物理地址扩展（PAE）分页机制<a href="https://blog.csdn.net/trochiluses/article/details/12853027" target="_blank" rel="noopener">https://blog.csdn.net/trochiluses/article/details/12853027</a></li>
+<li>ii.PAE分页模式详解：<a href="https://www.cnblogs.com/ck1020/p/6078214.html" target="_blank" rel="noopener">https://www.cnblogs.com/ck1020/p/6078214.html</a> </li>
+</ul>
+<p>A：分页的方式不同，PAE下，使用32位（2+9+9+12+4个内存目录项）。</p>
+<h3 id="f"><a href="#f" class="headerlink" title="f)"></a>f)</h3><p>Q：如果硬盘分区表被完全破坏，如何重构分区表？</p>
+<p>A：根据FAT表，以及数据的分布。</p>
+<h3 id="g"><a href="#g" class="headerlink" title="g)"></a>g)</h3><p>Q：FAT32系统下文件被删除时，系统具体做了哪些修改？</p>
+<p>A：（1）回收箱，文件名首字节变为E5<br>        （2）shift+deltete，文件首字节E5，FAT簇号高位归零，FAT簇链归零</p>
+<h3 id="h"><a href="#h" class="headerlink" title="h)"></a>h)</h3><p>Q：数据擦写（安全删除）的原理什么？</p>
+<p>A：由于磁盘可以重复使用，前面的数据被后面的数据覆盖后，前面的数据被还原的可能性就大大降低了，随着被</p>
+<p>覆盖次数的增多，能够被还原的可能性就趋于 0，但相应的时间支出也就越多。密级要求的高低对应着不同的标</p>
+<p>准，低密级要求的就是一次性将磁盘全部覆盖；高密级要求则须进行多次多规则覆盖。覆盖是指使用预先定义的格</p>
+<p>式——无意义、无规律的信息来覆盖硬盘上原先存储的数据。</p>
+<h3 id="i"><a href="#i" class="headerlink" title="i)"></a>i)</h3><p>Q：在使用数据恢复软件时，为什么标准格式文件（如doc、jpg等）比非格式文件更容易被恢复？</p>
+<p>A：应该是，标准文件每部分都有固定的格式，可以方便恢复簇</p>
+<h3 id="j"><a href="#j" class="headerlink" title="j)"></a>j)</h3><p>Q：在进行数据恢复时，为何有时候恢复出来的大文件只有前半部分是正确的？</p>
+<p>A：因为簇链不连续。</p>
+<h3 id="k"><a href="#k" class="headerlink" title="k)"></a>k)</h3><p>Q：恶意代码一定要在文件系统中以文件的方式出现么？它还可以隐藏在哪些区域以躲避被发现和查杀？</p>
+<p>A：不一定以文件形式存在。可以隐藏在MBR、bios这些之中。</p>
+]]></content>
+      <categories>
+        <category>信安</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020-02-28-algorithm-class</title>
     <url>/2020/02/28/2020-02-28-algorithm-class/</url>
-    <content><![CDATA[<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h3 id="算法是啥？"><a href="#算法是啥？" class="headerlink" title="算法是啥？"></a>算法是啥？</h3><h3 id="算法的性质"><a href="#算法的性质" class="headerlink" title="算法的性质"></a>算法的性质</h3><ul>
+    <content><![CDATA[<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200228174457509.png" alt></p>
+<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h3 id="算法是啥？"><a href="#算法是啥？" class="headerlink" title="算法是啥？"></a>算法是啥？</h3><h3 id="算法的性质"><a href="#算法的性质" class="headerlink" title="算法的性质"></a>算法的性质</h3><ul>
 <li><p>可行性：可通过基本运算有限次执行来实现。</p>
 </li>
 <li><p>有穷性：算法的运行步数是有穷（即能运行完出结果的算法，运行不完没有结果有你有何用）</p>
