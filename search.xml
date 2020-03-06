@@ -81,7 +81,13 @@
     <title>2020-02-28-algorithm-class</title>
     <url>/2020/02/28/2020-02-28-algorithm-class/</url>
     <content><![CDATA[<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200228174457509.png" alt></p>
-<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h3 id="算法是啥？"><a href="#算法是啥？" class="headerlink" title="算法是啥？"></a>算法是啥？</h3><h3 id="算法的性质"><a href="#算法的性质" class="headerlink" title="算法的性质"></a>算法的性质</h3><ul>
+<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h3 id="算法是啥？"><a href="#算法是啥？" class="headerlink" title="算法是啥？"></a>算法是啥？</h3><ol>
+<li><p>为解决某一问题定义的计算过程。</p>
+</li>
+<li><p>是通过一个有限的指令序列集合对特定问题进行求解的一种计算执行描述。</p>
+</li>
+</ol>
+<h3 id="算法的性质"><a href="#算法的性质" class="headerlink" title="算法的性质"></a>算法的性质</h3><ul>
 <li><p>可行性：可通过基本运算有限次执行来实现。</p>
 </li>
 <li><p>有穷性：算法的运行步数是有穷（即能运行完出结果的算法，运行不完没有结果有你有何用）</p>
@@ -91,7 +97,76 @@
 <li><p>有输入输出：存在数据处理</p>
 </li>
 </ul>
-<h3 id="程序与算法的区别"><a href="#程序与算法的区别" class="headerlink" title="程序与算法的区别"></a>程序与算法的区别</h3>]]></content>
+<h3 id="程序与算法的区别"><a href="#程序与算法的区别" class="headerlink" title="程序与算法的区别"></a>程序与算法的区别</h3><p>算法的概念与程序十分相似,但实际上有很大不同。程序并不都满足算法所要求的上述特征, 例如有限性特征。算法代表了对特定问题的求 解,而程序则是算法在计算机上的实现。</p>
+<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><ul>
+<li>O；f/g=/=∞</li>
+<li></li>
+<li></li>
+</ul>
+<p>举例</p>
+<p>二分搜索复杂度为：log<del>2</del>n</p>
+<p>合并两已排序表：n/2-&gt;n-1</p>
+<p>选择排序：n(n-1)/2</p>
+<p>插入排序：最好n-1次，最坏n(n-1)/2</p>
+<p>合并排序算法</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306125945288.png" alt="image-20200306125945288"></p>
+<h4 id="（1）O符号-上界"><a href="#（1）O符号-上界" class="headerlink" title="（1）O符号-上界"></a>（1）O符号-上界</h4><p>G越小越好</p>
+<p>假设： f (n) 和g(n) 是从<strong>自然数集到非负实数集</strong>里的两个函数</p>
+<p>定义1 (O)：如果存在正的常数C和自然数n0，使得当n≥n0时， 有f(n)≤C·g(n)，则称函数f (n) 在n 充分大</p>
+<p>时有上有界，且g(n) 是它的一个上界，记做f (n) = O(g(n))</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306130222135.png" alt="image-20200306130222135"></p>
+<h4 id="（2）Ω符号-下界"><a href="#（2）Ω符号-下界" class="headerlink" title="（2）Ω符号-下界"></a>（2）Ω符号-下界</h4><p>G越小大越好</p>
+<p>定义2(Ω)： 如果存在正的常数C 和自然数n0 ， 使得当n ≥ n0时， 有f(n)≥C·g(n)，则称函数f (n) 在n 充分大时有下有界，且g(n) 是它的一个下界，记做f (n) = Ω(g(n))</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306130400180.png" alt="image-20200306130400180"></p>
+<h4 id="（3）Θ符号-渐进紧确界"><a href="#（3）Θ符号-渐进紧确界" class="headerlink" title="（3）Θ符号-渐进紧确界"></a>（3）Θ符号-渐进紧确界</h4><p>最棒的表述，比O，Ω好</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306130554033.png" alt="image-20200306130554033"></p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306130607267.png" alt="image-20200306130607267"></p>
+<h4 id="（4）o符号"><a href="#（4）o符号" class="headerlink" title="（4）o符号"></a>（4）o符号</h4><p>与大O符号类似，但是大O符号对于某个大于零的常量c成立，而小o符号则对所有常量c&gt;0成立</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306130832478.png" alt="image-20200306130832478"></p>
+<h4 id="（5）性质"><a href="#（5）性质" class="headerlink" title="（5）性质"></a>（5）性质</h4><p>传递性：f&lt;g&lt;h；自反性：f=f；对称性：Θ相同；转置对称：f&lt;g==g&gt;f</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306130920867.png" alt="image-20200306130920867"></p>
+<h4 id="小问题"><a href="#小问题" class="headerlink" title="小问题"></a>小问题</h4><p>就是说不能说至少</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306131333799.png" alt="image-20200306131333799"></p>
+<h2 id="估计算法时间复杂度"><a href="#估计算法时间复杂度" class="headerlink" title="估计算法时间复杂度"></a>估计算法时间复杂度</h2><ul>
+<li>估计迭代次数</li>
+<li>频度分析</li>
+<li>使用递归方程</li>
+</ul>
+<h2 id="数学工具"><a href="#数学工具" class="headerlink" title="数学工具"></a>数学工具</h2><ul>
+<li>数学基础</li>
+<li>证明方法<ul>
+<li>直接证明、间接证明</li>
+<li>反证法</li>
+<li>数学归纳法</li>
+</ul>
+</li>
+<li>递归方程求解（*）</li>
+<li>Master定理（*）</li>
+<li>基本数据结构</li>
+</ul>
+<h3 id="（1）证明方法"><a href="#（1）证明方法" class="headerlink" title="（1）证明方法"></a>（1）证明方法</h3><h4 id="反证法"><a href="#反证法" class="headerlink" title="反证法"></a>反证法</h4><p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306131942409.png" alt="image-20200306131942409"></p>
+<h4 id="数学归纳法"><a href="#数学归纳法" class="headerlink" title="数学归纳法"></a>数学归纳法</h4><p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306131921482.png" alt="image-20200306131921482"></p>
+<h3 id="（2）递归方程求解"><a href="#（2）递归方程求解" class="headerlink" title="（2）递归方程求解"></a>（2）递归方程求解</h3><h4 id="常系数递归方程求解"><a href="#常系数递归方程求解" class="headerlink" title="常系数递归方程求解"></a>常系数递归方程求解</h4><p>T有n个就是n-1阶</p>
+<p>T(n)=T(n-1)+T(n-2)有2阶</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306132041333.png" alt="image-20200306132041333"></p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306132117637.png" alt="image-20200306132117637"></p>
+<h4 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h4><ol>
+<li>先弄出二阶方程、算出两个根</li>
+<li>选择T（n）的<strong>表示法</strong></li>
+<li>根据题目给的两个T（n）的值计算C1、C2</li>
+<li>最后代入（2）算出T（n）的<strong>表达式</strong>\即时间复杂度</li>
+</ol>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306132456701.png" alt="image-20200306132456701"></p>
+<h3 id="（3）Master定理"><a href="#（3）Master定理" class="headerlink" title="（3）Master定理"></a>（3）Master定理</h3><p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306132705476.png" alt="image-20200306132705476"></p>
+<h4 id="证明："><a href="#证明：" class="headerlink" title="证明："></a>证明：</h4><h4 id="例子：-1"><a href="#例子：-1" class="headerlink" title="例子："></a>例子：</h4><p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306132740874.png" alt="image-20200306132740874"></p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306132820314.png" alt="image-20200306132820314"></p>
+<p>3/4*Log(n/4)&lt;c *log(n)（c&lt;1，随便取）</p>
+<h4 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h4><p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306134213863.png" alt="image-20200306134213863"></p>
+<p>S(n)=O(n^(1/2-E))    E&gt;0  E取0到1/2</p>
+<p><img src="/2020/02/28/2020-02-28-algorithm-class/image-20200306134353096.png" alt="image-20200306134353096"></p>
+<p>S(n)=欧米伽(n^(1/2+E))    E&gt;0   E取0到1/2</p>
+<p>2*n/4&lt; c *n   c&lt;1   取1/2&lt;c&lt;1</p>
+]]></content>
       <categories>
         <category>算法</category>
       </categories>
