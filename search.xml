@@ -4,22 +4,22 @@
     <title>2020-03-07-beatuy-of-mathematics</title>
     <url>/2020/03/07/2020-03-07-beatuy-of-mathematics/</url>
     <content><![CDATA[<h1 id="数学之美"><a href="#数学之美" class="headerlink" title="数学之美"></a>数学之美</h1><p>《数学之美》是人民邮电出版社于2012年5月出版的图书，作者吴军，2014年再版。书中将高深的数学原理讲得更加通俗易懂，让非专业读者也能领略数学的魅力。通过具体实例教会读者在解决问题时如何化繁为简，如何用数学去解决工程问题，如何跳出固有思维不断去思考创新等。</p>
-<h3 id="第九章-图论和网络爬虫"><a href="#第九章-图论和网络爬虫" class="headerlink" title="第九章 图论和网络爬虫"></a>第九章 图论和网络爬虫</h3><p>互联网</p>
-<h4 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h4><p>爬虫用到了图论的遍历（Traverse）算法</p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307165641288.png" alt="image-20200307165641288"></p>
-<p>欧拉来到此处，证明：因为每个点的度数都非偶数。</p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307165548440.png" alt="image-20200307165548440"></p>
-<h4 id="BFS广度优先遍历"><a href="#BFS广度优先遍历" class="headerlink" title="BFS广度优先遍历"></a>BFS广度优先遍历</h4><p>（Breadth-First Search）算法如下</p>
+<h3 id="第九章-图论和网络爬虫"><a href="#第九章-图论和网络爬虫" class="headerlink" title="第九章 图论和网络爬虫"></a>第九章 图论和网络爬虫</h3><h4 id="图论定义"><a href="#图论定义" class="headerlink" title="图论定义"></a>图论定义</h4><p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307165641288.png" alt="image-20200307165641288"></p>
+<p>七桥问题：一个步行者怎样才能不重复、不遗漏地一次走完七座桥，最后回到出发点。</p>
+<p>后来大数学家欧拉把它转化成一个几何问题——一笔画问题。在解答问题的同时，开创了数学的一个新的分支——图论与几何拓扑，也由此展开了数学史上的新历程。</p>
+<p>PS：连通图可以一笔画的充要条件是：奇点的数目不是0 个就是2 个。</p>
+<h4 id="BFS广度优先遍历"><a href="#BFS广度优先遍历" class="headerlink" title="BFS广度优先遍历"></a>BFS广度优先遍历</h4><p>爬虫用到了图论的遍历（Traverse）算法</p>
+<p>BFS广度优先遍历（Breadth-First Search）算法如下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 初始只有一个已有节点</span><br><span class="line">2. 遍历当前已有节点的邻接节点，加入已有节点</span><br><span class="line">3. 重复步骤（2）直到不再有新的已有节点</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307162611791.png" alt="image-20200307162611791"></p>
+<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307162611791.png" alt="image-20200307162611791"></p>
 <p>广度遍历的次序图（从北京开始）</p>
-<h4 id="DFS深度优先遍历"><a href="#DFS深度优先遍历" class="headerlink" title="DFS深度优先遍历"></a>DFS深度优先遍历</h4><p>（Depth-First Search）算法如下</p>
+<h4 id="DFS深度优先遍历"><a href="#DFS深度优先遍历" class="headerlink" title="DFS深度优先遍历"></a>DFS深度优先遍历</h4><p>DFS深度优先遍历（Depth-First Search）算法如下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 初始只有一个未被标记节点</span><br><span class="line">2. 查找未标记的节点的邻接节点A，找到节点A被标记</span><br><span class="line">3. 进入该节点A第一个未标记的邻接节点B,将其设为A</span><br><span class="line">4. 回到2直到所有节点遍历完</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307163047990.png" alt="image-20200307163047990"></p>
+<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307163047990.png" alt="image-20200307163047990"></p>
 <p>深度遍历的次序图（从北京开始）</p>
-<h4 id="网络爬虫-Web-Crawlers）"><a href="#网络爬虫-Web-Crawlers）" class="headerlink" title="网络爬虫(Web Crawlers）"></a>网络爬虫(Web Crawlers）</h4><ul>
+<h4 id="网络爬虫-Web-Crawlers）定义"><a href="#网络爬虫-Web-Crawlers）定义" class="headerlink" title="网络爬虫(Web Crawlers）定义"></a>网络爬虫(Web Crawlers）定义</h4><ul>
 <li>互联网-就是一张大<code>网</code>（图）</li>
 <li>一个<code>网页</code>为一个<code>节点</code> node</li>
 <li>网页中的<code>超链接</code>是一条<code>边</code> edge，连向其他<code>节点</code>（网页）</li>
@@ -46,7 +46,7 @@
 <li>明确分工、如指定某个域名由某台机器爬取</li>
 <li>把哈希表存储在一组独立的服务器上</li>
 </ul>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307172007654.png" alt="image-20200307172007654"></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307172007654.png" alt="image-20200307172007654"></p>
 <h4 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h4><p>之前在数据结构、离散数学中都学过图论，但是当时都是学了一遍便忘了。</p>
 <p>直到近期在做一个项目，设计到了图论的遍历、最短路径问题。</p>
 <p>才知道图论是如此的有意思，而这次看爬虫也是图论，算是再复习下吧，数学不愧是万物之源啊。</p>
@@ -55,11 +55,11 @@
 
 <h4 id="算法细化"><a href="#算法细化" class="headerlink" title="算法细化"></a>算法细化</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">对每个网页的 投票权重 做区分（就如股东大会的表决权）</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307173646445.png" alt="image-20200307173646445"></p>
+<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307173646445.png" alt="image-20200307173646445"></p>
 <h4 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h4><p>将<code>Pagerank</code>用<strong>向量</strong>表示，并且用<strong>矩阵相乘</strong>的方法来<strong>迭代</strong>计算<code>Pagerank</code>。</p>
 <p>初始的排名从哪来？全部设为1/n</p>
 <p>（够暴力吧，理论证明，无论<strong>初值</strong>如何取，这种算法都能保证网页排名能收敛到<strong>真实值</strong>，无需人工干预）</p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307183507652.png" alt="image-20200307183507652"></p>
+<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307183507652.png" alt="image-20200307183507652"></p>
 <h4 id="实际问题"><a href="#实际问题" class="headerlink" title="实际问题"></a>实际问题</h4><p>矩阵过于大计算量大，使用<strong>稀疏矩阵</strong>的计算技巧。</p>
 <h4 id="目前的发展"><a href="#目前的发展" class="headerlink" title="目前的发展"></a>目前的发展</h4><p>当今影响搜索引擎的质量的有如下几点：</p>
 <ul>
@@ -78,17 +78,47 @@
 <p>一篇文章的相关性分数：TF*IDF。</p>
 </li>
 </ul>
-<h3 id="第18章-搜索引擎反作弊及搜索结果权威性"><a href="#第18章-搜索引擎反作弊及搜索结果权威性" class="headerlink" title="第18章 搜索引擎反作弊及搜索结果权威性"></a>第18章 搜索引擎反作弊及搜索结果权威性</h3><p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307183722965.png" alt="image-20200307183722965"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307183733403.png" alt="image-20200307183733403"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307183822892.png" alt="image-20200307183822892"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307183911082.png" alt="image-20200307183911082"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307183922637.png" alt="image-20200307183922637"></p>
-<p>术即实际工作，道即本质。透过具体问题，看本质和动机，解决问题。</p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307184050194.png" alt="image-20200307184050194"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307184102320.png" alt="image-20200307184102320"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307184140323.png" alt="image-20200307184140323"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307184212687.png" alt="image-20200307184212687"></p>
-<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200307184206288.png" alt="image-20200307184206288"></p>
+<h3 id="第十八章-搜索引擎反作弊及搜索结果权威性"><a href="#第十八章-搜索引擎反作弊及搜索结果权威性" class="headerlink" title="第十八章 搜索引擎反作弊及搜索结果权威性"></a>第十八章 搜索引擎反作弊及搜索结果权威性</h3><h4 id="搜索引擎的反作弊"><a href="#搜索引擎的反作弊" class="headerlink" title="搜索引擎的反作弊"></a>搜索引擎的反作弊</h4><p>作弊<strong>SEO</strong>是伴随着搜索引擎排名产生的。搜索结果排名靠前的不一定是高质量的相关网站。</p>
+<p>常见的<strong>作弊手段</strong>：针对<code>tf-idf</code>的<code>重复关键词</code>、针对<code>PageRank</code>的<code>链接站</code>（专业买卖链接URL）。</p>
+<p>关于<strong>落地页</strong>（LandinPage），其内容质量高，但是里面暗藏js跳转，一进去就跳转到一个商业网站。</p>
+<p><strong>反作弊的哲学</strong>：一般小的搜索引擎没有作弊不是因为他们反作弊很好，而是因为作弊商看不上这些小站。</p>
+<h4 id="如何反作弊"><a href="#如何反作弊" class="headerlink" title="如何反作弊"></a>如何反作弊</h4><p>抓作弊成为了“<strong>猫捉老鼠</strong>”的游戏，没有一劳永逸的方法（信息安全也是如此）。</p>
+<p>透过具体问题，看本质和动机，解决问题。反作弊也是如此，需要“道”。<strong>术即是表层，道即事务本质。</strong></p>
+<p>而通信模型对于搜索反作弊依然适用。在通信中解决噪声干扰问题的基本思路有两条。</p>
+<ul>
+<li>从信息源出发，加强通信（编码）自身的抗干扰能力。</li>
+<li>从传输来看，过滤掉噪声，还原信息。</li>
+</ul>
+<p>如下图，原始的信号混入噪声，在数学上表现为他们两个做了卷积，消除噪声的过程就是解卷积的过程。</p>
+<p><img src="/2020/03/07/2020-03-07-beatuy-of-mathematics/image-20200307184140323.png" alt="image-20200307184140323"></p>
+<h4 id="反作弊中”道“的扩展"><a href="#反作弊中”道“的扩展" class="headerlink" title="反作弊中”道“的扩展"></a>反作弊中”道“的扩展</h4><p>一个判断<code>链接站</code>的思路：</p>
+<p>将网站的出链（其指向的URL）作为一个向量，它是这个网站的固有特征。</p>
+<p>而通过对两个网站的向量计算余弦距离，若两个网站的出链URL几乎相同，则其出链向量的余弦距离为几近于1。</p>
+<p>另一个判断<code>链接站</code>的思路：</p>
+<p>由于<code>链接站</code>普遍两两链接，所以使用<code>图论</code>来寻找这些互联网中的<code>闭环</code>，就可以找到<code>链接站</code>。</p>
+<p>可以看到，这两个思路都用到了数学，赞美数学！</p>
+<h4 id="搜索结果的权威性"><a href="#搜索结果的权威性" class="headerlink" title="搜索结果的权威性"></a>搜索结果的权威性</h4><p>权威性：例如医疗方面的问题，需要判断搜索结果是否完全可信，这就是权威性的判断。</p>
+<p>如何判断权威性呢？</p>
+<p>一个概念 “<strong>提及</strong>”（Mention）。</p>
+<p>如果一个主题中的信息页中，有某个机构普遍、多次被“<strong>提及</strong>”，那就有理由判断其是权威的。</p>
+<p>计算权威有两个难点：</p>
+<ul>
+<li>“<strong>提及</strong>”需要<strong>自然语言处理</strong>NLP（natural language processing），得知文本内容的意思。</li>
+<li>权威是与领域相关的，一个机构在医学领域是权威的，但其在其他领域不一定相关。</li>
+</ul>
+<h4 id="权威性计算"><a href="#权威性计算" class="headerlink" title="权威性计算"></a>权威性计算</h4><ol>
+<li><code>句法分析</code>，寻找涉及主题短语、对信息源的描述。</li>
+<li>利用<code>互信息</code>，寻找道主题短语和信息源的相关性。</li>
+<li>对主题短语进行<code>聚类</code>，这里需要用到NLP，比如”吸烟的危害“和”香烟的危害“是相同的。</li>
+<li>一个网站也要分成不同的领域来判断。</li>
+</ol>
+<p>（句法分析、互信息、聚类后面都是数学!）</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>虽然先前都有了学习，但是看了这几章，还是不得不赞叹数学、信息论的力量。</p>
+<p>从网络爬虫中的图论知识，到PageRank中的矩阵运算，TF-IDF、反作弊中余弦、闭环的巧妙运用等等。</p>
+<p>都是数学的应用体现，<del>麻麻再也不担心我讨厌数学了</del>。</p>
+<p>收获还是有的吧，爬虫和pagerank课上都学过了，这里权当复习了。</p>
+<p>而互联网为啥叫网，我终于清晰的了解了。反作弊我还是第一次学习到，很有趣。</p>
+<p>在互联网时代，学这些是有好处的，毕竟网络已经无处不在，学这些有利于“生存”。</p>
 ]]></content>
       <categories>
         <category>读书笔记</category>
