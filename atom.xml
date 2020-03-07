@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://colalinn.github.io/"/>
-  <updated>2020-03-07T17:03:03.443Z</updated>
+  <updated>2020-03-07T17:30:45.203Z</updated>
   <id>https://colalinn.github.io/</id>
   
   <author>
@@ -21,9 +21,17 @@
     <link href="https://colalinn.github.io/2020/03/08/2020-03-08-anki-1/"/>
     <id>https://colalinn.github.io/2020/03/08/2020-03-08-anki-1/</id>
     <published>2020-03-07T17:03:03.000Z</published>
-    <updated>2020-03-07T17:03:03.443Z</updated>
+    <updated>2020-03-07T17:30:45.203Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="anki卡片的难度划分"><a href="#anki卡片的难度划分" class="headerlink" title="anki卡片的难度划分"></a>anki卡片的难度划分</h1><p>生疏/错误 困难/模糊 犹豫/想起 顺利/正确</p><p>1、生疏/错误：这个是级别简单得说就是你一看到就知道自己没见过或者见过也忘了。<br>2、困难/模糊：这个是级别简单得说就是你用力想能记起来一点，但不完全。<br>3、犹豫/想起：这个是级别简单得说就是你仔细想，还是能够回忆出来。<br>4、顺利/正确：这个是级别简单得说就是没什么难度，基本熟悉了。<br>5、轻松/容易：这个是级别简单得说就是条件反射、一看便知。</p><p>在学习时Anki有一个按钮，如果记忆对象实在太简单了，你可以点击排除按钮将卡片排除在今后复习之外（你如果忍无可忍还可以删除该条）。实际上第5个级别只在学习新卡片时出现，所以常用的级别就是1-4。</p><p>生疏/错误选项，Anki认为是学习失败，失败的这张卡片在接下来几分钟或本次学习的末尾还会出现，失败次数达到某个值会变为记忆难点（决定于你的设置）。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;anki卡片的难度划分&quot;&gt;&lt;a href=&quot;#anki卡片的难度划分&quot; class=&quot;headerlink&quot; title=&quot;anki卡片的难度划分&quot;&gt;&lt;/a&gt;anki卡片的难度划分&lt;/h1&gt;&lt;p&gt;生疏/错误 困难/模糊 犹豫/想起 顺利/正确&lt;/p&gt;
+&lt;p&gt;1、生
+      
     
     </summary>
     
@@ -53,9 +61,9 @@
       <category term="读书笔记" scheme="https://colalinn.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="爬虫" scheme="https://colalinn.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="笔记" scheme="https://colalinn.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="爬虫" scheme="https://colalinn.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
