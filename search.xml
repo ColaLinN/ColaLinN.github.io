@@ -5,7 +5,7 @@
     <url>/2020/03/25/2020-03-25-information-security-exp-1/</url>
     <content><![CDATA[<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>IDE：pycharm</p>
 <p>python版本：anacoda-&gt;python3.7</p>
-<h1 id="实验1-requests库"><a href="#实验1-requests库" class="headerlink" title="实验1-requests库"></a>实验1-requests库</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="/2020/03/25/2020-03-25-information-security-exp-1/C:%5CUsers%5C78290%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200325212700007.png" alt="image-20200325212700007"></p>
+<h1 id="实验1-requests库"><a href="#实验1-requests库" class="headerlink" title="实验1-requests库"></a>实验1-requests库</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200327164527042.png" alt="image-20200327164527042"></p>
 <p>安装requests库</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
 
@@ -96,7 +96,16 @@
 <td>2020-3-25</td>
 <td align="left">④√开始艰难</td>
 </tr>
+<tr>
+<td>2020-3-26</td>
+<td align="left">⑤√今天很累，搞到3：30</td>
+</tr>
+<tr>
+<td>2020-3-27</td>
+<td align="left">⑥√</td>
+</tr>
 </tbody></table>
+<p>说实话，上课期间脱产学这个还是很难顶的，一天花7、8个小时在这上面，人都搞没了</p>
 ]]></content>
       <categories>
         <category>-英语</category>
