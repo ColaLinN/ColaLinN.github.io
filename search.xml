@@ -3,7 +3,8 @@
   <entry>
     <title>2020-04-02-inforamtion-security-exp-2</title>
     <url>/2020/04/02/2020-04-02-inforamtion-security-exp-2/</url>
-    <content><![CDATA[<p>第六周ppt</p>
+    <content><![CDATA[<p>#coding = gbk</p>
+<p>第六周ppt</p>
 <p>搜狗词库，码一下,适用于初学者</p>
 <p>编码方式要一致，再码一下</p>
 <p><img src="/2020/04/02/2020-04-02-inforamtion-security-exp-2/DWRZTOS7$G%60%60G_@MT7IMR$T.png" alt="img"></p>
@@ -28,12 +29,12 @@
 
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402160841956.png" alt="image-20200402160841956"></p>
 <h2 id="1-获取状态码"><a href="#1-获取状态码" class="headerlink" title="1.获取状态码"></a>1.获取状态码</h2><p>配置Python环境，使用通用代码框架爬取网站，并获取状态码。 爬取网址请自行选择。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">def getHTMLText(url):</span><br><span class="line">    try:</span><br><span class="line">        r&#x3D;requests.get(url,timeout&#x3D;30)</span><br><span class="line">        r.raise_for_status()  # 如果状态不是200，引发error异常</span><br><span class="line">        r.encoding&#x3D;r.apparent_encoding</span><br><span class="line">        return r.status_code</span><br><span class="line">    except:</span><br><span class="line">        return &quot;产生异常&quot;</span><br><span class="line"></span><br><span class="line">if __name__&#x3D;&#x3D;&quot;__main__&quot;:</span><br><span class="line">    url&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&#x2F;&quot;</span><br><span class="line">    print(getHTMLText(url))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLText</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r=requests.get(url,timeout=<span class="number">30</span>)</span><br><span class="line">        r.raise_for_status()  <span class="comment"># 如果状态不是200，引发error异常</span></span><br><span class="line">        r.encoding=r.apparent_encoding <span class="comment">#获取网页正确的编码格式</span></span><br><span class="line">        <span class="keyword">return</span> r.status_code  <span class="comment">#返回状态码</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"产生异常"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    url=<span class="string">"https://www.baidu.com/"</span></span><br><span class="line">    print(getHTMLText(url))</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402160846431.png" alt="image-20200402160846431"></p>
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402160853276.png" alt="image-20200402160853276"></p>
 <h2 id="2-使用post-方法"><a href="#2-使用post-方法" class="headerlink" title="2.使用post()方法"></a>2.使用post()方法</h2><p>使用requests库中的post()方法，向<a href="http://httpbin.org/post" target="_blank" rel="noopener">http://httpbin.org/post</a> 增加字段，其中your_name和ID，请使用自己的姓名及学号。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">payload &#x3D; &#123;&#39;name&#39;: &#39;LFL&#39;, &#39;ID&#39;: &#39;2017301500076&#39;&#125;</span><br><span class="line">r&#x3D;requests.post(&quot;http:&#x2F;&#x2F;httpbin.org&#x2F;post&quot;, data&#x3D;payload)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">payload = &#123;<span class="string">'name'</span>: <span class="string">'LFL'</span>, <span class="string">'ID'</span>: <span class="string">'2017301500076'</span>&#125;</span><br><span class="line">r=requests.post(<span class="string">"http://httpbin.org/post"</span>, data=payload)</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402160901843.png" alt="image-20200402160901843"></p>
 <h2 id="3-实例1-2-3-4"><a href="#3-实例1-2-3-4" class="headerlink" title="3.实例1/2/3/4"></a>3.实例1/2/3/4</h2><p>完成实例1/2/3/4，其中实例1中的浏览器版本、实例2中搜索关键、实例3中下载图片、实例4 中的IP地址请自行选择。</p>
@@ -68,7 +69,7 @@
 </ul>
 <h2 id="1-爬取百度搜索风云榜"><a href="#1-爬取百度搜索风云榜" class="headerlink" title="1-爬取百度搜索风云榜"></a>1-爬取百度搜索风云榜</h2><p>使用审查可以看到百度搜索风云榜的标签都是a标签，属性是“list-title”</p>
 <p>所以我们使用以下方式即可获取所有人物串</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">soup.find_all(&#39;a&#39;, &#39;list-title&#39;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">soup.find_all(<span class="string">'a'</span>, <span class="string">'list-title'</span>)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402161241441.png" alt="image-20200402161241441"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">instance_2</span><span class="params">()</span>:</span></span><br><span class="line">    r = requests.get(<span class="string">"http://top.baidu.com/buzz?b=257&amp;fr=topboards"</span>)</span><br><span class="line">    r.encoding = r.apparent_encoding</span><br><span class="line">    demo = r.text</span><br><span class="line">    soup = BeautifulSoup(demo, <span class="string">'html.parser'</span>)</span><br><span class="line">    ulist = []</span><br><span class="line">    <span class="keyword">for</span> tag <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>, <span class="string">'list-title'</span>):</span><br><span class="line">        ulist.append(tag.string)  <span class="comment"># Xlist.append()在列表X尾部增加一个新的元素</span></span><br><span class="line">        print(ulist.index(tag.string) + <span class="number">1</span>, ulist[ulist.index(tag.string)])</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment"># instance_1()</span></span><br><span class="line">    instance_2()</span><br></pre></td></tr></table></figure>
@@ -103,11 +104,11 @@
 <p>由图上可知，第一个td标签包含了所有内容，包括排名，所以无法通过<code>tds[0]</code>找到</p>
 <p>解决方案：</p>
 <p>使用contends</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tds[<span class="number">0</span>].contents[<span class="number">0</span>]   <span class="comment">#这个就是排名了</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tds[<span class="number">0</span>].contents[<span class="number">0</span>]   <span class="comment">#这个就是排名了</span></span><br><span class="line">tds[<span class="number">0</span>].get_text(<span class="string">" "</span>).split(<span class="string">" "</span>)[<span class="number">0</span>]  <span class="comment">#这个也可以,get_text()清空所有html标签元素</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402183232902.png" alt="image-20200402183232902"></p>
 <p>总代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fillUnivList</span><span class="params">(ulist, html)</span>:</span></span><br><span class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">    <span class="comment"># print(soup.prettify())</span></span><br><span class="line">    <span class="keyword">for</span> tr <span class="keyword">in</span> soup.find(<span class="string">'tbody'</span>).children:</span><br><span class="line">        <span class="keyword">if</span> isinstance(tr, bs4.element.Tag):</span><br><span class="line">            tds = tr(<span class="string">'td'</span>)</span><br><span class="line">            ulist.append([tds[<span class="number">0</span>].contents[<span class="number">0</span>], tds[<span class="number">1</span>].string, tds[<span class="number">3</span>].string])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printUnivList_A</span><span class="params">(ulist, num)</span>:</span></span><br><span class="line">    tplt = <span class="string">"&#123;0:^4&#125;\t&#123;1:&#123;3&#125;^12&#125;\t&#123;2:^10&#125;"</span></span><br><span class="line">    print(tplt.format(<span class="string">"排名"</span>, <span class="string">"学校名称"</span>, <span class="string">"总分"</span>, chr(<span class="number">12288</span>)))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</span><br><span class="line">        u = ulist[i]</span><br><span class="line">        print(tplt.format(u[<span class="number">0</span>], u[<span class="number">1</span>], u[<span class="number">2</span>], chr(<span class="number">12288</span>)))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">instance_3</span><span class="params">()</span>:</span></span><br><span class="line">    uinfo = []</span><br><span class="line">    url = <span class="string">'http://www.zuihaodaxue.cn/zuihaodaxuepaiming2017.html'</span></span><br><span class="line">    html = getHTMLText(url)</span><br><span class="line">    fillUnivList(uinfo, html)</span><br><span class="line">    printUnivList_A(uinfo, <span class="number">20</span>)  <span class="comment"># 20 univs</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    instance_3()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fillUnivList</span><span class="params">(ulist, html)</span>:</span></span><br><span class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">    <span class="comment"># print(soup.prettify())</span></span><br><span class="line">    <span class="keyword">for</span> tr <span class="keyword">in</span> soup.find(<span class="string">'tbody'</span>).children:</span><br><span class="line">        <span class="keyword">if</span> isinstance(tr, bs4.element.Tag):</span><br><span class="line">            tds = tr(<span class="string">'td'</span>)</span><br><span class="line">            <span class="comment"># tds[0].get_text(" ").split(" ")[0]也可以</span></span><br><span class="line">            ulist.append([tds[<span class="number">0</span>].contents[<span class="number">0</span>], tds[<span class="number">1</span>].string, tds[<span class="number">3</span>].string])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printUnivList_A</span><span class="params">(ulist, num)</span>:</span></span><br><span class="line">    tplt = <span class="string">"&#123;0:^4&#125;\t&#123;1:&#123;3&#125;^12&#125;\t&#123;2:^10&#125;"</span></span><br><span class="line">    print(tplt.format(<span class="string">"排名"</span>, <span class="string">"学校名称"</span>, <span class="string">"总分"</span>, chr(<span class="number">12288</span>)))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</span><br><span class="line">        u = ulist[i]</span><br><span class="line">        print(tplt.format(u[<span class="number">0</span>], u[<span class="number">1</span>], u[<span class="number">2</span>], chr(<span class="number">12288</span>)))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">instance_3</span><span class="params">()</span>:</span></span><br><span class="line">    uinfo = []</span><br><span class="line">    url = <span class="string">'http://www.zuihaodaxue.cn/zuihaodaxuepaiming2017.html'</span></span><br><span class="line">    html = getHTMLText(url)</span><br><span class="line">    fillUnivList(uinfo, html)</span><br><span class="line">    printUnivList_A(uinfo, <span class="number">20</span>)  <span class="comment"># 20 univs</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    instance_3()</span><br></pre></td></tr></table></figure>
 
 <p>最终结果</p>
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402183419220.png" alt="image-20200402183419220"></p>
@@ -140,8 +141,112 @@
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402175720833.png" alt="image-20200402175720833"></p>
 <h1 id="实验2-1-正则式"><a href="#实验2-1-正则式" class="headerlink" title="实验2.1-正则式"></a>实验2.1-正则式</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>正则表达式（Regular Expression，简写为regex或RE），使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些匹配某个模式的文本。</p>
 <p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402184401030.png" alt="image-20200402184401030"></p>
-<h2 id="1-运行豆瓣电影top250实例"><a href="#1-运行豆瓣电影top250实例" class="headerlink" title="1.运行豆瓣电影top250实例"></a>1.运行豆瓣电影top250实例</h2><p>（只需爬取前50即可）</p>
-<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402190219949.png" alt="image-20200402190219949"></p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402200458302.png" alt="image-20200402200458302"></p>
+<p>re库主要的方法如下</p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402204550930.png" alt="image-20200402204550930"></p>
+<p>match对象包含了关于此次匹配的信息，可以使用Match提供的可读属性或方法来获取这些信息。</p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402204649960.png" alt="image-20200402204649960"></p>
+<p>只要长度输出可能不同的，都可以通过在操作符后增加?变成最小匹配</p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402204939305.png" alt="image-20200402204939305"></p>
+<h2 id="尝试爬取淘宝商品的数据"><a href="#尝试爬取淘宝商品的数据" class="headerlink" title="尝试爬取淘宝商品的数据"></a>尝试爬取淘宝商品的数据</h2><ul>
+<li><p>扫码登陆淘宝</p>
+</li>
+<li><p>搜索某个商品</p>
+</li>
+<li><p>发现商品分页的规律——如下，</p>
+<p>第1页<code>https://s.taobao.com/search</code> <code>?q=airpodspro</code> <code>&amp;s=0</code></p>
+<p>第2页<code>https://s.taobao.com/search</code> <code>?q=airpodspro</code> <code>&amp;s=44</code></p>
+<p>第3页<code>https://s.taobao.com/search</code> <code>?q=airpodspro</code> <code>&amp;s=88</code></p>
+<p>可以看出每页的s都是44累加的，这样我们想要遍历分页只需要遍历s即可</p>
+</li>
+</ul>
+<p>由于淘宝有反爬虫机制，我们要将手动登陆后的Cookies、agent复制到header中</p>
+<ul>
+<li>扫码登陆淘宝</li>
+<li>搜索商品，Chrome  下 F12打开审查</li>
+<li>点击Network-&gt;Doc类型-&gt;search……-&gt;复制cookie、user-agent</li>
+<li>将cookie、user-agent放到请求中，具体方式看代码</li>
+</ul>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402215404788.png" alt="image-20200402215404788"></p>
+<p>编写程序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLText</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># AFAEF728105FFA95263125A9E0A097DC</span></span><br><span class="line">        hd = &#123;<span class="string">'cookie'</span>: <span class="string">'t=31555440a71b4d3ae330f044081146f9; cna=eaagFpxdLAUCAdrFmScIIYcw; thw=cn; cookie2=1bdfd953450db1890a4960bafedf8169; v=0; _tb_token_=eefe396e49733; _samesite_flag_=true; sgcookie=Edo1lgxwoK2bRfYVahZOe; unb=2522367083; uc3=lg2=UIHiLt3xD8xYTw%3D%3D&amp;id2=UU2w7Hb9dvcsIQ%3D%3D&amp;nk2=tw%2F9XZuWLTE%3D&amp;vt3=F8dBxdAW4LSdjQGNkyg%3D; csg=dbe09bde; lgc=%5Cu518D%5Cu89C1%5Cu795E%5Cu5947; cookie17=UU2w7Hb9dvcsIQ%3D%3D; dnk=%5Cu518D%5Cu89C1%5Cu795E%5Cu5947; skt=d262960506d154ef; existShop=MTU4NTgzMjY2OQ%3D%3D; uc4=nk4=0%40tXwweg7zi7bxIxNwomsc8lmKSw%3D%3D&amp;id4=0%40U2%2F32UM%2BC1YLt9wuKmGuJsNzMVo7; tracknick=%5Cu518D%5Cu89C1%5Cu795E%5Cu5947; _cc_=VT5L2FSpdA%3D%3D; _l_g_=Ug%3D%3D; sg=%E5%A5%873f; _nk_=%5Cu518D%5Cu89C1%5Cu795E%5Cu5947; cookie1=AHnU1YHbYbkYLGQxilkANOpn3Y133DLACku%2BjBXRjNk%3D; enc=q3Gwz15Bq6QwoLkeceXsesqtD8wfeR5rLdWz%2BffQweZA9DT9jrnDbu8nmeCLcdc0X%2BE9JypMae6noiYZzph68g%3D%3D; tfstk=cEPhBo_vJJkCDiI_-HGQy2BO73GhalBEA7Pa_WoWKw4ovdFZ8sDJQKWBJNmLx7p5.; mt=ci=113_1; uc1=cookie16=URm48syIJ1yk0MX2J7mAAEhTuw%3D%3D&amp;cookie21=VFC%2FuZ9aiKCaj7AzMHh1&amp;cookie15=Vq8l%2BKCLz3%2F65A%3D%3D&amp;existShop=false&amp;pas=0&amp;cookie14=UoTUP2oWHktHHQ%3D%3D; l=dBEymxamQbBz3b0YBOfgqDezDdbOXBRflsPr9GLh3IB19u53HdBqEHweIlleI3QQEt134eKrjGibiRQeC3fRwxDDB3h2q_5xnxf..; isg=BIOD_uxF2W-mR5UgKRuxH2xxEkct-Bc6Bw5VXrVg3-JZdKOWPcinimHi7gQ6VG8y'</span></span><br><span class="line">              ,<span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0'</span>&#125;</span><br><span class="line">        r = requests.get(url, timeout=<span class="number">30</span>,headers=hd)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        <span class="keyword">return</span> r.text</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parsePage</span><span class="params">(ilt, html)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        plt = re.findall(<span class="string">r'\"view_price\"\:\"[\d\.]*\"'</span>, html) <span class="comment">#匹配价格</span></span><br><span class="line">        tlt = re.findall(<span class="string">r'\"raw_title\"\:\".*?\"'</span>, html)  <span class="comment">#匹配标题</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(plt)):</span><br><span class="line">            price = eval(plt[i].split(<span class="string">':'</span>)[<span class="number">1</span>])  <span class="comment">#对搜索结果进行分割，以“：”为分割点</span></span><br><span class="line">            title = eval(tlt[i].split(<span class="string">':'</span>)[<span class="number">1</span>])  <span class="comment">#eval将字符串当成有效的表达式来求值并返回计算结果</span></span><br><span class="line">            ilt.append([price, title])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printGoodsList</span><span class="params">(ilt)</span>:</span></span><br><span class="line">    tplt = <span class="string">"&#123;:4&#125;\t&#123;:8&#125;\t&#123;:16&#125;"</span></span><br><span class="line">    print(tplt.format(<span class="string">"序号"</span>, <span class="string">"价格"</span>, <span class="string">"商品名称"</span>))</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> g <span class="keyword">in</span> ilt:</span><br><span class="line">        count = count + <span class="number">1</span></span><br><span class="line">        <span class="comment"># print((tplt.format(count, g[0], g[1])+"\n"))</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">with</span> open(<span class="string">"taobao-airpods pro.txt"</span>, <span class="string">"a+"</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write((tplt.format(count, g[<span class="number">0</span>], g[<span class="number">1</span>])+<span class="string">"\n"</span>)) <span class="comment"># 这句话自带文件关闭功能，不需要再写f.close()</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    goods = <span class="string">'airpodspro'</span></span><br><span class="line">    depth = <span class="number">100</span></span><br><span class="line">    start_url = <span class="string">'https://s.taobao.com/search?q='</span> + goods</span><br><span class="line">    infoList = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(depth):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            url = start_url + <span class="string">'&amp;s='</span> + str(<span class="number">44</span> * i)</span><br><span class="line">            html = getHTMLText(url)</span><br><span class="line">            <span class="comment"># print(html)</span></span><br><span class="line">            parsePage(infoList, html)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    printGoodsList(infoList)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>功能说明：</p>
+<ul>
+<li><code>main()</code>主程序用于遍历商品页输出</li>
+<li><code>getHTMLText()</code>用于获得html</li>
+<li><code>parsePage()</code>用正则式搜索商品名称和价格</li>
+<li><code>printGoodsList()</code> 用于向命令行输出</li>
+</ul>
+<p>这里写入txt——用python向txt文件中写数据时的追加和覆盖，我们使用a+</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"test.txt"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"这是个测试！"</span>) <span class="comment">#这句话自带文件关闭功能，不需要再写f.close()</span></span><br><span class="line">r：以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</span><br><span class="line">r+：打开一个文件用于读写。文件指针将会放在文件的开头。 </span><br><span class="line">w：打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</span><br><span class="line">w+：打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</span><br><span class="line">a：打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</span><br><span class="line">a+：打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</span><br></pre></td></tr></table></figure>
+
+<p>我爬取的是airpodspro的相关信息，爬取100页，具体的数据会存储到txt中</p>
+<p>运行程序，成功</p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402213933616.png" alt="image-20200402213933616"></p>
+<p>爬取的过程中出现了编码问题</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">UnicodeEncodeError: <span class="string">'gbk'</span> codec can<span class="string">'t encode character '</span>\xae<span class="string">' in position 17: illegal multibyte sequence</span></span><br></pre></td></tr></table></figure>
+
+<p>处理一下exception就好了</p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402222101748.png" alt="image-20200402222101748"></p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402223510719.png" alt="image-20200402223510719"></p>
+<h1 id="实验2-2-用srapy框架爬取任意网站的内容"><a href="#实验2-2-用srapy框架爬取任意网站的内容" class="headerlink" title="实验2.2-用srapy框架爬取任意网站的内容"></a>实验2.2-用srapy框架爬取任意网站的内容</h1><p>要求：（不少于50条）</p>
+<h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><h3 id="1-Scrapy与request"><a href="#1-Scrapy与request" class="headerlink" title="1.Scrapy与request"></a>1.Scrapy与request</h3><ul>
+<li>相同点：两者都可以进行页面请求和爬取，Python爬虫的两个重要技术路线两者可用性都好，文档丰富，入门简单两者都没有处理js、提交表单、应对验证码等功能（可扩展）</li>
+<li>不同点：<ul>
+<li>Requests 页面级爬虫，功能库，并发性考虑不足，性能较差，重点在于页面下载。定制灵活，上手十分简单 。</li>
+<li>Scrapy<br>网站级爬虫 框架，并发性好，性能较高， 重点在于爬虫结构。 一般定制灵活，深度定制困难， 入门稍难。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402222443363.png" alt="image-20200402222443363"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Engine从Spider处获得爬取请求(Request)</span><br><span class="line">Engine将爬取请求转发给Scheduler，用于调度</span><br><span class="line">Engine从Scheduler处获得下一个要爬取的请求</span><br><span class="line">Engine将爬取请求通过中间件发送给Downloader</span><br><span class="line">爬取网页后，Downloader形成响应（Response）通过中间件发给Engine</span><br><span class="line">Engine将收到的响应通过中间件发送给Spider处理 </span><br><span class="line">Spider处理响应后产生爬取项（scraped Item）和新的爬取请求（Requests）给Engine</span><br><span class="line">Engine将爬取项发送给Item Pipeline（框架出口）</span><br><span class="line">Engine将爬取请求发送给Scheduler</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><ul>
+<li><p>安装lxml： pip install lxml</p>
+</li>
+<li><p>下载对应版本的Twisted</p>
+<p>我下面的方法没成功，是在pycharm下下载的</p>
+<p>%%%%%%%%%%%%%%%%%%%%</p>
+<p>++++++++++++++++++++++++</p>
+<p>​       <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted" target="_blank" rel="noopener">http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted</a> </p>
+<p>​        <img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402222827956.png" alt="image-20200402222827956"></p>
+<p>​       pip3 install C:\Users\78290\Desktop\Twisted-20.3.0-cp38-cp38-win_amd64.whl</p>
+<p>​        (下载好的twisted模块的whl文件路径)</p>
+<p>​    %%%%%%%%%%%%%%%%%%</p>
+</li>
+<li><p>安装scrapy：pip install scrapy</p>
+</li>
+<li><p>安装关联模块pypiwin32：pip install pypiwin32 </p>
+</li>
+</ul>
+<h3 id="3-创建一个scrapy"><a href="#3-创建一个scrapy" class="headerlink" title="3.创建一个scrapy"></a>3.创建一个scrapy</h3><p>Scrapy常用命令</p>
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402224714359.png" alt="image-20200402224714359"></p>
+<p>1.创建项目：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scrapy startproject tutorial</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402225249765.png" alt="image-20200402225249765"></p>
+<p>2.定义Item</p>
+<p>编辑 tutorial 目录中的 items.py 文件:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    link = scrapy.Field()</span><br><span class="line">    desc = scrapy.Field()</span><br></pre></td></tr></table></figure>
+
+<p>3.编写spider </p>
+<p>Spider是用户编写用于从单个网站(或者一些网站)爬取数据的类。其包含了一个用于下载的初始URL，如何跟进网页中的链接以及如何分析页面中的内容， 提取生成 item 的方法。<br>为了创建一个Spider，必须继承 scrapy.Spider 类， 且定义三个属性：</p>
+<ul>
+<li>name: 用于区别Spider。 该名字必须是唯一的，不可以为不同的Spider设定相同的名字。</li>
+<li>start_urls: 包含了Spider在启动时进行爬取的url列表。 因此，第一个被获取到的页面将是其中之一。 后续的URL则从初始的URL获取到的数据中提取。</li>
+<li>parse() 是spider的一个方法。 被调用时，每个初始URL完成下载后生成的 Response 对象将会作为唯一的参数传递给该函数。 该方法负责解析返回的数据(response data)，提取数据(生成item)以及生成需要进一步处理的URL的 Request 对象。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在项目中生成 spider 文件的两种方法:</span><br><span class="line">命令行输入 Scrapy genspider domain domain.com</span><br><span class="line">tutorial&#x2F;spiders&#x2F;目录下创建domain.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#爬取网页的内容</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">W3schoolSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">'w3school'</span></span><br><span class="line">    allowed_domains = [<span class="string">'w3school.com.cn'</span>]</span><br><span class="line">    start_urls = [<span class="string">'http://www.w3school.com.cn/cssref/css_selectors.asp'</span>,</span><br><span class="line">                  <span class="string">'http://www.w3school.com.cn/xpath/'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        filename = response.url.split(<span class="string">"/"</span>)[<span class="number">-2</span>]</span><br><span class="line">        <span class="keyword">with</span> open(filename, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.body)</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>4.执行spider</p>
+<p>进入项目的根目录，执行下列命令启动spider    </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">scrapy crawl w3school</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/03/25/2020-03-25-information-security-exp-1/image-20200402231037199.png" alt="image-20200402231037199"></p>
+<h1 id="使用GooSeeker爬取数据"><a href="#使用GooSeeker爬取数据" class="headerlink" title="使用GooSeeker爬取数据"></a>使用GooSeeker爬取数据</h1><p><a href="https://www.jianshu.com/p/62bb53e07544" target="_blank" rel="noopener">https://www.jianshu.com/p/62bb53e07544</a></p>
 ]]></content>
       <categories>
         <category>信息内容安全</category>
