@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://colalinn.github.io/"/>
-  <updated>2020-04-14T19:01:07.900Z</updated>
+  <updated>2020-04-11T10:13:47.438Z</updated>
   <id>https://colalinn.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>2020-04-15-HOPE</title>
-    <link href="https://colalinn.github.io/2020/04/15/2020-04-15-HOPE/"/>
-    <id>https://colalinn.github.io/2020/04/15/2020-04-15-HOPE/</id>
-    <published>2020-04-14T18:37:08.000Z</published>
-    <updated>2020-04-14T19:01:07.900Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2020/04/15/2020-04-15-HOPE/image-20200415030058351.png" alt="image-20200415030058351"></p><a id="more"></a><blockquote><h2 id="希望，是这个时代像钻石一样珍贵的东西——《流浪地球》"><a href="#希望，是这个时代像钻石一样珍贵的东西——《流浪地球》" class="headerlink" title="希望，是这个时代像钻石一样珍贵的东西——《流浪地球》"></a>希望，是这个时代像钻石一样珍贵的东西——《流浪地球》</h2></blockquote><p>xing’chen’da’hai</p><p>由于自己10年来没有认真学英语，</p><p>它多次给我使了绊，中考、高考、大英、六级、保研。</p><p>这次的疫情，它又一次给我提了一个醒。</p><p>我恨疫情，也感谢你，</p><p>虽然因为你，六级有可能无法准时考。</p><p>但希望，仍在。</p><p>就在那触手可及的地方，</p><p>需要一颗，勇敢的心。</p><p>What dose not kill me, make me stronger.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/2020/04/15/2020-04-15-HOPE/image-20200415030058351.png&quot; alt=&quot;image-20200415030058351&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="希望" scheme="https://colalinn.github.io/categories/%E5%B8%8C%E6%9C%9B/"/>
-    
-    
-      <category term="希望" scheme="https://colalinn.github.io/tags/%E5%B8%8C%E6%9C%9B/"/>
-    
-  </entry>
   
   <entry>
     <title>信息内容安全实验2</title>
@@ -528,6 +505,33 @@
       <category term="hexo" scheme="https://colalinn.github.io/tags/hexo/"/>
     
       <category term="others" scheme="https://colalinn.github.io/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test2</title>
+    <link href="https://colalinn.github.io/2020/01/15/2020-01-15-jottings/"/>
+    <id>https://colalinn.github.io/2020/01/15/2020-01-15-jottings/</id>
+    <published>2020-01-15T11:40:22.000Z</published>
+    <updated>2020-02-25T16:00:15.711Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h1><p>别来无恙啊</p><h3 id="2020-1-21"><a href="#2020-1-21" class="headerlink" title="2020.1.21"></a>2020.1.21</h3><p>今天武汉不明肺炎又进一步扩散了，讨论甚多</p><h3 id="2020-1-25-“大年初一，百病不侵”"><a href="#2020-1-25-“大年初一，百病不侵”" class="headerlink" title="2020.1.25  “大年初一，百病不侵”"></a>2020.1.25  “大年初一，百病不侵”</h3><p>大年初一，2019ncov已经严重到湖北禁省，各省份一级公共卫生响应。武汉将建两座“小汤山”医院，火神山、雷神山，今年春节愿我们百病不侵</p><h3 id="2020-1-27"><a href="#2020-1-27" class="headerlink" title="2020.1.27"></a>2020.1.27</h3><p>今天做了一道leetcode的最长回文子串</p><h3 id="2020-1-28-“成固欣然、败亦可喜”"><a href="#2020-1-28-“成固欣然、败亦可喜”" class="headerlink" title="2020.1.28  “成固欣然、败亦可喜”"></a>2020.1.28  “成固欣然、败亦可喜”</h3><p>今天疫情确诊人数突增2000+人，应该是试剂盒增加的原因，我有预感很快就能控制住。</p><p>今天Hexo做好了文章的图片，还有评论功能，leetcode做了一道Z”字符串”</p><h3 id="2020-1-30"><a href="#2020-1-30" class="headerlink" title="2020.1.30"></a>2020.1.30</h3><p>今天突增3000+人，今日配tensorflow环境，刷了两道题，无事发生</p><h3 id="2020-02-02-“对称日”"><a href="#2020-02-02-“对称日”" class="headerlink" title="2020.02.02 “对称日”"></a>2020.02.02 “对称日”</h3><p>这两日对确诊人数的增长已经麻木，只是身边的同学家里受到影响，很难受。</p><p>一直以为疫情还离自己很远，可当灾难来临时，降临到了身边的人时。</p><p>才知道灾难有多无情，才知道自己有多无力。</p><h3 id="2020-02-10-“奥里给”"><a href="#2020-02-10-“奥里给”" class="headerlink" title="2020.02.10 “奥里给”"></a>2020.02.10 “奥里给”</h3><p>没有什么是简单的</p><h3 id="2020-02-20-“还得继续加油”"><a href="#2020-02-20-“还得继续加油”" class="headerlink" title="2020.02.20 “还得继续加油”"></a>2020.02.20 “还得继续加油”</h3><p>这么久来，大创终于向前进了一步，还是希望自己能挺住吧，别轻易放弃</p><h3 id="2020-02-25-“壁立千仞，无欲则刚”"><a href="#2020-02-25-“壁立千仞，无欲则刚”" class="headerlink" title="2020.02.25 “壁立千仞，无欲则刚”"></a>2020.02.25 “壁立千仞，无欲则刚”</h3><p>今天，我制作了简历，给内推的学长看了。</p><p>结果学长表示java技术细节列的太少，做后端得知道操作系统、springMVC、springboot的应用及原理。</p><p>最好是源码级的，所以，我的眼前，又延伸出一条路，总的来说，还是略有迷茫。</p><p>壁立千仞，无欲则刚。</p><p>咱们    走着瞧。    </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;随笔&quot;&gt;&lt;a href=&quot;#随笔&quot; class=&quot;headerlink&quot; title=&quot;随笔&quot;&gt;&lt;/a&gt;随笔&lt;/h1&gt;&lt;p&gt;别来无恙啊&lt;/p&gt;
+&lt;h3 id=&quot;2020-1-21&quot;&gt;&lt;a href=&quot;#2020-1-21&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://colalinn.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="-随笔" scheme="https://colalinn.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
