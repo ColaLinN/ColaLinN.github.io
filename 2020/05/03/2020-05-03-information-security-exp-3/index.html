@@ -88,12 +88,11 @@
 
 
 
-<meta name="description" content="信息内容安全第三次实验报告  林峰吕 2017301500076 信安1班  [blog链接]( 实验环境IDE：pycharm python版本：anacoda-&gt;python3.7 1、图像实验1.1 背景介绍本次实验，主要熟悉图像的python库操作，仿射变换的学习，以及图像的基本聚类分类方法。 （1）图像的基本知识通常情况下，计算机中图像是一个三维数组，维度分别是高度、宽度和像素RG">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020-05-03-information-security-exp-3">
 <meta property="og:url" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/index.html">
 <meta property="og:site_name" content="神奇小站">
-<meta property="og:description" content="信息内容安全第三次实验报告  林峰吕 2017301500076 信安1班  [blog链接]( 实验环境IDE：pycharm python版本：anacoda-&gt;python3.7 1、图像实验1.1 背景介绍本次实验，主要熟悉图像的python库操作，仿射变换的学习，以及图像的基本聚类分类方法。 （1）图像的基本知识通常情况下，计算机中图像是一个三维数组，维度分别是高度、宽度和像素RG">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200505202005599.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174904801.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174823310.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174832839.png">
@@ -105,6 +104,7 @@
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504173711245.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504180152299.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504181130518.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504192849951.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191505663.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191549805.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504152416006.png">
@@ -117,12 +117,12 @@
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160027498.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160815181.png">
 <meta property="article:published_time" content="2020-05-03T12:07:38.000Z">
-<meta property="article:modified_time" content="2020-05-04T11:21:30.457Z">
+<meta property="article:modified_time" content="2020-05-05T12:20:18.922Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="实验">
 <meta property="article:tag" content="信息安全内容安全">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174904801.png">
+<meta name="twitter:image" content="https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/image-20200505202005599.png">
 
 
 
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6.7k字
+                  6.8k字
                 </span>
               
 
@@ -453,11 +453,10 @@
       
 
       
-        <center style="font-size:40px">信息内容安全第三次实验报告</center>
+        <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200505202005599.png" alt="image-20200505202005599"></p>
+<a id="more"></a>
 
-<center style="font-size:25px">林峰吕 2017301500076 信安1班
-
-<p>[blog链接](</p>
+<p>[TOC]</p>
 <h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>IDE：pycharm</p>
 <p>python版本：anacoda-&gt;python3.7</p>
 <h1 id="1、图像实验"><a href="#1、图像实验" class="headerlink" title="1、图像实验"></a>1、图像实验</h1><h2 id="1-1-背景介绍"><a href="#1-1-背景介绍" class="headerlink" title="1.1 背景介绍"></a>1.1 背景介绍</h2><p>本次实验，主要熟悉图像的python库操作，仿射变换的学习，以及图像的基本聚类分类方法。</p>
@@ -484,21 +483,21 @@
 </li>
 </ul>
 <h3 id="3-图像的基本操作"><a href="#3-图像的基本操作" class="headerlink" title="(3)图像的基本操作"></a>(3)图像的基本操作</h3><p><strong>图像的表示</strong></p>
-<h4 id="1-将彩色RGB图片变为黑白（灰度）图片"><a href="#1-将彩色RGB图片变为黑白（灰度）图片" class="headerlink" title="1.将彩色RGB图片变为黑白（灰度）图片"></a><strong>1.将彩色RGB图片变为黑白（灰度）图片</strong></h4><p>灰度转换公式：L = R * 299/1000 + G * 587/1000+ B * 114/1000</p>
+<h4 id="1-将彩色RGB图片变为黑白（灰度）图片"><a href="#1-将彩色RGB图片变为黑白（灰度）图片" class="headerlink" title="1.将彩色RGB图片变为黑白（灰度）图片"></a>1.将彩色RGB图片变为黑白（灰度）图片</h4><p>灰度转换公式：L = R * 299/1000 + G * 587/1000+ B * 114/1000</p>
 <p>PIL中，灰度表示模式为L模式，它的每个像素用8个bit表示，0表示黑，255表示白，其他数字表示不同的灰度。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im = Image.open(<span class="string">'1.jpg'</span>)</span><br><span class="line">im_l = im.convert(<span class="string">"L"</span>)</span><br><span class="line">im_1.show()</span><br><span class="line">im_l.save(<span class="string">'output1.jpg’)</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174904801.png" alt="image-20200504174904801"></p>
-<h4 id="2-将彩色RGB图片变为“底片”模式"><a href="#2-将彩色RGB图片变为“底片”模式" class="headerlink" title="2.将彩色RGB图片变为“底片”模式"></a><strong>2.将彩色RGB图片变为“底片”模式</strong></h4><p>PIL中，当需要更个性化的图片时，可配合使用numpy,对图像中的数据进行操作将原图以灰度打开后，取反码（b=255-a）</p>
+<h4 id="2-将彩色RGB图片变为“底片”模式"><a href="#2-将彩色RGB图片变为“底片”模式" class="headerlink" title="2.将彩色RGB图片变为“底片”模式"></a>2.将彩色RGB图片变为“底片”模式</h4><p>PIL中，当需要更个性化的图片时，可配合使用numpy,对图像中的数据进行操作将原图以灰度打开后，取反码（b=255-a）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array(Image.open(<span class="string">"1.jpg"</span>).convert(<span class="string">'L'</span>))</span><br><span class="line">b = <span class="number">255</span> - a</span><br><span class="line">im = Image.fromarray(b.astype(<span class="string">'uint8'</span>))</span><br><span class="line">im.save(<span class="string">"output3.jpg"</span>)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174823310.png" alt="image-20200504174823310"></p>
-<h4 id="3-滤波器提取图片的信息"><a href="#3-滤波器提取图片的信息" class="headerlink" title="3.滤波器提取图片的信息"></a><strong>3.滤波器提取图片的信息</strong></h4><p>PIL的ImageFilter模块提供了滤波器相关定义，这些滤波器主要用于Image类的filter()方法。</p>
+<h4 id="3-滤波器提取图片的信息"><a href="#3-滤波器提取图片的信息" class="headerlink" title="3.滤波器提取图片的信息"></a>3.滤波器提取图片的信息</h4><p>PIL的ImageFilter模块提供了滤波器相关定义，这些滤波器主要用于Image类的filter()方法。</p>
 <p>例如，提取图片的轮廓信息：使用ImageFilter.CONTOU</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageFilter</span><br><span class="line">a = Image.open(<span class="string">'5.jpg'</span>)</span><br><span class="line">b = </span><br><span class="line">a.filter(ImageFilter.CONTOUR)</span><br><span class="line">b.save(<span class="string">"output5.jpg"</span>)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174832839.png" alt="image-20200504174832839"></p>
-<h4 id="4-图片读、写和显示操作"><a href="#4-图片读、写和显示操作" class="headerlink" title="4.图片读、写和显示操作"></a><strong>4.</strong>图片读、写和显示操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="comment">#读图片（有多种模式）</span></span><br><span class="line"><span class="comment"># Load an color image in grayscale</span></span><br><span class="line">img = cv.imread(‘lena.jpg’,<span class="number">0</span>) <span class="comment">#显示图片</span></span><br><span class="line">cv.imshow(‘image’,img) <span class="comment">#第一个参数定义窗口名</span></span><br><span class="line">cv.waitKey(<span class="number">0</span>) <span class="comment">#无限制的等待用户的按键</span></span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"><span class="comment">#写</span></span><br><span class="line">cv.imwrite(‘graylena.png<span class="string">',img)</span></span><br><span class="line"><span class="string">           import cv2 as cv</span></span><br><span class="line"><span class="string">img = cv.imread('</span>lena.jpg’)</span><br><span class="line"><span class="comment">#图片的相关属性</span></span><br><span class="line">print(img.shape) <span class="comment">#高度×宽度×通道数（灰度图只返回前两项）</span></span><br><span class="line">print(img.size) <span class="comment">#像素总数</span></span><br><span class="line">print(img.dtype) <span class="comment">#图像数据类型</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-图片读、写和显示操作"><a href="#4-图片读、写和显示操作" class="headerlink" title="4.图片读、写和显示操作"></a>4.图片读、写和显示操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="comment">#读图片（有多种模式）</span></span><br><span class="line"><span class="comment"># Load an color image in grayscale</span></span><br><span class="line">img = cv.imread(‘lena.jpg’,<span class="number">0</span>) <span class="comment">#显示图片</span></span><br><span class="line">cv.imshow(‘image’,img) <span class="comment">#第一个参数定义窗口名</span></span><br><span class="line">cv.waitKey(<span class="number">0</span>) <span class="comment">#无限制的等待用户的按键</span></span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"><span class="comment">#写</span></span><br><span class="line">cv.imwrite(‘graylena.png<span class="string">',img)</span></span><br><span class="line"><span class="string">           import cv2 as cv</span></span><br><span class="line"><span class="string">img = cv.imread('</span>lena.jpg’)</span><br><span class="line"><span class="comment">#图片的相关属性</span></span><br><span class="line">print(img.shape) <span class="comment">#高度×宽度×通道数（灰度图只返回前两项）</span></span><br><span class="line">print(img.size) <span class="comment">#像素总数</span></span><br><span class="line">print(img.dtype) <span class="comment">#图像数据类型</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>结果：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(512, 512, 3)</span><br><span class="line">786432</span><br><span class="line">uint8</span><br></pre></td></tr></table></figure>
@@ -561,9 +560,10 @@
 <p><strong>训练结果如下：</strong></p>
 <p>其中，白色的数字为分类识别成功，红色的为识别错误</p>
 <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504181130518.png" alt="image-20200504181130518"></p>
-<h2 id="1-5-HOG特征，自找数据集进行测试"><a href="#1-5-HOG特征，自找数据集进行测试" class="headerlink" title="1.5 HOG特征，自找数据集进行测试"></a>1.5 HOG特征，自找数据集进行测试</h2><p>这里我选择了<code>mnist</code>的图、以及我自己word做的一些图混合来进行测试：</p>
-<p><code>mnist</code>的图像大小都是<code>28 * 28</code>，我们用仿射变换来进行缩小为 <code>20 * 20</code></p>
+<h2 id="1-5-HOG特征，自找数据集进行测试"><a href="#1-5-HOG特征，自找数据集进行测试" class="headerlink" title="1.5 HOG特征，自找数据集进行测试"></a>1.5 HOG特征，自找数据集进行测试</h2><p>这里我选择了<code>mnist</code>的图、以及word做的一些图混合来进行测试：</p>
+<p><code>mnist</code>的图像大小都是<code>28 * 28</code>，word做的也不是<code>20*20</code>，我们用仿射变换来进行缩小为 <code>20 * 20</code></p>
 <p>数据集，每一种数字有6个，总共有6 * 10=60张图：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504192849951.png" alt="image-20200504192849951"></p>
 <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191505663.png" alt="image-20200504191505663"></p>
 <p>其中有个复杂的点，数据结构的问题：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resp = model.predict(samples)</span></span><br><span class="line"><span class="comment">#这里加个[1].flatten()是因为读出的模型predict的datatype要转化为nparray</span></span><br><span class="line">resp=model.predict(samples)[<span class="number">1</span>].flatten()</span><br></pre></td></tr></table></figure>
@@ -653,10 +653,11 @@
 <p>LIBROSA处理音频信号   <a href="https://www.freesion.com/article/4795221829/" target="_blank" rel="noopener">https://www.freesion.com/article/4795221829/</a></p>
 <h1 id="3、总结"><a href="#3、总结" class="headerlink" title="3、总结"></a>3、总结</h1><ul>
 <li>这次实验挺有趣的，难度也适中。</li>
-<li>图像处理部分的透视变化、numpy的熟悉、HOG特征的计算、KNN、SVM聚类的学习。音频部分对音频特征和参数的介绍等等，学到了很多东西。</li>
 <li>大多数时候出错，都是api不熟悉导致的，多看多敲就好了。</li>
+<li>图像处理部分的透视变化、numpy的熟悉、HOG特征的计算、KNN、SVM聚类的学习。音频部分对音频特征和参数的介绍等等，学到了很多东西。</li>
+<li>但是，信息数据处理才是刚刚入了一点点门，还得继续努力才是。</li>
 </ul>
-</center>
+
       
     </div>
     
