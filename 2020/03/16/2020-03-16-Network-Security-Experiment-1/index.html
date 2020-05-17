@@ -100,9 +100,10 @@
 <meta property="og:image" content="https://colalinn.github.io/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316184802094.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316185228476.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316185543332.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200506175003615.png">
 <meta property="og:image" content="https://colalinn.github.io/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316185822712.png">
 <meta property="article:published_time" content="2020-03-16T08:56:30.000Z">
-<meta property="article:modified_time" content="2020-03-21T16:25:47.838Z">
+<meta property="article:modified_time" content="2020-05-06T10:46:13.066Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="实验">
 <meta property="article:tag" content="网络安全">
@@ -402,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.9k字
+                  2k字
                 </span>
               
 
@@ -418,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6分钟
+                  7分钟
                 </span>
               
             </div>
@@ -504,15 +505,15 @@
 <blockquote>
 <p>可以使用Kali linux集成的nmap工具来完成操作步骤1.1，也可以通过操作机自行上传其他工具来完成。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#使用Nmap实现网段内的IP发现：</span><br><span class="line">nmap -sP ip&#x2F;mask</span><br><span class="line">nmap -sP 192.168.1.0&#x2F;24</span><br></pre></td></tr></table></figure>
+<p><strong>使用Nmap实现网段内的IP发现：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP ip&#x2F;mask</span><br><span class="line">nmap -sP 192.168.1.0&#x2F;24</span><br></pre></td></tr></table></figure>
 
+<p>可以看到当前网段存活的IP有192.168.1.2\3\4</p>
 <p><img src="/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316183326844.png" alt="image-20200316183326844"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#探测开放端口及服务</span><br><span class="line">快速端口扫描</span><br><span class="line">nmap -F -v 192.168.1.0&#x2F;24</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316183738031.png" alt="image-20200316183738031"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#版本扫描</span><br><span class="line">nmap -sV -v taget_ip</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV -v 192.168.1.3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#版本扫描</span><br><span class="line">nmap -sV -v taget_ip</span><br><span class="line">nmap -sV -v 192.168.1.3</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316184802094.png" alt="image-20200316184802094"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV -v 192.168.1.4</span><br></pre></td></tr></table></figure>
@@ -521,9 +522,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#操作系统扫描</span><br><span class="line">nmap -O -v target_ip</span><br><span class="line">nmap -O -v 192.168.1.3</span><br><span class="line">nmap -O -v 192.168.1.4</span><br></pre></td></tr></table></figure>
 
 <p>nmap -O -v 192.168.1.3</p>
-<p>no exact OS matches for host</p>
+<p>没有扫描到该主机是Centos7（no exact OS matches for host）</p>
+<p>并且向我们请求，如果我们知道目标主机的版本号的话，请把目标的特征哈希值上传HHH</p>
 <p><img src="/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316185543332.png" alt="image-20200316185543332"></p>
 <p>nmap -O -v 192.168.1.4</p>
+<p>可以看到猜测192.168.1.4操作系统版本好最高的为windows 2012的，正确</p>
+<p><img src="/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200506175003615.png" alt="image-20200506175003615"></p>
 <p><img src="/2020/03/16/2020-03-16-Network-Security-Experiment-1/image-20200316185822712.png" alt="image-20200316185822712"></p>
 <h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><p>使用嗅探工具对目标机的vsftpd服务进行嗅探。通过设置监听网卡、主机、开启arp欺骗、启动嗅探等步骤来嗅探网络内的数据包，获取ftp用户名和密码。</p>
 <blockquote>
@@ -662,7 +666,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +677,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -684,7 +688,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -781,7 +785,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">45.2k</span>
+    <span title="站点总字数">47.3k</span>
   
 </div>
 
