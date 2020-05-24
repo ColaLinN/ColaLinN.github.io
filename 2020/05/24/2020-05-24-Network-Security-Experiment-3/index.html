@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="神奇小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="【实验环境】   操作系统 IP地址 服务器角色 登录账户密码    centos7 192.168.1.11 操作机 用户名：root；密码：Simplexue123   防火墙实验共六个任务 任务一、Linux防火墙Iptables基础1.1 任务描述本实验任务基于个人主机操作环境，主要完成以下内容： 12了解Iptables的基本概念与相应基础知识，熟悉使用语法。Iptables规则的增删改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020-054-Network-Security-Experiment-3">
+<meta property="og:url" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/index.html">
+<meta property="og:site_name" content="神奇小站">
+<meta property="og:description" content="【实验环境】   操作系统 IP地址 服务器角色 登录账户密码    centos7 192.168.1.11 操作机 用户名：root；密码：Simplexue123   防火墙实验共六个任务 任务一、Linux防火墙Iptables基础1.1 任务描述本实验任务基于个人主机操作环境，主要完成以下内容： 12了解Iptables的基本概念与相应基础知识，熟悉使用语法。Iptables规则的增删改">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104349373.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104715389.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104730099.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105035069.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105120323.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105239014.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105530162.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105618461.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111515868.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111726891.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111919474.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111942291.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112058994.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112220963.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112258214.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112650291.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112849486.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112858540.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112916108.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112940656.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113005634.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113024546.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113335499.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113351074.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113413956.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113556687.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113745045.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113853866.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113916493.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524114100860.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171430529.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171450707.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171413440.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524170828002.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171343601.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171401356.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524173706655.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524173741352.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524173844422.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524183515546.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524183914460.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184026990.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184104281.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184143638.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184320632.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184413942.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524185133769.png">
+<meta property="og:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524185116264.png">
+<meta property="article:published_time" content="2020-05-24T02:04:17.000Z">
+<meta property="article:modified_time" content="2020-05-24T10:53:35.335Z">
+<meta property="article:author" content="ColaLinN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104349373.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/"/>
+
+
+
+
+
+  <title>2020-054-Network-Security-Experiment-3 | 神奇小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">神奇小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">这里总有神奇的东西</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+    
+  
+  
+
+  <article class="post post-type-normal true" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://colalinn.github.io/2020/05/24/2020-05-24-Network-Security-Experiment-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ColaLinN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="神奇小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2020-054-Network-Security-Experiment-3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-24T10:04:17+08:00">
+                2020-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+		  		  
+		  
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.9k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  24分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="【实验环境】"><a href="#【实验环境】" class="headerlink" title="【实验环境】"></a>【实验环境】</h3><table>
+<thead>
+<tr>
+<th align="left">操作系统</th>
+<th align="left">IP地址</th>
+<th align="left">服务器角色</th>
+<th align="left">登录账户密码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">centos7</td>
+<td align="left">192.168.1.11</td>
+<td align="left">操作机</td>
+<td align="left">用户名：root；密码：Simplexue123</td>
+</tr>
+</tbody></table>
+<h1 id="防火墙实验"><a href="#防火墙实验" class="headerlink" title="防火墙实验"></a>防火墙实验</h1><p>共六个任务</p>
+<h2 id="任务一、Linux防火墙Iptables基础"><a href="#任务一、Linux防火墙Iptables基础" class="headerlink" title="任务一、Linux防火墙Iptables基础"></a>任务一、Linux防火墙Iptables基础</h2><h3 id="1-1-任务描述"><a href="#1-1-任务描述" class="headerlink" title="1.1 任务描述"></a>1.1 任务描述</h3><p>本实验任务基于个人主机操作环境，主要完成以下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">了解Iptables的基本概念与相应基础知识，熟悉使用语法。</span><br><span class="line">Iptables规则的增删改查的简单使用。</span><br></pre></td></tr></table></figure>
+
+<p>通过完成本实验任务，要求学生了解iptables的基础概念，掌握使用语法，会进行简单规则的增，删，改，查；为完成后续防火墙实验任务奠定坚实的基础。</p>
+<h3 id="1-2-实验目标"><a href="#1-2-实验目标" class="headerlink" title="1.2 实验目标"></a>1.2 实验目标</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">了解IPtables的基本概念与基础知识，熟悉使用语法。</span><br><span class="line">会进行简单规则的增删查。</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-实验工具"><a href="#1-3-实验工具" class="headerlink" title="1.3 实验工具"></a>1.3 实验工具</h3><p><a href="http://210.42.123.2:8088/doku.php?id=网络空间安全术语与概念:iptables" target="_blank" rel="noopener">iptables</a></p>
+<h3 id="1-4-操作步骤"><a href="#1-4-操作步骤" class="headerlink" title="1.4 操作步骤"></a>1.4 操作步骤</h3><h4 id="1、防火墙一些概念"><a href="#1、防火墙一些概念" class="headerlink" title="1、防火墙一些概念"></a>1、防火墙一些概念</h4><p>从防火墙作用范围讲，防火墙可以大体分为主机防火墙和网络防火墙。</p>
+<pre><code>主机防火墙：作用于单个机算机系统，例如个人电脑上windows自带的防火墙，linux系统上的iptables。
+网络防火墙：往往处于网络入口或边缘，对企业网络入口进行防护，服务范围为整个企业的内部网络。中小企业可以使用一台x86服务器运用linux的iptables搭建功能强大的网络防火墙。</code></pre><p>网络防火墙和主机防火墙在企业网络架构中所处的网络位置不一样，它俩的结合能使企业网络更安全。</p>
+<p>从产品形态讲，防火墙可以分为硬件防火墙和软件防火墙。</p>
+<pre><code>硬件防火墙：在硬件级别实现部分防火墙功能，另一部分功能基于软件实现，性能高，成本高。
+软件防火墙：应用软件处理逻辑运行于通用硬件平台之上的防火墙，性能低，成本低。</code></pre><p>下面说说本实验的重点，Linux iptables。</p>
+<p><strong>iptables其实并不是真正的防火墙</strong>，我们可以理解它为一个命令行工具，位于用户空间，我们用这个工具操作“安全框架”。netfilter是防火墙真正的安全框架（framework），netfilter位于内核空间。</p>
+<p><strong>netfilter/iptables</strong>（下文中简称为iptables）组成Linux平台下的包过滤防火墙，与大多数的Linux软件一样，这个包过滤防火墙是免费的，它可以代替昂贵的商业防火墙解决方案，完成封包过滤、封包重定向和网络地址转换（NAT）等功能。</p>
+<p>Netfilter是Linux操作系统内核的一个数据包处理模块，主要有如下功能：</p>
+<pre><code>网络地址转换(NAT)
+数据包内容修改
+包过滤防火墙</code></pre><h4 id="2、Iptables基础"><a href="#2、Iptables基础" class="headerlink" title="2、Iptables基础"></a>2、Iptables基础</h4><pre><code>Iptables有表、链、规则的概念，规则应用于链中， 链必须属于表，iptables默认的链可以属于多个表，每张表可以有多个链，可以在表中自定义链。
+Iptables按照规则（rules）来处理数据包，规则其实就是预定义的条件。规则存储在内核空间的信息包过滤表中，这些规则分别指定了源地址、目的地址、源端口、目的端口、协议等。当数据包与规则匹配时，iptables就根据规则所定义的方法来处理这些数据包，如放行（accept）、拒绝（reject）和丢弃（drop）等。配置防火墙的主要工作就是添加、修改和删除这些规则。</code></pre><h5 id="表的概念"><a href="#表的概念" class="headerlink" title="表的概念"></a>表的概念</h5><pre><code>iptables为我们提供了如下规则的分类，或者说，iptables为我们提供了如下“表”
+filter表：负责包过滤功能，防火墙
+nat表：网络地址转换功能
+mangle表：拆解报文，做出修改，并重新封装数据包的功能
+raw表：关闭nat表上启用的连接追踪机制</code></pre><h5 id="链的概念"><a href="#链的概念" class="headerlink" title="链的概念"></a>链的概念</h5><pre><code>iptables为我们提供了如下默认链
+PREROUTING：路由前
+INPUT：输入队列
+FORWARD：转发队列
+OUTPUT：输出队列
+POSTROUTING：路由后   iptables为我们提供了如下默认链
+PREROUTING：路由前
+INPUT：输入队列
+FORWARD：转发队列
+OUTPUT：输出队列
+POSTROUTING：路由后</code></pre><h5 id="表和链的对应关系："><a href="#表和链的对应关系：" class="headerlink" title="表和链的对应关系："></a>表和链的对应关系：</h5><pre><code>raw表对应：PREROUTING, OUTPUT链
+mangle表对应：PREROUTING, INPUT, FORWARD, OUTPUT, POSTROUTING链
+nat表对应：PREROUTING, OUTPUT, POSTROUTING，INPUT链
+filter表对应：INPUT, FORWARD, OUTPUT链</code></pre><p>同一链在不同表中的执行优先级次序（由高而低）：</p>
+<pre><code>raw --&gt; mangle --&gt; nat --&gt; filter</code></pre><h5 id="数据包经过iptables防火墙的处理流程"><a href="#数据包经过iptables防火墙的处理流程" class="headerlink" title="数据包经过iptables防火墙的处理流程"></a>数据包经过iptables防火墙的处理流程</h5><p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104349373.png" alt="image-20200524104349373"></p>
+<h4 id="3、Iptables使用语法"><a href="#3、Iptables使用语法" class="headerlink" title="3、Iptables使用语法"></a>3、Iptables使用语法</h4><p>Centos7下可用firewalld和iptables两种防火墙管理方式,实验中使用iptables。</p>
+<p><strong>基本语法格式：</strong></p>
+<pre><code>iptables [-t table] SUBCOMMAND chain [matches..] [target]
+-t tables：指明表，默认为filter表， 包括raw, mangle, nat表等；
+SUBCOMMAND：子命令</code></pre><p><strong>链管理：</strong></p>
+<pre><code>iptables -N CHAIN-NAME 新增一条自定义链;
+iptables -X CHAIN-NAME 删除自定义的空链，先清除规则，才能删除链；
+iptables -E CHAIN-NAME CHAIN-NEW-NAME 重命名自定义链，但要求是未被引用的链；
+iptables -P {PREROUTING | INPUT | FORWARD | OUTPUT | POSTROUTING} {DROP| ACCEPT | REJECT} 设置链的默认策略；</code></pre><p><strong>规则管理：</strong></p>
+<pre><code>-A：追加规则，默认追加在最后一个；
+-I：插入规则，默认插入为第一个；
+-D：删除规则，两种格式：指定规则或指定规则的序列号；
+  - rule specification
+  - rule number
+-R：替换指定的规则；
+-F：清空规则表；
+-Z：给iptables计数器置0；
+  iptables的每条规则，都有两个计数器
+  - 此规则匹配到的所有的packets次数；
+  - 此规则匹配到的所有packets大小之和；
+-S：列出指定表上的规则，默认为所有表的规则，类似于iptables-save，可用于保存规则；</code></pre><p><strong>保存规则：</strong></p>
+<pre><code># iptables -S &amp;gt; /etc/sysconfig/iptables 
+或
+# iptables-save &amp;gt; /etc/sysconfig/iptables</code></pre><p><strong>恢复规则:</strong></p>
+<pre><code># iptables-restore &amp;lt; /etc/sysconfig/iptables</code></pre><p><strong>规则查看：</strong></p>
+<pre><code>-L：列出规则；
+-n：以数字格式显示地址和端口；
+-v：显示详细信息；支持-vv，-vvv更详细信息；
+-x：显示精确值；
+--line-numbers：显示链上的规则的编号；
+常用组合：-nvL，但L要写在后面</code></pre><h4 id="4、登陆实验机"><a href="#4、登陆实验机" class="headerlink" title="4、登陆实验机"></a>4、登陆实验机</h4><p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104715389.png" alt="image-20200524104715389"></p>
+<p>登陆帐号：root，登陆密码：Simplexue123</p>
+<h4 id="5、Iptables简单使用"><a href="#5、Iptables简单使用" class="headerlink" title="5、Iptables简单使用"></a>5、Iptables简单使用</h4><p>使用man手册，如下图</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man iptables</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524104730099.png" alt="image-20200524104730099"></p>
+<p>查看filter表规则, iptables默认使用filter表，如下图</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -t filter -nvL </span><br><span class="line"><span class="meta">#</span><span class="bash">简写 iptables -nvL</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105035069.png" alt="image-20200524105035069"></p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105120323.png" alt="image-20200524105120323"></p>
+<p>添加规则,允许所有网络访问本机，如下图</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105239014.png" alt="image-20200524105239014"></p>
+<p>注意：在不指定源、目的地址,源、目的IP,协议的情况下为全部IP、端口、协议<br>为FORWARD链添加默认规则，如下图</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -P FORWARD DROP</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105530162.png" alt="image-20200524105530162"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -P FORWARD ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524105618461.png" alt="image-20200524105618461"></p>
+<h3 id="1-5-实验"><a href="#1-5-实验" class="headerlink" title="1.5 实验"></a>1.5 实验</h3><p>添加自定链test</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables () test</span><br><span class="line">-M</span><br></pre></td></tr></table></figure>
+
+<p>删除自定链test</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables () test</span><br><span class="line">-X</span><br></pre></td></tr></table></figure>
+
+<h2 id="任务二、Iptables主机防火墙和审计"><a href="#任务二、Iptables主机防火墙和审计" class="headerlink" title="任务二、Iptables主机防火墙和审计"></a>任务二、Iptables主机防火墙和审计</h2><h3 id="2-1-任务描述"><a href="#2-1-任务描述" class="headerlink" title="2.1 任务描述"></a>2.1 任务描述</h3><p>本实验任务基于个人主机操作环境，主要完成以下内容：</p>
+<pre><code>iptables的常用语法的实际操作。
+进行Iptables的特殊参数，自定义策略的的操作。
+启用Iptables日志记录的功能，配置相应的策略，进行操作，验证。</code></pre><p>通过完成本实验任务，要求学生<strong>掌握Iptables主机防火墙的常用配置</strong>已审计策略，具体包括：Iptables的常用语法，状态监测，特殊参数，自定义策略的使用，以及启用日志记录的功能进行相应的策略配置，具备更为夯石的防火墙配置使主机安全的能力。</p>
+<h3 id="2-2-实验目标"><a href="#2-2-实验目标" class="headerlink" title="2.2 实验目标"></a>2.2 实验目标</h3><pre><code>掌握Iptables工作中的常用策略。
+掌握审计策略。</code></pre><p>通过Iptables工作中的常用策略以及审计策略的学习和使用，具备丰富的主机安全防护的能力。</p>
+<h3 id="2-3-实验工具"><a href="#2-3-实验工具" class="headerlink" title="2.3 实验工具"></a>2.3 实验工具</h3><p><a href="http://210.42.123.2:8088/doku.php?id=网络空间安全术语与概念:iptables" target="_blank" rel="noopener">iptables</a></p>
+<h3 id="2-4-操作步骤"><a href="#2-4-操作步骤" class="headerlink" title="2.4 操作步骤"></a>2.4 操作步骤</h3><h4 id="1、常用语法"><a href="#1、常用语法" class="headerlink" title="1、常用语法"></a>1、常用语法</h4><p>对于任何协议及协议的扩展，通用匹配都可以直接使用。</p>
+<p><strong>（1）匹配指定协议。</strong></p>
+<p>-p，–protocol</p>
+<p>例: iptables -A INPUT -p tcp -j ACCEPT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111515868.png" alt="image-20200524111515868"></p>
+<p>说明匹配指定的协议，指定协议的形式有以下几种：</p>
+<pre><code>a.名字不分大小写，但必须是在/etc/protocols中定义的；
+b.可以使用协议相应的整数值。例如，ICMP的值是1，TCP是6，UDP是17；
+c.不指定为ALL，相应数值是X，要注意这只代表匹配TCP、UDP、ICMP，而不是/etc/protocols中定义的所有协议；
+d.可以是协议列表，以英文逗号为分隔符，如：udp，tcp；
+e.可以在协议前加英文的感叹号表示取反，注意有空格，如：--protocol ! tcp表示非TCP协议，也就是UDP和ICMP。可以看出这个取反的范围只是TCP、UDP和ICMP。</code></pre><p><strong>（2）以IP源地址匹配包。</strong></p>
+<p>-s，–src，–source</p>
+<p>例: iptables -A INPUT -s 192.168.0.1 -j ACCEPT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111726891.png" alt="image-20200524111726891"></p>
+<p>说明以IP源地址匹配包。地址的形式如下：</p>
+<pre><code>a、 单个地址，如192.168.0.1，也可写成192.168.0.1/255.255.255.255或192.168.0.1/32；
+b、 网络，如192.168.0.0/24，或192.168.0.0/255.255.255.0；
+c、 在地址前加英文感叹号表示取反，注意空格，如--source ! 192.168.0.0/24表示除此地址外的所有地址；
+d、 缺省是所有地址。</code></pre><p><strong>（3）以IP目的地址匹配包。</strong></p>
+<p>-d，–dst，–destination</p>
+<p>例: iptables -A INPUT -d 192.168.0.1 -j ACCEPT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111919474.png" alt="image-20200524111919474"></p>
+<p>说明以IP目的地址匹配包。地址的形式和–source完全一样。</p>
+<p><strong>（4）以包进入本地使用的网络接口匹配包。</strong></p>
+<p>-i<br>例: iptables -A INPUT -i eth0 -j ACCEPT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524111942291.png" alt="image-20200524111942291"></p>
+<p>说明以包进入本地所使用的网络接口来匹配包。要注意这个匹配操作只能用于INPUT，FORWARD和PREROUTING这三个链，用在其他任何地方会提示错误信息。指定接口有以下方法：</p>
+<pre><code>a、 指定接口名称，如：eth0、ppp0等；
+b、 使用通配符，即英文加号，它代表字符数字串。若直接用一个加号，即iptables -A INPUT -i +表示匹配所有的包，而不考虑使用哪个接口。通配符还可以放在某一类接口的后面，如：eth+表示匹配所有从Ethernet接口进入的包；
+c、 在接口前加英文感叹号表示取反，如：-i !eth0意思是匹配来自除eth0外的所有包。</code></pre><p><strong>（5）以包离开本地所使用的网络接口来匹配包。</strong></p>
+<p>-o<br>例: iptables -A OUTPUT -o eth0 -j ACCEPT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112058994.png" alt="image-20200524112058994"></p>
+<p>说明以包离开本地所使用的网络接口来匹配包。要注意这个匹配操作只能用于OUTPUT，FORWARD和POSTROUTING这三个链，用在其他任何地方会提示错误信息。</p>
+<p><strong>（6）匹配通信源端口。</strong></p>
+<p>–source-port，–sport<br>例: iptables -A INPUT -p tcp –sport 1111</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112220963.png" alt="image-20200524112220963"></p>
+<p>说明当通信协议为TCP或UDP时，可以指定匹配的源端口，但必须与匹配协议相结合使用。</p>
+<p><strong>（7）匹配通信目的端口。</strong></p>
+<p>– destination-port，–dport<br>例: iptables -A INPUT -p tcp –dport 80</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112258214.png" alt="image-20200524112258214"></p>
+<p>说明当通信协议为TCP或UDP时，可以指定匹配的目的端口，但必须与匹配协议相结合使用。</p>
+<h4 id="2、状态检测"><a href="#2、状态检测" class="headerlink" title="2、状态检测"></a>2、状态检测</h4><p>-m state –state {NEW,ESTATBLISHED,INVALID,RELATED},指定检测那种状态</p>
+<ul>
+<li>（1）NEW:该包想要建立一个新的连接（重新连接或连接重定向）。</li>
+<li>（2）RELATED:该包是属于某个已经建立的连接所建立的新连接。</li>
+<li>（3）ESTABLISHED：该包属于某个已经建立的连接。</li>
+<li>（4）INVALID:该包不匹配于任何连接，通常这些包被DROP。</li>
+</ul>
+<p>例: iptables -A INPUT -p tcp –dport 22 -m state –state NEW,ESTABLISHED -j ACCEPT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112650291.png" alt="image-20200524112650291"></p>
+<h4 id="3、特殊参数"><a href="#3、特殊参数" class="headerlink" title="3、特殊参数"></a>3、特殊参数</h4><p><strong>–icmp-type 指定ICMP的类型编号</strong></p>
+<p>例: iptables -A INPUT -p icmp –icmp-type 8</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112849486.png" alt="image-20200524112849486"></p>
+<p><strong>-m multiport 指定多端口号</strong></p>
+<ul>
+<li>　–sport</li>
+<li>　–dport</li>
+<li>　–ports</li>
+</ul>
+<p>例: iptables -A INPUT -p tcp -m multiport –dport 22,53,80,110</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112858540.png" alt="image-20200524112858540"></p>
+<p><strong>-m iprange 指定IP段</strong></p>
+<ul>
+<li>　–src-range ip-ip</li>
+<li>　–dst-range ip-ip</li>
+</ul>
+<p>例: iptables -A INPUT -m iprange –src-range 192.168.1.2-192.168.1.7 -j DROP</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112916108.png" alt="image-20200524112916108"></p>
+<p><strong>-m connlimit 连接限定</strong></p>
+<p>　–comlimit-above # 限定大连接个数</p>
+<p>例: iptables -A INPUT -p tcp –syn –dport 22 -m connlimit –connlimit-above 100 -j REJECT</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524112940656.png" alt="image-20200524112940656"></p>
+<p><strong>-m limit 现在连接速率，也就是限定匹配数据包的个数</strong></p>
+<ul>
+<li>　–limit # 指定速率</li>
+<li>　–limit-burst # 峰值速率，最大限定</li>
+</ul>
+<p>例: iptables -A INPUT -m limit –limit-burst 6</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113005634.png" alt="image-20200524113005634"></p>
+<p><strong>-m string 按字符串限定</strong></p>
+<p><strong>–algo bm|kmp # 指定算法bm或kmp</strong></p>
+<p>–string “STRING” # 指定字符串本身</p>
+<p>例: iptables -A OUTPUT -m string –string “tudou.com” –algo bm -j DROP</p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113024546.png" alt="image-20200524113024546"></p>
+<h4 id="4、iptables常用的操作语法"><a href="#4、iptables常用的操作语法" class="headerlink" title="4、iptables常用的操作语法"></a>4、iptables常用的操作语法</h4><table>
+<thead>
+<tr>
+<th align="center">功能</th>
+<th align="center">参数</th>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">添加规则</td>
+<td align="center">A</td>
+<td>iptables -A INPUT -p tcp -j ACCEPT</td>
+<td>在INPUT链后加入允许所有TCP请求</td>
+</tr>
+<tr>
+<td align="center">删除规则</td>
+<td align="center">-D</td>
+<td>iptables -D INPUT -p tcp -j ACCEPT</td>
+<td>在INPUT链中删除对应规则</td>
+</tr>
+<tr>
+<td align="center">自定义链重命名</td>
+<td align="center">-E</td>
+<td>iptables -E A B</td>
+<td>将自定义链A重命名为B，原来的名字在前，新名字在后</td>
+</tr>
+<tr>
+<td align="center">清空规则</td>
+<td align="center">-F</td>
+<td>iptables -F INPUT</td>
+<td>清空INPUT链规则, 如果不加链名则是清除当前表所有规则</td>
+</tr>
+<tr>
+<td align="center">插入规则</td>
+<td align="center">-I</td>
+<td>iptables -I INPUT 1 -p tcp -j ACCEPT</td>
+<td>在INPUT链内的某个位置插入规则，如果序号为1或没有序号，规则会被插入到的头部</td>
+</tr>
+<tr>
+<td align="center">显示规则</td>
+<td align="center">-L</td>
+<td>iptables -L INPUT</td>
+<td>显示INPUT链的所有规则，如果没有指定链，则显示指定表中的所有链。精确输出可用-n和-v等参数</td>
+</tr>
+<tr>
+<td align="center">新建自定义链</td>
+<td align="center">-N</td>
+<td>iptables -N A</td>
+<td>在指定表新建链A,不可以同名</td>
+</tr>
+<tr>
+<td align="center">默认策略</td>
+<td align="center">-P</td>
+<td>iptables -P INPUT DROP</td>
+<td>指定INPUT链的默认策略为DROP, 可选策略ACCEPT、DROP、REJECT、REDIRECT</td>
+</tr>
+<tr>
+<td align="center">替换规则</td>
+<td align="center">-R</td>
+<td>iptables -R INPUT 1 -p udp -j ACCETP</td>
+<td>替换INPUT链中的第1条策略</td>
+</tr>
+<tr>
+<td align="center">删除用户自定义链</td>
+<td align="center">-X</td>
+<td>iptables -X A</td>
+<td>删除指定表中的自定义链A</td>
+</tr>
+<tr>
+<td align="center">计数器归零</td>
+<td align="center">-Z</td>
+<td>iptables -Z</td>
+<td>清空指定表下指定链（如未指定则认为所有链）的所有计数器归零</td>
+</tr>
+</tbody></table>
+<h4 id="5、iptables日志记录"><a href="#5、iptables日志记录" class="headerlink" title="5、iptables日志记录"></a>5、iptables日志记录</h4><p>Linux下单独记录Iptables日志,编辑/etc/syslog.conf文件，加入一行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo “kern.warning /var/log/iptables.log” &amp;gt;&amp;gt;/etc/rsyslog.conf</span><br></pre></td></tr></table></figure>
+
+<p><strong>重启rsyslog服务生效：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart rsyslog</span><br></pre></td></tr></table></figure>
+
+<p>例: 记录源为127.0.0.1为来的所有ICMP日志</p>
+<p><strong>(1) 配置iptables策略</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -s 127.0.0.1 -p () -j LOG --log-prefix “iptables icmp-localhost “</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> icmp</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113335499.png" alt="image-20200524113335499"></p>
+<p><strong>(2) 验证规则</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c 1 127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113351074.png" alt="image-20200524113351074"></p>
+<p>图中pkts有两个数据包匹配</p>
+<p><strong>(3) 查看日志</strong></p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113413956.png" alt="image-20200524113413956"></p>
+<p><strong>(4) 上例iptables日志字段解释(编号21后为未用到的字段)</strong></p>
+<p>Jan 12 18:24:05 [localhost] kernel: iptables icmp-localhost IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=84 TOS=0x00 PREC=0x00 TTL=64 ID=8718 PROTO=ICMP TYPE=0 CODE=0 ID=9413 SEQ=1</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Jan  12 18:24:05</td>
+<td>日期时间，由syslog生成</td>
+</tr>
+<tr>
+<td>2</td>
+<td>localhost</td>
+<td>主机名称</td>
+</tr>
+<tr>
+<td>3</td>
+<td>kernel</td>
+<td>syslogd获取kernel产生的日志</td>
+</tr>
+<tr>
+<td>4</td>
+<td>iptables icmp-localhost</td>
+<td>记录前缀，由用户指定—log-prefix “iptables icmp-localhost”</td>
+</tr>
+<tr>
+<td>5</td>
+<td>IN=lo</td>
+<td>数据包进入的接口，若为空表示本机产生</td>
+</tr>
+<tr>
+<td>6</td>
+<td>OUT=</td>
+<td>数据包流出的接口，若为空表示本机产生</td>
+</tr>
+<tr>
+<td>7</td>
+<td>MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00</td>
+<td>前6段为源MAC, 后6段为目的MAC</td>
+</tr>
+<tr>
+<td>8</td>
+<td>08:00</td>
+<td>08:00 为上层协议代码，即表示IP协议</td>
+</tr>
+<tr>
+<td>9</td>
+<td>SRC=127.0.0.1</td>
+<td>源IP地址</td>
+</tr>
+<tr>
+<td>10</td>
+<td>DST=127.0.0.1</td>
+<td>目的IP地址</td>
+</tr>
+<tr>
+<td>11</td>
+<td>LEN=84</td>
+<td>IP封包+承载数据的总长度(MTU)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>TOS=0x00</td>
+<td>IP包头内的服务类型字段，能反应服务质量包括延迟、可靠性和拥塞等</td>
+</tr>
+<tr>
+<td>13</td>
+<td>PREC=0x00</td>
+<td>服务类型的优先级字段</td>
+</tr>
+<tr>
+<td>14</td>
+<td>TTL=64</td>
+<td>IP数据包的生存时间</td>
+</tr>
+<tr>
+<td>15</td>
+<td>ID=8718</td>
+<td>IP数据包标示</td>
+</tr>
+<tr>
+<td>16</td>
+<td>PROTO=ICMP</td>
+<td>协议ICMP</td>
+</tr>
+<tr>
+<td>17</td>
+<td>TYPE=0</td>
+<td>ICMP类型</td>
+</tr>
+<tr>
+<td>18</td>
+<td>CODE=0</td>
+<td>ICMP代码</td>
+</tr>
+<tr>
+<td>19</td>
+<td>ID=9413</td>
+<td>ICMP ID</td>
+</tr>
+<tr>
+<td>20</td>
+<td>SEQ=1</td>
+<td>ICMP SEQ</td>
+</tr>
+<tr>
+<td>21</td>
+<td>DF</td>
+<td>表示不分段，此字段还可能为MF/FRAG</td>
+</tr>
+<tr>
+<td>22</td>
+<td>SPT</td>
+<td>TCP或UDP中的源端口</td>
+</tr>
+<tr>
+<td>23</td>
+<td>DPT</td>
+<td>TCP或UDP中的目的端口</td>
+</tr>
+<tr>
+<td>24</td>
+<td>LEN</td>
+<td>传输层协议头长度</td>
+</tr>
+<tr>
+<td>25</td>
+<td>SEQ</td>
+<td>TCP序列号</td>
+</tr>
+<tr>
+<td>26</td>
+<td>ACK</td>
+<td>TCP应答号</td>
+</tr>
+<tr>
+<td>27</td>
+<td>WINDOWS</td>
+<td>IP包头内的窗口大小</td>
+</tr>
+<tr>
+<td>28</td>
+<td>RES</td>
+<td>TCP-Flags中ECN bits的值</td>
+</tr>
+<tr>
+<td>29</td>
+<td>CWR/ECE/URG/ACK/PSH/RST/SYN/FIN</td>
+<td>TCP标志位</td>
+</tr>
+<tr>
+<td>30</td>
+<td>URGP</td>
+<td>紧急指针起点</td>
+</tr>
+<tr>
+<td>31</td>
+<td>OPT</td>
+<td>IP或TCP选项</td>
+</tr>
+<tr>
+<td>32</td>
+<td>INCOMPLETE</td>
+<td>不完整的数据包</td>
+</tr>
+<tr>
+<td>33</td>
+<td>SPI</td>
+<td>当协议为AHESP时出现</td>
+</tr>
+<tr>
+<td>34</td>
+<td>[ ]</td>
+<td>中括号出现在两个地方，在ICMP协议中作为协议头的递归使用；在数据包长度出现非法时用于指出数据实际长度</td>
+</tr>
+</tbody></table>
+<p><strong>(5) 日志策略</strong></p>
+<p>a、 获取所有TCP日志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp -j LOG --log-prefix “iptables TCP “</span><br></pre></td></tr></table></figure>
+
+<p>b、 获取所有UDP日志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p udp -j LOG --log-prefix “iptables UDP “</span><br></pre></td></tr></table></figure>
+
+<p>c、 获取ssh的日志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp —dport 22 -j LOG --log-prefix “iptables SSH “</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-5-自定义策略"><a href="#2-5-自定义策略" class="headerlink" title="2.5 自定义策略"></a>2.5 自定义策略</h3><p><strong>(1)禁止ping 127.0.0.1</strong></p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113556687.png" alt="image-20200524113556687"></p>
+<p>默认是通过的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p icmp -j ()</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> drop</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113745045.png" alt="image-20200524113745045"></p>
+<p>应用策略ping不通了,图中iptables规则也有流量匹配</p>
+<p><strong>(2) 状态为已连接的放行</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state —state (),RELATED -j ACCEPT</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ESTABLISHED</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113853866.png" alt="image-20200524113853866"></p>
+<p><strong>(3)只允许本机访问80</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp —src 127.0.0.1 —dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524113916493.png" alt="image-20200524113916493"></p>
+<p>应用策略后通过curl 127.0.0.1 匹配策略(图中错误因为本机没有80服务)</p>
+<p><strong>(4) 利用扩展模块limit，可以实现DoS攻击防范</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p () —dport 80 -m limit —limit 25/minute —limit-burst 100 -j ACCEPT</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> tcp</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524114100860.png" alt="image-20200524114100860"></p>
+<h2 id="任务三、虚拟网络使用，SDN交换机Openvswitch与Linux-namespace"><a href="#任务三、虚拟网络使用，SDN交换机Openvswitch与Linux-namespace" class="headerlink" title="任务三、虚拟网络使用，SDN交换机Openvswitch与Linux namespace"></a>任务三、虚拟网络使用，SDN交换机Openvswitch与Linux namespace</h2><h3 id="3-1-任务描述"><a href="#3-1-任务描述" class="headerlink" title="3.1 任务描述"></a>3.1 任务描述</h3><p>本实验在个人主机操作环境中虚拟网络的使用：openswitch与namespace，模拟多个网络设备，将不同类型的网络应用隔离。为下一任务搭建网络环境实验场景做环境准备。</p>
+<p>通过完成本实验任务，要求学生掌握openswitch与namespace的使用，会构建虚拟网络环境。</p>
+<h3 id="3-2-实验目标"><a href="#3-2-实验目标" class="headerlink" title="3.2 实验目标"></a>3.2 实验目标</h3><ul>
+<li>了解openswitch与namespace的概念。</li>
+<li>掌控Linux虚拟网络设备的使用。</li>
+<li>掌握SDN交换机openvswitch的安装与使用。</li>
+</ul>
+<h3 id="3-3-实验工具"><a href="#3-3-实验工具" class="headerlink" title="3.3 实验工具"></a>3.3 实验工具</h3><ul>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络空间安全术语与概念:openvswitch" target="_blank" rel="noopener">openvswitch</a></li>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:ovs-vsctl" target="_blank" rel="noopener">ovs-vsctl</a></li>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:ip" target="_blank" rel="noopener">ip</a> (包含ip link、ip netns、ip addr等)</li>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:tcpdump" target="_blank" rel="noopener">tcpdump</a></li>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:ethtool" target="_blank" rel="noopener">ethtool</a></li>
+</ul>
+<h3 id="3-4-操作步骤"><a href="#3-4-操作步骤" class="headerlink" title="3.4 操作步骤"></a>3.4 操作步骤</h3><h4 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h4><p><strong>（1）Open vSwitch</strong></p>
+<p>Open vSwitch（简称为 OVS）是由 Nicira Networks 主导的，运行在<strong>虚拟化平台（例如 KVM，Xen）上的虚拟交换机</strong>。在虚拟化平台上，OVS 可以为动态变化的端点提供 2 层交换功能，很好的控制虚拟网络中的访问策略、网络隔离、流量监控等等。</p>
+<p>OVS 遵循 Apache 2.0 许可证, 能同时支持多种标准的管理接口和协议。OVS 也提供了对 OpenFlow 协议的支持，用户可以使用任何支持 OpenFlow 协议的控制器对 OVS 进行远程管理控制。</p>
+<p><strong>（2）网络名称空间netns</strong></p>
+<p>netns是在linux中提供<strong>网络虚拟化</strong>的一个项目，使用netns网络空间虚拟化可以在本地虚拟化出多个网络环境。netns可以让一台机器上模拟多个网络设备，是网络虚拟化的重要组成，将不同类型的网络应用隔离。<br>一个net namespace拥有独立的独立的网卡空间，路由表，ARP表，ip地址表，iptables等。</p>
+<h4 id="2、软件安装"><a href="#2、软件安装" class="headerlink" title="2、软件安装"></a>2、软件安装</h4><p>（1）netns功能由系统网络配置工具iproute2提供，命令形式为ip netns</p>
+<p>（2）openvswitch安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openvswitch</span><br></pre></td></tr></table></figure>
+
+<p>(3) 启动openvswitch并设置自启</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable openvswitch</span><br><span class="line">systemctl start openvswitch</span><br><span class="line">systemctl status openvswitch</span><br></pre></td></tr></table></figure>
+
+<p>(4) 安装抓包工具tcpdump,网络配置工具bridge-utils</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tcpdump bridge-utils</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、ip-link使用"><a href="#3、ip-link使用" class="headerlink" title="3、ip link使用"></a>3、ip link使用</h4><p><strong>(1) 查看ip link帮助</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link help</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171430529.png" alt="image-20200524171430529"></p>
+<p><strong>(2) 新建网络接口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip link add link eth0 name eth0.10 type vlan id 10</span><br><span class="line">ip link add veth1 type veth peer name veth2</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171450707.png" alt="image-20200524171450707"></p>
+<p><strong>(3) 查看网络接口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip link show</span><br><span class="line">ip link show type veth</span><br><span class="line">ip link show type vlan</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip -d link show type veth</span><br><span class="line">ip -d link show type vlan</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -S veth1</span><br></pre></td></tr></table></figure>
+<p>注: 实验中此处ID号可能不同</p>
+<p><strong>(4) 使接口UP</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip link set eth0.10 up</span><br><span class="line">ip link set veth1 up</span><br><span class="line">ip link set veth2 up</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(5) 删除接口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip link del dev eth0.10</span><br><span class="line">ip link del dev veth1</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="4、ip-netns使用"><a href="#4、ip-netns使用" class="headerlink" title="4、ip netns使用"></a>4、ip netns使用</h4><p><strong>(1) 查看ip netns帮助</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip netns help</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171413440.png" alt="image-20200524171413440"></p>
+<p><strong>(2) 创建一个名为test的namespace</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip （） add test</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">netns</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524170828002.png" alt="image-20200524170828002"></p>
+<p><strong>(3) 查看所有namespace</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip netns list 或 （）</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ip netns</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171343601.png" alt="image-20200524171343601"></p>
+<p><strong>(4) 查看名为test的namespace</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip netns exec test ip addr show</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(5) 进入名为test的namespace,执行网络命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip netns （） test bash</span><br><span class="line">route -n</span><br><span class="line">iptables -nvL</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">exec</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524171401356.png" alt="image-20200524171401356"></p>
+<p>(6) 退出namespace**</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p><strong>(7)给test 添加接口tap1</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip link add tap1 type dummy</span><br><span class="line">ip link set tap1 netns test</span><br><span class="line">ip netns exec test ip link show</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(8) 启用tap1虚拟接口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip netns exec test ip link set tap1 up</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(9) 给tap1虚拟接口配置IP</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip netns exec test ip （） add dev tap1 192.168.0.1/24</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> addr</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524173706655.png" alt="image-20200524173706655"></p>
+<p><strong>(10) 删除test namespace</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip netns del test</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、openvswitch使用"><a href="#5、openvswitch使用" class="headerlink" title="5、openvswitch使用"></a>5、openvswitch使用</h4><p><strong>(1) 查看openvswitch安装的命令工具</strong></p>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524173741352.png" alt="image-20200524173741352"></p>
+<p><strong>(2)添加网桥br0</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl add-br br0</span><br></pre></td></tr></table></figure>
+
+<p><strong>(3)列出open vswitch中所有的网桥</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl list-br</span><br></pre></td></tr></table></figure>
+
+<p><strong>(4)判断网桥是否存在</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl br-exists br0</span><br></pre></td></tr></table></figure>
+
+<p><strong>(5)将网卡添加到网桥br0</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip link add tap1 type dummy</span><br><span class="line">ovs-vsctl add-port （） tap1</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> br0</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524173844422.png" alt="image-20200524173844422"></p>
+<p><strong>(6)查看open vswitch的网络状态</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl show</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(7)在网桥br0中新建openvswitch网口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl add-port br0 tap2 -- set interface tap2 type=internal</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(8)列出网桥br0中所有端口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl list-ports br0</span><br></pre></td></tr></table></figure>
+
+<p><strong>(9)列出所有连接到网卡tap2的网桥</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl port-to-br tap2</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(10)删除网桥br0上的网口tap2</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl del-port br0 tap2</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>(11)设置网口tap1的vlan tag为10</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl set port tap1 tag=10</span><br></pre></td></tr></table></figure>
+
+<p><strong>(12)查看网口tap1的属性</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl list port tap1</span><br></pre></td></tr></table></figure>
+
+<p><strong>(13)从网桥br0删除网口tap1, 并从系统删除虚拟网口tap1</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl del-port br0 tap1</span><br><span class="line">ip link del dev tap1</span><br></pre></td></tr></table></figure>
+
+<p><strong>(14)删除网桥br0</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl del-br br0</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="任务四、搭建网络防火墙实验场景"><a href="#任务四、搭建网络防火墙实验场景" class="headerlink" title="任务四、搭建网络防火墙实验场景"></a>任务四、搭建网络防火墙实验场景</h2><h3 id="4-1-任务描述"><a href="#4-1-任务描述" class="headerlink" title="4.1 任务描述"></a>4.1 任务描述</h3><p>本实验任务在任务三操作完成的基础上，Linux下利用工具组搭建如网络拓扑所示的虚拟网络环境。</p>
+<p>通过完成本实验任务，了解和掌握部分虚拟化网络软件的使用，利用虚拟交换机openvswitch和linux的netns(网络命名空间)模拟复杂的网络环境。</p>
+<h3 id="4-2-实验目标"><a href="#4-2-实验目标" class="headerlink" title="4.2 实验目标"></a>4.2 实验目标</h3><ul>
+<li>掌握openswitch与netns的使用。</li>
+<li>掌握利用openswitch与netns来模拟复杂网络环境。</li>
+</ul>
+<h3 id="4-3-实验工具"><a href="#4-3-实验工具" class="headerlink" title="4.3 实验工具"></a>4.3 实验工具</h3><ul>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:ovs-vsctl" target="_blank" rel="noopener">ovs-vsctl</a>(openvswitch软件提供)</li>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:ip" target="_blank" rel="noopener">ip</a>(包含ip link、ip netns、ip addr等)</li>
+<li><a href="http://210.42.123.2:8088/doku.php?id=网络安全实验命令与工具:sysctl" target="_blank" rel="noopener">sysctl</a></li>
+</ul>
+<h3 id="4-4-操作步骤"><a href="#4-4-操作步骤" class="headerlink" title="4.4 操作步骤"></a>4.4 操作步骤</h3><h4 id="1、实验网络拓扑"><a href="#1、实验网络拓扑" class="headerlink" title="1、实验网络拓扑"></a>1、实验网络拓扑</h4><p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524183515546.png" alt="image-20200524183515546"></p>
+<h4 id="2、环境搭建"><a href="#2、环境搭建" class="headerlink" title="2、环境搭建"></a>2、环境搭建</h4><p>利用openvswitch创建tag为10和11的两个接口,结全netns模拟内网1、内网2。</p>
+<p><strong>1、开启主机路由转发功能</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo “net.ipv4.ip_forward = （）” &amp;gt;&amp;gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl -a | grep “ip_forward”</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; 1</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524183914460.png" alt="image-20200524183914460"></p>
+<p><strong>2、创建tag为10的内网1</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl add-br br0</span><br><span class="line">ovs-vsctl （） br0 tap1 tag=10 -- set interface tap1 type=internal</span><br><span class="line">ip link show</span><br><span class="line">ip netns add ns-tap1</span><br><span class="line">ip link set dev tap1 netns ns-tap1</span><br><span class="line">ip netns exec ns-tap1 ip link show</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; add-port</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184026990.png" alt="image-20200524184026990">t;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip netns exec ns-tap1 ip link set dev lo up</span><br><span class="line">ip netns exec ns-tap1 ip link set dev tap1 up</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184104281.png" alt="image-20200524184104281"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip netns exec ns-tap1 ip addr add dev tap1 10.0.0.2/24</span><br><span class="line">ip netns exec ns-tap1 ip route add default via 10.0.0.1</span><br><span class="line">ip netns exec ns-tap1 ip addr show</span><br><span class="line">ip netns exec ns-tap1 ip route show</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184143638.png" alt="image-20200524184143638"></p>
+<p><strong>3、创建tag为11的内网2，方法同上</strong></p>
+<p>略</p>
+<p><strong>4、查看网络内网1 与 内网2的连通性</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip netns</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184320632.png" alt="image-20200524184320632"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl show</span><br><span class="line">ip netns exec ns-tap1 ping -c 1 10.0.1.2</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524184413942.png" alt="image-20200524184413942"></p>
+<p>测试两个内网是不通的。</p>
+<p><strong>4、netns模拟器由器实现内网1与内网2互通</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ovs-vsctl add-port br0 r1 tag=10 -- set interface r1 type=internal</span><br><span class="line">ovs-vsctl add-port br0 r2 tag=11 -- set interface r2 type=internal</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524185133769.png" alt="image-20200524185133769"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ip （） add router</span><br><span class="line">ip link set dev r1 netns router</span><br><span class="line">ip link set dev r2 netns router</span><br><span class="line">ip netns exec router ip link set dev lo up</span><br><span class="line">ip netns exec router ip link set dev r1 up</span><br><span class="line">ip netns exec router ip link set dev r2 up</span><br><span class="line">ip netns exec router ip addr add dev r1 10.0.0.1/24</span><br><span class="line">ip netns exec router ip addr add dev r2 10.0.1.1/24</span><br><span class="line">ip netns exec router ping -c 1 10.0.0.2</span><br><span class="line">ip netns exec router ping -c 1 10.0.1.2</span><br><span class="line">ip netns exec ns-tap1 ping -c 1 10.0.1.2</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; netns</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/05/24/2020-05-24-Network-Security-Experiment-3/image-20200524185116264.png" alt="image-20200524185116264"></p>
+<p>在路由器内ping两个内网都是通的,在内网1内ping内网2也是通的,实验环境搭建成功。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/23/2020-05-23-Network-Security-Experiment-2/" rel="next" title="2020-05-23-Network-Security-Experiment-2">
+                <i class="fa fa-chevron-left"></i> 2020-05-23-Network-Security-Experiment-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/24/2020-05-24-Network-Security-Experiment-4/" rel="prev" title="2020-05-24-Network-Security-Experiment-4">
+                2020-05-24-Network-Security-Experiment-4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container">
+	</div>	
+
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ColaLinN" />
+            
+              <p class="site-author-name" itemprop="name">ColaLinN</p>
+              <p class="site-description motion-element" itemprop="description">集中一点 登峰造极</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ColaLinN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:shenqiaaa@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【实验环境】"><span class="nav-text">【实验环境】</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防火墙实验"><span class="nav-text">防火墙实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#任务一、Linux防火墙Iptables基础"><span class="nav-text">任务一、Linux防火墙Iptables基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-任务描述"><span class="nav-text">1.1 任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-实验目标"><span class="nav-text">1.2 实验目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-实验工具"><span class="nav-text">1.3 实验工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-操作步骤"><span class="nav-text">1.4 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、防火墙一些概念"><span class="nav-text">1、防火墙一些概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Iptables基础"><span class="nav-text">2、Iptables基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表的概念"><span class="nav-text">表的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链的概念"><span class="nav-text">链的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表和链的对应关系："><span class="nav-text">表和链的对应关系：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据包经过iptables防火墙的处理流程"><span class="nav-text">数据包经过iptables防火墙的处理流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Iptables使用语法"><span class="nav-text">3、Iptables使用语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、登陆实验机"><span class="nav-text">4、登陆实验机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Iptables简单使用"><span class="nav-text">5、Iptables简单使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-实验"><span class="nav-text">1.5 实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务二、Iptables主机防火墙和审计"><span class="nav-text">任务二、Iptables主机防火墙和审计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-任务描述"><span class="nav-text">2.1 任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-实验目标"><span class="nav-text">2.2 实验目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-实验工具"><span class="nav-text">2.3 实验工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-操作步骤"><span class="nav-text">2.4 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、常用语法"><span class="nav-text">1、常用语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、状态检测"><span class="nav-text">2、状态检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、特殊参数"><span class="nav-text">3、特殊参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、iptables常用的操作语法"><span class="nav-text">4、iptables常用的操作语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、iptables日志记录"><span class="nav-text">5、iptables日志记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-自定义策略"><span class="nav-text">2.5 自定义策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务三、虚拟网络使用，SDN交换机Openvswitch与Linux-namespace"><span class="nav-text">任务三、虚拟网络使用，SDN交换机Openvswitch与Linux namespace</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-任务描述"><span class="nav-text">3.1 任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-实验目标"><span class="nav-text">3.2 实验目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-实验工具"><span class="nav-text">3.3 实验工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-操作步骤"><span class="nav-text">3.4 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、概述"><span class="nav-text">1、概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、软件安装"><span class="nav-text">2、软件安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、ip-link使用"><span class="nav-text">3、ip link使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、ip-netns使用"><span class="nav-text">4、ip netns使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、openvswitch使用"><span class="nav-text">5、openvswitch使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务四、搭建网络防火墙实验场景"><span class="nav-text">任务四、搭建网络防火墙实验场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-任务描述"><span class="nav-text">4.1 任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-实验目标"><span class="nav-text">4.2 实验目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-实验工具"><span class="nav-text">4.3 实验工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-操作步骤"><span class="nav-text">4.4 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、实验网络拓扑"><span class="nav-text">1、实验网络拓扑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、环境搭建"><span class="nav-text">2、环境搭建</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ColaLinN</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">61.5k</span>
+  
+</div>
+
+
+
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人访问
+</span>
+</div>
+
+
+
+<!--添加网站的运行时间-->
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2020,01,15,19,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已安全运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7dd0e4dd1112b4f6ac75',
+          clientSecret: '5f52c7a06abafb34741cd6468191b708c1f166b9',
+          repo: 'ColaLinN.github.io',
+          owner: 'ColaLinN',
+          admin: ['ColaLinN'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
