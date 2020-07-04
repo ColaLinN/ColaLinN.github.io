@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://colalinn.github.io/2020/02/04/2020-02-04-tensorflow-gpu-CUDA/</loc>
+    
+    <lastmod>2020-07-04T08:07:36.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://colalinn.github.io/2020/06/29/2020-06-29-Viewing-record/</loc>
+    
+    <lastmod>2020-07-04T08:07:02.137Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://colalinn.github.io/2020/06/22/2020-06-22-NS-The-Final-Exam/</loc>
     
     <lastmod>2020-06-26T11:55:17.477Z</lastmod>
@@ -198,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://colalinn.github.io/tags/index.html</loc>
+    <loc>https://colalinn.github.io/tags/</loc>
     
     <lastmod>2020-02-12T11:36:50.821Z</lastmod>
     
@@ -212,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://colalinn.github.io/archives/index.html</loc>
+    <loc>https://colalinn.github.io/archives/</loc>
     
     <lastmod>2020-01-29T03:50:24.988Z</lastmod>
     
@@ -226,14 +240,14 @@
   </url>
   
   <url>
-    <loc>https://colalinn.github.io/categories/index.html</loc>
+    <loc>https://colalinn.github.io/categories/</loc>
     
     <lastmod>2020-01-20T03:07:18.584Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://colalinn.github.io/about/index.html</loc>
+    <loc>https://colalinn.github.io/about/</loc>
     
     <lastmod>2020-01-15T10:31:20.168Z</lastmod>
     
