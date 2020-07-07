@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://colalinn.github.io/2020/07/07/2020-07-07-algorithm/</loc>
+    
+    <lastmod>2020-07-07T10:52:30.064Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://colalinn.github.io/2020/02/04/2020-02-04-tensorflow-gpu-CUDA/</loc>
     
     <lastmod>2020-07-04T08:07:36.392Z</lastmod>
