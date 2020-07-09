@@ -91,33 +91,33 @@
 <meta name="description" content="5 利用TCP协议实现synflood攻击5.1 实验目的 理解SYN攻击原理  熟悉SYN攻击方法  熟悉抵御SYN攻击的方法   5.2 实验原理运行syn攻击程序，以靶机为目标主机对其发送syn数据包。查看目标主机状态。 5.3 实验环境 目标机：192.168.1.3  工具: C:\实验工具集 \ 06_网络与无线安全 \ 01_典型协议攻击 5.4 实验步骤一、利用xdos工具进行攻击">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网安平台实验2">
-<meta property="og:url" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/">
+<meta property="og:url" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/">
 <meta property="og:site_name" content="神奇小站">
 <meta property="og:description" content="5 利用TCP协议实现synflood攻击5.1 实验目的 理解SYN攻击原理  熟悉SYN攻击方法  熟悉抵御SYN攻击的方法   5.2 实验原理运行syn攻击程序，以靶机为目标主机对其发送syn数据包。查看目标主机状态。 5.3 实验环境 目标机：192.168.1.3  工具: C:\实验工具集 \ 06_网络与无线安全 \ 01_典型协议攻击 5.4 实验步骤一、利用xdos工具进行攻击">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523100355080.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523101348186.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523101945212.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523102117860.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523102250942.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524102547057.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523103428946.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524102839035.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523104146437.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523104421807.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523195226289.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524093435526.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524093522720.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095428273.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095609498.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095730555.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095834478.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095925240.png">
-<meta property="og:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524100338651.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523100355080.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523101348186.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523101945212.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523102117860.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523102250942.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524102547057.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523103428946.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524102839035.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523104146437.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523104421807.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523195226289.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524093435526.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524093522720.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095428273.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095609498.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095730555.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095834478.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524095925240.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200524100338651.png">
 <meta property="article:published_time" content="2020-05-23T02:31:14.000Z">
 <meta property="article:modified_time" content="2020-07-07T12:51:38.428Z">
 <meta property="article:author" content="ColaLinN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523100355080.png">
+<meta name="twitter:image" content="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/image-20200523100355080.png">
 
 
 
@@ -147,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/"/>
+  <link rel="canonical" href="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/"/>
 
 
 
@@ -326,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://colalinn.github.io/2020/05/23/2020-05-23-Network-Security-Experiment-2/">
+    <link itemprop="mainEntityOfPage" href="https://shenqiy.cn/2020/05/23/2020-05-23-Network-Security-Experiment-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ColaLinN">
