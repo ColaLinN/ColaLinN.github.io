@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://colalinn.github.io/2020/03/22/2020-03-22-plan-A/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/07/08/2020-07-08-Steganography/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/04/15/2020-04-15-HOPE/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/06/22/2020-06-22-NS-The-Final-Exam/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/01/15/2020-01-15-jottings/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/02/06/2020-02-06-English-grammar-show/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/05/11/2020-05-11-translate-1/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://colalinn.github.io/2020/06/29/2020-06-29-Viewing-record/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
     <loc>https://colalinn.github.io/2020/03/08/2020-03-08-anki-1/</loc>
     <lastmod>2020-07-07</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/06/13/2020-06-13-ida-usage/</loc>
-    <lastmod>2020-07-07</lastmod>
-  </url>  <url>
-    <loc>https://colalinn.github.io/2020/06/22/2020-06-22-NS-The-Final-Exam/</loc>
-    <lastmod>2020-07-07</lastmod>
-  </url>  <url>
-    <loc>https://colalinn.github.io/2020/05/11/2020-05-11-translate-1/</loc>
     <lastmod>2020-07-07</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/05/23/2020-03-16-Network-Security-Experiment-1/</loc>
@@ -32,9 +50,6 @@
     <lastmod>2020-07-07</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/02/04/2020-02-04-tensorflow-gpu-CUDA/</loc>
-    <lastmod>2020-07-04</lastmod>
-  </url>  <url>
-    <loc>https://colalinn.github.io/2020/06/29/2020-06-29-Viewing-record/</loc>
     <lastmod>2020-07-04</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/05/03/2020-05-03-information-security-exp-3/</loc>
@@ -76,17 +91,11 @@
     <loc>https://colalinn.github.io/2020/01/26/2020-01-26-leetcode/</loc>
     <lastmod>2020-03-03</lastmod>
   </url>  <url>
-    <loc>https://colalinn.github.io/2020/02/06/2020-02-06-English-grammar-show/</loc>
-    <lastmod>2020-02-26</lastmod>
-  </url>  <url>
     <loc>https://colalinn.github.io/2020/02/04/2020-02-04-pRide-current-search/</loc>
     <lastmod>2020-02-26</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/01/22/2020-01-22-ROAD-NETWORK-EMBEDDING/</loc>
     <lastmod>2020-02-26</lastmod>
-  </url>  <url>
-    <loc>https://colalinn.github.io/2020/01/15/2020-01-15-jottings/</loc>
-    <lastmod>2020-02-25</lastmod>
   </url>  <url>
     <loc>https://colalinn.github.io/2020/02/13/2020-02-13-ZSRW-Development-record/</loc>
     <lastmod>2020-02-25</lastmod>
