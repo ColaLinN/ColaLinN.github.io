@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shenqiy.cn/about/</loc>
+    
+    <lastmod>2020-07-11T17:03:57.824Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shenqiy.cn/2020/06/29/2020-06-29-Viewing-record/</loc>
     
-    <lastmod>2020-07-09T12:44:09.665Z</lastmod>
+    <lastmod>2020-07-11T09:57:37.781Z</lastmod>
     
   </url>
   
@@ -264,13 +271,6 @@
     <loc>https://shenqiy.cn/categories/</loc>
     
     <lastmod>2020-01-20T03:07:18.584Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://shenqiy.cn/about/</loc>
-    
-    <lastmod>2020-01-15T10:31:20.168Z</lastmod>
     
   </url>
   
