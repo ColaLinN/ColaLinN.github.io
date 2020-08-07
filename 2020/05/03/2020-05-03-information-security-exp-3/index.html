@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="实验," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="神奇小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="信安内容实验3">
+<meta property="og:url" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/">
+<meta property="og:site_name" content="神奇小站">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200505202005599.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174904801.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174823310.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174832839.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175530141.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175115434.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175134255.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175150544.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504173747162.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504173711245.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504180152299.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504181130518.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504192849951.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191505663.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191549805.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504152416006.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504152437022.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504154037385.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504153802954.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504153901633.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504155357411.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160541818.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160027498.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160815181.png">
+<meta property="article:published_time" content="2020-05-03T12:07:38.000Z">
+<meta property="article:modified_time" content="2020-07-13T16:47:17.003Z">
+<meta property="article:author" content="ColaLinN">
+<meta property="article:tag" content="实验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/image-20200505202005599.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/"/>
+
+
+
+
+
+  <title>信安内容实验3 | 神奇小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">神奇小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">这里总有神奇的东西</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friendlink">
+          <a href="/friendlink" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+    
+  
+  
+
+  <article class="post post-type-normal true" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ColaLinN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="神奇小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">信安内容实验3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-03T20:07:38+08:00">
+                2020-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index">
+                    <span itemprop="name">实验</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+		  		  
+		  
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.8k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  29分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200505202005599.png" alt="image-20200505202005599"></p>
+<a id="more"></a>
+
+<p>[TOC]</p>
+<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>IDE：pycharm</p>
+<p>python版本：anacoda-&gt;python3.7</p>
+<h1 id="1、图像实验"><a href="#1、图像实验" class="headerlink" title="1、图像实验"></a>1、图像实验</h1><h2 id="1-1-背景介绍"><a href="#1-1-背景介绍" class="headerlink" title="1.1 背景介绍"></a>1.1 背景介绍</h2><p>本次实验，主要熟悉图像的python库操作，仿射变换的学习，以及图像的基本聚类分类方法。</p>
+<h3 id="（1）图像的基本知识"><a href="#（1）图像的基本知识" class="headerlink" title="（1）图像的基本知识"></a>（1）图像的基本知识</h3><p>通常情况下，计算机中图像是一个三维数组，维度分别是高度、宽度和像素RGB值。</p>
+<p>RGB色彩模式，即每个像素点的颜色由红(R)、绿(G)、蓝(B)组成，RGB三个颜色通道的变化和叠加得到各种颜色，其中每个通道值为0~255。</p>
+<h3 id="（2）库介绍"><a href="#（2）库介绍" class="headerlink" title="（2）库介绍"></a>（2）库介绍</h3><ul>
+<li><p>NumPy是一个开源的Python科学计算基础库。</p>
+<p>N维数组对象：ndarray</p>
+<ul>
+<li>数组对象可以去掉<strong>元素间运算</strong>所需的循环，使一维向量更像单个数据</li>
+<li>设置专门的数组对象，经过优化，可以提升这类应用的运算速度</li>
+</ul>
+</li>
+<li><p>PIL库（Python Image Library）Python中图像处理最常用的库</p>
+<p>PIL库是一个具有强大图像处理能力的第三方库。</p>
+<p>PILLOW官方文档：<a href="https://pillow.readthedocs.io/en/latest/reference/Image.html" target="_blank" rel="noopener">https://pillow.readthedocs.io/en/latest/reference/Image.html</a></p>
+<p>中文博客：<a href="http://blog.csdn.net/column/details/pythonpil.html?&amp;page=1" target="_blank" rel="noopener">http://blog.csdn.net/column/details/pythonpil.html?&amp;page=1</a></p>
+</li>
+<li><p>OpenCV：是计算机视觉领域应用最广泛的开源工具包。</p>
+<p>基于C/C++，支持Linux/Windows/MacOS/Android/iOS，并提供了Python，Matlab和Java等语言的接口，因为其丰富的接口，优秀的性能和商业友好的使用许可，不管是学术界还是业界中都非常受欢迎。OpenCV旨在提供一个用于计算机视觉的科研和商业应用的高性能通用库。</p>
+<p>Anaconda命令行安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install --channel https:&#x2F;&#x2F;conda.anaconda.org&#x2F;menpo opencv3</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-图像的基本操作"><a href="#3-图像的基本操作" class="headerlink" title="(3)图像的基本操作"></a>(3)图像的基本操作</h3><p><strong>图像的表示</strong></p>
+<h4 id="1-将彩色RGB图片变为黑白（灰度）图片"><a href="#1-将彩色RGB图片变为黑白（灰度）图片" class="headerlink" title="1.将彩色RGB图片变为黑白（灰度）图片"></a>1.将彩色RGB图片变为黑白（灰度）图片</h4><p>灰度转换公式：L = R * 299/1000 + G * 587/1000+ B * 114/1000</p>
+<p>PIL中，灰度表示模式为L模式，它的每个像素用8个bit表示，0表示黑，255表示白，其他数字表示不同的灰度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im = Image.open(<span class="string">'1.jpg'</span>)</span><br><span class="line">im_l = im.convert(<span class="string">"L"</span>)</span><br><span class="line">im_1.show()</span><br><span class="line">im_l.save(<span class="string">'output1.jpg’)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174904801.png" alt="image-20200504174904801"></p>
+<h4 id="2-将彩色RGB图片变为“底片”模式"><a href="#2-将彩色RGB图片变为“底片”模式" class="headerlink" title="2.将彩色RGB图片变为“底片”模式"></a>2.将彩色RGB图片变为“底片”模式</h4><p>PIL中，当需要更个性化的图片时，可配合使用numpy,对图像中的数据进行操作将原图以灰度打开后，取反码（b=255-a）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array(Image.open(<span class="string">"1.jpg"</span>).convert(<span class="string">'L'</span>))</span><br><span class="line">b = <span class="number">255</span> - a</span><br><span class="line">im = Image.fromarray(b.astype(<span class="string">'uint8'</span>))</span><br><span class="line">im.save(<span class="string">"output3.jpg"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174823310.png" alt="image-20200504174823310"></p>
+<h4 id="3-滤波器提取图片的信息"><a href="#3-滤波器提取图片的信息" class="headerlink" title="3.滤波器提取图片的信息"></a>3.滤波器提取图片的信息</h4><p>PIL的ImageFilter模块提供了滤波器相关定义，这些滤波器主要用于Image类的filter()方法。</p>
+<p>例如，提取图片的轮廓信息：使用ImageFilter.CONTOU</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageFilter</span><br><span class="line">a = Image.open(<span class="string">'5.jpg'</span>)</span><br><span class="line">b = </span><br><span class="line">a.filter(ImageFilter.CONTOUR)</span><br><span class="line">b.save(<span class="string">"output5.jpg"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504174832839.png" alt="image-20200504174832839"></p>
+<h4 id="4-图片读、写和显示操作"><a href="#4-图片读、写和显示操作" class="headerlink" title="4.图片读、写和显示操作"></a>4.图片读、写和显示操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="comment">#读图片（有多种模式）</span></span><br><span class="line"><span class="comment"># Load an color image in grayscale</span></span><br><span class="line">img = cv.imread(‘lena.jpg’,<span class="number">0</span>) <span class="comment">#显示图片</span></span><br><span class="line">cv.imshow(‘image’,img) <span class="comment">#第一个参数定义窗口名</span></span><br><span class="line">cv.waitKey(<span class="number">0</span>) <span class="comment">#无限制的等待用户的按键</span></span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"><span class="comment">#写</span></span><br><span class="line">cv.imwrite(‘graylena.png<span class="string">',img)</span></span><br><span class="line"><span class="string">           import cv2 as cv</span></span><br><span class="line"><span class="string">img = cv.imread('</span>lena.jpg’)</span><br><span class="line"><span class="comment">#图片的相关属性</span></span><br><span class="line">print(img.shape) <span class="comment">#高度×宽度×通道数（灰度图只返回前两项）</span></span><br><span class="line">print(img.size) <span class="comment">#像素总数</span></span><br><span class="line">print(img.dtype) <span class="comment">#图像数据类型</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(512, 512, 3)</span><br><span class="line">786432</span><br><span class="line">uint8</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-图像缩放"><a href="#5-图像缩放" class="headerlink" title="5.图像缩放"></a>5.图像缩放</h4><p><strong>cv2.resize(src, dsize, dst, fx=0, fy=0, interpolation=INTER_LINEAR )</strong> </p>
+<h2 id="1-2-图像的仿射变换之图像缩放"><a href="#1-2-图像的仿射变换之图像缩放" class="headerlink" title="1.2 图像的仿射变换之图像缩放"></a>1.2 图像的仿射变换之图像缩放</h2><p><strong>仿射变换原理：</strong></p>
+<p>在仿射变换中，原始图像中的所有平行线仍将在输出图像中平行。 </p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175530141.png" alt="image-20200504175530141"></p>
+<p>为了找到变换矩阵，我们需要输入图像中的三个点及其在输出图像中的相应位置。</p>
+<p><strong>仿射变换矩阵：</strong></p>
+<p>一个任意的仿射变换都能表示为 <em>乘以一个矩阵</em> (线性变换) 接着再 <em>加上一个向量</em> (平移).</p>
+<ul>
+<li>旋转 (线性变换) 、平移 (向量加) 、缩放操作 (线性变换)</li>
+</ul>
+<p>我们通常使用 2 x 3 矩阵来表示仿射变换.其中左边的2×2子矩阵是线性变换矩阵，右边的2×1的</p>
+<p>两项是平移项：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175115434.png" alt="image-20200504175115434"></p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175134255.png" alt="image-20200504175134255"></p>
+<p>宽度方向是x，高度方向是y，坐标的顺序和图像像素对应下标一致。</p>
+<p>所以原点的位置不是左下角而是左上角，y的方向也不是向上，而是向下。</p>
+<p>对于图像上的<strong>任一位置(x,y)</strong>，仿射变换执行的是如下的操作：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504175150544.png" alt="image-20200504175150544"></p>
+<p>使用<code>cv.getAffineTransform()</code>将创建一个2x3矩阵，将该矩阵传递给<code>cv.warpAffine()</code>得到结果。</p>
+<p>仿射变换进行图像缩放，<strong>代码</strong>如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="comment">#加载图片</span></span><br><span class="line">img = cv.imread(<span class="string">'lena.jpg'</span>,<span class="number">0</span>)</span><br><span class="line">rows,cols = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据三点的横纵坐标均缩小一倍计算仿射变换</span></span><br><span class="line">pts1 = np.float32([[<span class="number">50</span>,<span class="number">50</span>],[<span class="number">200</span>,<span class="number">50</span>],[<span class="number">50</span>,<span class="number">200</span>]])</span><br><span class="line">pts2=pts1/<span class="number">2</span> <span class="comment"># np.float32([[25,25],[100,25],[25,100]])</span></span><br><span class="line"><span class="comment">#获得仿射变换矩阵</span></span><br><span class="line">M = cv.getAffineTransform(pts1,pts2)</span><br><span class="line"><span class="comment">#warpAffine长宽的一半（int）</span></span><br><span class="line">Affine_scale = cv.warpAffine(img,M,((int)(rows/<span class="number">2</span>),(int)(cols/<span class="number">2</span>)))</span><br><span class="line">cv.imshow(<span class="string">'Raw'</span>,img)</span><br><span class="line">cv.imshow(<span class="string">'Affine_scale'</span>,Affine_scale)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果如下：</strong></p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504173747162.png" alt="image-20200504173747162"></p>
+<h2 id="1-3-图像的透视变换（空间变换）"><a href="#1-3-图像的透视变换（空间变换）" class="headerlink" title="1.3 图像的透视变换（空间变换）"></a>1.3 图像的透视变换（空间变换）</h2><p>对于透视变换，需要一个3x3变换矩阵。在转换之后，直线仍将保持笔直。</p>
+<p>要找到此变换矩阵，输入图像上需要4个点，输出图像上需要相应的。在这4个点中，其中3个不应该共线。</p>
+<p>通过函数<code>cv2.getPerspectiveTransform</code>找到变换矩阵，将该矩阵传递给<code>cv2.warpPerspective</code>得到结果。</p>
+<p><strong>Tips</strong>：<br>仿射变换和透视变换更直观的叫法可以叫做“平面变换”和“空间变换”或者“二维坐标变换”和“三维坐标变换”。<br>从另一个角度也能说明三维变换和二维变换的意思，仿射变换的方程组有6个未知数，所以要求解就需要找到3组映射点，三个点刚好确定一个平面。透视变换的方程组有8个未知数，所以要求解就需要找到4组映射点，四个点就刚好确定了一个三维空间。</p>
+<p><strong>参考资料：</strong></p>
+<p><a href="https://segmentfault.com/a/1190000015645951" target="_blank" rel="noopener">opencv python 图像缩放/图像平移/图像旋转/仿射变换/透视变换</a></p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab  <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'img6.jpg'</span>)</span><br><span class="line">rows,cols,ch = img.shape</span><br><span class="line"></span><br><span class="line">pts1 = np.float32([[<span class="number">56</span>,<span class="number">65</span>],[<span class="number">368</span>,<span class="number">52</span>],[<span class="number">28</span>,<span class="number">387</span>],[<span class="number">389</span>,<span class="number">390</span>]])</span><br><span class="line">pts2 = np.float32([[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">300</span>],[<span class="number">300</span>,<span class="number">300</span>]])</span><br><span class="line"></span><br><span class="line">M = cv2.getPerspectiveTransform(pts1,pts2)</span><br><span class="line"></span><br><span class="line">dst = cv2.warpPerspective(img,M,(<span class="number">300</span>,<span class="number">300</span>))</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">121</span>),plt.imshow(img),plt.title(<span class="string">'Input'</span>)</span><br><span class="line">plt.subplot(<span class="number">122</span>),plt.imshow(dst),plt.title(<span class="string">'Output'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果如下：</strong></p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504173711245.png" alt="image-20200504173711245"></p>
+<h2 id="1-4-通过HOG特征来分类——OCR"><a href="#1-4-通过HOG特征来分类——OCR" class="headerlink" title="1.4 通过HOG特征来分类——OCR"></a>1.4 通过HOG特征来分类——OCR</h2><p><strong>OCR：</strong> </p>
+<p>（Optical Character Recognition，光学字符识别）是指电子设备（例如扫描仪或数码相机）检查纸上打印的字符，通过检测暗、亮的模式确定其形状，然后用字符识别方法将形状翻译成计算机文字的过程；即，对文本资料进行扫描，然后对图像文件进行分析处理，获取文字及版面信息的过程。</p>
+<p><strong>一般流程如下：</strong></p>
+<blockquote>
+<p> 图像文件输入 → 图像特征提取 → 分类器训练 → 预测 → 识别结果输出→ 计算正确率 → …</p>
+</blockquote>
+<p><strong>HOG方向梯度直方图：</strong></p>
+<p>（Histogram of Oriented Gradient, HOG）特征是一种在计算机视觉和图像处理中用来进行物体检测的特征描述子。它通过计算和统计图像局部区域的梯度方向直方图来构成特征。HOG特征结合SVM分类器已经被广泛应用于图像识别中，尤其在行人检测中获得了极大的成功。</p>
+<p>HOG步骤如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HOG特征提取方法就是将一个image（你要检测的目标或者扫描窗口）：</span><br><span class="line"><span class="number">1</span>）灰度化（将图像看做一个x,y,z（灰度）的三维图像）；</span><br><span class="line"><span class="number">2</span>）采用Gamma校正法对输入图像进行颜色空间的标准化（归一化）；目的是调节图像的对比度，降低图像局部的阴影和光照变化所造成的影响，同时可以抑制噪音的干扰；</span><br><span class="line"><span class="number">3</span>）计算图像每个像素的梯度（包括大小和方向）；主要是为了捕获轮廓信息，同时进一步弱化光照的干扰。</span><br><span class="line"><span class="number">4</span>）将图像划分成小cells（例如<span class="number">10</span>*<span class="number">10</span>像素/cell）；</span><br><span class="line"><span class="number">5</span>）统计每个cell的梯度直方图（不同梯度的个数），即可形成每个cell的descriptor； <span class="number">6</span>）将每几个cell组成一个block（例如<span class="number">2</span>*<span class="number">2</span>个cell/block），一个block内所有cell的特征descriptor串联起来便得到该block的HOG特征descriptor。 <span class="number">7</span>）将图像image内的所有block的HOG特征descriptor串联起来就可以得到该image（你要检测的目标）的HOG特征descriptor了。这个就是最终的可供分类使用的特征向量了。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这次实验用的是一张图的数据集（digits.png）来训练：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504180152299.png" alt="image-20200504180152299"></p>
+<p>原代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">SVM and KNearest digit recognition.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Sample loads a dataset of handwritten digits from '../data/digits.png'.</span></span><br><span class="line"><span class="string">Then it trains a SVM and KNearest classifiers on it and evaluates</span></span><br><span class="line"><span class="string">their accuracy.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Following preprocessing is applied to the dataset:</span></span><br><span class="line"><span class="string"> - Moment-based image deskew (see deskew())</span></span><br><span class="line"><span class="string"> - Digit images are split into 4 10x10 cells and 16-bin</span></span><br><span class="line"><span class="string">   histogram of oriented gradients is computed for each</span></span><br><span class="line"><span class="string">   cell</span></span><br><span class="line"><span class="string"> - Transform histograms to space with Hellinger metric (see [1] (RootSIFT))</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[1] R. Arandjelovic, A. Zisserman</span></span><br><span class="line"><span class="string">    "Three things everyone should know to improve object retrieval"</span></span><br><span class="line"><span class="string">    http://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12/arandjelovic12.pdf</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Usage:</span></span><br><span class="line"><span class="string">   digits.py</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Python 2/3 compatibility</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"></span><br><span class="line"><span class="comment"># built-in modules</span></span><br><span class="line"><span class="keyword">from</span> multiprocessing.pool <span class="keyword">import</span> ThreadPool</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"><span class="comment"># local modules</span></span><br><span class="line"><span class="keyword">from</span> common <span class="keyword">import</span> clock, mosaic</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SZ = <span class="number">20</span> <span class="comment"># size of each digit is SZ x SZ</span></span><br><span class="line">CLASS_N = <span class="number">10</span></span><br><span class="line">DIGITS_FN = <span class="string">'../data/digits.png'</span></span><br><span class="line"><span class="comment">#分割并且每张图缩放为20*20</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split2d</span><span class="params">(img, cell_size, flatten=True)</span>:</span></span><br><span class="line">    h, w = img.shape[:<span class="number">2</span>]</span><br><span class="line">    sx, sy = cell_size</span><br><span class="line">    cells = [np.hsplit(row, w//sx) <span class="keyword">for</span> row <span class="keyword">in</span> np.vsplit(img, h//sy)]</span><br><span class="line">    cells = np.array(cells)</span><br><span class="line">    <span class="keyword">if</span> flatten:</span><br><span class="line">        cells = cells.reshape(<span class="number">-1</span>, sy, sx)</span><br><span class="line">    <span class="keyword">return</span> cells</span><br><span class="line"><span class="comment">#加载digits数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_digits</span><span class="params">(fn)</span>:</span></span><br><span class="line">    print(<span class="string">'loading "%s" ...'</span> % fn)</span><br><span class="line">    digits_img = cv.imread(fn, <span class="number">0</span>)</span><br><span class="line">    digits = split2d(digits_img, (SZ, SZ))</span><br><span class="line">    labels = np.repeat(np.arange(CLASS_N), len(digits)/CLASS_N)</span><br><span class="line">    <span class="keyword">return</span> digits, labels</span><br><span class="line"><span class="comment">#纠正图片倾斜</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deskew</span><span class="params">(img)</span>:</span></span><br><span class="line">    m = cv.moments(img)</span><br><span class="line">    <span class="keyword">if</span> abs(m[<span class="string">'mu02'</span>]) &lt; <span class="number">1e-2</span>:</span><br><span class="line">        <span class="keyword">return</span> img.copy()</span><br><span class="line">    skew = m[<span class="string">'mu11'</span>]/m[<span class="string">'mu02'</span>]</span><br><span class="line">    M = np.float32([[<span class="number">1</span>, skew, <span class="number">-0.5</span>*SZ*skew], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line">    img = cv.warpAffine(img, M, (SZ, SZ), flags=cv.WARP_INVERSE_MAP | cv.INTER_LINEAR)</span><br><span class="line">    <span class="keyword">return</span> img</span><br><span class="line"><span class="comment">#模型的加载和保存</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StatModel</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">load</span><span class="params">(self, fn)</span>:</span></span><br><span class="line">        self.model.load(fn)  <span class="comment"># Known bug: https://github.com/opencv/opencv/issues/4969</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self, fn)</span>:</span></span><br><span class="line">        self.model.save(fn)</span><br><span class="line"><span class="comment">#knn分类器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KNearest</span><span class="params">(StatModel)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, k = <span class="number">3</span>)</span>:</span></span><br><span class="line">        self.k = k</span><br><span class="line">        self.model = cv.ml.KNearest_create()</span><br><span class="line">    <span class="comment">#训练</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, samples, responses)</span>:</span></span><br><span class="line">        self.model.train(samples, cv.ml.ROW_SAMPLE, responses)</span><br><span class="line">    <span class="comment">#评估</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, samples)</span>:</span></span><br><span class="line">        _retval, results, _neigh_resp, _dists = self.model.findNearest(samples, self.k)</span><br><span class="line">        <span class="keyword">return</span> results.ravel()</span><br><span class="line"><span class="comment">#SVM分类器训练</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SVM</span><span class="params">(StatModel)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, C = <span class="number">1</span>, gamma = <span class="number">0.5</span>)</span>:</span></span><br><span class="line">        self.model = cv.ml.SVM_create()</span><br><span class="line">        self.model.setGamma(gamma)</span><br><span class="line">        self.model.setC(C)</span><br><span class="line">        self.model.setKernel(cv.ml.SVM_RBF)</span><br><span class="line">        self.model.setType(cv.ml.SVM_C_SVC)</span><br><span class="line">    <span class="comment">#训练</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, samples, responses)</span>:</span></span><br><span class="line">        self.model.train(samples, cv.ml.ROW_SAMPLE, responses)</span><br><span class="line">    <span class="comment">#评估</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, samples)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.model.predict(samples)[<span class="number">1</span>].ravel()</span><br><span class="line"></span><br><span class="line"><span class="comment">#测试集评估模型</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_model</span><span class="params">(model, digits, samples, labels)</span>:</span></span><br><span class="line">    resp = model.predict(samples)</span><br><span class="line">    err = (labels != resp).mean()</span><br><span class="line">    print(<span class="string">'error: %.2f %%'</span> % (err*<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">    confusion = np.zeros((<span class="number">10</span>, <span class="number">10</span>), np.int32)</span><br><span class="line">    <span class="keyword">for</span> i, j <span class="keyword">in</span> zip(labels, resp):</span><br><span class="line">        confusion[i, int(j)] += <span class="number">1</span></span><br><span class="line">    print(<span class="string">'confusion matrix:'</span>)</span><br><span class="line">    print(confusion)</span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    vis = []</span><br><span class="line">    <span class="keyword">for</span> img, flag <span class="keyword">in</span> zip(digits, resp == labels):</span><br><span class="line">        img = cv.cvtColor(img, cv.COLOR_GRAY2BGR)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flag:</span><br><span class="line">            img[...,:<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line">        vis.append(img)</span><br><span class="line">    <span class="keyword">return</span> mosaic(<span class="number">25</span>, vis)</span><br><span class="line"><span class="comment">#简单预处理</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preprocess_simple</span><span class="params">(digits)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> np.float32(digits).reshape(<span class="number">-1</span>, SZ*SZ) / <span class="number">255.0</span></span><br><span class="line"><span class="comment">#hog特征计算</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preprocess_hog</span><span class="params">(digits)</span>:</span></span><br><span class="line">    samples = []</span><br><span class="line">    <span class="keyword">for</span> img <span class="keyword">in</span> digits:</span><br><span class="line">        gx = cv.Sobel(img, cv.CV_32F, <span class="number">1</span>, <span class="number">0</span>)  <span class="comment">#sobel算子边缘检测 一阶差分滤波器</span></span><br><span class="line">        gy = cv.Sobel(img, cv.CV_32F, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        mag, ang = cv.cartToPolar(gx, gy)  <span class="comment">#极坐标变换 （模 角度）</span></span><br><span class="line">        bin_n = <span class="number">16</span>  <span class="comment">#区间数</span></span><br><span class="line">        bin = np.int32(bin_n*ang/(<span class="number">2</span>*np.pi))</span><br><span class="line">        bin_cells = bin[:<span class="number">10</span>,:<span class="number">10</span>], bin[<span class="number">10</span>:,:<span class="number">10</span>], bin[:<span class="number">10</span>,<span class="number">10</span>:], bin[<span class="number">10</span>:,<span class="number">10</span>:]</span><br><span class="line">        mag_cells = mag[:<span class="number">10</span>,:<span class="number">10</span>], mag[<span class="number">10</span>:,:<span class="number">10</span>], mag[:<span class="number">10</span>,<span class="number">10</span>:], mag[<span class="number">10</span>:,<span class="number">10</span>:]</span><br><span class="line">        hists = [np.bincount(b.ravel(), m.ravel(), bin_n) <span class="keyword">for</span> b, m <span class="keyword">in</span> zip(bin_cells, mag_cells)]    <span class="comment">#统计梯度直方图</span></span><br><span class="line">        hist = np.hstack(hists)</span><br><span class="line">        <span class="comment"># transform to Hellinger kernel  to quantify the similarity of two probability distributions</span></span><br><span class="line">        eps = <span class="number">1e-7</span></span><br><span class="line">        hist /= hist.sum() + eps</span><br><span class="line">        hist = np.sqrt(hist)</span><br><span class="line">        hist /= norm(hist) + eps</span><br><span class="line"></span><br><span class="line">        samples.append(hist)</span><br><span class="line">    <span class="keyword">return</span> np.float32(samples)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(__doc__)</span><br><span class="line"></span><br><span class="line">    digits, labels = load_digits(DIGITS_FN) <span class="comment">#图像切分 导入</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'preprocessing...'</span>)</span><br><span class="line">    <span class="comment"># shuffle digits</span></span><br><span class="line">    rand = np.random.RandomState(<span class="number">321</span>)   <span class="comment">#随机种子321</span></span><br><span class="line">    shuffle = rand.permutation(len(digits))</span><br><span class="line">    digits, labels = digits[shuffle], labels[shuffle]   <span class="comment">#打乱数字顺序</span></span><br><span class="line"></span><br><span class="line">    digits2 = list(map(deskew, digits)) <span class="comment">#纠正图片倾斜</span></span><br><span class="line">    samples = preprocess_hog(digits2)   <span class="comment">#计算hog特征</span></span><br><span class="line"></span><br><span class="line">    train_n = int(<span class="number">0.9</span>*len(samples)) <span class="comment">#划分训练测试集</span></span><br><span class="line">    print(train_n)</span><br><span class="line">    cv.imshow(<span class="string">'test set'</span>, mosaic(<span class="number">25</span>, digits[train_n:]))<span class="comment">#展示划分出来的测试数据集</span></span><br><span class="line">    digits_train, digits_test = np.split(digits2, [train_n])<span class="comment">#图像数据</span></span><br><span class="line">    samples_train, samples_test = np.split(samples, [train_n])<span class="comment">#特征数据</span></span><br><span class="line">    labels_train, labels_test = np.split(labels, [train_n])<span class="comment">#标签分割</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'training KNearest...'</span>)   <span class="comment">#knn分类器</span></span><br><span class="line">    model = KNearest(k=<span class="number">4</span>)</span><br><span class="line">    model.train(samples_train, labels_train)</span><br><span class="line">    vis = evaluate_model(model, digits_test, samples_test, labels_test)</span><br><span class="line">    cv.imshow(<span class="string">'KNearest test'</span>, vis)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'training SVM...'</span>)    <span class="comment">#SVM分类器</span></span><br><span class="line">    model = SVM(C=<span class="number">2.67</span>, gamma=<span class="number">5.383</span>)</span><br><span class="line">    model.train(samples_train, labels_train)</span><br><span class="line">    vis = evaluate_model(model, digits_test, samples_test, labels_test)</span><br><span class="line">    cv.imshow(<span class="string">'SVM test'</span>, vis)</span><br><span class="line">    print(<span class="string">'saving SVM as "digits_svm.dat"...'</span>)</span><br><span class="line">    model.save(<span class="string">'digits_svm.dat'</span>)</span><br><span class="line"></span><br><span class="line">    cv.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>训练结果如下：</strong></p>
+<p>其中，白色的数字为分类识别成功，红色的为识别错误</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504181130518.png" alt="image-20200504181130518"></p>
+<h2 id="1-5-HOG特征，自找数据集进行测试"><a href="#1-5-HOG特征，自找数据集进行测试" class="headerlink" title="1.5 HOG特征，自找数据集进行测试"></a>1.5 HOG特征，自找数据集进行测试</h2><p>这里我选择了<code>mnist</code>的图、以及word做的一些图混合来进行测试：</p>
+<p><code>mnist</code>的图像大小都是<code>28 * 28</code>，word做的也不是<code>20*20</code>，我们用仿射变换来进行缩小为 <code>20 * 20</code></p>
+<p>数据集，每一种数字有6个，总共有6 * 10=60张图：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504192849951.png" alt="image-20200504192849951"></p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191505663.png" alt="image-20200504191505663"></p>
+<p>其中有个复杂的点，数据结构的问题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resp = model.predict(samples)</span></span><br><span class="line"><span class="comment">#这里加个[1].flatten()是因为读出的模型predict的datatype要转化为nparray</span></span><br><span class="line">resp=model.predict(samples)[<span class="number">1</span>].flatten()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"><span class="keyword">from</span> common <span class="keyword">import</span> clock, mosaic</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SZ = <span class="number">20</span> <span class="comment"># size of each digit is SZ x SZ</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 纠正图像倾斜</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deskew</span><span class="params">(img)</span>:</span></span><br><span class="line">    m = cv.moments(img)</span><br><span class="line">    <span class="keyword">if</span> abs(m[<span class="string">'mu02'</span>]) &lt; <span class="number">1e-2</span>:</span><br><span class="line">        <span class="keyword">return</span> img.copy()</span><br><span class="line">    skew = m[<span class="string">'mu11'</span>]/m[<span class="string">'mu02'</span>]</span><br><span class="line">    M = np.float32([[<span class="number">1</span>, skew, <span class="number">-0.5</span>*SZ*skew], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line">    img = cv.warpAffine(img, M, (SZ, SZ), flags=cv.WARP_INVERSE_MAP | cv.INTER_LINEAR)</span><br><span class="line">    <span class="keyword">return</span> img</span><br><span class="line"></span><br><span class="line"><span class="comment">#hog特征计算</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preprocess_hog</span><span class="params">(digits)</span>:</span></span><br><span class="line">    samples = []</span><br><span class="line">    <span class="keyword">for</span> img <span class="keyword">in</span> digits:</span><br><span class="line">        gx = cv.Sobel(img, cv.CV_32F, <span class="number">1</span>, <span class="number">0</span>)  <span class="comment">#sobel算子 边缘检测 一阶差分滤波器</span></span><br><span class="line">        gy = cv.Sobel(img, cv.CV_32F, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        mag, ang = cv.cartToPolar(gx, gy)  <span class="comment">#极坐标变换 （模 角度）</span></span><br><span class="line">        bin_n = <span class="number">16</span>  <span class="comment">#区间数</span></span><br><span class="line">        bin = np.int32(bin_n*ang/(<span class="number">2</span>*np.pi))</span><br><span class="line">        bin_cells = bin[:<span class="number">10</span>,:<span class="number">10</span>], bin[<span class="number">10</span>:,:<span class="number">10</span>], bin[:<span class="number">10</span>,<span class="number">10</span>:], bin[<span class="number">10</span>:,<span class="number">10</span>:]</span><br><span class="line">        mag_cells = mag[:<span class="number">10</span>,:<span class="number">10</span>], mag[<span class="number">10</span>:,:<span class="number">10</span>], mag[:<span class="number">10</span>,<span class="number">10</span>:], mag[<span class="number">10</span>:,<span class="number">10</span>:]</span><br><span class="line">        hists = [np.bincount(b.ravel(), m.ravel(), bin_n) <span class="keyword">for</span> b, m <span class="keyword">in</span> zip(bin_cells, mag_cells)]    <span class="comment">#统计梯度直方图</span></span><br><span class="line">        hist = np.hstack(hists)</span><br><span class="line">        <span class="comment"># transform to Hellinger kernel  to quantify the similarity of two probability distributions</span></span><br><span class="line">        eps = <span class="number">1e-7</span></span><br><span class="line">        hist /= hist.sum() + eps</span><br><span class="line">        hist = np.sqrt(hist)</span><br><span class="line">        hist /= norm(hist) + eps</span><br><span class="line"></span><br><span class="line">        samples.append(hist)</span><br><span class="line">    <span class="keyword">return</span> np.float32(samples)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#评估函数，基本没改</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_model_2</span><span class="params">(model, digits, samples, labels)</span>:</span></span><br><span class="line">    <span class="comment"># resp = model.predict(samples)</span></span><br><span class="line">    <span class="comment">#这里加个[1].flatten()是因为读出的模型predict的datatype要转化为nparray</span></span><br><span class="line">    resp=model.predict(samples)[<span class="number">1</span>].flatten()</span><br><span class="line">    print(labels)</span><br><span class="line">    print(resp)</span><br><span class="line">    err = (labels != resp).mean()</span><br><span class="line">    print(<span class="string">'error: %.2f %%'</span> % (err*<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">    confusion = np.zeros((<span class="number">10</span>, <span class="number">10</span>), np.int32)</span><br><span class="line">    <span class="keyword">for</span> i, j <span class="keyword">in</span> zip(labels, resp):</span><br><span class="line">        confusion[i, int(j)] += <span class="number">1</span></span><br><span class="line">    print(<span class="string">'confusion matrix:'</span>)</span><br><span class="line">    print(confusion)</span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    vis = []</span><br><span class="line">    <span class="keyword">for</span> img, flag <span class="keyword">in</span> zip(digits, resp == labels):</span><br><span class="line">        img = cv.cvtColor(img, cv.COLOR_GRAY2BGR) <span class="comment">#RGB显示？</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flag:</span><br><span class="line">            img[...,:<span class="number">2</span>] = <span class="number">0</span> <span class="comment">#变红</span></span><br><span class="line">        vis.append(img)</span><br><span class="line">        <span class="comment"># 以25为一行</span></span><br><span class="line">    <span class="keyword">return</span> vis</span><br><span class="line"></span><br><span class="line"><span class="comment">#读取mnist测试数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_mnist</span><span class="params">()</span>:</span></span><br><span class="line">    path = <span class="string">"mnist"</span>  <span class="comment"># 文件夹目录</span></span><br><span class="line">    files = os.listdir(path)  <span class="comment"># 得到文件夹下的所有文件名称</span></span><br><span class="line">    s = <span class="string">""</span> <span class="comment">#全部文件名字符串</span></span><br><span class="line">    digits_img=[] <span class="comment">#图片数组</span></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:  <span class="comment"># 遍历文件夹</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(file):  <span class="comment"># 判断是否是文件夹，不是文件夹才打开</span></span><br><span class="line">            s=s+file</span><br><span class="line">            print(<span class="string">'loading "%s" ...'</span> % file)<span class="comment">#加载某个文件</span></span><br><span class="line">            img = cv.imread(<span class="string">"mnist//"</span>+file, <span class="number">0</span>)<span class="comment">#读取图片</span></span><br><span class="line">            <span class="comment">#resize为20*20</span></span><br><span class="line">            img = cv.resize(img, (<span class="number">20</span>, <span class="number">20</span>), interpolation=cv.INTER_AREA)</span><br><span class="line">            digits_img.append(img)</span><br><span class="line">    <span class="comment"># 改为np数组</span></span><br><span class="line">    digits_img = np.array(digits_img)</span><br><span class="line">    <span class="comment"># lable数组</span></span><br><span class="line">    labels = np.repeat(np.arange(<span class="number">10</span>), len(digits_img) / <span class="number">10</span>)</span><br><span class="line">    print(s)  <span class="comment"># 打印读取的文件名</span></span><br><span class="line">    <span class="keyword">return</span> digits_img,labels</span><br><span class="line"></span><br><span class="line"><span class="comment">#测试mnist数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_mnist</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#加载数据集</span></span><br><span class="line">    digits_img,labels=read_mnist()</span><br><span class="line">    <span class="comment"># 纠正图片倾斜</span></span><br><span class="line">    digits2 = list(map(deskew, digits_img))</span><br><span class="line">    <span class="comment"># 计算hog特征</span></span><br><span class="line">    samples = preprocess_hog(digits2)   </span><br><span class="line">    <span class="comment">#展示test数据集</span></span><br><span class="line">    cv.imshow(<span class="string">'test set'</span>, mosaic(<span class="number">16</span>, digits_img))</span><br><span class="line"></span><br><span class="line">    <span class="comment">#SVM模型分类</span></span><br><span class="line">    model=cv.ml.SVM_load(<span class="string">'SVM.dat'</span>)</span><br><span class="line">    vis = evaluate_model_2(model, digits2, samples, labels)</span><br><span class="line">    cv.imshow(<span class="string">'SVM test'</span>, mosaic(<span class="number">16</span>, vis))</span><br><span class="line"></span><br><span class="line">    <span class="comment">#KNN模型分类</span></span><br><span class="line">    model=cv.ml.KNearest_load(<span class="string">'KNearest.dat'</span>)</span><br><span class="line">    vis = evaluate_model_2(model, digits2, samples, labels)</span><br><span class="line">    cv.imshow(<span class="string">'KNN test'</span>, mosaic(<span class="number">16</span>, vis))</span><br><span class="line"></span><br><span class="line">    cv.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test_mnist()</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p>可以看到，OCR效果还是不错的</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504191549805.png" alt="image-20200504191549805"></p>
+<h1 id="2、音频实验"><a href="#2、音频实验" class="headerlink" title="2、音频实验"></a>2、音频实验</h1><h2 id="2-1-背景介绍"><a href="#2-1-背景介绍" class="headerlink" title="2.1 背景介绍"></a>2.1 背景介绍</h2><p>本节实验课，实践音频的相关操作和库，以及一些基本特征的提取。</p>
+<p>使用了实验自带的音频</p>
+<p><audio id="audio" controls preload="none"> <source id="mp3" src="2020-05-03-information-security-exp-3/1.wav"> </audio></p>
+<p>第一个实验（读取音频信息）用到的库：</p>
+<blockquote>
+<p>音频库：wave 库 <em><a href="https://docs.python.org/3/library/wave.html" target="_blank" rel="noopener">https://docs.python.org/3/library/wave.html</a></em> </p>
+<p>绘图库：pylab库，这是 Matplotlib 和Ipython提供的一个模块，提供了类似Matlab的语法</p>
+<p>Matplotlib是一个Python的图形框架，类似于MATLAB，同时还可以使用内嵌的latex引擎绘制的数学公式。</p>
+<p>LibROSA是python用于音乐、音频分析的一个工具包。官方文档：<a href="http://librosa.github.io/librosa/" target="_blank" rel="noopener">http://librosa.github.io/librosa/</a></p>
+</blockquote>
+<p>第二个实验（读取音频特征）用到的库：</p>
+<blockquote>
+<p>安装LibROSA ：</p>
+<p>windows命令行下pip install librosa</p>
+<p>或anaconda命令行下conda install -c conda-forge librosa</p>
+<p>LibROSA需要ffmpeg支持（用于音频和视频多种格式的录影、转换、流功能）</p>
+<p>安装ffmpeg：</p>
+<p>ffmpeg下载<a href="https://www.ffmpeg.org/download.html" target="_blank" rel="noopener">https://www.ffmpeg.org/download.html</a></p>
+<p>配置环境向量<a href="http://alleni123.iteye.com/blog/2028433" target="_blank" rel="noopener">http://alleni123.iteye.com/blog/2028433</a></p>
+</blockquote>
+<h2 id="2-2-使用wave读取音频文件的信息"><a href="#2-2-使用wave读取音频文件的信息" class="headerlink" title="2.2 使用wave读取音频文件的信息"></a>2.2 使用wave读取音频文件的信息</h2><ul>
+<li><strong>采样率</strong><br>外界的声音都是模拟信号，在数字设备中A/D转化成为了由0、1表示的数字信号后被储存下来。数字信号都是离散的，所以采样率是指一秒钟采样的次数，采样率越高，还原的声音也就越真实。由于人耳听觉范围是20Hz~20kHz，根据香农采样定理(也叫奈奎斯特采样定理)，理论上来说采样率大于40kHz的音频格式都可以称之为<strong>无损格式</strong>。</li>
+<li>*<em>位深度 *</em><br>若要尽可能精确地还原声音，只有高采样率是不够的。描述一个采样点，横轴(时间)代表采样率，纵轴(幅度)代表位深度。</li>
+<li><strong>码率</strong><br>在无损无压缩格式中(如.wav)，码率=采样率x位深度x声道数。在有损压缩中(如.mp3)码率便不等于这个公式了，因为原始信息已经被破坏。</li>
+<li><strong>奈奎斯特采样定律</strong>：在进行模拟/数字信号的转换过程中，当采样频率fs.max大于信号中最高频率fmax的2倍时(fs.max&gt;2fmax)，采样之后的数字信号完整地保留了原始信号中的信息。</li>
+<li><strong>人耳听音频率范围</strong>： 20Hz～20kHz标准格式化的WAV文件和CD格式一样，采样频率为44.1K。</li>
+<li><strong>无损编码</strong>： 能够由编码后的数据完全无误地恢复原始信号采样值。常见的无损编码格式：APE、FLAC。</li>
+<li><strong>有损编码</strong>：  根据人耳对不同频率的声音感知敏感度不同，在压缩过程中损失一部分音质以换取更高的压缩比，由于编码过程中有信息的损失，无法完全恢复原始信号。</li>
+</ul>
+<p>代码如下，说明已在代码中详细注释标出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> wave</span><br><span class="line"><span class="keyword">import</span> pylab <span class="keyword">as</span> pl</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">f = wave.open(<span class="string">r"1.wav"</span>,<span class="string">"rb"</span>)</span><br><span class="line"><span class="comment"># 读取格式信息</span></span><br><span class="line">params = f.getparams()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取wav文件信息（依次为声道数、位深度、采样频率、采样点数）</span></span><br><span class="line">nchannels, sampwidth, framerate, nframes = params[:<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">"声道数："</span>,nchannels)</span><br><span class="line">print(<span class="string">"位深度："</span>,sampwidth)</span><br><span class="line">print(<span class="string">"采样频率："</span>,framerate)</span><br><span class="line">print(<span class="string">"采样点数："</span>,nframes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取波形数据</span></span><br><span class="line">str_data = f.readframes(nframes)</span><br><span class="line">f.close()</span><br><span class="line"><span class="comment">#将波形数据转换为数组</span></span><br><span class="line">wave_data = np.fromstring(str_data, dtype=np.short)</span><br><span class="line"><span class="comment">#该文件为双声道，数组列数为2</span></span><br><span class="line">wave_data.shape = <span class="number">-1</span>, <span class="number">2</span></span><br><span class="line">wave_data = wave_data.T</span><br><span class="line"><span class="comment">#时长为总点数/频率</span></span><br><span class="line">time = np.arange(<span class="number">0</span>, nframes) * (<span class="number">1.0</span> / framerate)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制波形</span></span><br><span class="line">pl.subplot(<span class="number">211</span>)</span><br><span class="line"><span class="comment">#声道1（左声道），蓝色</span></span><br><span class="line">pl.plot(time, wave_data[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">pl.subplot(<span class="number">212</span>)</span><br><span class="line"><span class="comment">#声道2（右声道）,绿色</span></span><br><span class="line">pl.plot(time, wave_data[<span class="number">1</span>], c=<span class="string">"g"</span>)</span><br><span class="line"><span class="comment">#横轴为时间、纵轴为幅度的量化值</span></span><br><span class="line">pl.xlabel(<span class="string">"time (seconds)"</span>)</span><br><span class="line">pl.show()</span><br></pre></td></tr></table></figure>
+
+<p>音频基本信息如下所示：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504152416006.png" alt="image-20200504152416006"></p>
+<p>音频波形图：</p>
+<p>蓝色部分为声道1（左声道），绿色部分为声道2（右声道）横轴为时间、纵轴为幅度的量化值：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504152437022.png" alt="image-20200504152437022"></p>
+<h2 id="2-3-使用LibROSA分别计算音频的MFCC和Chroma特征"><a href="#2-3-使用LibROSA分别计算音频的MFCC和Chroma特征" class="headerlink" title="2.3 使用LibROSA分别计算音频的MFCC和Chroma特征"></a>2.3 使用LibROSA分别计算音频的MFCC和Chroma特征</h2><p>每个音频信号都包含许多特征。但是，我们必须提取与我们试图解决的问题相关的特征。提取要使用它们进行分析的特征的过程称为特征提取，让我们详细研究一些特征。</p>
+<p><strong>音频特征基础：</strong></p>
+<p>谐波、冲击源分离（Harmonic Percussive Source Separation, HPSS）</p>
+<p>一般而言，音乐信号在频谱图通常呈面两种形式分布，一种是沿时间轴连续平滑分布，另一种是沿频率轴连续平滑分布，通常将这两种分布的音源分别称作<strong>谐波源</strong>和<strong>冲击源</strong>。乐器可大致分为管弦乐器和打击乐器。管弦乐器产生的音源一般舒缓，音与音之间连续衔接，且频谱图上表现为平滑的包络，常见的管弦乐器有笛子、筝、小提琴、钢琴（钢琴虽不是严格意义上的管弦乐器，但其音源的频谱具有管弦乐音源的特征，因此这里将其归为一类）等。与之相反，打击乐器产生的音源一般有强烈的节奏感，音与音之间有较大的跨度在频谱图上表现为垂直包络，常见的打击乐器有鼓、木琴、小军鼓、锣等。因此在频谱图上，将管弦乐所产生的音源通常称之为谐波源，打击乐产生的音源通常称之为冲击源。谐波源通常包含固定音调，能在频谱上形成一系列平滑的瞬时包络，因此在时间轴方向上是平滑连续的，在频率轴方向上间断的；反之，冲击源一般集中在较短时间内，在频谱上形成一系列垂直的宽带谱包络，因此在时间轴方向上是间断的，在频率轴方向上是平滑连续的。</p>
+<p><strong>在计算音频特征时，会根据这两种信号的不同特点，进行分离后分别进行特征计算。比如chroma特征就只使用了谐波源作为源数据</strong></p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504154037385.png" alt="image-20200504154037385"></p>
+<p><strong>音频特征：</strong></p>
+<ul>
+<li><p>MFCC(Mel-frequency cepstral coefficients)</p>
+<p>梅尔频率倒谱系数。梅尔频率是基于人耳听觉特性提出来的， 它与Hz频率成非线性对应关系。</p>
+<p>当频率在1000Hz以下时，人耳的听觉能力与声音频率呈线性增长，当频率在1000Hz以上时，与声音的频率呈对数分布。梅尔频率倒谱系数(MFCC)则是利用它们之间的这种关系，计算得到的Hz频谱特征。主要用于语音数据特征提取和降低运算维度。</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504153802954.png" alt="image-20200504153802954"></p>
+</li>
+<li><p>Chroma色度特征是色度向量（Chroma Vector）和色度图谱（Chromagram）的统称。色度向量是一个含有12个元素的向量，这些元素分别代表一段时间（如1帧）内12个音级中的能量，不同八度的同一音级能量累加，色度图谱则是色度向量的序列。色度特征的计算，参考：Automatic Chord Estimation from Audio: A R</p>
+<p>eview of the State of the Art，过程如下图：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504153901633.png" alt="image-20200504153901633"></p>
+</li>
+</ul>
+<p><strong>提取MFCC和Chroma</strong></p>
+<p>提取MFCC和Chroma的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="comment"># Feature extraction example</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> librosa</span><br><span class="line"><span class="keyword">import</span> librosa.display</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">#加载音频</span></span><br><span class="line"><span class="comment"># Load the example clip</span></span><br><span class="line">y, sr = librosa.load(<span class="string">"1.wav"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the hop length; at 22050 Hz, 512 samples ~= 23ms</span></span><br><span class="line">hop_length = <span class="number">512</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#时序y被分为信号的谐波和冲击两个时序，都与y有着相同的形状和时间长度。</span></span><br><span class="line"><span class="comment">#划分的意义：首先， percussive能够更好地表示节奏信息，意味着它能提供更稳定地节拍跟踪结果。</span></span><br><span class="line"><span class="comment">#其次， percussive在所有频带上都会贡献能量,会污染声调特征chroma，所以在计算chroma时会把percussive去掉。</span></span><br><span class="line"><span class="comment"># Separate harmonics and percussives into two waveforms</span></span><br><span class="line">y_harmonic, y_percussive = librosa.effects.hpss(y) <span class="comment">#频域内的谐波冲击波分离</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#冲击信号计算节拍</span></span><br><span class="line"><span class="comment"># Beat track on the percussive signal</span></span><br><span class="line">Tempo, beat_frames = librosa.beat.beat_track(y=y_percussive,sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算MFCC特征</span></span><br><span class="line"><span class="comment"># Compute MFCC features from the raw signa</span></span><br><span class="line">mfcc = librosa.feature.mfcc(y=y, sr=sr, hop_length=hop_length, n_mfcc=<span class="number">13</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算每帧之间MFCC的一阶差分</span></span><br><span class="line"><span class="comment"># And the first-order differences (delta features)</span></span><br><span class="line">mfcc_delta = librosa.feature.delta(mfcc)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 叠加并同步MFCC特征</span></span><br><span class="line"><span class="comment"># Stack and synchronize between beat events</span></span><br><span class="line"><span class="comment"># This time, we’ll use the mean value (default) instead of median</span></span><br><span class="line">beat_mfcc_delta = librosa.util.sync(np.vstack([mfcc, mfcc_delta]),beat_frames)</span><br><span class="line"></span><br><span class="line"><span class="comment">#用谐波计算色度特征</span></span><br><span class="line"><span class="comment"># Compute chroma features from the harmonic signa</span></span><br><span class="line">chromagram = librosa.feature.chroma_cqt(y=y_harmonic,sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment">#整合色度特征</span></span><br><span class="line"><span class="comment"># Aggregate chroma features between beat events</span></span><br><span class="line"><span class="comment"># We’ll use the median value of each feature between beat frames</span></span><br><span class="line">beat_chroma = librosa.util.sync(chromagram,beat_frames,aggregate=np.median)</span><br><span class="line"></span><br><span class="line"><span class="comment">#叠加所有特征</span></span><br><span class="line"><span class="comment"># Finally, stack all beat-synchronous features togethe</span></span><br><span class="line">beat_features = np.vstack([beat_chroma, beat_mfcc_delta])</span><br><span class="line"><span class="comment">#得到beat_features的维度为(12 + 13 + 13, # beat intervals)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#绘制mfcc特征图</span></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">librosa.display.specshow(mfcc, sr=sr, x_axis=<span class="string">'time'</span>)</span><br><span class="line">plt.title(<span class="string">'mfcc'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#绘制chroma特征图</span></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">librosa.display.specshow(chromagram, sr=sr,y_axis=<span class="string">'chroma'</span>, x_axis=<span class="string">'time'</span>, hop_length=hop_length, cmap=<span class="string">'coolwarm'</span>)</span><br><span class="line">plt.title(<span class="string">'chromagram'</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>如下为我们的mfcc和chroma的特征图</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504155357411.png" alt="image-20200504155357411"></p>
+<h2 id="2-4-提取过零率特征"><a href="#2-4-提取过零率特征" class="headerlink" title="2.4 提取过零率特征"></a>2.4 提取过零率特征</h2><p>过零率（zero crossing rate）是一个信号符号变化的比率，即，在每帧中，语音信号从正变为负或从负变为正的次数。 这个特征已在语音识别和音乐信息检索领域得到广泛使用，通常对类似金属、摇滚等高冲击性的声音的具有更高的价值。</p>
+<p>该特征在语音识别和音乐信息检索中都被大量使用。对于像金属和岩石那样的高冲击声，它通常具有更高的值。让我们计算示例音频片段的过零率。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> librosa.display</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 加载信号</span></span><br><span class="line">x, sr = librosa.load(<span class="string">"1.wav"</span>)</span><br><span class="line"><span class="comment">#绘制信号波形图</span></span><br><span class="line"><span class="comment"># plt.figure(figsize=(14, 5))</span></span><br><span class="line"><span class="comment"># librosa.display.waveplot(x, sr=sr)</span></span><br><span class="line"><span class="comment"># 放大n0~n1区间，绘制过零点</span></span><br><span class="line">n0 = <span class="number">9000</span></span><br><span class="line">n1 = <span class="number">9100</span></span><br><span class="line">plt.figure(figsize=(<span class="number">14</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(x[n0:n1])</span><br><span class="line">plt.grid()</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment">#计算在n0~n1区间的过零率数目</span></span><br><span class="line">zero_crossings = librosa.zero_crossings(x[n0:n1], pad=<span class="literal">False</span>)</span><br><span class="line">print(sum(zero_crossings))</span><br></pre></td></tr></table></figure>
+
+<p>在这段区间（9000~9100）有11个过零点</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160541818.png" alt="image-20200504160541818"></p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160027498.png" alt="image-20200504160027498"></p>
+<h2 id="2-5-提取光谱质心特征"><a href="#2-5-提取光谱质心特征" class="headerlink" title="2.5 提取光谱质心特征"></a>2.5 提取光谱质心特征</h2><p>光谱质心(Spectral Centroid)指示声音的“质心”位于何处，并按照声音的频率的加权平均值来加以计算。 假设现有两首歌曲，一首是蓝调歌曲，另一首是金属歌曲。现在，与同等长度的蓝调歌曲相比，金属歌曲在接近尾声位置的频率更高。所以蓝调歌曲的频谱质心会在频谱偏中间的位置，而金属歌曲的频谱质心则靠近频谱末端。</p>
+<p>librosa.feature.spectral_centroid 计算信号中每帧的光谱质心：</p>
+<p><img src="/2020/05/03/2020-05-03-information-security-exp-3/image-20200504160815181.png" alt="image-20200504160815181"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> librosa.display</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 加载信号</span></span><br><span class="line"><span class="keyword">import</span> sklearn</span><br><span class="line"></span><br><span class="line">x, sr = librosa.load(<span class="string">"1.wav"</span>)</span><br><span class="line"></span><br><span class="line">spectral_centroids = librosa.feature.spectral_centroid(x, sr=sr)[<span class="number">0</span>]</span><br><span class="line">print(spectral_centroids.shape)</span><br><span class="line"><span class="comment"># (2647,)</span></span><br><span class="line"><span class="comment">#计算可视化时间变量</span></span><br><span class="line"><span class="comment"># Computing the time variable for visualization</span></span><br><span class="line">frames = range(len(spectral_centroids))</span><br><span class="line">t = librosa.frames_to_time(frames)</span><br><span class="line"><span class="comment">#标准化光谱质心以进行可视化</span></span><br><span class="line"><span class="comment"># Normalising the spectral centroid for visualisation</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span><span class="params">(x, axis=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sklearn.preprocessing.minmax_scale(x, axis=axis)</span><br><span class="line"><span class="comment">#可视化光谱质心</span></span><br><span class="line"><span class="comment">#Plotting the Spectral Centroid along the waveform</span></span><br><span class="line">librosa.display.waveplot(x, sr=sr, alpha=<span class="number">0.4</span>)</span><br><span class="line">plt.plot(t, normalize(spectral_centroids), color=<span class="string">'r'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>参考资料：</p>
+<p>LIBROSA处理音频信号   <a href="https://www.freesion.com/article/4795221829/" target="_blank" rel="noopener">https://www.freesion.com/article/4795221829/</a></p>
+<h1 id="3、总结"><a href="#3、总结" class="headerlink" title="3、总结"></a>3、总结</h1><ul>
+<li>这次实验挺有趣的，难度也适中。</li>
+<li>大多数时候出错，都是api不熟悉导致的，多看多敲就好了。</li>
+<li>图像处理部分的透视变化、numpy的熟悉、HOG特征的计算、KNN、SVM聚类的学习。音频部分对音频特征和参数的介绍等等，学到了很多东西。</li>
+<li>但是，信息数据处理才是刚刚入了一点点门，还得继续努力才是。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ColaLinN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/" title="信安内容实验3">https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag"><i class="fa fa-tag"></i> 实验</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/30/2020-04-30-algorithm-homework-2/" rel="next" title="2020-04-30-algorithm-homework-2">
+                <i class="fa fa-chevron-left"></i> 2020-04-30-algorithm-homework-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/11/2020-05-11-translate-1/" rel="prev" title="翻译">
+                翻译 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container">
+	</div>	
+
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ColaLinN" />
+            
+              <p class="site-author-name" itemprop="name">ColaLinN</p>
+              <p class="site-description motion-element" itemprop="description">集中一点 登峰造极</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ColaLinN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:shenqiaaa@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+		  
+				  
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验环境"><span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1、图像实验"><span class="nav-text">1、图像实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-背景介绍"><span class="nav-text">1.1 背景介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）图像的基本知识"><span class="nav-text">（1）图像的基本知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）库介绍"><span class="nav-text">（2）库介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-图像的基本操作"><span class="nav-text">(3)图像的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-将彩色RGB图片变为黑白（灰度）图片"><span class="nav-text">1.将彩色RGB图片变为黑白（灰度）图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-将彩色RGB图片变为“底片”模式"><span class="nav-text">2.将彩色RGB图片变为“底片”模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-滤波器提取图片的信息"><span class="nav-text">3.滤波器提取图片的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-图片读、写和显示操作"><span class="nav-text">4.图片读、写和显示操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-图像缩放"><span class="nav-text">5.图像缩放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-图像的仿射变换之图像缩放"><span class="nav-text">1.2 图像的仿射变换之图像缩放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-图像的透视变换（空间变换）"><span class="nav-text">1.3 图像的透视变换（空间变换）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-通过HOG特征来分类——OCR"><span class="nav-text">1.4 通过HOG特征来分类——OCR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-HOG特征，自找数据集进行测试"><span class="nav-text">1.5 HOG特征，自找数据集进行测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、音频实验"><span class="nav-text">2、音频实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-背景介绍"><span class="nav-text">2.1 背景介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-使用wave读取音频文件的信息"><span class="nav-text">2.2 使用wave读取音频文件的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-使用LibROSA分别计算音频的MFCC和Chroma特征"><span class="nav-text">2.3 使用LibROSA分别计算音频的MFCC和Chroma特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-提取过零率特征"><span class="nav-text">2.4 提取过零率特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-提取光谱质心特征"><span class="nav-text">2.5 提取光谱质心特征</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、总结"><span class="nav-text">3、总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ColaLinN</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">86k</span>
+  
+</div>
+
+
+
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人访问
+</span>
+</div>
+
+
+
+<!--添加网站的运行时间-->
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2020,01,15,19,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已安全运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="BbeiAn-info">
+   	  
+    <a target="_blank" href="http://www.beian.miit.gov.cn/" rel="nofollow">琼ICP备-20002422号</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
+	<span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
+	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=46902402000039" style="text-decoration:none;no-repeat left center" rel="nofollow">琼公网安备46902402000039号</a>	  <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+<!--*style="color:#f0d784"-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7dd0e4dd1112b4f6ac75',
+          clientSecret: '5f52c7a06abafb34741cd6468191b708c1f166b9',
+          repo: 'ColaLinN.github.io',
+          owner: 'ColaLinN',
+          admin: ['ColaLinN'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+</body>
+</html>

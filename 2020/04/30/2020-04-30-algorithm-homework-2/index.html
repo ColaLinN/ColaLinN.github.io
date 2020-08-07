@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="作业," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="神奇小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1.明显倒置问题——分治 1.1 描述算法思想我们可以再归并排序的基础上来计算明显倒置。  分治：将一列数字平分为左右两列数字 治理：左右两列数字分别计算其明显倒置个数A、B 合并：计算左列右列（i在左列，j在右列）所含的明显倒置个数C，A+B+C即为明显倒置的总个数  1.2 写出算法伪代码12345678910111213141516171819202122232425262728293031">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020-04-30-algorithm-homework-2">
+<meta property="og:url" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/">
+<meta property="og:site_name" content="神奇小站">
+<meta property="og:description" content="1.明显倒置问题——分治 1.1 描述算法思想我们可以再归并排序的基础上来计算明显倒置。  分治：将一列数字平分为左右两列数字 治理：左右两列数字分别计算其明显倒置个数A、B 合并：计算左列右列（i在左列，j在右列）所含的明显倒置个数C，A+B+C即为明显倒置的总个数  1.2 写出算法伪代码12345678910111213141516171819202122232425262728293031">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427220820331.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427225822702.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427225957321.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427232332542.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200430172622350.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200430172619021.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200430172833186.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429180827475.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234432154.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234429347.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429171527226.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429171618826.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429171955315.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429172049824.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429172142515.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429172219858.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234524430.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429173903200.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429173645486.png">
+<meta property="og:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234616837.png">
+<meta property="article:published_time" content="2020-04-30T14:58:55.000Z">
+<meta property="article:modified_time" content="2020-04-30T14:59:41.700Z">
+<meta property="article:author" content="ColaLinN">
+<meta property="article:tag" content="作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427220820331.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/"/>
+
+
+
+
+
+  <title>2020-04-30-algorithm-homework-2 | 神奇小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">神奇小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">这里总有神奇的东西</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friendlink">
+          <a href="/friendlink" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+    
+  
+  
+
+  <article class="post post-type-normal true" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ColaLinN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="神奇小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2020-04-30-algorithm-homework-2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T22:58:55+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+		  		  
+		  
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.7k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-明显倒置问题——分治"><a href="#1-明显倒置问题——分治" class="headerlink" title="1.明显倒置问题——分治"></a>1.明显倒置问题——分治</h1><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427220820331.png" alt="image-20200427220820331"></p>
+<h2 id="1-1-描述算法思想"><a href="#1-1-描述算法思想" class="headerlink" title="1.1 描述算法思想"></a>1.1 描述算法思想</h2><p>我们可以再归并排序的基础上来计算明显倒置。</p>
+<ul>
+<li>分治：将一列数字平分为左右两列数字</li>
+<li>治理：左右两列数字分别计算其明显倒置个数A、B</li>
+<li>合并：计算左列右列（i在左列，j在右列）所含的明显倒置个数C，A+B+C即为明显倒置的总个数</li>
+</ul>
+<h2 id="1-2-写出算法伪代码"><a href="#1-2-写出算法伪代码" class="headerlink" title="1.2 写出算法伪代码"></a>1.2 写出算法伪代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MS_OI</span><span class="params">(lists)</span>:</span>  <span class="comment">#merge_sort_Obvious_inversion</span></span><br><span class="line">    <span class="keyword">if</span> len(lists) &lt;= <span class="number">1</span>: <span class="comment">#若list个数小于一，直接返回</span></span><br><span class="line">        <span class="keyword">return</span> lists,<span class="number">0</span></span><br><span class="line">    middle = len(lists)/<span class="number">2</span>	<span class="comment">#mid是向下取整的数组中间指针</span></span><br><span class="line">    left,numA = MS_OI(lists[:middle]) <span class="comment">#计算有序左数组，以及左数组明显倒置个数</span></span><br><span class="line">    right,numB = MS_OI(lists[middle:]) <span class="comment">#计算有序右数组，以及右数组明显倒置个数</span></span><br><span class="line">    lists_sort,numC=merge_OV(left, right)<span class="comment">#计算有序list，以及左列右列数组明显倒置个数</span></span><br><span class="line">	<span class="keyword">return</span> lists_sort,(numA+numB+numC)   <span class="comment">#返回有序list，以及总明显倒置个数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_OV</span><span class="params">(left, right)</span>:</span></span><br><span class="line">    num=<span class="number">0</span></span><br><span class="line">    c = []  <span class="comment">#合并结果数组</span></span><br><span class="line">    i = j = <span class="number">0</span></span><br><span class="line">    left_R=len(left)<span class="number">-1</span>  <span class="comment">#left数组最右边元素的下标，这里-1是因为python的数组从零开始</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(left) <span class="keyword">and</span> j &lt; len(right):</span><br><span class="line">        <span class="keyword">if</span> left[i] &lt; right[j]:  <span class="comment">#如果左数组当前元素i小于右数组当前元素j，则不满足“明显倒置”</span></span><br><span class="line">            c.append(left[i])</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:					<span class="comment">#如果左数组当前元素i小于右数组当前元素j，则满足“倒置”</span></span><br><span class="line">            <span class="keyword">if</span>(left[i] &gt; <span class="number">2</span>*right[j]):  <span class="comment">#在满足“倒置”的前提下，还满足“明显倒置”</span></span><br><span class="line">                num=num+<span class="number">1</span>		<span class="comment">#首先对这个明显倒置加1</span></span><br><span class="line">                <span class="comment">#因为在left数组中[i]右边的元素都大于[i]，都与当前的right[j]构成“明显倒置”</span></span><br><span class="line">                <span class="comment">#所以left数组中[i]右边的元素有多少个，num就加多少，即len(left)-i</span></span><br><span class="line">                num=num+left_R-i</span><br><span class="line">            c.append(right[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> i == len(left): <span class="comment">#如果left数组已经遍历完，则把right剩下的直接全移到合并数组中</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> right[j:]:</span><br><span class="line">            c.append(x)</span><br><span class="line">    <span class="keyword">else</span>:			   <span class="comment">#如果right数组已经遍历完，则把left剩下的直接全移到合并数组中</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> left[i:]:</span><br><span class="line">            c.append(x)</span><br><span class="line">    <span class="keyword">return</span> c,num</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line">    lists_sort,num=MS_OI(a) <span class="comment">#计算num</span></span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-分析算法时间复杂度"><a href="#1-3-分析算法时间复杂度" class="headerlink" title="1.3 分析算法时间复杂度"></a>1.3 分析算法时间复杂度</h2><p>时间复杂度与归并排序的相同，都为nlog(n)</p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427225822702.png" alt="image-20200427225822702"></p>
+<h1 id="2-工作最优安排问题——动态规划"><a href="#2-工作最优安排问题——动态规划" class="headerlink" title="2.工作最优安排问题——动态规划"></a>2.工作最优安排问题——动态规划</h1><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427225957321.png" alt="image-20200427225957321"></p>
+<h2 id="2-1-描述算法思路"><a href="#2-1-描述算法思路" class="headerlink" title="2.1 描述算法思路"></a>2.1 描述算法思路</h2><p>这道题和我们之前做的  阿里面试题之求括号数、求走楼梯的方法数类似，都是一个数组内的线性规划问题。</p>
+<p>我们用一个数组OPT来表示这道题，数组值对应各天最优解，明显是满足最优子结构的。</p>
+<ul>
+<li>首先计算0到2天的最优值，即两天之内的情况都工作不用休息<ul>
+<li>OPT[0]=0、OPT[1]=w[1]、OPT[2]=w[1]+w[2]</li>
+</ul>
+</li>
+<li>我们从i=3-&gt;k来遍历计算这个数组，对于每个OPT[i]，有三种情况：<ul>
+<li>1天前的最优值+1天休息：OPT[i]=OPT[i-1]</li>
+<li>2天前的最优值+1天休息+1天工作：OPT[i]=OPT[i-2]+w[i]</li>
+<li>3天前的最优值+1天休息+2天工作：OPT[i]=OPT[i-3]+w[i-1]+w[i]</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-OPT-k-递推式"><a href="#2-2-OPT-k-递推式" class="headerlink" title="2.2 OPT(k)递推式"></a>2.2 OPT(k)递推式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OPT(0)=0</span></span><br><span class="line"><span class="comment"># OPT(1)=w[1]</span></span><br><span class="line"><span class="comment"># OPT(2)=w[2]</span></span><br><span class="line">OPT(k)=max(OPT(k<span class="number">-1</span>),OPT(k<span class="number">-2</span>)+w[k],OPT(k<span class="number">-3</span>)+w[k<span class="number">-1</span>]+w[k])</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-写出算法伪代码"><a href="#2-3-写出算法伪代码" class="headerlink" title="2.3 写出算法伪代码"></a>2.3 写出算法伪代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work_arrange</span><span class="params">(w)</span></span></span><br><span class="line">	OPT=[len(w)]</span><br><span class="line">    <span class="keyword">if</span> len(w)&gt;=<span class="number">1</span>:	 <span class="comment">#一天（含）以上的OPT安排	</span></span><br><span class="line">        OPT[<span class="number">0</span>]=w[<span class="number">0</span>]  <span class="comment">#w[0]是工作第0天工作的工资，为零</span></span><br><span class="line">        OPT[<span class="number">1</span>]=w[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">elif</span> len(w)&gt;=<span class="number">2</span>:	 <span class="comment">#两天（含）以上的OPT安排</span></span><br><span class="line">        OPT[<span class="number">2</span>]=w[<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:			<span class="comment">#三天（含）以上的OPT安排</span></span><br><span class="line">        <span class="keyword">for</span> i=<span class="number">3</span> to len(w):  <span class="comment">#对于三天以上的每天，都有三种情况</span></span><br><span class="line">            OPT[i]=max(OPT[i<span class="number">-1</span>],OPT[i<span class="number">-2</span>]+w[i],OPT[i<span class="number">-3</span>]+w[i<span class="number">-1</span>]+w[i]) </span><br><span class="line">    <span class="keyword">return</span> OPT</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-分析算法时间复杂度"><a href="#2-4-分析算法时间复杂度" class="headerlink" title="2.4 分析算法时间复杂度"></a>2.4 分析算法时间复杂度</h2><p>O(n)，根据伪代码可知，我们的代码时间复杂度与n成正比。</p>
+<p>直接证明法：推导递推式T(n)=T(n-1)+O(1)=T(n-2)+O(1)+O(1)=……=O(n)</p>
+<p>数学归纳法证明：</p>
+<ul>
+<li>当<code>n=0、1、2</code>时，算法时间复杂度为<code>O(n)</code></li>
+<li>设当<code>n=k</code>时，算法时间复杂度为<code>O(k)=O(n)</code>。而当<code>n=k+1</code>时，算法时间复杂度等于<code>O(k)+O(1)=O(k+1)=O(n)</code></li>
+</ul>
+<p>得证时间复杂度为O(n)</p>
+<h1 id="3-棋盘硬币收集问题——动态规划"><a href="#3-棋盘硬币收集问题——动态规划" class="headerlink" title="3.棋盘硬币收集问题——动态规划"></a>3.棋盘硬币收集问题——动态规划</h1><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427232332542.png" alt="image-20200427232332542"></p>
+<h2 id="3-1-描述算法思路"><a href="#3-1-描述算法思路" class="headerlink" title="3.1 描述算法思路"></a>3.1 描述算法思路</h2><p>以下 <code>列即x坐标</code>，<code>行即y坐标</code></p>
+<p>x+1往右，y+1往上</p>
+<p>自顶向下遍历棋盘的行。</p>
+<ul>
+<li>首先计算第n行的所有格子的总价值，因为是最高的棋子，所以总价值就是自身价值。</li>
+<li>然后计算第n-1行的总价值，第n-1行的每个格子的总价值计算公式如下：<ul>
+<li>若是第1列：OPT(x,y)=max(OPT(x,y+1),OPT(x+1,y+1))+c(x,y)</li>
+<li>若是第n列：OPT(x,y)=max(OPT(x,y+1),OPT(x-1,y+1))+c(x,y)</li>
+<li>其余列：OPT(x,y)=max(OPT(x,y+1),OPT(x-1,y+1),OPT(x+1,y+1))+c(x,y)</li>
+</ul>
+</li>
+<li>同上，自顶向下遍历行计算，最终，得到全棋盘格子可收集最大硬币总价值。</li>
+</ul>
+<p>⭐由于考虑到题目仅仅只计算底部任意一个格子的最大总价值，如下图：影响到OPT(x,y)的，仅仅是两条红色线以上的格子。所以我们可以在上述算法上做一点点修改，遍历行时可减少遍历格子数。可降低时间复杂度、提高计算效率。</p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200430172622350.png" alt="image-20200430172622350"></p>
+<p>⭐由于题目可在最顶部任意一排格子结束，对于这个要求，我们同样只要加个约束就好了。</p>
+<h2 id="3-2-OPT-x-y-递推式"><a href="#3-2-OPT-x-y-递推式" class="headerlink" title="3.2 OPT(x,y)递推式"></a>3.2 OPT(x,y)递推式</h2><ul>
+<li>若是第0列：OPT(x,y)=max(OPT(x,y+1),OPT(x+1,y+1))+c(x,y)</li>
+<li>若是第n列：OPT(x,y)=max(OPT(x,y+1),OPT(x-1,y+1))+c(x,y)</li>
+<li>其余列：OPT(x,y)=max(OPT(x,y+1),OPT(x-1,y+1),OPT(x+1,y+1))+c(x,y)</li>
+</ul>
+<h2 id="3-3-写出算法伪代码"><a href="#3-3-写出算法伪代码" class="headerlink" title="3.3 写出算法伪代码"></a>3.3 写出算法伪代码</h2><p>以下下标，均是以python数组下标从零开始为前提。range(n)=[n-1,……,0]。</p>
+<p> <code>列=x=i</code>，<code>行=y=j</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CHESS_COIN</span><span class="params">(c)</span>:</span></span><br><span class="line">    lenc=len(c)</span><br><span class="line">    OPT=[lenc][lenc]</span><br><span class="line"><span class="comment">#这是上半部分初始化最高行的代码：</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(lenc):    <span class="comment">#遍历最高行(y)的每列(x)，从0~n-1</span></span><br><span class="line">		 OPT(i,lenc<span class="number">-1</span>)=(i,lenc<span class="number">-1</span>)</span><br><span class="line"><span class="comment">#这是下半部分遍历计算的代码：</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(lenc<span class="number">-1</span>:<span class="number">0</span>):  <span class="comment">#遍历行(y)，从n-2~0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(lenc):  <span class="comment">#遍历列(x)，从0~n-1</span></span><br><span class="line">            <span class="keyword">if</span> i==<span class="number">0</span> :		 <span class="comment">#最左列</span></span><br><span class="line">                OPT(i,j)=max(OPT(i,j+<span class="number">1</span>),OPT(i+<span class="number">1</span>,j+<span class="number">1</span>))+c(i,j)</span><br><span class="line">            <span class="keyword">elif</span> i==n<span class="number">-1</span>:	<span class="comment">#最右列</span></span><br><span class="line">                OPT(i,j)=max(OPT(i,j+<span class="number">1</span>),OPT(i<span class="number">-1</span>,j+<span class="number">1</span>))+c(i,j)</span><br><span class="line">            <span class="keyword">else</span>:			<span class="comment">#其余列</span></span><br><span class="line">            	OPT(i,j)=max(OPT(i,j+<span class="number">1</span>),OPT(i<span class="number">-1</span>,j+<span class="number">1</span>),OPT(i+<span class="number">1</span>,j+<span class="number">1</span>))+c(i,j)</span><br><span class="line">    <span class="keyword">return</span> OPT</span><br></pre></td></tr></table></figure>
+
+<p>⭐为了使达到题目中的要求：  你可以选择在在<code>最底部一排的任意格子开始</code>，在<code>最顶部一排的任意格子结束</code></p>
+<ul>
+<li><input checked disabled type="checkbox"> 我们在遍历最顶部行时，做一个条件判断是否为最后一个格子（第M列）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这是上半部分初始化最高行的代码：</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(M):    <span class="comment">#遍历最高行(y)的每列(x)，从0~M-1</span></span><br><span class="line">		 OPT(i,lenc<span class="number">-1</span>)=(i,lenc<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(M:n<span class="number">-1</span>):  <span class="comment">#遍历最高行(y) 在M~n-1列的值</span></span><br><span class="line">        OPT(i,lenc<span class="number">-1</span>)=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked disabled type="checkbox"> 我们在遍历行时要考虑函数是否在红线范围内，判断是否大于直线的值即可，</li>
+<li><input checked disabled type="checkbox"> 设最底行的格子坐标为（a,b）这里写个伪代码：</li>
+</ul>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200430172619021.png" alt="image-20200430172619021"></p>
+<h2 id="3-4-分析算法时间复杂度"><a href="#3-4-分析算法时间复杂度" class="headerlink" title="3.4 分析算法时间复杂度"></a>3.4 分析算法时间复杂度</h2><p>⭐直接证明：</p>
+<ul>
+<li><p>对于题目——棋盘硬币收集问题来说，想要获得一个最底部的格子的最大价值，最少必须要遍历其上方的格子数=    <code>n^2</code> -  <code>(1/4)n^2</code> =<code>(3/4)n^2</code>  。即<code>(3/4)n^2</code>  &lt;=f(n) &lt;=  <code>n^2</code>  。</p>
+</li>
+<li><p>存在正的常数C=1和自然数n0=1，使得当n≥n0时， 有f(n)≤g(n)=n^2。</p>
+</li>
+<li><p>则称函数f (n) 在n 充分大时有上有界，且g(n) 是它的一个上界，记做f (n) = O(g(n))=O(n^2)</p>
+</li>
+</ul>
+<p>⭐数学归纳法证明：</p>
+<ul>
+<li>当<code>n=1</code>时，算法时间复杂度为<code>O(n^2)</code></li>
+<li>设当<code>n=k</code>时，算法时间复杂度为<code>O(k^2)=O(n^2)</code>。而当<code>n=k+1</code>时，算法时间复杂度等于<code>O((k+1)^2)=O(n^2)</code></li>
+</ul>
+<p>得证时间复杂度为O(n^2)</p>
+<h2 id="3-5-证明不存在最差时间复杂度为小o-n-2-的动态规划算法"><a href="#3-5-证明不存在最差时间复杂度为小o-n-2-的动态规划算法" class="headerlink" title="3.5 证明不存在最差时间复杂度为小o(n^2)的动态规划算法"></a>3.5 证明不存在最差时间复杂度为小o(n^2)的动态规划算法</h2><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200430172833186.png" alt="image-20200430172833186"></p>
+<p>反证法：</p>
+<ul>
+<li><p>假设存在一个动态规划算法的最差时间复杂度为<code>小o(n^2)</code> ，即<code>f(n)=o(g(n))</code>  。</p>
+</li>
+<li><p>即<code>0&lt;=f(n)&lt;=cg(n)</code>对于任意常量<code>c&gt;0</code>成立（n&gt;=n0）。</p>
+</li>
+<li><p>但是，对于题目——棋盘硬币收集问题来说，想要获得一个最底部的格子的最大价值，最少必须要遍历其上方的的格子数=  <code>n^2</code> -  <code>(1/4)n^2</code> =<code>(3/4)n^2</code>   。假如此时取c取<code>1/2</code>，则<code>0&lt;=f(n)&lt;=(1/2)g(n)</code>不成立，矛盾。</p>
+</li>
+<li><p>反证得不存在最差时间复杂度为<code>小o(n^2)</code>的动态规划算法，最优的算法时间复杂度只能是 <code>大O(n^2)</code>。</p>
+</li>
+</ul>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429180827475.png" alt="image-20200429180827475"></p>
+<h1 id="4-dijkstra算法流程图——贪心"><a href="#4-dijkstra算法流程图——贪心" class="headerlink" title="4.dijkstra算法流程图——贪心"></a>4.dijkstra算法流程图——贪心</h1><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234432154.png" alt="image-20200427234432154"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234429347.png" alt="image-20200427234429347"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429171527226.png" alt="image-20200429171527226"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429171618826.png" alt="image-20200429171618826"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429171955315.png" alt="image-20200429171955315"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429172049824.png" alt="image-20200429172049824"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429172142515.png" alt="image-20200429172142515"></p>
+<p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429172219858.png" alt="image-20200429172219858"></p>
+<h1 id="5-kruskal-prim最小生成树——贪心"><a href="#5-kruskal-prim最小生成树——贪心" class="headerlink" title="5.kruskal\prim最小生成树——贪心"></a>5.kruskal\prim最小生成树——贪心</h1><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234524430.png" alt="image-20200427234524430"></p>
+<h2 id="5-1-Kruskal"><a href="#5-1-Kruskal" class="headerlink" title="5.1 Kruskal"></a>5.1 Kruskal</h2><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429173903200.png" alt="image-20200429173903200"></p>
+<h2 id="5-2-prim"><a href="#5-2-prim" class="headerlink" title="5.2 prim"></a>5.2 prim</h2><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200429173645486.png" alt="image-20200429173645486"></p>
+<h1 id="6-环内活动安排问题——贪心"><a href="#6-环内活动安排问题——贪心" class="headerlink" title="6.环内活动安排问题——贪心"></a>6.环内活动安排问题——贪心</h1><p><img src="/2020/04/30/2020-04-30-algorithm-homework-2/image-20200427234616837.png" alt="image-20200427234616837"></p>
+<h2 id="6-1-描述算法思想"><a href="#6-1-描述算法思想" class="headerlink" title="6.1 描述算法思想"></a>6.1 描述算法思想</h2><p>该题，是一个环内的活动安排问题。我们可以遍历每个活动，将该活动从环中去除，余下的时间不成环，为普通活动安排问题。最后比较所有情况求得最优解。我们还可以用以下分类的方法，来减少一些计算量。    </p>
+<p>考虑以下两种情况下的安排，并且从这些安排中选出最优的。</p>
+<ul>
+<li>最优的安排里没有过夜的活动，是一个0-24点的普通活动安排问题。</li>
+<li>最优的安排里有过夜的活动，<strong>遍历过夜活动集每个过夜活动</strong>，剩下的也是普通活动安排问题。</li>
+</ul>
+<p>⭐其实，对于过夜的活动，我们还可以用一些小的技巧来减少计算量。但因为计算包含关系有时复杂度会很高，这里当作一个变式。</p>
+<ul>
+<li>若过夜活动两两不存在包含关系，则遍历计算，选择最优的安排。</li>
+<li>对于活动A在活动B包含下的（即B开始早于A，结束晚于A，真子集关系），直接选择活动A。</li>
+</ul>
+<h2 id="6-2-分析算法时间复杂度"><a href="#6-2-分析算法时间复杂度" class="headerlink" title="6.2 分析算法时间复杂度"></a>6.2 分析算法时间复杂度</h2><p>考虑以下两种情况下的安排，并且从这些安排中选出最优的。</p>
+<ul>
+<li><p>首先以结束时间为基准，使用冒泡排序0am~24pm的活动。——O(nlogn)</p>
+</li>
+<li><p>遍历记下过夜的活动在排序数组中的位置，并且用一个数组将保存过夜活动——O(n)</p>
+</li>
+<li><p>最优的安排里没有过夜的活动，是一个0-24点的普通活动安排问题，得到<code>结果A</code>。——O(n)</p>
+</li>
+<li><p>最优的安排里有过夜活动，遍历每个过夜活动，剩下的也是普通活动安排问题，寻找该过夜活动(如下)—O(n)</p>
+<ul>
+<li>tips：对于活动A在活动B包含下的（即B开始早于A，结束晚于A，真子集关系），直接选择活动A。若过夜活动两两不存在包含关系，则遍历计算值，选择最优的安排。但是此操作会增加时间复杂度，可以作为变式使用。</li>
+</ul>
+</li>
+<li><p>得到一个需要遍历的过夜活动集，<strong>遍历过夜活动集每个过夜活动</strong>。然后把它所占的区间从0-24小时中去除，然后从这个区间内使用普通活动安排方法计算，得到结果<code>B、C、D……</code>。——<strong>O(n^2)</strong></p>
+</li>
+<li><p>最后，对比几种情况<code>A、B、C……</code>选择最优值（最多活动）。——O(n)</p>
+</li>
+</ul>
+<p>综上，一般情况下，算法时间复杂度为O(n^2)。</p>
+<h2 id="6-3-证明算法正确性"><a href="#6-3-证明算法正确性" class="headerlink" title="6.3 证明算法正确性"></a>6.3 证明算法正确性</h2><h4 id="（1）贪心选择性质："><a href="#（1）贪心选择性质：" class="headerlink" title="（1）贪心选择性质："></a>（1）贪心选择性质：</h4><ul>
+<li><p>对于不含跨夜活动的活动安排。是一个0~24小时普通活动的贪心选择：</p>
+<ol>
+<li><p>证：假设，存在一个最优解A（不含跨夜活动情况下），且A中的活动也按结束时间非递减排序。A中的第一个活动是K。（设从零点开始的最早结束的活动为F）</p>
+</li>
+<li><p>如果K是F，那A就是从0点开始的贪心选择。</p>
+<p>如果K不是F，那么设B=A-{K}∪{F}，因为F早于K结束，且A中的活动是相容的。所以B中的活动也是相容的。又由于B中的活动个数与A中的活动个数相同，故A是最优的，即B是以F开始的最优活动安排。</p>
+</li>
+<li><p>所以，最优解A必包含F。</p>
+</li>
+</ol>
+</li>
+<li><p>对于含跨夜活动的活动安排：</p>
+<ol>
+<li><p>证：假设，含某跨夜活动X的最优解为A，且A中的活动也按结束时间非递减排序。A中的第一个活动是K。</p>
+<p>（设F是X结束后开始的结束最早的活动安排）</p>
+</li>
+<li><p>如果K是F，那A就是去掉X所占区间后，从X结束时间开始的贪心选择。</p>
+<p>如果K不是F，那么设B=A-{K}∪{F}，因为F早于K结束，且A中的活动是相容的。所以B中的活动也是相容的。又由于B中的活动个数与A中的活动个数相同，故A是最优的，即B是以F开始的最优活动安排。</p>
+</li>
+<li><p>所以，最优解A（含某跨夜活动X），是去掉X后，从X结束时间开始的普通活动安排贪心选择。</p>
+</li>
+</ol>
+</li>
+<li><p>对于两种类型的解，我们贪心选择活动数量最多的解。</p>
+</li>
+</ul>
+<h4 id="（2）最优子结构性质："><a href="#（2）最优子结构性质：" class="headerlink" title="（2）最优子结构性质："></a>（2）最优子结构性质：</h4><ul>
+<li>对于不含跨夜活动的活动安排。是一个0~24小时普通活动的贪心选择：<ul>
+<li>反证法：假设A是活动集E最优解，A中第一个活动是K。设E去掉K后为E’，A去掉K之后为A’。</li>
+<li>若E’中存在另一个解B‘ ，比A’有更多的活动，则将K加入B’中产生了另一个解B。这个B将比A拥有                更多的活动，与A的最优性矛盾。故最优解A去掉第一个活动K后，其子结构也是最优的。</li>
+</ul>
+</li>
+<li>对于含跨夜活动的活动安排，同上。</li>
+<li>对于以上两种解，我们总是选择的全局最优解，包含了子结构的的最优解。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ColaLinN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/" title="2020-04-30-algorithm-homework-2">https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag"><i class="fa fa-tag"></i> 作业</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/15/2020-04-15-HOPE/" rel="next" title="希望">
+                <i class="fa fa-chevron-left"></i> 希望
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/03/2020-05-03-information-security-exp-3/" rel="prev" title="信安内容实验3">
+                信安内容实验3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container">
+	</div>	
+
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ColaLinN" />
+            
+              <p class="site-author-name" itemprop="name">ColaLinN</p>
+              <p class="site-description motion-element" itemprop="description">集中一点 登峰造极</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ColaLinN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:shenqiaaa@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+		  
+				  
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-明显倒置问题——分治"><span class="nav-text">1.明显倒置问题——分治</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-描述算法思想"><span class="nav-text">1.1 描述算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-写出算法伪代码"><span class="nav-text">1.2 写出算法伪代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-分析算法时间复杂度"><span class="nav-text">1.3 分析算法时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-工作最优安排问题——动态规划"><span class="nav-text">2.工作最优安排问题——动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-描述算法思路"><span class="nav-text">2.1 描述算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-OPT-k-递推式"><span class="nav-text">2.2 OPT(k)递推式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-写出算法伪代码"><span class="nav-text">2.3 写出算法伪代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-分析算法时间复杂度"><span class="nav-text">2.4 分析算法时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-棋盘硬币收集问题——动态规划"><span class="nav-text">3.棋盘硬币收集问题——动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-描述算法思路"><span class="nav-text">3.1 描述算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-OPT-x-y-递推式"><span class="nav-text">3.2 OPT(x,y)递推式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-写出算法伪代码"><span class="nav-text">3.3 写出算法伪代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-分析算法时间复杂度"><span class="nav-text">3.4 分析算法时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-证明不存在最差时间复杂度为小o-n-2-的动态规划算法"><span class="nav-text">3.5 证明不存在最差时间复杂度为小o(n^2)的动态规划算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-dijkstra算法流程图——贪心"><span class="nav-text">4.dijkstra算法流程图——贪心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-kruskal-prim最小生成树——贪心"><span class="nav-text">5.kruskal\prim最小生成树——贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Kruskal"><span class="nav-text">5.1 Kruskal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-prim"><span class="nav-text">5.2 prim</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-环内活动安排问题——贪心"><span class="nav-text">6.环内活动安排问题——贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-描述算法思想"><span class="nav-text">6.1 描述算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-分析算法时间复杂度"><span class="nav-text">6.2 分析算法时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-证明算法正确性"><span class="nav-text">6.3 证明算法正确性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）贪心选择性质："><span class="nav-text">（1）贪心选择性质：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）最优子结构性质："><span class="nav-text">（2）最优子结构性质：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ColaLinN</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">86k</span>
+  
+</div>
+
+
+
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人访问
+</span>
+</div>
+
+
+
+<!--添加网站的运行时间-->
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2020,01,15,19,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已安全运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="BbeiAn-info">
+   	  
+    <a target="_blank" href="http://www.beian.miit.gov.cn/" rel="nofollow">琼ICP备-20002422号</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
+	<span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
+	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=46902402000039" style="text-decoration:none;no-repeat left center" rel="nofollow">琼公网安备46902402000039号</a>	  <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+<!--*style="color:#f0d784"-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7dd0e4dd1112b4f6ac75',
+          clientSecret: '5f52c7a06abafb34741cd6468191b708c1f166b9',
+          repo: 'ColaLinN.github.io',
+          owner: 'ColaLinN',
+          admin: ['ColaLinN'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+</body>
+</html>
