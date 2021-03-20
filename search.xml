@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>那些花儿</title>
+    <url>/2021/03/20/2021-03-20-huaer/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="密码错误，请重试。\n Oh, this is an invalid password. Check and try again, please." data-whm="解密内容无法验证，但您仍然可以看看。\n Oh, these decrypted content cannot be verified, but you can still have a look."><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="加密文章，需要输入密码访问。</br> Hey, password is required here." /><label>加密文章，需要输入密码访问。</br> Hey, password is required here.</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="57c90076def79597fe2f97bc4f4d0d62eb809265ac4fe941556cf72974693754">3ae6893324e709a3fa4aa1f68cae68d1b05fe3a9544092fd1adc330e3b4019cf</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>那些花儿</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>写一个医院挂号脚本</title>
     <url>/2020/11/13/2020-11-13-guahao/</url>
     <content><![CDATA[<h1 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h1><p>上个月有个同学找我，说在某医院某医生抢了一年没挂到号。</p>
