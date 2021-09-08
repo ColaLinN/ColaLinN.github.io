@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shenqiy.cn/2021/03/20/2021-03-20-huaer/</loc>
-    <lastmod>2021-03-24</lastmod>
+    <loc>https://shenqiy.cn/2020/06/29/2020-06-29-Viewing-record/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/07/07/2020-07-07-algorithm/</loc>
+    <lastmod>2021-09-08</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/11/13/2020-11-13-guahao/</loc>
-    <lastmod>2020-11-12</lastmod>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/02/04/2020-02-04-pRide-current-search/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/02/04/2020-02-04-tensorflow-gpu-CUDA/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/02/13/2020-02-13-ZSRW-Development-record/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/02/26/2020-02-26-JAVA-complement-1/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/03/08/2020-03-08-anki-1/</loc>
+    <lastmod>2021-09-08</lastmod>
+  </url>  <url>
+    <loc>https://shenqiy.cn/2020/07/14/2020-07-14-essay-1/</loc>
+    <lastmod>2021-09-08</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/08/02/2020-08-02-DP-1/</loc>
     <lastmod>2020-11-03</lastmod>
@@ -18,9 +42,6 @@
   </url>  <url>
     <loc>https://shenqiy.cn/2020/10/21/2020-10-21-leetcode-p1/</loc>
     <lastmod>2020-10-21</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/09/26/2020-09-26-baoyan/</loc>
-    <lastmod>2020-10-19</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/08/02/2020-08-02-Recursive-1/</loc>
     <lastmod>2020-08-02</lastmod>
@@ -55,31 +76,16 @@
     <loc>https://shenqiy.cn/2020/07/22/2020-07-22-learn-CPP/</loc>
     <lastmod>2020-07-24</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/07/17/2020-07-17-How-to-memorize-words/</loc>
-    <lastmod>2020-07-17</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/03/22/2020-03-22-plan-A/</loc>
     <lastmod>2020-07-17</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/06/29/2020-06-29-Viewing-record/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/03/02/2020-03-02-Software-security-notebook-1/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/02/26/2020-02-26-JAVA-complement-1/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/01/26/2020-01-26-leetcode/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/02/06/2020-02-06-English-grammar-show/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/01/20/2020-01-20-hexo/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/01/15/2020-01-15-hello-world/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/01/26/2020-01-26-shadowsocks-centos7-vutlr-bbr/</loc>
@@ -94,9 +100,6 @@
     <loc>https://shenqiy.cn/2020/03/07/2020-03-07-beatuy-of-mathematics/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/05/11/2020-05-11-translate-1/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/03/06/2020-03-06-algorithm-2/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
@@ -106,13 +109,7 @@
     <loc>https://shenqiy.cn/2020/06/13/2020-06-13-ida-usage/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/07/07/2020-07-07-algorithm/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/05/03/2020-05-03-information-security-exp-3/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/01/22/2020-01-22-ROAD-NETWORK-EMBEDDING/</loc>
@@ -121,23 +118,11 @@
     <loc>https://shenqiy.cn/2020/01/23/2020-01-23-pRide-optimized-construction/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/02/04/2020-02-04-pRide-current-search/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/07/14/2020-07-14-essay-1/</loc>
-    <lastmod>2020-07-13</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/07/08/2020-07-08-Steganography/</loc>
     <lastmod>2020-07-09</lastmod>
   </url>  <url>
-    <loc>https://shenqiy.cn/2020/03/08/2020-03-08-anki-1/</loc>
-    <lastmod>2020-07-07</lastmod>
-  </url>  <url>
     <loc>https://shenqiy.cn/2020/05/23/2020-03-16-Network-Security-Experiment-1/</loc>
     <lastmod>2020-07-07</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/02/04/2020-02-04-tensorflow-gpu-CUDA/</loc>
-    <lastmod>2020-07-04</lastmod>
   </url>  <url>
     <loc>https://shenqiy.cn/2020/04/30/2020-04-30-algorithm-homework-2/</loc>
     <lastmod>2020-04-30</lastmod>
@@ -150,8 +135,5 @@
   </url>  <url>
     <loc>https://shenqiy.cn/2020/03/03/2020-03-03-JAVA-complement-2/</loc>
     <lastmod>2020-03-05</lastmod>
-  </url>  <url>
-    <loc>https://shenqiy.cn/2020/02/13/2020-02-13-ZSRW-Development-record/</loc>
-    <lastmod>2020-02-25</lastmod>
   </url>
 </urlset>

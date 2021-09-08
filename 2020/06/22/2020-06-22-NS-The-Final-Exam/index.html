@@ -88,12 +88,12 @@
 
 
 
-<meta name="description" content="总体设计任务一：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。（30 分） 任务二：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。（40 分） 任务三：利用上述漏洞，把一个自己">
+<meta name="description" content="Network_Security final exam 总体设计任务一：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。（30 分） 任务二：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络安全综合实验设计">
 <meta property="og:url" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/">
 <meta property="og:site_name" content="神奇小站">
-<meta property="og:description" content="总体设计任务一：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。（30 分） 任务二：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。（40 分） 任务三：利用上述漏洞，把一个自己">
+<meta property="og:description" content="Network_Security final exam 总体设计任务一：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。（30 分） 任务二：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是">
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221417113-1593172509344.png">
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200621221754210-1593172509345.png">
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622164819499.png">
@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023250674.png">
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023111428.png">
 <meta property="article:published_time" content="2020-06-21T16:30:47.000Z">
-<meta property="article:modified_time" content="2020-07-13T16:46:35.849Z">
+<meta property="article:modified_time" content="2021-09-08T08:13:51.810Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="实验">
 <meta name="twitter:card" content="summary">
@@ -448,7 +448,8 @@
       
 
       
-        <h1 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h1><p><strong>任务一</strong>：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。<strong>（30 分）</strong></p>
+        <p>Network_Security final exam</p>
+<h1 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h1><p><strong>任务一</strong>：做一个服务端程序，其功能是：收到客户端请求之后，将请求中的字符串前后翻转，然后返回给客户端。<strong>（30 分）</strong></p>
 <p><strong>任务二</strong>：基于上述服务程序，在保持基本功能的前提下，设计一个缓冲区溢出漏洞。并编写恶意客户端程序，扫描局域网内的所有机器，找到有该漏洞的服务端机器，在服务端机器上创建一个 txt 的文件，文件名是你的姓名.txt，文件内容是你的学号。<strong>（40 分）</strong></p>
 <p><strong>任务三</strong>：利用上述漏洞，把一个自己设计的程序 daemon 送上服务端机器并运行，这个 daemon能够搜索服务器上的所有 txt 文件，并找出文件名中含有你的姓名的文件，并利用网络传送给客户端机器（传出的方法不限，例如：email，在线 socket 连接等）。<strong>（20 分）</strong></p>
 <p><strong>任务四：</strong>在上述任务的基础上，设计一种密钥管理机制和传输加密方案，模拟将传输内容加密（包含文件名和文件内容）发送给客户端机器。用 wireshark 等工具抓取传输内容，证明未加密与加密的区别，并分析你所设计的密钥管理机制和传输加密方案的安全性。<strong>（10 分）</strong></p>
@@ -797,7 +798,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -819,7 +820,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -918,7 +919,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">87.7k</span>
   
 </div>
 
