@@ -5,9 +5,9 @@
   <subtitle>这里总有神奇的东西</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://shenqiy.cn/"/>
+  <link href="https://colalinn.github.io/"/>
   <updated>2021-09-08T08:08:36.000Z</updated>
-  <id>https://shenqiy.cn/</id>
+  <id>https://colalinn.github.io/</id>
   
   <author>
     <name>ColaLinN</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>写一个医院挂号脚本</title>
-    <link href="https://shenqiy.cn/2020/11/13/2020-11-13-guahao/"/>
-    <id>https://shenqiy.cn/2020/11/13/2020-11-13-guahao/</id>
+    <link href="https://colalinn.github.io/2020/11/13/2020-11-13-guahao/"/>
+    <id>https://colalinn.github.io/2020/11/13/2020-11-13-guahao/</id>
     <published>2020-11-12T16:58:46.000Z</published>
     <updated>2021-09-08T08:08:36.000Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>2020-10-21-leetcode-p1</title>
-    <link href="https://shenqiy.cn/2020/10/21/2020-10-21-leetcode-p1/"/>
-    <id>https://shenqiy.cn/2020/10/21/2020-10-21-leetcode-p1/</id>
+    <link href="https://colalinn.github.io/2020/10/21/2020-10-21-leetcode-p1/"/>
+    <id>https://colalinn.github.io/2020/10/21/2020-10-21-leetcode-p1/</id>
     <published>2020-10-21T08:44:46.000Z</published>
     <updated>2020-10-21T08:45:26.000Z</updated>
     
@@ -57,17 +57,17 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法 回溯练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-Backtrace-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-Backtrace-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-Backtrace-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-Backtrace-1/</id>
     <published>2020-08-02T15:20:23.000Z</published>
     <updated>2020-08-02T15:27:10.000Z</updated>
     
@@ -83,17 +83,17 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法 滑动窗口练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-Sliding-Window-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-Sliding-Window-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-Sliding-Window-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-Sliding-Window-1/</id>
     <published>2020-08-02T15:20:09.000Z</published>
     <updated>2020-11-03T02:10:02.000Z</updated>
     
@@ -109,19 +109,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 二进制练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-Binary-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-Binary-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-Binary-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-Binary-1/</id>
     <published>2020-08-02T15:19:51.000Z</published>
     <updated>2020-08-02T15:28:20.000Z</updated>
     
@@ -138,19 +138,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 二分搜索练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-Binary-Search-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-Binary-Search-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-Binary-Search-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-Binary-Search-1/</id>
     <published>2020-08-02T15:19:37.000Z</published>
     <updated>2020-08-02T15:28:12.000Z</updated>
     
@@ -167,19 +167,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 二叉搜索树练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-Binary-Search-Tree-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-Binary-Search-Tree-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-Binary-Search-Tree-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-Binary-Search-Tree-1/</id>
     <published>2020-08-02T15:19:17.000Z</published>
     <updated>2020-08-02T15:27:30.000Z</updated>
     
@@ -198,19 +198,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 动态规划练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-DP-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-DP-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-DP-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-DP-1/</id>
     <published>2020-08-02T15:18:33.000Z</published>
     <updated>2020-11-03T02:12:02.000Z</updated>
     
@@ -227,19 +227,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 递归练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-Recursive-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-Recursive-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-Recursive-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-Recursive-1/</id>
     <published>2020-08-02T15:18:02.000Z</published>
     <updated>2020-08-02T15:29:20.000Z</updated>
     
@@ -255,19 +255,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 栈与队列练习</title>
-    <link href="https://shenqiy.cn/2020/08/02/2020-08-02-stack-queue-1/"/>
-    <id>https://shenqiy.cn/2020/08/02/2020-08-02-stack-queue-1/</id>
+    <link href="https://colalinn.github.io/2020/08/02/2020-08-02-stack-queue-1/"/>
+    <id>https://colalinn.github.io/2020/08/02/2020-08-02-stack-queue-1/</id>
     <published>2020-08-02T14:21:03.000Z</published>
     <updated>2020-11-03T02:08:52.000Z</updated>
     
@@ -283,19 +283,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 二叉树练习</title>
-    <link href="https://shenqiy.cn/2020/07/30/2020-07-30-Binary-Tree-1/"/>
-    <id>https://shenqiy.cn/2020/07/30/2020-07-30-Binary-Tree-1/</id>
+    <link href="https://colalinn.github.io/2020/07/30/2020-07-30-Binary-Tree-1/"/>
+    <id>https://colalinn.github.io/2020/07/30/2020-07-30-Binary-Tree-1/</id>
     <published>2020-07-30T07:41:28.000Z</published>
     <updated>2020-08-02T15:27:18.000Z</updated>
     
@@ -311,19 +311,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法 链表练习</title>
-    <link href="https://shenqiy.cn/2020/07/30/2020-07-30-Linked-List-1/"/>
-    <id>https://shenqiy.cn/2020/07/30/2020-07-30-Linked-List-1/</id>
+    <link href="https://colalinn.github.io/2020/07/30/2020-07-30-Linked-List-1/"/>
+    <id>https://colalinn.github.io/2020/07/30/2020-07-30-Linked-List-1/</id>
     <published>2020-07-30T07:41:06.000Z</published>
     <updated>2020-08-02T15:23:26.000Z</updated>
     
@@ -340,19 +340,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://shenqiy.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://colalinn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>密码学复习</title>
-    <link href="https://shenqiy.cn/2020/07/30/2020-07-30-review-of-cryptography/"/>
-    <id>https://shenqiy.cn/2020/07/30/2020-07-30-review-of-cryptography/</id>
+    <link href="https://colalinn.github.io/2020/07/30/2020-07-30-review-of-cryptography/"/>
+    <id>https://colalinn.github.io/2020/07/30/2020-07-30-review-of-cryptography/</id>
     <published>2020-07-30T07:40:27.000Z</published>
     <updated>2020-08-02T15:25:22.000Z</updated>
     
@@ -368,21 +368,21 @@
     </summary>
     
     
-      <category term="安全" scheme="https://shenqiy.cn/categories/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="https://colalinn.github.io/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-      <category term="密码学" scheme="https://shenqiy.cn/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+      <category term="密码学" scheme="https://colalinn.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
-      <category term="复习" scheme="https://shenqiy.cn/tags/%E5%A4%8D%E4%B9%A0/"/>
+      <category term="复习" scheme="https://colalinn.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
     
-      <category term="安全" scheme="https://shenqiy.cn/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="https://colalinn.github.io/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>2020-07-30-python-1</title>
-    <link href="https://shenqiy.cn/2020/07/30/2020-07-30-python-1/"/>
-    <id>https://shenqiy.cn/2020/07/30/2020-07-30-python-1/</id>
+    <link href="https://colalinn.github.io/2020/07/30/2020-07-30-python-1/"/>
+    <id>https://colalinn.github.io/2020/07/30/2020-07-30-python-1/</id>
     <published>2020-07-30T07:40:05.000Z</published>
     <updated>2020-08-02T15:24:10.000Z</updated>
     
@@ -398,19 +398,19 @@
     </summary>
     
     
-      <category term="python" scheme="https://shenqiy.cn/categories/python/"/>
+      <category term="python" scheme="https://colalinn.github.io/categories/python/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="python" scheme="https://shenqiy.cn/tags/python/"/>
+      <category term="python" scheme="https://colalinn.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>2020-07-22-learn-CPP</title>
-    <link href="https://shenqiy.cn/2020/07/22/2020-07-22-learn-CPP/"/>
-    <id>https://shenqiy.cn/2020/07/22/2020-07-22-learn-CPP/</id>
+    <link href="https://colalinn.github.io/2020/07/22/2020-07-22-learn-CPP/"/>
+    <id>https://colalinn.github.io/2020/07/22/2020-07-22-learn-CPP/</id>
     <published>2020-07-22T04:30:35.000Z</published>
     <updated>2020-07-24T16:26:22.000Z</updated>
     
@@ -427,17 +427,17 @@
     </summary>
     
     
-      <category term="C/C++" scheme="https://shenqiy.cn/categories/C-C/"/>
+      <category term="C/C++" scheme="https://colalinn.github.io/categories/C-C/"/>
     
     
-      <category term="C/C++" scheme="https://shenqiy.cn/tags/C-C/"/>
+      <category term="C/C++" scheme="https://colalinn.github.io/tags/C-C/"/>
     
   </entry>
   
   <entry>
     <title>c语言基础复习</title>
-    <link href="https://shenqiy.cn/2020/07/21/2020-07-21-C-Program/"/>
-    <id>https://shenqiy.cn/2020/07/21/2020-07-21-C-Program/</id>
+    <link href="https://colalinn.github.io/2020/07/21/2020-07-21-C-Program/"/>
+    <id>https://colalinn.github.io/2020/07/21/2020-07-21-C-Program/</id>
     <published>2020-07-21T04:31:09.000Z</published>
     <updated>2020-07-24T16:26:26.000Z</updated>
     
@@ -455,17 +455,17 @@
     </summary>
     
     
-      <category term="C/C++" scheme="https://shenqiy.cn/categories/C-C/"/>
+      <category term="C/C++" scheme="https://colalinn.github.io/categories/C-C/"/>
     
     
-      <category term="C/C++" scheme="https://shenqiy.cn/tags/C-C/"/>
+      <category term="C/C++" scheme="https://colalinn.github.io/tags/C-C/"/>
     
   </entry>
   
   <entry>
     <title>不要试图说服别人</title>
-    <link href="https://shenqiy.cn/2020/07/14/2020-07-14-essay-1/"/>
-    <id>https://shenqiy.cn/2020/07/14/2020-07-14-essay-1/</id>
+    <link href="https://colalinn.github.io/2020/07/14/2020-07-14-essay-1/"/>
+    <id>https://colalinn.github.io/2020/07/14/2020-07-14-essay-1/</id>
     <published>2020-07-13T16:19:27.000Z</published>
     <updated>2021-09-08T08:01:30.000Z</updated>
     
@@ -478,19 +478,19 @@
     </summary>
     
     
-      <category term="生活" scheme="https://shenqiy.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://colalinn.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="密文" scheme="https://shenqiy.cn/tags/%E5%AF%86%E6%96%87/"/>
+      <category term="密文" scheme="https://colalinn.github.io/tags/%E5%AF%86%E6%96%87/"/>
     
-      <category term="生活" scheme="https://shenqiy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://colalinn.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>信息隐藏</title>
-    <link href="https://shenqiy.cn/2020/07/08/2020-07-08-Steganography/"/>
-    <id>https://shenqiy.cn/2020/07/08/2020-07-08-Steganography/</id>
+    <link href="https://colalinn.github.io/2020/07/08/2020-07-08-Steganography/"/>
+    <id>https://colalinn.github.io/2020/07/08/2020-07-08-Steganography/</id>
     <published>2020-07-08T04:39:02.000Z</published>
     <updated>2020-07-09T12:17:14.000Z</updated>
     
@@ -504,14 +504,14 @@
     
     
     
-      <category term="密文" scheme="https://shenqiy.cn/tags/%E5%AF%86%E6%96%87/"/>
+      <category term="密文" scheme="https://colalinn.github.io/tags/%E5%AF%86%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title>算法复习</title>
-    <link href="https://shenqiy.cn/2020/07/07/2020-07-07-algorithm/"/>
-    <id>https://shenqiy.cn/2020/07/07/2020-07-07-algorithm/</id>
+    <link href="https://colalinn.github.io/2020/07/07/2020-07-07-algorithm/"/>
+    <id>https://colalinn.github.io/2020/07/07/2020-07-07-algorithm/</id>
     <published>2020-07-07T10:46:48.000Z</published>
     <updated>2021-09-08T08:11:22.000Z</updated>
     
@@ -527,17 +527,17 @@
     </summary>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://shenqiy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://colalinn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>观影记录</title>
-    <link href="https://shenqiy.cn/2020/06/29/2020-06-29-Viewing-record/"/>
-    <id>https://shenqiy.cn/2020/06/29/2020-06-29-Viewing-record/</id>
+    <link href="https://colalinn.github.io/2020/06/29/2020-06-29-Viewing-record/"/>
+    <id>https://colalinn.github.io/2020/06/29/2020-06-29-Viewing-record/</id>
     <published>2020-06-29T02:43:14.000Z</published>
     <updated>2021-09-08T08:14:14.000Z</updated>
     
@@ -550,10 +550,10 @@
     </summary>
     
     
-      <category term="生活" scheme="https://shenqiy.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://colalinn.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="生活" scheme="https://shenqiy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://colalinn.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
