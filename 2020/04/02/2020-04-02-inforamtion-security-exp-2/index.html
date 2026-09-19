@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://shenqiy.cn/2020/04/02/2020-04-02-inforamtion-security-exp-2/image-20200416171617463.png">
 <meta property="og:image" content="https://shenqiy.cn/2020/04/02/2020-04-02-inforamtion-security-exp-2/image-20200416172425856.png">
 <meta property="article:published_time" content="2020-04-02T11:17:42.000Z">
-<meta property="article:modified_time" content="2020-07-13T16:49:13.647Z">
+<meta property="article:modified_time" content="2020-07-13T16:49:14.000Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="实验">
 <meta name="twitter:card" content="summary">
@@ -165,7 +165,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -482,9 +482,9 @@
 <p>NLP 中最直观，也是到目前为止最常用的词表示方法是 One-hot Representation。</p>
 <p>这种方法把每个词表示为一个很长的向量。</p>
 <p>这个向量的维度是词表大小，其中绝大多数元素为 0，只有一个维度的值为 1，这个维度就代表了当前的词。</p>
-<p>​    举个例子：</p>
-<p>​    “话筒”表示为 [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 …]</p>
-<p>​    “麦克”表示为 [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 …]</p>
+<p>​	举个例子：</p>
+<p>​	“话筒”表示为 [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 …]</p>
+<p>​	“麦克”表示为 [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 …]</p>
 <p>每个词都是茫茫 0 海中的一个 1。</p>
 <p>！但是这种简单的方法有两个缺点：<br>     1.维数灾难<br>     2.“词汇鸿沟”现象：任意两个词之间都是孤立的，无法判断像“话筒”和“麦克”是同义词。</p>
 <p>所以，我们需要词向量表示</p>
@@ -522,7 +522,7 @@
 <ul>
 <li>阿富汗的词向量，一个200维的数：</li>
 </ul>
-<p>​    <img src="/2020/04/02/2020-04-02-inforamtion-security-exp-2/image-20200409192647571.png" alt="image-20200409192647571"></p>
+<p>​	<img src="/2020/04/02/2020-04-02-inforamtion-security-exp-2/image-20200409192647571.png" alt="image-20200409192647571"></p>
 <ul>
 <li>争端、冲突这两个词的相关程度：</li>
 </ul>
@@ -574,7 +574,7 @@
 <p><img src="/2020/04/02/2020-04-02-inforamtion-security-exp-2/image-20200411181303308.png" alt="image-20200411181303308"></p>
 </li>
 </ul>
-<p>#coding = gbk</p>
+<p>#coding &#x3D; gbk</p>
 <h1 id="实验2-垃圾邮件的分类"><a href="#实验2-垃圾邮件的分类" class="headerlink" title="实验2-垃圾邮件的分类"></a>实验2-垃圾邮件的分类</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="1-文本分类"><a href="#1-文本分类" class="headerlink" title="1.文本分类"></a>1.文本分类</h3><p>文本分类就是在给定的分类体系下,让计算机根据给定文本的内容，将其判</p>
 <p>别为事先确定的若干个文本类别中的某一类或某几类的过程。</p>
 <p>一般来说，文本分类可以分为一下过程：</p>
@@ -596,10 +596,10 @@
 <ul>
 <li><p>为正常邮件的概率为<code>𝑝(𝑐0/𝑥, 𝑦) =𝑝(𝑥, 𝑦/c0)*p(c0)</code> </p>
 </li>
-<li><p>为垃圾邮件的概率为<code>𝑝(𝑐1/𝑥, 𝑦) =𝑝(𝑥, 𝑦/c1)*p(c1)</code> </p>
+<li><p>为垃圾邮件的概率为<code>𝑝(𝑐1/𝑥, 𝑦) =𝑝(𝑥, 𝑦/c1)*p(c1)</code></p>
 </li>
 </ul>
-<h4 id="2-“朴素”——引入条件独立性假设"><a href="#2-“朴素”——引入条件独立性假设" class="headerlink" title="(2).“朴素”——引入条件独立性假设"></a>(2).“朴素”——引入条件独立性假设</h4><p>x和y的条件概率相互独立。𝑝(𝑥/𝑐𝑖)和𝑝(𝑦/𝑐𝑖)可以对数据进行计数而直接得出。</p>
+<h4 id="2-“朴素”——引入条件独立性假设"><a href="#2-“朴素”——引入条件独立性假设" class="headerlink" title="(2).“朴素”——引入条件独立性假设"></a>(2).“朴素”——引入条件独立性假设</h4><p>x和y的条件概率相互独立。𝑝(𝑥&#x2F;𝑐𝑖)和𝑝(𝑦&#x2F;𝑐𝑖)可以对数据进行计数而直接得出。</p>
 <p>则条件概率<code>𝑝(𝑥, 𝑦/ci)=𝑝(𝑥/c0)*𝑝(𝑦/ci)</code></p>
 <p>即上述公式为<code>𝑝(𝑐0/𝑥, 𝑦) =𝑝(𝑥, 𝑦/c0)*𝑝(c0)=𝑝(𝑥/c0)*𝑝(𝑦/ci)*p(c0)</code> </p>
 <h4 id="3-假设每个样本至少出现一次"><a href="#3-假设每个样本至少出现一次" class="headerlink" title="(3).假设每个样本至少出现一次"></a>(3).假设每个样本至少出现一次</h4><p>由于条件独立性假设，需要对条件概率进行乘法运算，若某个样本不出现，即概率为0，则最后结果也为0。所以假设每个样本至少出现一次。</p>
@@ -684,9 +684,9 @@
 </li>
 </ol>
 <p>则：</p>
-<p><strong>查准率P=TP/（TP+FP）</strong></p>
-<p><strong>查全率R=TP/（TP+FN）</strong></p>
-<p><strong>准确率ACC=(TP+FN) / (TP+TN+FP+FN)</strong></p>
+<p><strong>查准率P&#x3D;TP&#x2F;（TP+FP）</strong></p>
+<p><strong>查全率R&#x3D;TP&#x2F;（TP+FN）</strong></p>
+<p><strong>准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN)</strong></p>
 <p>以下为去除重读词</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">去除重复词后特征项数为： 20</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.86</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.647887323943662</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 48</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.9</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6575342465753424</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 96</span><br><span class="line">查准率P&#x3D;TP&#x2F;（TP+FP）: 10.0</span><br><span class="line">查全率R&#x3D;TP&#x2F;（TP+FN）: 0.550561797752809</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.89</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6621621621621622</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 142</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.92</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6666666666666666</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 192</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.92</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6666666666666666</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 290</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.92</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6666666666666666</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 386</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.92</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6666666666666666</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 578</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.93</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6666666666666666</span><br><span class="line">————————————————————————————————————————</span><br><span class="line">去除重复词后特征项数为： 924</span><br><span class="line">准确率ACC&#x3D;(TP+FN) &#x2F; (TP+TN+FP+FN): 0.92</span><br><span class="line">调和均值F&#x3D; 2TP &#x2F; (2TP+FP+FN): 0.6666666666666666</span><br></pre></td></tr></table></figure>
 
@@ -894,7 +894,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -963,7 +963,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -977,7 +977,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">87.7k</span>
+    <span title="站点总字数">77.7k</span>
   
 </div>
 

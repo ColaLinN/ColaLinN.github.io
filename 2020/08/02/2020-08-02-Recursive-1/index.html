@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="神奇小站">
 <meta property="og:description" content="注意事项递归深度过深出错(超出时间限制)如果提醒递归深度过深出错 就用如下的代码更改限制 12class Solution:     @functools.lru_cache(maxsize&#x3D;512)  PS : 为什么要模1000000007（跟我念，一，八个零，七）。参考https:&#x2F;&#x2F;www.liuchuo.net&#x2F;archives&#x2F;645  大数相乘，大数的排列组合等为什么要取模   10">
 <meta property="article:published_time" content="2020-08-02T15:18:02.000Z">
-<meta property="article:modified_time" content="2020-08-02T15:29:19.079Z">
+<meta property="article:modified_time" content="2020-08-02T15:29:20.000Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -145,7 +145,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -449,17 +449,17 @@
 <li>大数相乘，大数的排列组合等为什么要取模</li>
 </ol>
 <ul>
-<li>1000000007是一个质数（素数），对质数取余能最大程度避免结果冲突/重复</li>
+<li>1000000007是一个质数（素数），对质数取余能最大程度避免结果冲突&#x2F;重复</li>
 <li>int32位的最大值为2147483647，所以对于int32位来说1000000007足够大。</li>
 <li>int64位的最大值为2^63-1，用最大值模1000000007的结果求平方，不会在int64中溢出。</li>
-<li>所以在大数相乘问题中，因为(a∗b)%c=((a%c)∗(b%c))%c，所以相乘时两边都对1000000007取模，再保存在int64里面不会溢出。</li>
+<li>所以在大数相乘问题中，因为(a∗b)%c&#x3D;((a%c)∗(b%c))%c，所以相乘时两边都对1000000007取模，再保存在int64里面不会溢出。</li>
 </ul>
 <ol>
 <li>这道题为什么要取模，取模前后的值不就变了吗？</li>
 </ol>
 <ul>
-<li>确实：取模前 f(43) = 701408733, f(44) = 1134903170, f(45) = 1836311903, 但是 f(46) &gt; 2147483647结果就溢出了。</li>
-<li>_____，取模后 f(43) = 701408733, f(44) = 134903163 , f(45) = 836311896, f(46) = 971215059没有溢出。</li>
+<li>确实：取模前 f(43) &#x3D; 701408733, f(44) &#x3D; 1134903170, f(45) &#x3D; 1836311903, 但是 f(46) &gt; 2147483647结果就溢出了。</li>
+<li>_____，取模后 f(43) &#x3D; 701408733, f(44) &#x3D; 134903163 , f(45) &#x3D; 836311896, f(46) &#x3D; 971215059没有溢出。</li>
 <li>取模之后能够计算更多的情况，如 f(46)</li>
 <li>这道题的测试答案与取模后的结果一致。</li>
 <li>总结一下，这道题要模1000000007的根本原因是标准答案模了1000000007。不过大数情况下为了防止溢出，模1000000007是通用做法，原因见第一点。</li>
@@ -661,7 +661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -730,7 +730,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -744,7 +744,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">87.7k</span>
+    <span title="站点总字数">77.7k</span>
   
 </div>
 

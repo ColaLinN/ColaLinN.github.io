@@ -96,7 +96,7 @@
 <meta property="og:description" content="1.两数之和1234567891011121314class Solution &amp;#123;    public int[] twoSum(int[] nums, int target) &amp;#123;        Map&lt;Integer,Integer&gt; map&#x3D;new HashMap&lt;&gt;();        for(int i&#x3D;0;i&lt;nums.length;i+">
 <meta property="og:image" content="https://shenqiy.cn/2020/10/21/2020-10-21-leetcode-p1/image-20200930153614180.png">
 <meta property="article:published_time" content="2020-10-21T08:44:46.000Z">
-<meta property="article:modified_time" content="2020-10-21T08:45:24.609Z">
+<meta property="article:modified_time" content="2020-10-21T08:45:26.000Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
@@ -146,7 +146,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -453,16 +453,16 @@
 <p>给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。</p>
 <p>请你找出这两个正序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。</p>
 <p>你可以假设 nums1 和 nums2 不会同时为空。</p>
-<p>这道题其实可以扩展成，在O(log(m + n))    的时间复杂度内，找到第K大的数</p>
+<p>这道题其实可以扩展成，在O(log(m + n))	的时间复杂度内，找到第K大的数</p>
 <ol>
-<li><p>为了计算第K位的数，先判断两数组A、B在第k//2的数的大小，<em>如果A的该数比B大</em>，则可以判断，B在第K//2之前的数肯定不是我们要找的target，则把这些数删掉，将K减去K//2，继续递归遍历。</p>
+<li><p>为了计算第K位的数，先判断两数组A、B在第k&#x2F;&#x2F;2的数的大小，<em>如果A的该数比B大</em>，则可以判断，B在第K&#x2F;&#x2F;2之前的数肯定不是我们要找的target，则把这些数删掉，将K减去K&#x2F;&#x2F;2，继续递归遍历。</p>
 </li>
 <li><p>要处理一些边界条件：</p>
 <p>我们需要始终保持A比B长。</p>
 <p>当B长度为零时就可以直接返回，减少了递归深度。</p>
 <p>如果寻找的K为排在第1位的数，则比较两数组的第1位数，并返回</p>
 </li>
-<li><p>对于中位数而言，我们可以分别计算第    length//2+1、length//2+2  的值</p>
+<li><p>对于中位数而言，我们可以分别计算第    length&#x2F;&#x2F;2+1、length&#x2F;&#x2F;2+2  的值</p>
 <p>总长度奇数条件下，前者后者都是中间的值</p>
 <p>总长度偶数条件下，前者是第一个中位数，后者是第二个。两者之均，正好是中位数的值</p>
 </li>
@@ -472,11 +472,11 @@
 
 
 <p>其实上面的比较A、B的长度，并且交换，是可以避免的。</p>
-<p>开局先判断两个数组是否为空，然后判断k==1</p>
-<p>接下来就比较两数组的k//2的大小，来进一步缩小查找范围：</p>
+<p>开局先判断两个数组是否为空，然后判断k&#x3D;&#x3D;1</p>
+<p>接下来就比较两数组的k&#x2F;&#x2F;2的大小，来进一步缩小查找范围：</p>
 <ul>
-<li>只可能有一个数组的长度不到k//2，因为k从一开始就是被约束好的</li>
-<li>如果B数组长度不为K/2，那么一定可以把A数组的前K/2个数去掉，因为这K/2个数必不是target</li>
+<li>只可能有一个数组的长度不到k&#x2F;&#x2F;2，因为k从一开始就是被约束好的</li>
+<li>如果B数组长度不为K&#x2F;2，那么一定可以把A数组的前K&#x2F;2个数去掉，因为这K&#x2F;2个数必不是target</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left=(nums1.length+nums2.length+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> right=(nums1.length+nums2.length+<span class="number">2</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> (findKNum(nums1,<span class="number">0</span>,nums2,<span class="number">0</span>,left)+findKNum(nums1,<span class="number">0</span>,nums2,<span class="number">0</span>,right))/<span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKNum</span><span class="params">(<span class="keyword">int</span>[] nums1,<span class="keyword">int</span> i,<span class="keyword">int</span>[] nums2,<span class="keyword">int</span> j,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=nums1.length) <span class="keyword">return</span> nums2[j+k-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(j&gt;=nums2.length) <span class="keyword">return</span> nums1[i+k-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(nums1[i],nums2[j]);<span class="comment">//两个数组此时都不为空</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> nums1mid=(i+k/<span class="number">2</span>-<span class="number">1</span>&lt;nums1.length)?nums1[i+k/<span class="number">2</span>-<span class="number">1</span>]:Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> nums2mid=(j+k/<span class="number">2</span>-<span class="number">1</span>&lt;nums2.length)?nums2[j+k/<span class="number">2</span>-<span class="number">1</span>]:Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">if</span>(nums1mid&lt;nums2mid)&#123;</span><br><span class="line">            <span class="keyword">return</span> findKNum(nums1,i+k/<span class="number">2</span>,nums2,j,k-k/<span class="number">2</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> findKNum(nums1,i,nums2,j+k/<span class="number">2</span>,k-k/<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -534,7 +534,7 @@
 <li>先从后往前找到一个相邻的逆序对，<code>A[i]&lt; A[j]</code> ，其中跳过的 <code>A[j:]</code> 肯定是降序排列</li>
 <li>然后从后往前找到第一个大于 <code>A[i]</code> 的 <code>A[k]</code> ，交换 <code>A[k]、A[i]</code> </li>
 <li>然后将 <code>A[i+1:]</code> 升序排列（因为我们要找的是在交换 <code>A[k]、A[i]</code>  后的最大的数）</li>
-<li>如果没有找到逆序对，就直接跳到 <code>升序排列</code>  </li>
+<li>如果没有找到逆序对，就直接跳到 <code>升序排列</code></li>
 </ul>
 </li>
 </ul>
@@ -546,7 +546,7 @@
 <ul>
 <li><p>先判断它左边是不是 <code>左括号</code> ，是的话 <code>dp[i]+2</code></p>
 </li>
-<li><p>上面的情况不对的话，判断它左边的 <code>dp[i-1]</code> 是否大于零（代表左边有有效括号组），并且跳过这个dp[i-1]的长度之后，能找到一个 <code>左括号</code>  与其匹配，dp[i]=d[i-1]+2</p>
+<li><p>上面的情况不对的话，判断它左边的 <code>dp[i-1]</code> 是否大于零（代表左边有有效括号组），并且跳过这个dp[i-1]的长度之后，能找到一个 <code>左括号</code>  与其匹配，dp[i]&#x3D;d[i-1]+2</p>
 </li>
 <li><p>最后判断，<code>i-dp[i]&gt;0</code> 与 <code>i-dp[i]</code> 处的 dp 值是否大于零，这代表着 <code>dp[i]</code> 为代表的括号组左边还有有效的括号组。</p>
 <p>如果大于零（其实等于零也可以直接加哈哈哈），<code>dp[i]+=dp[i-dp[i]]</code></p>
@@ -649,7 +649,7 @@
 
 
 
-<h1 id="插入-amp-希尔排序-缩小增量排序"><a href="#插入-amp-希尔排序-缩小增量排序" class="headerlink" title="插入&amp;希尔排序(缩小增量排序)"></a>插入&amp;希尔排序(缩小增量排序)</h1><p><a href="https://blog.csdn.net/weixin_37818081/article/details/79202115" target="_blank" rel="noopener">介绍比较完整</a></p>
+<h1 id="插入-希尔排序-缩小增量排序"><a href="#插入-希尔排序-缩小增量排序" class="headerlink" title="插入&amp;希尔排序(缩小增量排序)"></a>插入&amp;希尔排序(缩小增量排序)</h1><p><a href="https://blog.csdn.net/weixin_37818081/article/details/79202115" target="_blank" rel="noopener">介绍比较完整</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertSort</span><span class="params">(num:[])</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(num)):</span><br><span class="line">        tmp=num[i]</span><br><span class="line">        j=i<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> j&gt;=<span class="number">0</span> <span class="keyword">and</span> num[j]&gt;tmp:</span><br><span class="line">            num[j+<span class="number">1</span>]=num[j]</span><br><span class="line">            j-=<span class="number">1</span></span><br><span class="line">        num[j+<span class="number">1</span>]=tmp</span><br><span class="line">    <span class="keyword">return</span> num</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shellSort</span><span class="params">(num:[])</span>-&gt;[]</span></span><br><span class="line"><span class="function">	gap=len(num)//2</span></span><br><span class="line"><span class="function">    while gap&gt;0:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(gap,len(num)):</span><br><span class="line">            tmp=num[i]</span><br><span class="line">            j=i-gap</span><br><span class="line">            <span class="keyword">while</span> j&gt;=<span class="number">0</span> <span class="keyword">and</span> num[j]&gt;num[j+<span class="number">1</span>]:</span><br><span class="line">                num[j+<span class="number">1</span>],num[j]=num[j].num[j+<span class="number">1</span>]</span><br><span class="line">                j+=gap</span><br><span class="line">    <span class="keyword">return</span> num</span><br></pre></td></tr></table></figure>
 
 
@@ -822,7 +822,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -864,7 +864,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-两数之和"><span class="nav-text">1.两数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-链表相加"><span class="nav-text">2. 链表相加</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-两个正序数组的中位数"><span class="nav-text">4.两个正序数组的中位数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-最长回文子串"><span class="nav-text">5.最长回文子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-正则表达式匹配"><span class="nav-text">10. 正则表达式匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-盛水最多的容器"><span class="nav-text">11.盛水最多的容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-三数之和"><span class="nav-text">15. 三数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-电话号码的字母组合"><span class="nav-text">17. 电话号码的字母组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-删除链表的倒数第N个节点"><span class="nav-text">19. 删除链表的倒数第N个节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-有效的括号"><span class="nav-text">20.有效的括号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-下一个排列"><span class="nav-text">31.下一个排列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-最长有效括号"><span class="nav-text">32.最长有效括号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-在排序数组中查找元素的第一个和最后一个位置"><span class="nav-text">34. 在排序数组中查找元素的第一个和最后一个位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#42-接雨水-单调栈经典题"><span class="nav-text">42.接雨水__单调栈经典题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#46-全排列-回溯经典题"><span class="nav-text">46. 全排列__回溯经典题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#48-旋转图像"><span class="nav-text">48.旋转图像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#49-字母异位词分组"><span class="nav-text">49. 字母异位词分组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#53-最大子序和"><span class="nav-text">53. 最大子序和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#55-跳跃游戏-扩展-最少跳数"><span class="nav-text">55. 跳跃游戏_扩展:最少跳数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#56-合并区间"><span class="nav-text">56. 合并区间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#62-不同路径-二维动规easy"><span class="nav-text">62. 不同路径__二维动规easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#64-最小路径和-二维动规easy"><span class="nav-text">64. 最小路径和__二维动规easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#70-爬楼梯-一维动规easy"><span class="nav-text">70. 爬楼梯__一维动规easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#72-编辑距离-⭐"><span class="nav-text">72. 编辑距离__⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#75-颜色分类-三维动规⭐"><span class="nav-text">75. 颜色分类__三维动规⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#76-最小覆盖子串-经典滑动窗口⭐"><span class="nav-text">76. 最小覆盖子串__经典滑动窗口⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#79-单词搜索-经典图回溯⭐"><span class="nav-text">79. 单词搜索 经典图回溯⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#78-子集-经典回溯"><span class="nav-text">78. 子集__经典回溯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#84-柱状图中最大的矩形-单调栈经典⭐⭐"><span class="nav-text">84. 柱状图中最大的矩形__单调栈经典⭐⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#85-最大矩形-在上一题之上的改进"><span class="nav-text">85. 最大矩形__在上一题之上的改进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#94-二叉树的中序遍历-非递归中序"><span class="nav-text">94. 二叉树的中序遍历__非递归中序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#96-不同的二叉搜索树"><span class="nav-text">96. 不同的二叉搜索树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#101-对称二叉树"><span class="nav-text">101. 对称二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#104-二叉树的最大深度"><span class="nav-text">104. 二叉树的最大深度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#105-从前序与中序遍历序列构造二叉树-常见的分治"><span class="nav-text">105. 从前序与中序遍历序列构造二叉树__常见的分治</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#128-最长连续序列-神奇的处理⭐"><span class="nav-text">128. 最长连续序列__神奇的处理⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#155-最小栈-单调递减栈的基础应用"><span class="nav-text">155. 最小栈__单调递减栈的基础应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#160-相交链表-简单的数学"><span class="nav-text">160. 相交链表__简单的数学</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#617-合并二叉树-简单递归"><span class="nav-text">617. 合并二叉树__简单递归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#169-多数元素-众数问题，摩根投票法"><span class="nav-text">169. 多数元素__众数问题，摩根投票法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛客高频-链表内指定区间反转"><span class="nav-text">牛客高频-链表内指定区间反转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入-amp-希尔排序-缩小增量排序"><span class="nav-text">插入&amp;希尔排序(缩小增量排序)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-两数之和"><span class="nav-text">1.两数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-链表相加"><span class="nav-text">2. 链表相加</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-两个正序数组的中位数"><span class="nav-text">4.两个正序数组的中位数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-最长回文子串"><span class="nav-text">5.最长回文子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-正则表达式匹配"><span class="nav-text">10. 正则表达式匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-盛水最多的容器"><span class="nav-text">11.盛水最多的容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-三数之和"><span class="nav-text">15. 三数之和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-电话号码的字母组合"><span class="nav-text">17. 电话号码的字母组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-删除链表的倒数第N个节点"><span class="nav-text">19. 删除链表的倒数第N个节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-有效的括号"><span class="nav-text">20.有效的括号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-下一个排列"><span class="nav-text">31.下一个排列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-最长有效括号"><span class="nav-text">32.最长有效括号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-在排序数组中查找元素的第一个和最后一个位置"><span class="nav-text">34. 在排序数组中查找元素的第一个和最后一个位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#42-接雨水-单调栈经典题"><span class="nav-text">42.接雨水__单调栈经典题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#46-全排列-回溯经典题"><span class="nav-text">46. 全排列__回溯经典题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#48-旋转图像"><span class="nav-text">48.旋转图像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#49-字母异位词分组"><span class="nav-text">49. 字母异位词分组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#53-最大子序和"><span class="nav-text">53. 最大子序和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#55-跳跃游戏-扩展-最少跳数"><span class="nav-text">55. 跳跃游戏_扩展:最少跳数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#56-合并区间"><span class="nav-text">56. 合并区间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#62-不同路径-二维动规easy"><span class="nav-text">62. 不同路径__二维动规easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#64-最小路径和-二维动规easy"><span class="nav-text">64. 最小路径和__二维动规easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#70-爬楼梯-一维动规easy"><span class="nav-text">70. 爬楼梯__一维动规easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#72-编辑距离-⭐"><span class="nav-text">72. 编辑距离__⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#75-颜色分类-三维动规⭐"><span class="nav-text">75. 颜色分类__三维动规⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#76-最小覆盖子串-经典滑动窗口⭐"><span class="nav-text">76. 最小覆盖子串__经典滑动窗口⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#79-单词搜索-经典图回溯⭐"><span class="nav-text">79. 单词搜索 经典图回溯⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#78-子集-经典回溯"><span class="nav-text">78. 子集__经典回溯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#84-柱状图中最大的矩形-单调栈经典⭐⭐"><span class="nav-text">84. 柱状图中最大的矩形__单调栈经典⭐⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#85-最大矩形-在上一题之上的改进"><span class="nav-text">85. 最大矩形__在上一题之上的改进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#94-二叉树的中序遍历-非递归中序"><span class="nav-text">94. 二叉树的中序遍历__非递归中序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#96-不同的二叉搜索树"><span class="nav-text">96. 不同的二叉搜索树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#101-对称二叉树"><span class="nav-text">101. 对称二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#104-二叉树的最大深度"><span class="nav-text">104. 二叉树的最大深度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#105-从前序与中序遍历序列构造二叉树-常见的分治"><span class="nav-text">105. 从前序与中序遍历序列构造二叉树__常见的分治</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#128-最长连续序列-神奇的处理⭐"><span class="nav-text">128. 最长连续序列__神奇的处理⭐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#155-最小栈-单调递减栈的基础应用"><span class="nav-text">155. 最小栈__单调递减栈的基础应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#160-相交链表-简单的数学"><span class="nav-text">160. 相交链表__简单的数学</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#617-合并二叉树-简单递归"><span class="nav-text">617. 合并二叉树__简单递归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#169-多数元素-众数问题，摩根投票法"><span class="nav-text">169. 多数元素__众数问题，摩根投票法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛客高频-链表内指定区间反转"><span class="nav-text">牛客高频-链表内指定区间反转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入-希尔排序-缩小增量排序"><span class="nav-text">插入&amp;希尔排序(缩小增量排序)</span></a></li></ol></div>
             
 
           </div>
@@ -891,7 +891,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -905,7 +905,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">87.7k</span>
+    <span title="站点总字数">77.7k</span>
   
 </div>
 

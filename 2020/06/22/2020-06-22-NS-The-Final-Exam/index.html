@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023250674.png">
 <meta property="og:image" content="https://shenqiy.cn/2020/06/22/2020-06-22-NS-The-Final-Exam/image-20200622023111428.png">
 <meta property="article:published_time" content="2020-06-21T16:30:47.000Z">
-<meta property="article:modified_time" content="2021-09-08T08:13:51.810Z">
+<meta property="article:modified_time" content="2021-09-08T08:13:52.000Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="实验">
 <meta name="twitter:card" content="summary">
@@ -153,7 +153,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -476,8 +476,8 @@
 </li>
 <li><strong>包含了三种shellcode</strong>——创建学号.txt、下载 daemon程序、运行daemon程序<ul>
 <li>创建学号.txt，汇编使用了linux的系统调用（32位下实验：调用号5打开文件、调用号6关闭文件）</li>
-<li>下载 daemon程序，汇编使用了<strong>/usr/bin/wget</strong>程序来下载daemon（从攻击方开启的apache服务器中下载)</li>
-<li>运行daemon程序，汇编通过<strong>/usr/bin/python daemon.py</strong>来运行</li>
+<li>下载 daemon程序，汇编使用了**&#x2F;usr&#x2F;bin&#x2F;wget**程序来下载daemon（从攻击方开启的apache服务器中下载)</li>
+<li>运行daemon程序，汇编通过**&#x2F;usr&#x2F;bin&#x2F;python daemon.py**来运行</li>
 </ul>
 </li>
 </ul>
@@ -494,7 +494,7 @@
 <ul>
 <li>不清楚如何对不够4字节整数的字符串进行控制避免<code>00</code>字节——<ul>
 <li>可以通过call</li>
-<li>也可以通过linux中：<code>/</code>&lt;=&gt;<code>/////</code>   、 <code>x</code>&lt;=&gt;<code>./////x</code>等来实现4字节整数</li>
+<li>也可以通过linux中：<code>/</code>&lt;&#x3D;&gt;<code>/////</code>   、 <code>x</code>&lt;&#x3D;&gt;<code>./////x</code>等来实现4字节整数</li>
 </ul>
 </li>
 <li>编译的位数问题，由于32位和64位的系统调用有所不同，如果想用32位的系统调用号，就要<ul>
@@ -514,7 +514,7 @@
 <p>而这次的实验，我觉得重点不在于漏洞的复杂性，所以索性编写了strcpy()函数栈溢出漏洞。</p>
 </blockquote>
 <p>string前后翻转服务端程序，我使用c语言编写简单的sokcet服务，将客户端发来的字符串翻转之后回送。</p>
-<h2 id="1-1-漏洞原理"><a href="#1-1-漏洞原理" class="headerlink" title="1.1 漏洞原理"></a>1.1 漏洞原理</h2><p>缓冲区溢出漏洞在于处理字符串时<strong>main()-&gt;reverse()-&gt;foo()-&gt;strcpy()</strong>中，由于<code>strcpy()</code>在复制字符串时并未检查字符串的长度，使输入内容可以超过bufferA的空间，从而实现栈溢出，覆盖返回地址，跳到我们填入的shellcode。</p>
+<h2 id="1-1-漏洞原理"><a href="#1-1-漏洞原理" class="headerlink" title="1.1 漏洞原理"></a>1.1 漏洞原理</h2><p>缓冲区溢出漏洞在于处理字符串时**main()-&gt;reverse()-&gt;foo()-&gt;strcpy()**中，由于<code>strcpy()</code>在复制字符串时并未检查字符串的长度，使输入内容可以超过bufferA的空间，从而实现栈溢出，覆盖返回地址，跳到我们填入的shellcode。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//漏洞部分</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> bufferA[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(bufferA,str);<span class="comment">//&lt;-----------漏洞所在</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>为了实现攻击，我们构造输入str，使其超出bufferA的部分恰好覆盖ebp的值和foo函数的栈返回ret，使该ret内容指向我们的shellcode，然后在foo返回之后即顺势跳到我们的shellcode，劫持成功。</p>
@@ -820,7 +820,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -889,7 +889,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -903,7 +903,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">87.7k</span>
+    <span title="站点总字数">77.7k</span>
   
 </div>
 

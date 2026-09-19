@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-38c0d8de4b7b0938709a3c96eef9c17d_720w.jpg">
 <meta property="og:image" content="https://shenqiy.cn/2020/07/30/2020-07-30-review-of-cryptography/image-20200723121106838.png">
 <meta property="og:image" content="https://shenqiy.cn/2020/07/30/2020-07-30-review-of-cryptography/image-20200723121842310.png">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=Pr%5C%7BA(D)+%253D+O%5C%7D+%E2%89%A4e%5E%5Cepsilon+%5Ccdot+Pr%5C%7BA(D%E2%80%99)+%253D+O%5C%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Pr%5C%7BA(D)+=+O%5C%7D+%E2%89%A4e%5E%5Cepsilon+%5Ccdot+Pr%5C%7BA(D%E2%80%99)+=+O%5C%7D+">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=O">
 <meta property="og:image" content="https://shenqiy.cn/2020/07/30/2020-07-30-review-of-cryptography/image-20200723173336210.png">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
@@ -111,9 +111,9 @@
 <meta property="og:image" content="https://shenqiy.cn/2020/07/30/2020-07-30-review-of-cryptography/image-20200723173929125.png">
 <meta property="og:image" content="https://img-blog.csdn.net/20180704155455576?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2p1emhlbnl1YW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Bx%5D%E2%89%94x%5Ee">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Bx%5D%E2%8B%85%5By%5D%253D(xy)%5Ee">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Bx%5D%E2%8B%85%5By%5D=(xy)%5Ee">
 <meta property="article:published_time" content="2020-07-30T07:40:27.000Z">
-<meta property="article:modified_time" content="2020-08-02T15:25:21.422Z">
+<meta property="article:modified_time" content="2020-08-02T15:25:22.000Z">
 <meta property="article:author" content="ColaLinN">
 <meta property="article:tag" content="密码学">
 <meta property="article:tag" content="复习">
@@ -165,7 +165,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -476,7 +476,7 @@
 <li>仅仅是加上摘要的数字签名，也可能会遭遇重放攻击、而且无法保证真实性，只能保证完整性、保密性</li>
 <li>如果有了 CA 颁发的证书，就可以确保真实性</li>
 </ol>
-<h3 id="Diffi-Halman-非对称密钥交换"><a href="#Diffi-Halman-非对称密钥交换" class="headerlink" title="Diffi-Halman 非对称密钥交换"></a>Diffi-Halman 非对称密钥交换</h3><p><a href="https://zh.wikipedia.org/wiki/迪菲-赫爾曼密鑰交換" target="_blank" rel="noopener">DH交换</a></p>
+<h3 id="Diffi-Halman-非对称密钥交换"><a href="#Diffi-Halman-非对称密钥交换" class="headerlink" title="Diffi-Halman 非对称密钥交换"></a>Diffi-Halman 非对称密钥交换</h3><p><a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B" target="_blank" rel="noopener">DH交换</a></p>
 <p>是一个密钥交换的方案，如下图可以容易知道整个过程。</p>
 <p>最后的 K 即是两方交换得到的密钥。</p>
 <p>而基于 <strong>离散对数问题</strong> ，攻击者是无法根据 A \ B \ g \ p 计算出 a \ b \ K 的。</p>
@@ -489,10 +489,10 @@
 <p><a href="https://github.com/ColaLinN/cryptology_project" target="_blank" rel="noopener">https://github.com/ColaLinN/cryptology_project</a></p>
 <p><img src="https://pic3.zhimg.com/80/v2-38c0d8de4b7b0938709a3c96eef9c17d_720w.jpg" alt="img"></p>
 <h2 id="3-非对称密码-RSA-Elgamal"><a href="#3-非对称密码-RSA-Elgamal" class="headerlink" title="3.非对称密码  RSA Elgamal"></a>3.非对称密码  RSA Elgamal</h2><p><strong>RSA——离散对数问题</strong></p>
-<p><a href="[https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95](https://zh.wikipedia.org/wiki/RSA加密演算法)">RSA维基百科</a></p>
+<p><a href="%5Bhttps://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95%5D(https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95)">RSA维基百科</a></p>
 <p><img src="/2020/07/30/2020-07-30-review-of-cryptography/image-20200723121106838.png" alt="image-20200723121106838"></p>
 <p><strong>Elgamal——椭圆曲线离散对数问题</strong></p>
-<p><a href="[https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95](https://zh.wikipedia.org/wiki/ElGamal加密算法)">Elgamal维基百科</a></p>
+<p><a href="%5Bhttps://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%5D(https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95)">Elgamal维基百科</a></p>
 <p><img src="/2020/07/30/2020-07-30-review-of-cryptography/image-20200723121842310.png" alt="image-20200723121842310"></p>
 <h2 id="4-hash算法-MD5、SHA、HMAC"><a href="#4-hash算法-MD5、SHA、HMAC" class="headerlink" title="4.hash算法 MD5、SHA、HMAC"></a>4.hash算法 MD5、SHA、HMAC</h2><h3 id="几种实际应用"><a href="#几种实际应用" class="headerlink" title="几种实际应用"></a>几种实际应用</h3><h4 id="hash冲突解决"><a href="#hash冲突解决" class="headerlink" title="hash冲突解决"></a>hash冲突解决</h4><p><a href="https://www.cnblogs.com/higerMan/p/11907117.html" target="_blank" rel="noopener">https://www.cnblogs.com/higerMan/p/11907117.html</a></p>
 <p>由于数据过多，会有数据产生相同的哈希值</p>
@@ -518,7 +518,7 @@
 <li><a href="https://zhuanlan.zhihu.com/p/40760105" target="_blank" rel="noopener">差分隐私 Differential Privacy 介绍</a></li>
 </ul>
 <p>一句话：保护的是数据源中一点微小的改动导致的隐私泄露问题。</p>
-<p><img src="https://www.zhihu.com/equation?tex=Pr%5C%7BA%28D%29+%3D+O%5C%7D+%E2%89%A4e%5E%5Cepsilon+%5Ccdot+Pr%5C%7BA%28D%E2%80%99%29+%3D+O%5C%7D+" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=Pr%5C%7BA(D)+=+O%5C%7D+%E2%89%A4e%5E%5Cepsilon+%5Ccdot+Pr%5C%7BA(D%E2%80%99)+=+O%5C%7D+" alt="[公式]"></p>
 <p><strong>作用于任何相近的数据集</strong>，得到一个特定输出 <img src="https://www.zhihu.com/equation?tex=O" alt="[公式]"> 的概率应差不多，那么我们就说这个算法能达到差分隐私的效果。也就是说，观察者通过观察输出结果很难察觉出数据集一点微小的变化，从而达到保护隐私的目的。</p>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/41172002" target="_blank" rel="noopener">混淆电路 Garbled Circuit 介绍</a></li>
@@ -547,7 +547,7 @@
 <p>其中，RSA满足乘法同态，Paillier加密方案满足加法同态。</p>
 <p>如下为RSA的同态举例：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Bx%5D%E2%89%94x%5Ee" alt="[公式]"></p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Bx%5D%E2%8B%85%5By%5D%3D%28xy%29%5Ee" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Bx%5D%E2%8B%85%5By%5D=(xy)%5Ee" alt="[公式]"></p>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/144847471" target="_blank" rel="noopener">零知识证明 Zero-Knowledge Proof 介绍</a></li>
 </ul>
@@ -738,7 +738,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -807,7 +807,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -821,7 +821,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">87.7k</span>
+    <span title="站点总字数">77.7k</span>
   
 </div>
 
